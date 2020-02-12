@@ -1,12 +1,6 @@
----
-title: 'BA-Seminar: Kleines Einmaleins des Digitalen (SS2020)'
-author:
-- name: Alex Flückiger
-  affiliation: University of Lucerne
-  email: alex.flueckiger@doz.unilu.ch
----
+# KED2020
 
-# Description
+## Description
  	
 
 In diesem praxisorientierten Seminar erlernen die Studierenden aller Fächer der KSF zentrale technische Fertigkeiten, die sie in ihren unmittelbaren Studienalltag einbauen können, und erhalten darüber hinaus auch einen Eindruck über aktuelle technische Entwicklungen.  Das Ziel dieser Veranstaltung ist das technische Sensorium zu schärfen und eine solide Basis für weiterführende computergestützte Analysen zu schaffen.
@@ -17,8 +11,8 @@ Wie lassen sich Texte quantitativ erschliessen, um die qualitative Inhaltsanalys
 
 Inputs von den Studierenden für inhaltliche Schwerpunkte sind willkommen.
 
-# Outline
+## Outline
 
-## Week 1: Introduction
+### Week 1: Introduction
 
 [Week 1 Slides](slides/html/index.html)
