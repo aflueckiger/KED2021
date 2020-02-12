@@ -1,10 +1,9 @@
 ---
-title: 'BA-Seminar: Kleines Einmaleins des Digitalen'
+title: 'BA-Seminar: Kleines Einmaleins des Digitalen (SS2020)'
 author:
 - name: Alex Flückiger
   affiliation: University of Lucerne
   email: alex.flueckiger@doz.unilu.ch
-date: Spring 2020
 ---
 
 # Description
