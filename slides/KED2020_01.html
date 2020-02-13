@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Alex Flückiger">
+  <meta name="dcterms.date" content="2020-02-24">
+  <title>Kleines Einmaleins des Digitalen</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://revealjs.com/css/reset.css">
+  <link rel="stylesheet" href="https://revealjs.com/css/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+  <link rel="stylesheet" href="https://revealjs.com/css/theme/night.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://revealjs.com/css/print/pdf.css' : 'https://revealjs.com/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://revealjs.com/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <style type='text/css'>
+  .reveal {
+      font-size: 150%; */
+  }
+  .subtitle{
+      font-size: 200%;
+      color: #e7ad52;
+
+  }
+  p.author,
+  p.date{
+      margin-top: -20px;
+  }
+
+  .reveal h2 {
+      margin-bottom: +50px;
+  }
+  .wow {
+      color :   #00FFAA;
+      font-weight: bold;
+      font-size: 200%;
+  }
+
+  /* .reveal h1,
+  .reveal h2,
+  .reveal h3,
+  .reveal h4,
+  .reveal h5,
+  .reveal h6 {
+      word-wrap: normal;
+      -webkit-hyphens: manual;
+      -moz-hyphens: manual;
+      hyphens: manual;
+  } */
+
+  div.references{
+      font-size: 75%
+  }
+
+  .reveal .slide-number {
+    font-size: 18pt;
+    color: #ffffff; }
+
+  .emoji {
+      font-size: 150%
+  }
+
+  .reveal blockquote{
+      color: #428bca;
+
+      background-color: #111;
+      border-left: 5px solid #428bca;
+
+      /*
+
+      border-left: 4px solid #428bca;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      border-right: 4px solid #428bca;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+
+
+      background-color: #E6E6E6;
+      color: #000000;
+       background-color: #d2f8d2; */
+  }
+
+
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Kleines Einmaleins des Digitalen</h1>
+  <p class="subtitle">01: Introduction + Where is the digital revolution?</p>
+  <p class="author">Alex Flückiger</p>
+  <p class="date">24 February 2020</p>
+</section>
+
+<section class="slide level2">
+
+<h3 id="outline">Outline</h3>
+<ol type="1">
+<li>digital revolution or hype?</li>
+<li>about me</li>
+<li>goals of this course</li>
+</ol>
+</section>
+<section><section id="todays-lecture" class="title-slide slide level1"><h1>Today’s Lecture</h1></section>
+<section id="the-world-is-changed-isnt-it" class="slide level2">
+<h2>The world is changed, isn’t it?</h2>
+<figure>
+<img data-src="../images/ai_illustration_new.jpg" style="height:10cm" alt="" /><figcaption>symbol of artificial intelligence (<a href="https://www.hwzdigital.ch/artificial-intelligence-part-1/">HWZ</a>)</figcaption>
+</figure>
+</section>
+<section id="an-era-of-big-data-ai" class="slide level2">
+<h2>An Era of big data + AI</h2>
+<aside class="notes">
+<p>Big Data discredited due privacy concerns</p>
+</aside>
+</section>
+<section id="group-discussion" class="slide level2">
+<h2>Group Discussion</h2>
+<blockquote>
+<p>What makes a computer looking intelligent?</p>
+</blockquote>
+</section>
+<section id="mimicking-human-intelligence" class="slide level2">
+<h2>Mimicking Human Intelligence</h2>
+<p>from static machines to more flexible devices</p>
+<ul>
+<li>mimicking intelligent behavior (speaking, seeing)</li>
+<li>a sense of perception</li>
+<li>many degrees of freedom</li>
+</ul>
+</section>
+<section id="seeing-like-a-human" class="slide level2">
+<h2>Seeing like a human</h2>
+<figure>
+<img data-src="../images/facebook_detectron2.png" class="center" style="width:60.0%" alt="" /><figcaption>image segmentation with <a href="https://ai.facebook.com/blog/-detectron2-a-pytorch-based-modular-object-detection-library-/">Facebook’s Detectron2</a></figcaption>
+</figure>
+</section>
+<section id="demos-of-artificial-intelligence" class="slide level2">
+<h2>Demos of <em>Artificial Intelligence</em></h2>
+<ul>
+<li><a href="https://developer.aylien.com/text-api-demo">sentiment analysis</a></li>
+<li><a href="https://demo.deeppavlov.ai/#/en/textqa">question answering (QA)</a></li>
+<li><a href="https://www.captionbot.ai/">image caption</a></li>
+<li><a href="https://talktotransformer.com/">text generation</a></li>
+<li><a href="https://www.pandorabots.com/mitsuku/">chat bots</a></li>
+<li><a href="https://www.deepl.com/translator">machine translation</a></li>
+</ul>
+<p>todo: talking to chatbot meena</p>
+</section>
+<section id="how-does-computer-intelligence-work" class="slide level2">
+<h2>How does computer intelligence work?</h2>
+<p>Artificial Intelligence (AI), Machine Learning (ML), Deep Learning (DL)</p>
+<p>generalize patterns from lots of data theory agnostically</p>
+<aside class="notes">
+<p>Regression is ML as well</p>
+</aside>
+</section></section>
+<section><section id="why-this-matters-for-social-science" class="title-slide slide level1"><h1>Why this matters for Social Science</h1></section>
+<section id="computational-social-science" class="slide level2">
+<h2>Computational Social Science</h2>
+<ul>
+<li>computational social science <span class="citation" data-cites="Lazer2009">(Lazer et al. 2009)</span></li>
+<li>Digital Humanities, Data Science, Computational History</li>
+<li>highly interdisciplinary</li>
+<li>early computational history already in 1960s <span class="citation" data-cites="Graham2015">(Graham, Milligan, and Weingart 2015)</span></li>
+</ul>
+</section>
+<section id="group-discussion-1" class="slide level2">
+<h2>Group Discussion</h2>
+<blockquote>
+<p>What kind of data are there?</p>
+<p>What data is relevant for social science?</p>
+</blockquote>
+<div class="fragment">
+<p>data as traces of social behaviour</p>
+<p>much of human knowledge compiled as text</p>
+</div>
+</section>
+<section id="about-the-mystery-of-coding" class="slide level2">
+<h2>About the Mystery of Coding</h2>
+<h4 id="coding-is-like">coding is like…</h4>
+<ul>
+<li>cooking</li>
+<li>a superpower</li>
+</ul>
+<p>IMG Superman</p>
+</section>
+<section id="where-the-actual-revolution-is" class="slide level2">
+<h2>Where the actual revolution is</h2>
+<p>Coding is a superpower…</p>
+<ul>
+<li>flexible</li>
+<li>reusable</li>
+<li>reproducible</li>
+<li>inspectable</li>
+<li>collaborative</li>
+<li>open-source</li>
+</ul>
+<p>… to tackle complex problems</p>
+<aside class="notes">
+<p>mit Code sind Fehler einfach zu beheben -&gt; skript korrigieren und nochmals laufen lassen</p>
+</aside>
+</section>
+<section id="personal-project" class="slide level2">
+<h2>Personal Project</h2>
+<p>MA-thesis</p>
+</section></section>
+<section id="about-me" class="title-slide slide level1"><h1>About me</h1></section>
+<section><section id="goals-of-this-course" class="title-slide slide level1"><h1>Goals of this Course</h1></section>
+<section id="what-you-learn" class="slide level2">
+<h2>What you learn</h2>
+<ul>
+<li>analyzing texts using a computer</li>
+<li>digital scholarship</li>
+<li>problem solving capacity</li>
+</ul>
+<aside class="notes">
+<p>It is more than a simple <em>Kleines Einmaleins</em> quantification other than statistics technical skills that make life easier</p>
+<p>computational methods broadly applicable</p>
+</aside>
+</section>
+<section id="learnings-from-previous-courses" class="slide level2">
+<h2>Learnings from previous Courses</h2>
+<ul>
+<li>programming can be overwhelming</li>
+<li>learning by doing, doing by googling</li>
+</ul>
+</section>
+<section id="levels-of-proficiency" class="slide level2">
+<h2>Levels of Proficiency</h2>
+<ol type="1">
+<li>awareness of today’s computational potential</li>
+<li>analyzing existing datasets</li>
+<li>creating + analyzing new datasets</li>
+<li>applying advanced machine learning</li>
+</ol>
+</section>
+<section id="what-i-teach" class="slide level2">
+<h2>What I teach</h2>
+<ul>
+<li>solid computational foundation
+<ul>
+<li>command line + python</li>
+</ul></li>
+<li>lecture-style introduction</li>
+<li>lab-style
+<ul>
+<li>practical coding sessions</li>
+<li>discussions + experiments in groups</li>
+</ul></li>
+</ul>
+</section>
+<section id="topics-covered" class="slide level2">
+<h2>Topics Covered</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>techniques</p>
+<ul>
+<li><p>extract information (regex)</p></li>
+<li><p>aggregate numbers</p></li>
+<li><p>basic visualization</p></li>
+<li><p>optical character recognition (OCR)</p></li>
+<li><p>scraping files</p></li>
+<li><p>topic modeling</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p>data</p>
+<ul>
+<li>existing resources</li>
+<li>creating new resources</li>
+</ul>
+</div>
+</div>
+<p><br></p>
+<p><span class="emoji" data-emoji="nerd_face">🤓</span> inputs are more than welcome</p>
+</section>
+<section class="slide level2">
+
+<p class="wow">
+TL;DR
+</p>
+<p>You will be tech-savvy, yet no programmer applying fancy machine learning</p>
+<p>IMAGE</p>
+<aside class="notes">
+<p>You will be able to perform simple, yet powerful analysis on your own data collection</p>
+</aside>
+</section>
+<section id="provisional-schedule" class="slide level2">
+<h2>Provisional schedule</h2>
+<p>12 sessions, Thursday from 2.15pm - 4.00pm</p>
+<p>OUTLINE TABLE</p>
+</section>
+<section id="requirements" class="slide level2">
+<h2>Requirements</h2>
+<ul>
+<li>laptop (macOS, Win10, Linux)
+<ul>
+<li>update OS</li>
+<li>free up at least 10GB storage</li>
+<li>backup</li>
+</ul></li>
+<li>no technical skills required</li>
+</ul>
+</section>
+<section id="grading" class="slide level2">
+<h2>Grading</h2>
+<ul>
+<li>no grades (pass/fail)
+<ul>
+<li>3 exercises during semester</li>
+</ul></li>
+<li>mini-project with presentation
+<ul>
+<li>complement claims with numbers</li>
+<li>work in teams</li>
+<li>data of your interest</li>
+</ul></li>
+<li>optional: writing a seminar paper
+<ul>
+<li>in cooperation with Prof. Sophie Mützel</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>think about potential data source</p>
+</aside>
+</section>
+<section id="organization" class="slide level2">
+<h2>Organization</h2>
+<p>slides + data on github: <a href="https://aflueckiger.github.io/KED2020/">KED2020</a></p>
+<p>readings on OLAT: <a href="https://lms.uzh.ch/auth/RepositoryEntry/16703095856/CourseNode/79952613783583">link to course</a></p>
+<p>questions to: <a href="mailto:alex.flueckiger@doz.unilu.ch">alex.flueckiger@doz.unilu.ch</a></p>
+</section>
+<section id="questionnaire" class="slide level2">
+<h2>Questionnaire</h2>
+<p>Please fill out this <a href="https://forms.gle/nvrCeW9XfMXjVoqU9">questionnaire</a></p>
+</section>
+<section id="reading-for-next-week" class="slide level2">
+<h2>Reading for next week</h2>
+<p>David Lazer, Alex Pentland, Lada Adamic, Sinan Aral, Albert-László Barabási, Devon Brewer, Nicholas Christakis, Noshir Contractor, James Fowler, Myron Gutmann, Tony Jebara, Gary King, Michael Macy, Deb Roy, and Marshall Van Alstyne. 2009. Computational Social Science. <em>Science</em>, 323(5915):721–723, February.</p>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions?</h2>
+</section>
+<section id="references" class="slide level2">
+<h2 class="unnumbered">References</h2>
+<div id="refs" class="references hanging-indent" role="doc-bibliography">
+<div id="ref-Graham2015">
+<p>Graham, Shawn, Ian Milligan, and Scott Weingart. 2015. <em>Exploring Big Historical Data: The Historian’s Macroscope</em>. Reprint edition. London: Icp. <a href="http://www.themacroscope.org/?page_id=303">http://www.themacroscope.org/?page_id=303</a>.</p>
+</div>
+<div id="ref-Lazer2009">
+<p>Lazer, David, Alex Pentland, Lada Adamic, Sinan Aral, Albert-László Barabási, Devon Brewer, Nicholas Christakis, et al. 2009. “Computational Social Science.” <em>Science</em> 323 (5915): 721–23. <a href="https://doi.org/10.1126/science.1167742">https://doi.org/10.1126/science.1167742</a>.</p>
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://revealjs.com/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://revealjs.com/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://revealjs.com/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://revealjs.com/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
