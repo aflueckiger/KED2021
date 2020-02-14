@@ -17,6 +17,7 @@
     span.underline{text-decoration: underline;}
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
   </style>
   <link rel="stylesheet" href="https://revealjs.com/css/theme/night.css" id="theme">
   <!-- Printing and PDF exports -->
@@ -31,6 +32,18 @@
   <script src="https://revealjs.com/lib/js/html5shiv.js"></script>
   <![endif]-->
   <style type='text/css'>
+  /*
+  #4d7e65 green
+  #b5533c red
+
+  ## green {data-background=#4d7e65}
+
+  ## blue {data-background=#3c70b5}
+
+  ## red {data-background=#b5533c}
+
+   */
+
   .reveal {
       font-size: 150%; */
   }
@@ -52,6 +65,18 @@
       font-weight: bold;
       font-size: 200%;
   }
+
+  ul li {
+    line-height:2em;
+  }
+
+  ul li li {
+   line-height:1.3em;
+   list-style-type:  None;
+   font-style: italic;
+   font-family: "Courier New";
+  }
+
 
   /* .reveal h1,
   .reveal h2,
@@ -77,14 +102,24 @@
       font-size: 150%
   }
 
-  .reveal blockquote{
-      color: #428bca;
+  .blockstyle{
+      background-color: #323633;
+      padding: 1.5em;
+      width: 80%;
+      margin: auto;
+      margin-bottom: 1em;
+      text-align: center;
+  }
 
-      background-color: #111;
-      border-left: 5px solid #428bca;
+  .reveal blockquote{
+
+
+      background-color: #323633;
+
 
       /*
-
+      border-left: 5px solid #428bca;
+      color: #428bca;
       border-left: 4px solid #428bca;
       border-top-left-radius: 20px;
       border-bottom-left-radius: 20px;
@@ -117,11 +152,15 @@
 <h3 id="outline">Outline</h3>
 <ol type="1">
 <li>digital revolution or hype?</li>
-<li>about me</li>
+<li>about us</li>
 <li>goals of this course</li>
 </ol>
 </section>
-<section><section id="todays-lecture" class="title-slide slide level1"><h1>Today’s Lecture</h1></section>
+<section>
+<section id="todays-lecture" class="title-slide slide level1">
+<h1>Today’s Lecture</h1>
+
+</section>
 <section id="the-world-is-changed-isnt-it" class="slide level2">
 <h2>The world is changed, isn’t it?</h2>
 <figure>
@@ -134,15 +173,26 @@
 <p>Big Data discredited due privacy concerns</p>
 </aside>
 </section>
-<section id="group-discussion" class="slide level2">
-<h2>Group Discussion</h2>
-<blockquote>
-<p>What makes a computer looking intelligent?</p>
-</blockquote>
+<section id="group-discussion" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">Group Discussion</h2>
+<div class="columns blockstyle">
+<h4 id="questions">Questions</h4>
+<ul>
+<li>What makes a computer looking intelligent?</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="columns blockstyle">
+<ul>
+<li>data as traces of social behaviour</li>
+<li>much of human knowledge compiled as text</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="mimicking-human-intelligence" class="slide level2">
 <h2>Mimicking Human Intelligence</h2>
-<p>from static machines to more flexible devices</p>
+<h4 id="from-static-machines-to-more-flexible-devices">from static machines to more flexible devices</h4>
 <ul>
 <li>mimicking intelligent behavior (speaking, seeing)</li>
 <li>a sense of perception</li>
@@ -157,6 +207,7 @@
 </section>
 <section id="demos-of-artificial-intelligence" class="slide level2">
 <h2>Demos of <em>Artificial Intelligence</em></h2>
+<h4 id="can-you-disenchant-them">Can you disenchant them?</h4>
 <ul>
 <li><a href="https://developer.aylien.com/text-api-demo">sentiment analysis</a></li>
 <li><a href="https://demo.deeppavlov.ai/#/en/textqa">question answering (QA)</a></li>
@@ -169,31 +220,58 @@
 </section>
 <section id="how-does-computer-intelligence-work" class="slide level2">
 <h2>How does computer intelligence work?</h2>
-<p>Artificial Intelligence (AI), Machine Learning (ML), Deep Learning (DL)</p>
-<p>generalize patterns from lots of data theory agnostically</p>
+<ul>
+<li>interchangeably (?) used names
+<ul>
+<li>Artificial Intelligence (AI), Machine Learning (ML), Deep Learning (DL)</li>
+</ul></li>
+<li>generalize patterns from lots of data theory agnostically</li>
+<li>supervised training
+<ul>
+<li>input-output pairs</li>
+</ul></li>
+</ul>
 <aside class="notes">
 <p>Regression is ML as well</p>
 </aside>
-</section></section>
-<section><section id="why-this-matters-for-social-science" class="title-slide slide level1"><h1>Why this matters for Social Science</h1></section>
+</section>
+</section>
+<section>
+<section id="why-this-matters-for-social-science" class="title-slide slide level1">
+<h1>Why this matters for Social Science</h1>
+
+</section>
 <section id="computational-social-science" class="slide level2">
 <h2>Computational Social Science</h2>
+<h4 id="todo-plan-transition-ai-to-ss">todo plan transition AI to SS</h4>
 <ul>
-<li>computational social science <span class="citation" data-cites="Lazer2009">(Lazer et al. 2009)</span></li>
+<li>computational social science <span class="citation" data-cites="Lazer2009">(Lazer et al. 2009)</span>
+<ul>
 <li>Digital Humanities, Data Science, Computational History</li>
+</ul></li>
 <li>highly interdisciplinary</li>
 <li>early computational history already in 1960s <span class="citation" data-cites="Graham2015">(Graham, Milligan, and Weingart 2015)</span></li>
 </ul>
 </section>
-<section id="group-discussion-1" class="slide level2">
-<h2>Group Discussion</h2>
-<blockquote>
-<p>What kind of data are there?</p>
-<p>What data is relevant for social science?</p>
-</blockquote>
+<section id="group-discussion-1" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">Group Discussion</h2>
+<div class="columns blockstyle">
+<h4 id="questions-1">Questions</h4>
+<ul>
+<li><p>What kind of data are there?</p></li>
+<li><p>What data is relevant for social science?</p></li>
+</ul>
+</div>
 <div class="fragment">
-<p>data as traces of social behaviour</p>
-<p>much of human knowledge compiled as text</p>
+<div class="columns blockstyle">
+<ul>
+<li>data as traces of social behaviour
+<ul>
+<li>tabular, texts, images</li>
+</ul></li>
+<li>much of human knowledge compiled as text</li>
+</ul>
+</div>
 </div>
 </section>
 <section id="about-the-mystery-of-coding" class="slide level2">
@@ -203,7 +281,12 @@
 <li>cooking</li>
 <li>a superpower</li>
 </ul>
-<p>IMG Superman</p>
+</section>
+<section id="section" class="slide level2" data-background="https://media.giphy.com/media/jzjfBPyUa6k9i/giphy.gif">
+<h2 data-background="https://media.giphy.com/media/jzjfBPyUa6k9i/giphy.gif"></h2>
+</section>
+<section id="girls-have-superpower-too" class="slide level2" data-background="https://media1.tenor.com/images/93c9eb756df19748e4fb50f04c4a451c/tenor.gif?itemid=11586724">
+<h2 data-background="https://media1.tenor.com/images/93c9eb756df19748e4fb50f04c4a451c/tenor.gif?itemid=11586724">Girls have superpower too</h2>
 </section>
 <section id="where-the-actual-revolution-is" class="slide level2">
 <h2>Where the actual revolution is</h2>
@@ -221,12 +304,22 @@
 <p>mit Code sind Fehler einfach zu beheben -&gt; skript korrigieren und nochmals laufen lassen</p>
 </aside>
 </section>
-<section id="personal-project" class="slide level2">
-<h2>Personal Project</h2>
-<p>MA-thesis</p>
-</section></section>
-<section id="about-me" class="title-slide slide level1"><h1>About me</h1></section>
-<section><section id="goals-of-this-course" class="title-slide slide level1"><h1>Goals of this Course</h1></section>
+</section>
+<section>
+<section id="about-us" class="title-slide slide level1">
+<h1>About us</h1>
+
+</section>
+<section id="personal-example" class="slide level2" data-background="../images/ma_flueckiger_country_mentions_white.png">
+<h2 data-background="../images/ma_flueckiger_country_mentions_white.png">Personal Example</h2>
+<p>directed country mentions in UN speeches</p>
+</section>
+</section>
+<section>
+<section id="goals-of-this-course" class="title-slide slide level1">
+<h1>Goals of this Course</h1>
+
+</section>
 <section id="what-you-learn" class="slide level2">
 <h2>What you learn</h2>
 <ul>
@@ -242,6 +335,7 @@
 <section id="learnings-from-previous-courses" class="slide level2">
 <h2>Learnings from previous Courses</h2>
 <ul>
+<li>too much content, too short practicing</li>
 <li>programming can be overwhelming</li>
 <li>learning by doing, doing by googling</li>
 </ul>
@@ -262,29 +356,25 @@
 <ul>
 <li>command line + python</li>
 </ul></li>
-<li>lecture-style introduction</li>
-<li>lab-style
-<ul>
+<li>lecture-style introductions</li>
 <li>practical coding sessions</li>
 <li>discussions + experiments in groups</li>
-</ul></li>
 </ul>
 </section>
 <section id="topics-covered" class="slide level2">
 <h2>Topics Covered</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>techniques</p>
+<h4 id="techniques">techniques</h4>
 <ul>
 <li><p>extract information (regex)</p></li>
 <li><p>aggregate numbers</p></li>
 <li><p>basic visualization</p></li>
 <li><p>optical character recognition (OCR)</p></li>
 <li><p>scraping files</p></li>
-<li><p>topic modeling</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p>data</p>
+<h4 id="data">data</h4>
 <ul>
 <li>existing resources</li>
 <li>creating new resources</li>
@@ -294,13 +384,10 @@
 <p><br></p>
 <p><span class="emoji" data-emoji="nerd_face">🤓</span> inputs are more than welcome</p>
 </section>
-<section class="slide level2">
-
-<p class="wow">
-TL;DR
-</p>
-<p>You will be tech-savvy, yet no programmer applying fancy machine learning</p>
-<p>IMAGE</p>
+<section id="tldr" class="slide level2" data-background="#4d7e65">
+<h2 data-background="#4d7e65">TL;DR</h2>
+<p>You will be tech-savvy…</p>
+<p>…yet no programmer applying fancy machine learning</p>
 <aside class="notes">
 <p>You will be able to perform simple, yet powerful analysis on your own data collection</p>
 </aside>
@@ -350,18 +437,18 @@ TL;DR
 <p>readings on OLAT: <a href="https://lms.uzh.ch/auth/RepositoryEntry/16703095856/CourseNode/79952613783583">link to course</a></p>
 <p>questions to: <a href="mailto:alex.flueckiger@doz.unilu.ch">alex.flueckiger@doz.unilu.ch</a></p>
 </section>
-<section id="questionnaire" class="slide level2">
-<h2>Questionnaire</h2>
+<section id="questionnaire" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">Questionnaire</h2>
 <p>Please fill out this <a href="https://forms.gle/nvrCeW9XfMXjVoqU9">questionnaire</a></p>
 </section>
 <section id="reading-for-next-week" class="slide level2">
 <h2>Reading for next week</h2>
 <p>David Lazer, Alex Pentland, Lada Adamic, Sinan Aral, Albert-László Barabási, Devon Brewer, Nicholas Christakis, Noshir Contractor, James Fowler, Myron Gutmann, Tony Jebara, Gary King, Michael Macy, Deb Roy, and Marshall Van Alstyne. 2009. Computational Social Science. <em>Science</em>, 323(5915):721–723, February.</p>
 </section>
-<section id="questions" class="slide level2">
+<section id="questions-2" class="slide level2">
 <h2>Questions?</h2>
 </section>
-<section id="references" class="slide level2">
+<section id="references" class="slide level2 unnumbered">
 <h2 class="unnumbered">References</h2>
 <div id="refs" class="references hanging-indent" role="doc-bibliography">
 <div id="ref-Graham2015">
@@ -371,7 +458,8 @@ TL;DR
 <p>Lazer, David, Alex Pentland, Lada Adamic, Sinan Aral, Albert-László Barabási, Devon Brewer, Nicholas Christakis, et al. 2009. “Computational Social Science.” <em>Science</em> 323 (5915): 721–23. <a href="https://doi.org/10.1126/science.1167742">https://doi.org/10.1126/science.1167742</a>.</p>
 </div>
 </div>
-</section></section>
+</section>
+</section>
     </div>
   </div>
 
@@ -386,6 +474,8 @@ TL;DR
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
+        // see https://github.com/hakimel/reveal.js/#navigation-mode
+        navigationMode: 'linear',
 
         // Optional reveal.js plugins
         dependencies: [

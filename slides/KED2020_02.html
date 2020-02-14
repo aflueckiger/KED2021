@@ -17,6 +17,7 @@
     span.underline{text-decoration: underline;}
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
   </style>
   <link rel="stylesheet" href="https://revealjs.com/css/theme/night.css" id="theme">
   <!-- Printing and PDF exports -->
@@ -31,6 +32,18 @@
   <script src="https://revealjs.com/lib/js/html5shiv.js"></script>
   <![endif]-->
   <style type='text/css'>
+  /*
+  #4d7e65 green
+  #b5533c red
+
+  ## green {data-background=#4d7e65}
+
+  ## blue {data-background=#3c70b5}
+
+  ## red {data-background=#b5533c}
+
+   */
+
   .reveal {
       font-size: 150%; */
   }
@@ -52,6 +65,18 @@
       font-weight: bold;
       font-size: 200%;
   }
+
+  ul li {
+    line-height:2em;
+  }
+
+  ul li li {
+   line-height:1.3em;
+   list-style-type:  None;
+   font-style: italic;
+   font-family: "Courier New";
+  }
+
 
   /* .reveal h1,
   .reveal h2,
@@ -77,14 +102,24 @@
       font-size: 150%
   }
 
-  .reveal blockquote{
-      color: #428bca;
+  .blockstyle{
+      background-color: #323633;
+      padding: 1.5em;
+      width: 80%;
+      margin: auto;
+      margin-bottom: 1em;
+      text-align: center;
+  }
 
-      background-color: #111;
-      border-left: 5px solid #428bca;
+  .reveal blockquote{
+
+
+      background-color: #323633;
+
 
       /*
-
+      border-left: 5px solid #428bca;
+      color: #428bca;
       border-left: 4px solid #428bca;
       border-top-left-radius: 20px;
       border-bottom-left-radius: 20px;
@@ -119,7 +154,11 @@
 <li>Get your hands dirty!</li>
 </ul>
 </section>
-<section><section id="working-with-texts" class="title-slide slide level1"><h1>Working with Texts</h1></section>
+<section>
+<section id="working-with-texts" class="title-slide slide level1">
+<h1>Working with Texts</h1>
+
+</section>
 <section id="a-micro-and-macro-perspective-i" class="slide level2">
 <h2>A micro and macro perspective I</h2>
 <p><strong>individual cases vs. collective trends</strong></p>
@@ -190,8 +229,13 @@ Remember <span class="emoji" data-emoji="thumbsup">👍</span>
 <li>Resources: https://programminghistorian.org/en/lessons/preserving-your-research-data</li>
 </ul>
 </aside>
-</section></section>
-<section><section id="data-management" class="title-slide slide level1"><h1>Data Management</h1></section>
+</section>
+</section>
+<section>
+<section id="data-management" class="title-slide slide level1">
+<h1>Data Management</h1>
+
+</section>
 <section id="file-types-in-class-task" class="slide level2">
 <h2>File types: In-class task</h2>
 <blockquote>
@@ -207,16 +251,25 @@ Remember <span class="emoji" data-emoji="thumbsup">👍</span>
 <li>formatted: docx, pdf, html</li>
 <li>open vs. proprietary</li>
 </ul>
-</section></section>
-<section><section id="lets-dive-into-it" class="title-slide slide level1"><h1>Let’s dive into it!</h1></section>
+</section>
+</section>
+<section>
+<section id="lets-dive-into-it" class="title-slide slide level1">
+<h1>Let’s dive into it!</h1>
+
+</section>
 <section id="ngram-viewer" class="slide level2">
 <h2>Ngram Viewer</h2>
 <p><a href="https://books.google.com/ngrams">Google Ngram Viewer</a></p>
 <ul>
-<li>historical perspective</li>
+<li>historical perspective with n-grams</li>
 <li>5.2 million books</li>
 <li>rise and fall of cultural ideas and phenomena</li>
 </ul>
+<p><a href="http://www.culturomics.org/Resources/faq">More information</a></p>
+<aside class="notes">
+
+</aside>
 </section>
 <section id="in-class-task-environmental-discourse" class="slide level2">
 <h2>In-Class Task: Environmental Discourse</h2>
@@ -236,7 +289,40 @@ Remember <span class="emoji" data-emoji="thumbsup">👍</span>
 </ul></li>
 </ul>
 <p><br></p>
-<p>Hint: check out case-sensitiveness and wildcards (*) <span class="emoji" data-emoji="nerd_face">🤓</span></p>
+</section>
+<section id="refine-your-queries" class="slide level2">
+<h2>refine your queries</h2>
+<p>check out case-sensitiveness, wildcards (*) ​an​d ​operators <span class="emoji" data-emoji="nerd_face">🤓</span></p>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 88%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>+</code></td>
+<td>sums multiple expressions into one</td>
+</tr>
+<tr class="even">
+<td><code>-</code></td>
+<td>subtracts the expression on the right from the expression on the left, giving you a way to measure one ngram relative to another.</td>
+</tr>
+<tr class="odd">
+<td><code>/</code></td>
+<td>divides the expression on the left by the expression on the right, which is useful for isolating the behavior of an ngram with respect to another.</td>
+</tr>
+<tr class="even">
+<td><code>*</code></td>
+<td>multiplies the expression on the left by the number on the right, making it easier to compare ngrams of very different frequencies. (Be sure to enclose the entire ngram in parentheses so that * isn’t interpreted as a wildcard.)</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section class="slide level2">
 
@@ -246,8 +332,37 @@ Remember <span class="emoji" data-emoji="thumbsup">👍</span>
 <h4 id="the-underlying-question">The underlying question</h4>
 <p>Have only the terms changed over time or the social perception?</p>
 <div class="fragment">
-<p><strong>Both, most likely.</strong></p>
+<p><strong>Both, most likely.</strong> The same is true for regions.</p>
 </div>
+</section>
+<section id="no-culturomics-but-meaning-making" class="slide level2">
+<h2>No Culturomics but Meaning-Making</h2>
+<p>phenomena in collective memory</p>
+<ul>
+<li>semantic drifts</li>
+<li>lexical shifts</li>
+</ul>
+<p>interpretation decreasing frequency</p>
+<ul>
+<li>loosing interest?</li>
+<li>becoming established?</li>
+<li>new reference
+<ul>
+<li>e.g. <em>The Great War</em> to <em>World War I</em></li>
+</ul></li>
+</ul>
+<p>Read, read, read and complement stats with context!</p>
+<aside class="notes">
+<p>Eigentum hat sich etabliert, Religion degeneriert</p>
+<p>Patterns EN</p>
+<p>dessert=&gt;*_ADJ</p>
+<p>*=&gt;public_ADJ</p>
+<p>*=&gt;personal_ADJ</p>
+<p>Pattern DE</p>
+<p>Kulturen=&gt;*_ADJ</p>
+<p>Kinder=&gt;*_ADJ</p>
+<p>only entire words, yet: _INF</p>
+</aside>
 </section>
 <section id="a-word-of-caution" class="slide level2">
 <h2>A word of caution</h2>
@@ -268,7 +383,8 @@ Remember <span class="emoji" data-emoji="thumbsup">👍</span>
 </section>
 <section id="references" class="slide level2">
 <h2>References</h2>
-</section></section>
+</section>
+</section>
     </div>
   </div>
 
@@ -283,6 +399,8 @@ Remember <span class="emoji" data-emoji="thumbsup">👍</span>
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
+        // see https://github.com/hakimel/reveal.js/#navigation-mode
+        navigationMode: 'linear',
 
         // Optional reveal.js plugins
         dependencies: [
