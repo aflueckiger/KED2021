@@ -1,7 +1,6 @@
 # KED2020
 
 ## Description
- 	
 
 In diesem praxisorientierten Seminar erlernen die Studierenden aller Fächer der KSF zentrale technische Fertigkeiten, die sie in ihren unmittelbaren Studienalltag einbauen können, und erhalten darüber hinaus auch einen Eindruck über aktuelle technische Entwicklungen.  Das Ziel dieser Veranstaltung ist das technische Sensorium zu schärfen und eine solide Basis für weiterführende computergestützte Analysen zu schaffen.
 
@@ -13,6 +12,10 @@ Inputs von den Studierenden für inhaltliche Schwerpunkte sind willkommen.
 
 ## Outline
 
-### Week 1: Introduction
+### Week 1: Introduction + Where is the digital revolution?
 
-[Week 1 Slides](slides/html/index.html)
+[Week 1 Slides](slides/KED2020_01.html)
+
+### Week 2: Text as Data
+
+[Week 2 Slides](slides/KED2020_02.html)
