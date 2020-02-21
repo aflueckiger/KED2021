@@ -3,7 +3,7 @@ title: 'BA-Seminar: <br>Kleines Einmaleins des Digitalen'
 author:  
 - name: Alex Flückiger
   affiliation: University of Lucerne
-date: Spring 2020
+date: 2020
 ---
 
 
