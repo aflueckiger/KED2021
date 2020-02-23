@@ -8,9 +8,6 @@ date: 2020
 
 
 
-> “Language shapes the way we think, <br>and determines what we can think about.” <br>
-> ― Benjamin Lee Whor
-
 # Outline
 
 In this practice-oriented seminar, students of social and cultural sciences learn relevant technical skills and programming that they can incorporate into their everyday studies. Moreover, they also develop an understanding of current developments in the field of information technology.  This course aims to foster digital literacy and to build a solid foundation for computational analysis, using Python and the command-line.
@@ -29,10 +26,10 @@ We have 12 seminar sessions together.
 | ---------------- | -------------------------------------------------- |
 | 27 February 2020 | Introduction + Where is the digital revolution?    |
 | 05 March 2020    | Text as Data                                       |
-| 12 March 2020    | Setting up a Development Environment               |
+| 12 March 2020    | Setting up your Development Environment            |
 | 19 March 2020    | Introduction into Command-line                     |
 | 26  March 2020   | Basic NLP with Command-line                        |
-| 02 April 2020    | Learning Regular Expression                        |
+| 02 April 2020    | Learning Regular Expressions                       |
 | 09 April 2020    | Data Sources + Ethics                              |
 | 16 April 2020    | *no lecture (Osterpause)*                          |
 | 23 April 2020    | Creating new Data Sets                             |

@@ -66,17 +66,31 @@
       font-size: 200%;
   }
 
+  .reveal table {
+      font-size: 80%;
+  }
+
+
+  ol li {
+    line-height:2em;
+  }
+
   ul li {
     line-height:2em;
   }
 
   ul li li {
+
    line-height:1.3em;
-   list-style-type:  None;
+   list-style-type: None;
    font-style: italic;
-   font-family: "Courier New";
+   font-size: 90%;
+   font-family: Georgia;
   }
 
+  hr {
+      color: white;
+  }
 
   /* .reveal h1,
   .reveal h2,
@@ -102,21 +116,7 @@
       font-size: 150%
   }
 
-  .blockstyle{
-      background-color: #323633;
-      padding: 1.5em;
-      width: 80%;
-      margin: auto;
-      margin-bottom: 1em;
-      text-align: center;
-  }
-
   .reveal blockquote{
-
-
-      background-color: #323633;
-
-
       /*
       border-left: 5px solid #428bca;
       color: #428bca;
@@ -133,6 +133,32 @@
        background-color: #d2f8d2; */
   }
 
+  .reveal blockquote{
+      position: static;
+      text-align: center;
+      border-style: none;
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
+      background: inherit;
+      font-family: Georgia;
+      font-size: 1.4em;
+      width:90%;
+      margin:0px auto;
+      padding: 1em
+      font-style:italic;
+
+  }
+
+
+
+
+  .reveal blockquote cite{
+      text-align: right;
+      font-style: normal;
+      font-size: 0.75em;
+      font-weight: bold;
+      margin-top:1em;
+  }
+
 
   </style>
 </head>
@@ -147,12 +173,43 @@
   <p class="date">05 March 2020</p>
 </section>
 
+<section id="wrap-up-last-lecture" class="slide level2">
+<h2>Wrap-up last Lecture</h2>
+<p>Computational Social Science</p>
+<ul>
+<li>data-driven</li>
+<li>Network Analysis + Text Analysis</li>
+<li>historical perspective vs. real-time dynamics</li>
+<li>limited access to data</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>more than self-reported data</li>
+<li>Methodical focus because of Nature paper</li>
+</ul>
+</aside>
+</section>
 <section id="outline" class="slide level2">
 <h2>Outline</h2>
 <ul>
 <li>Methodological ground <span class="emoji" data-emoji="grimacing">😬</span></li>
 <li>Get your hands dirty!</li>
 </ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<blockquote>
+<p>«Language shapes the way we think, <br> and determines what we can think about.»</p>
+<p><cite>― Benjamin Lee Whorf</cite></p>
+</blockquote>
+<aside class="notes">
+<p>Loosely coupling between:</p>
+<ul>
+<li>World</li>
+<li>Cognition</li>
+<li>Language</li>
+</ul>
+</aside>
 </section>
 <section>
 <section id="working-with-texts" class="title-slide slide level1">
@@ -165,11 +222,11 @@
 <div class="columns">
 <div class="column">
 <figure>
-<img data-src="images/close_reading.jpg" style="height:8cm" alt="" /><figcaption>close reading [source]</figcaption>
+<img data-src="images/close_reading.png" style="height:8cm" alt="" /><figcaption>close reading (<a href="https://i1.wp.com/elevenews.com/wp-content/uploads/2018/03/golf-cart-repair-manuals.png">source</a>)</figcaption>
 </figure>
 </div><div class="column">
 <figure>
-<img data-src="images/nlp-natural-language-processing.jpg" style="height:8cm" alt="" /><figcaption>distant reading <a href="https://www.100worte.de/wp-content/uploads/2019/08/nlp-natural-language-processing.jpg">source</a></figcaption>
+<img data-src="images/nlp-natural-language-processing.jpg" style="height:8cm" alt="" /><figcaption>distant reading (<a href="https://www.100worte.de/wp-content/uploads/2019/08/nlp-natural-language-processing.jpg">source</a>)</figcaption>
 </figure>
 </div>
 </div>
@@ -192,13 +249,11 @@
 <p>Textual abstractions without context, Abstract from individual case</p>
 </aside>
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
-<p>From micro to macro…</p>
-<p>…and back again</p>
+<section id="from-micro-to-macro-and-back-again" class="slide level2">
+<h2>From micro to macro…<br> …and back again</h2>
 </section>
-<section id="two-research-paradigma" class="slide level2">
-<h2>Two Research Paradigma</h2>
+<section id="two-research-paradigms" class="slide level2">
+<h2>Two Research Paradigms</h2>
 <p>data exploration vs. hypothesis testing</p>
 <ul>
 <li>add nuance</li>
@@ -206,11 +261,8 @@
 <li>verify hypothesis</li>
 </ul>
 </section>
-<section class="slide level2">
-
-<p class="wow">
-Remember <span class="emoji" data-emoji="thumbsup">👍</span>
-</p>
+<section id="remember" class="slide level2" data-background="#4d7e65">
+<h2 data-background="#4d7e65">Remember <span class="emoji" data-emoji="thumbsup">👍</span> ​</h2>
 <p>Quantification and qualitative analysis go well together</p>
 </section>
 <section id="text-as-data" class="slide level2">
@@ -236,12 +288,14 @@ Remember <span class="emoji" data-emoji="thumbsup">👍</span>
 <h1>Data Management</h1>
 
 </section>
-<section id="file-types-in-class-task" class="slide level2">
-<h2>File types: In-class task</h2>
-<blockquote>
-<p>What file formats do you know?</p>
-<p>Open files of different types in a text editor. Which look nice?</p>
-</blockquote>
+<section id="file-types-in-class-task" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">File types: In-class task</h2>
+<div class="columns blockstyle">
+<ul>
+<li>What file formats do you know?</li>
+<li>Open files of different types in a text editor. Which look nice?</li>
+</ul>
+</div>
 </section>
 <section id="file-formats" class="slide level2">
 <h2>File formats</h2>
@@ -268,11 +322,12 @@ Remember <span class="emoji" data-emoji="thumbsup">👍</span>
 </ul>
 <p><a href="http://www.culturomics.org/Resources/faq">More information</a></p>
 <aside class="notes">
-
+<p>See how narratives (descriptions) evolve/change over time</p>
 </aside>
 </section>
-<section id="in-class-task-environmental-discourse" class="slide level2">
-<h2>In-Class Task: Environmental Discourse</h2>
+<section id="in-class-task-environmental-discourse" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">In-Class Task: Environmental Discourse</h2>
+<div class="columns blockstyle">
 <h4 id="questions-about-environmental-discourse">questions about environmental discourse</h4>
 <ul>
 <li>What other terms have been used to describe nature?
@@ -288,7 +343,8 @@ Remember <span class="emoji" data-emoji="thumbsup">👍</span>
 <li>i.e. equivalent words with equivalent curves over time</li>
 </ul></li>
 </ul>
-<p><br></p>
+</div>
+<h4 id="section-1"></h4>
 </section>
 <section id="refine-your-queries" class="slide level2">
 <h2>refine your queries</h2>
@@ -324,14 +380,11 @@ Remember <span class="emoji" data-emoji="thumbsup">👍</span>
 </tbody>
 </table>
 </section>
-<section class="slide level2">
-
-<p class="wow">
-Remember <span class="emoji" data-emoji="thumbsup">👍</span>
-</p>
-<h4 id="the-underlying-question">The underlying question</h4>
+<section id="remember-1" class="slide level2" data-background="#4d7e65">
+<h2 data-background="#4d7e65">Remember <span class="emoji" data-emoji="thumbsup">👍</span></h2>
 <p>Have only the terms changed over time or the social perception?</p>
 <div class="fragment">
+<p><br></p>
 <p><strong>Both, most likely.</strong> The same is true for regions.</p>
 </div>
 </section>
@@ -342,16 +395,7 @@ Remember <span class="emoji" data-emoji="thumbsup">👍</span>
 <li>semantic drifts</li>
 <li>lexical shifts</li>
 </ul>
-<p>interpretation decreasing frequency</p>
-<ul>
-<li>loosing interest?</li>
-<li>becoming established?</li>
-<li>new reference
-<ul>
-<li>e.g. <em>The Great War</em> to <em>World War I</em></li>
-</ul></li>
-</ul>
-<p>Read, read, read and complement stats with context!</p>
+<p>Read, read, read to complement stats with context!</p>
 <aside class="notes">
 <p>Eigentum hat sich etabliert, Religion degeneriert</p>
 <p>Patterns EN</p>
@@ -364,16 +408,31 @@ Remember <span class="emoji" data-emoji="thumbsup">👍</span>
 <p>only entire words, yet: _INF</p>
 </aside>
 </section>
-<section id="a-word-of-caution" class="slide level2">
-<h2>A word of caution</h2>
+<section id="questions-of-interpretation" class="slide level2">
+<h2>Questions of Interpretation</h2>
+<p>interpretation of decreasing frequency</p>
+<ul>
+<li>loosing interest</li>
+<li>becoming an established fact</li>
+<li>new reference
+<ul>
+<li>The Great War → World War I</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Weisse Schafe nicht erwähnenswert, nur schwarze.</p>
+</aside>
+</section>
+<section id="a-word-of-caution" class="slide level2" data-background="#b5533c">
+<h2 data-background="#b5533c">A word of caution</h2>
 <ul>
 <li>indexed data is unknown
 <ul>
-<li>e.g. genre, quantity</li>
+<li>genre, quantity</li>
 </ul></li>
 <li>artifacts of digitalization</li>
 </ul>
-<p>Use alternative: <a href="http://bookworm.culturomics.org">bookworm: HathiTrust</a></p>
+<p>use alternative: <a href="http://bookworm.culturomics.org">bookworm: HathiTrust</a></p>
 <aside class="notes">
 <ul>
 <li>curated collection</li>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Alex Flückiger">
+  <meta name="dcterms.date" content="2020-03-12">
+  <title>Kleines Einmaleins des Digitalen</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://revealjs.com/css/reset.css">
+  <link rel="stylesheet" href="https://revealjs.com/css/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://revealjs.com/css/theme/night.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://revealjs.com/css/print/pdf.css' : 'https://revealjs.com/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://revealjs.com/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <style type='text/css'>
+  /*
+  #4d7e65 green
+  #b5533c red
+
+  ## green {data-background=#4d7e65}
+
+  ## blue {data-background=#3c70b5}
+
+  ## red {data-background=#b5533c}
+
+   */
+
+  .reveal {
+      font-size: 150%; */
+  }
+  .subtitle{
+      font-size: 200%;
+      color: #e7ad52;
+
+  }
+  p.author,
+  p.date{
+      margin-top: -20px;
+  }
+
+  .reveal h2 {
+      margin-bottom: +50px;
+  }
+  .wow {
+      color :   #00FFAA;
+      font-weight: bold;
+      font-size: 200%;
+  }
+
+  .reveal table {
+      font-size: 80%;
+  }
+
+
+  ol li {
+    line-height:2em;
+  }
+
+  ul li {
+    line-height:2em;
+  }
+
+  ul li li {
+
+   line-height:1.3em;
+   list-style-type: None;
+   font-style: italic;
+   font-size: 90%;
+   font-family: Georgia;
+  }
+
+  hr {
+      color: white;
+  }
+
+  /* .reveal h1,
+  .reveal h2,
+  .reveal h3,
+  .reveal h4,
+  .reveal h5,
+  .reveal h6 {
+      word-wrap: normal;
+      -webkit-hyphens: manual;
+      -moz-hyphens: manual;
+      hyphens: manual;
+  } */
+
+  div.references{
+      font-size: 75%
+  }
+
+  .reveal .slide-number {
+    font-size: 18pt;
+    color: #ffffff; }
+
+  .emoji {
+      font-size: 150%
+  }
+
+  .reveal blockquote{
+      /*
+      border-left: 5px solid #428bca;
+      color: #428bca;
+      border-left: 4px solid #428bca;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      border-right: 4px solid #428bca;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+
+
+      background-color: #E6E6E6;
+      color: #000000;
+       background-color: #d2f8d2; */
+  }
+
+  .reveal blockquote{
+      position: static;
+      text-align: center;
+      border-style: none;
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
+      background: inherit;
+      font-family: Georgia;
+      font-size: 1.4em;
+      width:90%;
+      margin:0px auto;
+      padding: 1em
+      font-style:italic;
+
+  }
+
+
+
+
+  .reveal blockquote cite{
+      text-align: right;
+      font-style: normal;
+      font-size: 0.75em;
+      font-weight: bold;
+      margin-top:1em;
+  }
+
+
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Kleines Einmaleins des Digitalen</h1>
+  <p class="subtitle">03: Setting up your Development Environment</p>
+  <p class="author">Alex Flückiger</p>
+  <p class="date">12 March 2020</p>
+</section>
+
+<section id="wrap-up-last-lecture" class="slide level2">
+<h2>Wrap-up last Lecture</h2>
+</section>
+<section id="outline" class="slide level2">
+<h2>Outline</h2>
+<ul>
+<li>Research Workflow</li>
+<li>Interaction with computers</li>
+<li>Installation of programs</li>
+</ul>
+<aside class="notes">
+<ul>
+<li><p>Ausholen, wieso das ganze Tooling sinnvoll ist</p></li>
+<li><p>Grundverständis für Mensch-Maschine-Interaktion</p></li>
+</ul>
+</aside>
+</section>
+<section>
+<section id="the-zen-of-organization" class="title-slide slide level1">
+<h1>The Zen of Organization</h1>
+
+</section>
+<section id="empirical-research-means-lot-of-organizing" class="slide level2">
+<h2>Empirical Research means lot of organizing</h2>
+<ul>
+<li>scripts as documentation</li>
+<li>efficient automation: “don’t repeat yourself”</li>
+<li>less error-prone</li>
+<li>reproducible</li>
+</ul>
+<aside class="notes">
+<p>Wissenschaft ist chaotisch und erfordert viel Organisation</p>
+</aside>
+</section>
+<section id="organizing-literature" class="slide level2">
+<h2>Organizing Literature</h2>
+<ul>
+<li>manage literature in one place</li>
+<li>generating bibliographies</li>
+<li>collect with a click</li>
+</ul>
+<figure>
+<img data-src="images/zotero.png" alt="" /><figcaption><a href="https://www.zotero.org/">Zotero</a></figcaption>
+</figure>
+</section>
+</section>
+<section>
+<section id="computers" class="title-slide slide level1">
+<h1>Computers</h1>
+
+</section>
+<section id="two-revolutions-in-computing" class="slide level2">
+<h2>Two Revolutions in Computing</h2>
+<div class="columns">
+<div class="column" style="width:80%;">
+<ul>
+<li>everyday, mobile, cloud-centered, touch/click-based model
+<ul>
+<li>single-purpose application</li>
+<li>smartphones</li>
+</ul></li>
+<li>engineering, open-source, machine-oriented model
+<ul>
+<li>powerful due to modularity</li>
+<li>workflow for data science</li>
+</ul></li>
+</ul>
+<p>See also <span class="citation" data-cites="Healy2019">(<span class="citeproc-not-found" data-reference-id="Healy2019"><strong>???</strong></span>)</span></p>
+</div><div class="column" style="width:20%;">
+<figure>
+<img data-src="images/original-apple-iphone.jpg" alt="" /><figcaption>Apple Original iPhone</figcaption>
+</figure>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>Spannungsfeld
+<ul>
+<li>Einfachheit vs. technisches Vorwissen</li>
+<li>Eingeschränktheit vs. Flexibilität</li>
+</ul></li>
+<li>–&gt; schwieriger Einstieg/Lernen, Sinn zu verstehen</li>
+<li>Richtiges Programmieren nicht immer zwingend, nur bis Daten in standardisiertem Format vorliegen</li>
+<li>keine Zauberei, aber sehr nützlich
+<ul>
+<li>Zeitersparnis, indem sie ganze Workflows abbilden</li>
+</ul></li>
+<li>von dem Wissen/Tools der Engineers profitieren</li>
+</ul>
+</aside>
+</section>
+<section id="operating-systems-os" class="slide level2">
+<h2>Operating Systems (OS)</h2>
+<ul>
+<li>Microsoft Windows</li>
+<li>macOS</li>
+<li>Unix / Linux <span class="emoji" data-emoji="nerd_face">🤓</span></li>
+</ul>
+<aside class="notes">
+<ul>
+<li><p>OS</p></li>
+<li><p>windows = dominator, Alltag</p></li>
+<li><p>unix = stable, secure, free. became more userfriendly, sometimes still issue</p></li>
+<li><p>mac = restricted to mac HW, beide Welten</p></li>
+<li><p>Betriebssysteme wie Autos, Fahrräder</p></li>
+</ul>
+</aside>
+</section>
+<section id="user-interfaces-ui" class="slide level2">
+<h2>User Interfaces (UI)</h2>
+<div class="columns">
+<div class="column">
+<p><strong>graphical user interface (GUI)</strong></p>
+<p><img data-src="images/graphical_user_interface.png" data-heigth="10cm" /></p>
+</div><div class="column">
+<p><strong>command line</strong></p>
+<p><img data-src="images/command_line.png" data-heigth="10cm" /></p>
+</div>
+</div>
+</section>
+<section id="awesome-programmer-saves-the-world" class="slide level2" data-background="images/matrix_style_computer.jpeg">
+<h2 data-background="images/matrix_style_computer.jpeg">“Awesome Programmer saves the world”</h2>
+</section>
+<section id="human-machine-interaction" class="slide level2">
+<h2>Human-Machine Interaction</h2>
+<ul>
+<li>text commands instead of clicks</li>
+<li>similar to a human language
+<ul>
+<li>syntax (form)</li>
+<li>semantics (meaning)</li>
+</ul></li>
+<li>computers are literalists</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>viele verschiedene Sprachen</li>
+<li>sie mache genau, was man ihnen sagt, nichts mehr, nichts weniger. Nie.</li>
+</ul>
+</aside>
+</section>
+<section id="programming" class="slide level2">
+<h2>Programming</h2>
+<ul>
+<li>command languages
+<ul>
+<li>Bourne-Again shell (Bash), since 1987</li>
+</ul></li>
+<li>programming languages
+<ul>
+<li>Python, R, Java, C++</li>
+</ul></li>
+<li>instructions → program == algorithm</li>
+</ul>
+<aside class="notes">
+<p>Python is a general-purpose language whereas R is a statistical programming language.</p>
+</aside>
+</section>
+<section id="packet-manager" class="slide level2">
+<h2>Packet Manager</h2>
+<ul>
+<li><p>automation of software installation</p></li>
+<li><p>similar to app stores</p>
+<ul>
+<li>apt, Homebrew</li>
+</ul></li>
+<li><p>software dependencies</p></li>
+</ul>
+<aside class="notes">
+<p>software builds on other software</p>
+</aside>
+</section>
+<section id="remember" class="slide level2" data-background="#4d7e65">
+<h2 data-background="#4d7e65">Remember <span class="emoji" data-emoji="thumbsup">👍</span></h2>
+<blockquote>
+<p>«Learning by doing, doing by googleing.»</p>
+</blockquote>
+<aside class="notes">
+<ul>
+<li><p>Without the internet, you are a nobody</p></li>
+<li><p>Technical problems are normal</p></li>
+<li><p>Installation/setup/whatever is sometimes harder and much more poorly documented than mere usage</p></li>
+</ul>
+</aside>
+</section>
+<section id="the-spirit-of-open-source" class="slide level2">
+<h2>The Spirit of Open-Source</h2>
+<blockquote>
+<p>«Standing on the shoulders of giants.»</p>
+</blockquote>
+<ul>
+<li><p>free + open software</p></li>
+<li><p>collaboration</p>
+<ul>
+<li>share + reuse</li>
+</ul></li>
+<li><p>helpful community</p></li>
+<li><p>cross-plattform portability</p></li>
+</ul>
+</section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+<ul>
+<li>Where you get answers to your technical questions
+<ul>
+<li><a href="https://stackoverflow.com/questions">Stack Overflow</a></li>
+</ul></li>
+<li>Where you find software
+<ul>
+<li><a href="https://github.com/">GitHub</a></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section>
+<section id="set-up-your-system" class="title-slide slide level1">
+<h1>Set up your System</h1>
+
+</section>
+<section id="backup" class="slide level2" data-background="#b5533c">
+<h2 data-background="#b5533c">Backup</h2>
+<p>You don’t need it until you desperately need it!</p>
+</section>
+<section id="collective-installation-setting-up-your-development-environment" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">Collective Installation: Setting up your Development Environment</h2>
+<h3 id="installation">Installation</h3>
+<ul>
+<li><p>Python with Anaconda Platform</p></li>
+<li><p>Tesseract</p></li>
+<li><p>Bash tools</p></li>
+</ul>
+<p>Depending on your operating system, some other components need to be installed as well i order to use regular bash tools.</p>
+</section>
+<section id="readings" class="slide level2">
+<h2>Readings</h2>
+<h3 id="optional-pimp-your-workflow">optional: pimp your workflow</h3>
+<p>Healy, Kieran. 2019. “The Plain Person’s Guide to Plain Text Social Science.” <a href="https://kieranhealy.org/publications/plain-person-text/">online</a>.</p>
+</section>
+<section id="references" class="slide level2">
+<h2>References</h2>
+</section>
+</section>
+    </div>
+  </div>
+
+  <script src="https://revealjs.com/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // see https://github.com/hakimel/reveal.js/#navigation-mode
+        navigationMode: 'linear',
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://revealjs.com/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://revealjs.com/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://revealjs.com/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
