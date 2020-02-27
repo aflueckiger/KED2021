@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Alex Flückiger">
-  <meta name="dcterms.date" content="2020-02-24">
-  <title>Kleines Einmaleins des Digitalen</title>
+  <meta name="dcterms.date" content="2020-02-27">
+  <title>The ABC of computational Text Analysis</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -45,8 +45,13 @@
    */
 
   .reveal {
-      font-size: 150%; */
+      font-size: 170%; */
   }
+
+  .reveal .title {
+      font-size: 260%; */
+  }
+
   .subtitle{
       font-size: 200%;
       color: #e7ad52;
@@ -167,10 +172,10 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Kleines Einmaleins des Digitalen</h1>
+  <h1 class="title">The ABC of computational Text Analysis</h1>
   <p class="subtitle">01: Introduction + Where is the digital revolution?</p>
   <p class="author">Alex Flückiger</p>
-  <p class="date">24 February 2020</p>
+  <p class="date">27 February 2020</p>
 </section>
 
 <section class="slide level2">
@@ -181,17 +186,36 @@
 <li>about us</li>
 <li>goals of this course</li>
 </ol>
+<aside class="notes">
+<ul>
+<li>Dreiteilig</li>
+<li>Heranführung, Austausch, Kursorganisation</li>
+<li>Thema öffentlicher Diskurs</li>
+<li>Exkurs: Computer als Zaubermaschine vs. Werkzeug</li>
+</ul>
+</aside>
 </section>
 <section>
 <section id="todays-lecture" class="title-slide slide level1">
 <h1>Today’s Lecture</h1>
 
 </section>
-<section id="the-world-is-changed-isnt-it" class="slide level2">
-<h2>The world is changed, isn’t it?</h2>
+<section id="the-world-has-changed-hasnt-it" class="slide level2">
+<h2>The world has changed, hasn’t it?</h2>
 <figure>
 <img data-src="images/ai_illustration_new.jpg" style="height:10cm" alt="" /><figcaption>symbol of artificial intelligence (<a href="https://www.hwzdigital.ch/artificial-intelligence-part-1/">HWZ</a>)</figcaption>
 </figure>
+<aside class="notes">
+<ul>
+<li>Welt im Wandel</li>
+<li>Wer kennt solche Bilder nicht?
+<ul>
+<li>Roboter, Hybride, Hirne</li>
+<li>Blauton</li>
+</ul></li>
+<li>AI ist hip: Technologiefirmen, Forschung, Konsumenten</li>
+</ul>
+</aside>
 </section>
 <section id="an-era-of-big-data-ai" class="slide level2">
 <h2>An Era of Big Data + AI</h2>
@@ -206,45 +230,93 @@
 <li>What makes a computer looking intelligent?</li>
 </ul>
 </div>
+<div class="fragment">
+<hr>
+<div class="columns blockstyle">
+<p>AI not absolute, rather relative to…</p><ul>
+<li>… human capabilities</li>
+<li>… technological abilities</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="mimicking-human-intelligence" class="slide level2">
 <h2>Mimicking Human Intelligence</h2>
 <h4 id="from-static-machines-to-more-flexible-devices">from static machines to more flexible devices</h4>
 <ul>
-<li>mimicking intelligent behavior (speaking, seeing)</li>
-<li>a sense of perception</li>
+<li>mimicking intelligent behavior
+<ul>
+<li>speaking + seeing</li>
+</ul></li>
+<li>a sense of contextual perception</li>
 <li>many degrees of freedom</li>
 </ul>
+<aside class="notes">
+<ul>
+<li>Referenzfolie Mensch
+<ul>
+<li>Imitieren von menschlichen Sinnen</li>
+<li>Sprechen/Sehen</li>
+<li>Statische maschine
+<ul>
+<li>if this then that</li>
+</ul></li>
+<li>Kontextabhängiges Handeln
+<ul>
+<li>Interaktion initieren</li>
+<li>Situationsangepasstheit</li>
+</ul></li>
+</ul></li>
+</ul>
+</aside>
 </section>
 <section id="seeing-like-a-human" class="slide level2">
-<h2>Seeing like a human</h2>
+<h2>Seeing like a Human</h2>
 <figure>
 <img data-src="images/facebook_detectron2.png" class="center" style="width:60.0%" alt="" /><figcaption>image segmentation with <a href="https://ai.facebook.com/blog/-detectron2-a-pytorch-based-modular-object-detection-library-/">Facebook’s Detectron2</a></figcaption>
 </figure>
+<aside class="notes">
+<p>Unbeschriftete Dinge? → ontologische Frage</p>
+</aside>
+</section>
+<section id="speaking-like-a-human" class="slide level2">
+<h2>Speaking like a Human?</h2>
+<figure>
+<img data-src="images/meena.png" style="height:11cm" alt="" /><figcaption>Chatting with <a href="https://ai.googleblog.com/2020/01/towards-conversational-agent-that-can.html">Google’s Meena</a></figcaption>
+</figure>
+<div class="fragment">
+<p><span class="emoji" data-emoji="see_no_evil">🙈</span> Not really, Arizona is not by the sea.</p>
+<aside class="notes">
+<ul>
+<li><p>POS: Gesprächsfluss, mehrere Turns, Slang, Humor</p></li>
+<li><p>NEG: Übernahme fremde Identität, Faktencheck Arizona</p></li>
+</ul>
+</aside>
+</div>
 </section>
 <section id="demos-of-artificial-intelligence" class="slide level2">
 <h2>Demos of <em>Artificial Intelligence</em></h2>
 <h4 id="can-you-disenchant-them">Can you disenchant them?</h4>
 <ul>
 <li><a href="https://developer.aylien.com/text-api-demo">sentiment analysis</a></li>
-<li><a href="https://demo.deeppavlov.ai/#/en/textqa">question answering (QA)</a></li>
+<li><a href="https://demo.deeppavlov.ai/#/en/textqa">question answering</a></li>
 <li><a href="https://www.captionbot.ai/">image caption</a></li>
 <li><a href="https://talktotransformer.com/">text generation</a></li>
 <li><a href="https://www.pandorabots.com/mitsuku/">chat bots</a></li>
 <li><a href="https://www.deepl.com/translator">machine translation</a></li>
 </ul>
-</section>
-<section id="speaking-like-a-human" class="slide level2">
-<h2>Speaking like a human?</h2>
-<figure>
-<img data-src="images/meena.png" style="height:10cm" alt="" /><figcaption>Chatting with <a href="https://ai.googleblog.com/2020/01/towards-conversational-agent-that-can.html">Google’s Meena</a></figcaption>
-</figure>
-<div class="fragment">
-<p><span class="emoji" data-emoji="see_no_evil">🙈</span> ​Not really, Arizona is not by the sea.</p>
-</div>
+<aside class="notes">
+<ul>
+<li>Eindrückliche Beispiele, Stand Forschung</li>
+<li>Generation: “The Coronavirus is dangerous”</li>
+<li>Sentiment: Aspekte Airline</li>
+<li>QA: When was the University of Lucerne founded? What are the 5 biggest Swiss companies?</li>
+<li>Caption: Medienwechsel von Sehen zu Sprache</li>
+</ul>
+</aside>
 </section>
 <section id="how-does-computer-intelligence-work" class="slide level2">
-<h2>How does computer intelligence work?</h2>
+<h2>How does Computer Intelligence work?</h2>
 <ul>
 <li>interchangeably (?) used names
 <ul>
@@ -261,7 +333,21 @@
 </ul></li>
 </ul>
 <aside class="notes">
-<p>Regression is ML as well</p>
+<ul>
+<li>Hinter diesen Systemen steht…</li>
+<li>Wie funktionieren diese Systeme?</li>
+<li>Paradigma: Logik/Lernen</li>
+<li>DL = dominantes ML-Modell
+<ul>
+<li>Schichtweise Abstraktion</li>
+<li>Metapher Hirn</li>
+</ul></li>
+<li>Lernen von Unmengen Daten
+<ul>
+<li>Input-Antwort-Beziehung</li>
+</ul></li>
+<li>Regression = ML</li>
+</ul>
 </aside>
 </section>
 </section>
@@ -272,15 +358,32 @@
 </section>
 <section id="computational-social-science" class="slide level2">
 <h2>Computational Social Science</h2>
-<h4 id="todo-plan-transition-ai-to-social-science-with-an-emphasis-on-data">todo plan transition AI to Social Science with an emphasis on data</h4>
+<h4 id="data-driven-research">data-driven research</h4>
 <ul>
 <li>computational social science <span class="citation" data-cites="Lazer2009">(Lazer et al. 2009)</span>
 <ul>
-<li>Digital Humanities, Data Science, Computational History</li>
+<li>Digital Humanities, Computational History, Data Science</li>
 </ul></li>
 <li>highly interdisciplinary</li>
 <li>early computational history already in 1960s <span class="citation" data-cites="Graham2015">(Graham, Milligan, and Weingart 2015)</span></li>
 </ul>
+<aside class="notes">
+<ul>
+<li>AI Spitze von Eisberg</li>
+<li>Pointe: Data-driven research
+<ul>
+<li>Modelle sind nur die halbe Miete, Daten sind der Zauberstoff. nicht das neuste ML</li>
+<li>sorgfältiges aggregieren</li>
+</ul></li>
+<li>CSS mit langer Vorgeschichte, nie Mainstream</li>
+<li>Sozialwissenschaften müssen sich bewegen
+<ul>
+<li>CSS löst Probleme der response-rate in Survey</li>
+<li>vielfältige Auswirkungen Forschung/Fragestellung</li>
+<li>insbesondere auf Ausbildung</li>
+</ul></li>
+</ul>
+</aside>
 </section>
 <section id="group-discussion-1" class="slide level2" data-background="#3c70b5">
 <h2 data-background="#3c70b5">Group Discussion</h2>
@@ -298,7 +401,10 @@
 <ul>
 <li>tabular, texts, images</li>
 </ul></li>
-<li>datafication</li>
+<li>datafication
+<ul>
+<li>sensors of smartphone, digital communication</li>
+</ul></li>
 <li>much of human knowledge compiled as text</li>
 </ul>
 </div>
@@ -309,17 +415,24 @@
 <h4 id="coding-is-like">coding is like…</h4>
 <ul>
 <li>cooking</li>
-<li>a superpower</li>
+<li>superpowers</li>
 </ul>
+<aside class="notes">
+<ul>
+<li>2 Metapher für Abarbeiten von Befehlen</li>
+<li>Kochrezepte</li>
+<li>flexible, grenzenlose Datenverarbeitung</li>
+</ul>
+</aside>
 </section>
-<section id="girls-have-superpower-too" class="slide level2" data-background="https://media1.tenor.com/images/93c9eb756df19748e4fb50f04c4a451c/tenor.gif?itemid=11586724">
-<h2 data-background="https://media1.tenor.com/images/93c9eb756df19748e4fb50f04c4a451c/tenor.gif?itemid=11586724">Girls have superpower too</h2>
+<section id="girls-have-superpowers-too" class="slide level2" data-background="https://media1.tenor.com/images/93c9eb756df19748e4fb50f04c4a451c/tenor.gif?itemid=11586724">
+<h2 data-background="https://media1.tenor.com/images/93c9eb756df19748e4fb50f04c4a451c/tenor.gif?itemid=11586724">Girls have superpowers too</h2>
 <aside class="notes">
 <p>alternative gif: {data-background=“https://media.giphy.com/media/jzjfBPyUa6k9i/giphy.gif”}</p>
 </aside>
 </section>
 <section id="where-the-actual-revolution-is" class="slide level2">
-<h2>Where the actual revolution is</h2>
+<h2>Where the actual Revolution is</h2>
 <p>Coding is a superpower…</p>
 <ul>
 <li>flexible</li>
@@ -327,11 +440,14 @@
 <li>reproducible</li>
 <li>inspectable</li>
 <li>collaborative</li>
-<li>open-source</li>
 </ul>
 <p>… to tackle complex problems</p>
 <aside class="notes">
-<p>mit Code sind Fehler einfach zu beheben -&gt; skript korrigieren und nochmals laufen lassen</p>
+<ul>
+<li>Coding ermöglicht Verarbeitung von komplexen, nicht standardisierten Daten</li>
+<li>Fehler im Code möglich → beheben → neustarten</li>
+<li>Pause</li>
+</ul>
 </aside>
 </section>
 </section>
@@ -343,6 +459,18 @@
 <section id="personal-example" class="slide level2" data-background="images/ma_flueckiger_country_mentions_white.png">
 <h2 data-background="images/ma_flueckiger_country_mentions_white.png">Personal Example</h2>
 <p>directed country mentions in UN speeches</p>
+<aside class="notes">
+<ul>
+<li>UN-Debatte: Wer erwähnt wen in Rede?
+<ul>
+<li>Aufmerksamkeiten</li>
+<li>Extrahiert aus Texten</li>
+</ul></li>
+<li>Farben/Ordnung nach Kontinent</li>
+<li>Rolle der USA (Regenbogen)</li>
+<li>Regionale Aufmerksamkeit statt Globalität</li>
+</ul>
+</aside>
 </section>
 </section>
 <section>
@@ -358,8 +486,18 @@
 <li>problem solving capacity</li>
 </ul>
 <aside class="notes">
-<p>It is more than a simple <em>Kleines Einmaleins</em> quantification other than statistics technical skills that make life easier</p>
-<p>computational methods broadly applicable</p>
+<ul>
+<li>Text als Datenform → Textanalyse</li>
+<li>Tools/Arbeitsweisen für Alltag/Forschen/Arbeit
+<ul>
+<li>Leben vereinfachen</li>
+<li>Dinge, die ich spät gelernt habe</li>
+</ul></li>
+<li>Problemlöseverhalten
+<ul>
+<li>Nachlesen &amp; Ausprobieren</li>
+</ul></li>
+</ul>
 </aside>
 </section>
 <section id="learnings-from-previous-courses" class="slide level2">
@@ -369,6 +507,15 @@
 <li>programming can be overwhelming</li>
 <li>learning by doing, doing by googling</li>
 </ul>
+<aside class="notes">
+<ul>
+<li>Zu ambitioniert, zu einseitig Programmieren</li>
+<li>an Bedürfnissen vorbei, auch für MA</li>
+<li>Braucht viel Übung</li>
+<li>Kein Einzelfallwissen, sondern Selbsthilfe</li>
+<li>Tutor</li>
+</ul>
+</aside>
 </section>
 <section id="levels-of-proficiency" class="slide level2">
 <h2>Levels of Proficiency</h2>
@@ -378,6 +525,13 @@
 <li>creating + analyzing new datasets</li>
 <li>applying advanced machine learning</li>
 </ol>
+<aside class="notes">
+<ul>
+<li>Kompetenzstufen</li>
+<li>Nicht nur Word, Youtube, sondern auch Werkzeug</li>
+<li>Ziel: Stufe 3</li>
+</ul>
+</aside>
 </section>
 <section id="what-i-teach" class="slide level2">
 <h2>What I teach</h2>
@@ -390,18 +544,24 @@
 <li>practical coding sessions</li>
 <li>discussions + experiments in groups</li>
 </ul>
+<aside class="notes">
+<ul>
+<li>technisch: CL + Python Sprachen</li>
+<li>Aufbau Unterricht</li>
+</ul>
+</aside>
 </section>
-<section id="topics-covered" class="slide level2">
-<h2>Topics Covered</h2>
+<section id="topics" class="slide level2">
+<h2>Topics</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <h4 id="techniques">techniques</h4>
 <ul>
-<li><p>text processing</p></li>
-<li><p>extract information</p></li>
-<li><p>basic visualization</p></li>
-<li><p>optical character recognition (OCR)</p></li>
-<li><p>scraping files</p></li>
+<li>text processing</li>
+<li>extract information</li>
+<li>basic visualization</li>
+<li>optical character recognition (OCR)</li>
+<li>scraping files</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <h4 id="data">data</h4>
@@ -413,17 +573,24 @@
 </div>
 <p><br></p>
 <p><span class="emoji" data-emoji="nerd_face">🤓</span> inputs are more than welcome</p>
+<aside class="notes">
+<p>Techniken &amp; Resourcen Text zu Daten machen Inputs</p>
+</aside>
 </section>
 <section id="tldr" class="slide level2" data-background="#4d7e65">
 <h2 data-background="#4d7e65">TL;DR</h2>
 <p>You will be tech-savvy…</p>
 <p>…yet no programmer applying fancy machine learning</p>
 <aside class="notes">
-<p>You will be able to perform simple, yet powerful analysis on your own data collection</p>
+<ul>
+<li>Nicht ML, aber solide Analyse</li>
+<li>Empirische Arbeiten schreiben</li>
+<li>bereits toll</li>
+</ul>
 </aside>
 </section>
 <section id="provisional-schedule" class="slide level2">
-<h2>Provisional schedule</h2>
+<h2>Provisional Schedule</h2>
 <table>
 <thead>
 <tr class="header">
@@ -491,19 +658,28 @@
 </tbody>
 </table>
 <aside class="notes">
-<p>schauen, wie weit wir kommen</p>
+<ul>
+<li>12 Sitzungen</li>
+<li>Überblicksitzungen</li>
+<li>Gemeinsame Installation → immer wieder Probleme</li>
+<li>Kommandozeile</li>
+<li>Daten</li>
+<li>Python</li>
+<li>Mini-Projekt</li>
+<li>Vorläufiger Plan</li>
+</ul>
 </aside>
 </section>
 <section id="requirements" class="slide level2">
 <h2>Requirements</h2>
 <ul>
+<li>no technical skills required</li>
 <li>laptop (macOS, Win10, Linux)
 <ul>
 <li>update OS</li>
-<li>free up at least 10GB storage</li>
+<li>free up at least 15GB storage</li>
 <li>backup</li>
 </ul></li>
-<li>no technical skills required</li>
 </ul>
 </section>
 <section id="grading" class="slide level2">
@@ -525,8 +701,14 @@
 </ul></li>
 </ul>
 <aside class="notes">
-<p>think about potential data source</p>
-<p>More fun when applied to your area of interest</p>
+<ul>
+<li>Seminar üblicherweise mit Vorträgen</li>
+<li>Hier: 3 Übungen + Mini-Projekt</li>
+<li>Denkt über Daten nach → mehr Spass, wenn Interesse daran</li>
+<li>Auseinandersetzung fördern, keine harte Beurteilung</li>
+<li>Mit Mützel</li>
+<li>Teamarbeit</li>
+</ul>
 </aside>
 </section>
 <section id="organization" class="slide level2">
@@ -535,23 +717,40 @@
 <p>slides + data on github: <a href="https://aflueckiger.github.io/KED2020/">KED2020</a></p>
 <p>readings on OLAT: <a href="https://lms.uzh.ch/auth/RepositoryEntry/16703095856/CourseNode/79952613783583">link to course</a></p>
 <p>questions to: <a href="mailto:alex.flueckiger@doz.unilu.ch">alex.flueckiger@doz.unilu.ch</a></p>
+<aside class="notes">
+<ul>
+<li>Präsentation/Daten über Website</li>
+<li>Papers OLAT</li>
+</ul>
+</aside>
 </section>
 <section id="questionnaire" class="slide level2" data-background="#3c70b5">
 <h2 data-background="#3c70b5">Questionnaire</h2>
 <p>Please fill out this <a href="https://forms.gle/nvrCeW9XfMXjVoqU9">questionnaire</a></p>
+<aside class="notes">
+<ul>
+<li>Link zur Verfügung stellen</li>
+<li>Website lesen</li>
+<li>Reading</li>
+<li>Fragen</li>
+</ul>
+</aside>
 </section>
 <section id="questions" class="slide level2">
 <h2>Questions?</h2>
 </section>
 <section id="reading" class="slide level2">
 <h2>Reading</h2>
-<p>David Lazer, Alex Pentland, Lada Adamic, Sinan Aral, Albert-László Barabási, Devon Brewer, Nicholas Christakis, Noshir Contractor, James Fowler, Myron Gutmann, Tony Jebara, Gary King, Michael Macy, Deb Roy, and Marshall Van Alstyne. 2009. Computational Social Science. <em>Science</em>, 323(5915):721–723, February.</p>
+<h4 id="required">Required</h4>
+<p>Lazer, David, Alex Pentland, Lada Adamic, Sinan Aral, Albert-László Barabási, Devon Brewer, Nicholas Christakis, Noshir Contractor, James Fowler, Myron Gutmann, Tony Jebara, Gary King, Michael Macy, Deb Roy, and Marshall Van Alstyne. 2009. “Computational Social Science.” <em>Science</em> 323(5915):721–23.</p>
+<h4 id="optional">Optional</h4>
+<p>Graham, Shawn, Ian Milligan, and Scott Weingart. 2015. <em>Exploring Big Historical Data: The Historian’s Macroscope</em>. Open Draft Version. Under contract with Imperial College Press. <a href="http://www.themacroscope.org/?page_id=584">online</a></p>
 </section>
 <section id="references" class="slide level2 unnumbered">
 <h2 class="unnumbered">References</h2>
 <div id="refs" class="references hanging-indent" role="doc-bibliography">
 <div id="ref-Graham2015">
-<p>Graham, Shawn, Ian Milligan, and Scott Weingart. 2015. <em>Exploring Big Historical Data: The Historian’s Macroscope</em>. Reprint edition. London: Icp. <a href="http://www.themacroscope.org/?page_id=303">http://www.themacroscope.org/?page_id=303</a>.</p>
+<p>Graham, Shawn, Ian Milligan, and Scott Weingart. 2015. <em>Exploring Big Historical Data: The Historian’s Macroscope</em>. Open Draft Version. Under contract with Imperial College Press. <a href="http://themacroscope.org">http://themacroscope.org</a>.</p>
 </div>
 <div id="ref-Lazer2009">
 <p>Lazer, David, Alex Pentland, Lada Adamic, Sinan Aral, Albert-László Barabási, Devon Brewer, Nicholas Christakis, et al. 2009. “Computational Social Science.” <em>Science</em> 323 (5915): 721–23. <a href="https://doi.org/10.1126/science.1167742">https://doi.org/10.1126/science.1167742</a>.</p>
