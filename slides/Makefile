@@ -25,7 +25,7 @@ PREFIX = /home/alex/pandoc-templates
 
 
 ## Location of CSS file
-CSS = ../resources/custom_style_reveal.css
+CSS = resources/custom_style_reveal.css
 
 ## Location of your working bibliography file
 BIB = /home/alex/drive/zotero/references.bib
@@ -75,23 +75,19 @@ pdf:	clean $(PDFS)
 html:	clean $(HTML)
 tex:	clean $(TEX)
 
-new_CSS = custom_style_reveal.css
-new_BIB = references.bib
 
 %.html:	%.md
-	docker run --rm --volume "`pwd`:/data" --user `id -u`:`id -g` \
-	pandoc/core:latest -f markdown+emoji -t revealjs -s -o $@ $< \
+	pandoc -f markdown+emoji -t revealjs -s -o $@ $< \
 	-V revealjs-url=https://revealjs.com -V theme=night  \
 	-V navigationMode=linear \
 	-V slideNumber=true \
 	-V biblio-title:References \
-	--include-in-header $(new_CSS) \
+	--include-in-header $(CSS) \
 	-V $(TEX_REF) \
 	--filter pandoc-citeproc \
-	--bibliography=$(new_BIB) \
+	--bibliography=$(BIB) \
 	# --csl=$(CSL)
-	 # 	$(CROSSREF) \
-	 #
+	# 	$(CROSSREF)
 
 %.tex: %.md
 	pandoc -t beamer --pdf-engine=xelatex -V theme:metropolis -o $@ $<
