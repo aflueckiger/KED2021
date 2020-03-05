@@ -62,6 +62,12 @@ On the one hand, I present the goals and organization of the seminar. On the oth
 
 
 
+### Week 2: Text as Data
+
+Computational text analysis comes with many challenges that are unique due to the fuzziness of natural language. In this session, we learn about its methodological foundation, and we conduct our first computational text analysis to understand how this translates into practice.
+
+[Week 2 Slides](slides/KED2020_02.html)
+
 # Exercises
 
 You need to submit three exercises to complete the seminar successfully. The point of the exercises is not to make it hard to pass but rather to foster the engagement with the covered material of this class. As you like, you may prefer to work in teams to discuss different approaches. Nonetheless, each student has to submit his own solution. 
