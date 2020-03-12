@@ -68,6 +68,16 @@ Computational text analysis comes with many challenges that are unique due to th
 
 [Week 2 Slides](slides/KED2020_02.html)
 
+
+
+### Week 3: Setting up your Development Environment
+
+The title says it all. We are getting ready for the practical part of the course: Programming. As the installation of Python and non-standard command-line tools may be tricky, we do this in class rather than doing it as homework. Moreover, I will also introduce some principles to organize research and jargon that help you to find your way in the programmer's brave new word.
+
+[Week 3 Slides](slides/KED2020_03.html)
+
+[Installation Guide](https://aflueckiger.github.io/KED2020/installation_guide.pdf)
+
 # Exercises
 
 You need to submit three exercises to complete the seminar successfully. The point of the exercises is not to make it hard to pass but rather to foster the engagement with the covered material of this class. As you like, you may prefer to work in teams to discuss different approaches. Nonetheless, each student has to submit his own solution. 
@@ -84,8 +94,8 @@ You need to submit three exercises to complete the seminar successfully. The poi
 
 Your submission is a single script, meaning that is readily executable, and is named as follows:
 
-- Bash scripts: `SURNAME_exercise_NR.sh`
-- Python scripts: `SURNAME_exercise_NR.py` 
+- Bash scripts: `SURNAME_KED2020_ex_NR.sh`
+- Python scripts: `SURNAME_KED2020_ex_NR.py` 
 
 
 
@@ -125,7 +135,7 @@ The only requirement is that you have to complement your claims with some quanti
 
 # Optional: Writing a Seminar Paper
 
-You are welcome to write a seminar paper (Hauptseminararbeit) for which you get additional credit points. As I am in the position of a guest lecturer, I will accept seminar papers accept in cooperation with [Prof. Sophie Mützel](https://www.unilu.ch/fakultaeten/ksf/institute/soziologisches-seminar/mitarbeitende/sophie-muetzel/).
+You are welcome to write a seminar paper (Hauptseminararbeit) for which you get additional credit points. As I am in the position of a guest lecturer, I will accept seminar papers in cooperation with [Prof. Sophie Mützel](https://www.unilu.ch/fakultaeten/ksf/institute/soziologisches-seminar/mitarbeitende/sophie-muetzel/).
 
 Due to the practical foundation of this seminar, you are well-prepared to apply computational text analysis in a personal project subsequently. Although this is not a requirement, you may want to turn your mini-project into a seminar paper by deepening your empirical inquiry. 
 
