@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc">
   <meta name="author" content="Alex Flückiger">
   <meta name="dcterms.date" content="2020-03-12">
-  <title>Kleines Einmaleins des Digitalen</title>
+  <title>The ABC of computational Text Analysis</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -45,13 +45,26 @@
    */
 
   .reveal {
-      font-size: 150%; */
+      font-size: 170%; */
   }
+
+  .reveal .title {
+      font-size: 260%; */
+  }
+
   .subtitle{
       font-size: 200%;
       color: #e7ad52;
-
   }
+
+  .reveal figcaption{
+      font-size: 80%;
+  }
+
+  span.citation{
+      font-size: 60%;
+  }
+
   p.author,
   p.date{
       margin-top: -20px;
@@ -64,6 +77,15 @@
       color :   #00FFAA;
       font-weight: bold;
       font-size: 200%;
+  }
+
+  /* @import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css"); */
+
+  .sourceCode{
+      font-size: 150%;
+  }
+  code{
+      background: #484a42 /* #272822 */
   }
 
   .reveal table {
@@ -167,26 +189,58 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Kleines Einmaleins des Digitalen</h1>
+  <h1 class="title">The ABC of computational Text Analysis</h1>
   <p class="subtitle">03: Setting up your Development Environment</p>
   <p class="author">Alex Flückiger</p>
   <p class="date">12 March 2020</p>
 </section>
 
-<section id="wrap-up-last-lecture" class="slide level2">
-<h2>Wrap-up last Lecture</h2>
-</section>
 <section id="outline" class="slide level2">
 <h2>Outline</h2>
 <ul>
-<li>Research Workflow</li>
-<li>Interaction with computers</li>
-<li>Installation of programs</li>
+<li>research workflow</li>
+<li>interacting with computers</li>
+<li>installation of programs</li>
 </ul>
 <aside class="notes">
 <ul>
-<li><p>Ausholen, wieso das ganze Tooling sinnvoll ist</p></li>
-<li><p>Grundverständis für Mensch-Maschine-Interaktion</p></li>
+<li>Organisatorisches
+<ul>
+<li>Corona</li>
+<li>Mail
+<ul>
+<li>alle erhalten?</li>
+<li>Mac-User: Installation geklappt?</li>
+</ul></li>
+</ul></li>
+<li>Exkurs: wieso braucht es das ganze Tooling?</li>
+<li>Grundverständis für Mensch-Maschine-Interaktion</li>
+<li>Zeitplan für Installation schwierig abzuschätzen</li>
+</ul>
+</aside>
+</section>
+<section id="recap-last-lecture" class="slide level2">
+<h2>Recap last Lecture</h2>
+<ul>
+<li>textual data is challenging</li>
+<li>machine-readibility</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Bedeutung kontextabhängig</li>
+<li>Unvergleichbarkeit diskreter Symbole</li>
+<li>Abstraktion + Kontextualität kombinieren</li>
+<li>Fragen
+<ul>
+<li>wichtigste Dateiformate?
+<ul>
+<li>txt, csv, tsv</li>
+</ul></li>
+<li>Sinn von Texteditor?
+<ul>
+<li>keine Formatierung</li>
+</ul></li>
+</ul></li>
 </ul>
 </aside>
 </section>
@@ -195,39 +249,89 @@
 <h1>The Zen of Organization</h1>
 
 </section>
-<section id="empirical-research-means-lot-of-organizing" class="slide level2">
-<h2>Empirical Research means lot of organizing</h2>
+<section id="empirical-research-means-organizing" class="slide level2">
+<h2>Empirical Research means Organizing</h2>
 <ul>
 <li>scripts as documentation</li>
-<li>efficient automation: “don’t repeat yourself”</li>
+<li>efficient automation
+<ul>
+<li>“don’t repeat yourself”</li>
+</ul></li>
 <li>less error-prone</li>
 <li>reproducible</li>
 </ul>
 <aside class="notes">
-<p>Wissenschaft ist chaotisch und erfordert viel Organisation</p>
+<ul>
+<li>Wissenschaft auch praktische Seite, nicht nur theoretische
+<ul>
+<li>chaotisch statt strukturiert -&gt; Organisation von Komplexität als Problem</li>
+<li>Wiederverwendung von Code/Datensatz + Literatur/Vorlagen</li>
+</ul></li>
+<li>Wieso
+<ul>
+<li>Reproduzierbarkeit höchster Wert</li>
+<li>je besser Arbeitsablauf -&gt; desto weniger Zeit</li>
+</ul></li>
+<li>Code strukturiert/dokumentiert Arbeitsablauf
+<ul>
+<li>gegen Vergessenheit</li>
+<li>schützt nicht vor Fehler, aber inkrementeller Fortschritt</li>
+</ul></li>
+<li>wichtig für Projekte + Abschlussarbeiten</li>
+<li>kurzfristig langsamer, langfristig effizienter
+<ul>
+<li>keine mühsame Fehlersuche, Wiederholung</li>
+</ul></li>
+</ul>
 </aside>
 </section>
 <section id="organizing-literature" class="slide level2">
 <h2>Organizing Literature</h2>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
 <li>manage literature in one place</li>
 <li>generating bibliographies</li>
 <li>collect with a click</li>
 </ul>
+</div><div class="column" style="width:50%;">
 <figure>
 <img data-src="images/zotero.png" alt="" /><figcaption><a href="https://www.zotero.org/">Zotero</a></figcaption>
 </figure>
-</section>
-</section>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>Organisation betrifft auch Literatur</li>
+<li>Fragen, wer Literaturverwaltungssystem nutzt
+<ul>
+<li>was? wieso nützlich?</li>
+</ul></li>
+<li>Zotero
+<ul>
+<li>kostenlos, Weiterentwicklung</li>
+</ul></li>
+<li>Nutzen
+<ul>
+<li>verschiedene Zitationsstile</li>
+<li>einmal indexiert, immer gleich</li>
+<li>Recherche: Metadaten automatisch erhalten</li>
+<li>Bibliographie automatisch zusammenstellen</li>
+</ul></li>
+</ul>
+</aside>
+</div>
+</section></section>
 <section>
 <section id="computers" class="title-slide slide level1">
 <h1>Computers</h1>
 
 </section>
-<section id="two-revolutions-in-computing" class="slide level2">
-<h2>Two Revolutions in Computing</h2>
+<section id="two-trends-in-computing" class="slide level2">
+<h2>Two Trends in Computing</h2>
 <div class="columns">
-<div class="column" style="width:80%;">
+<div class="column" style="width:83%;">
 <ul>
 <li>everyday, mobile, cloud-centered, touch/click-based model
 <ul>
@@ -240,8 +344,8 @@
 <li>workflow for data science</li>
 </ul></li>
 </ul>
-<p>See also <span class="citation" data-cites="Healy2019">(<span class="citeproc-not-found" data-reference-id="Healy2019"><strong>???</strong></span>)</span></p>
-</div><div class="column" style="width:20%;">
+<p><span class="citation" data-cites="Healy2019">(see also Healy 2019)</span></p>
+</div><div class="column" style="width:17%;">
 <figure>
 <img data-src="images/original-apple-iphone.jpg" alt="" /><figcaption>Apple Original iPhone</figcaption>
 </figure>
@@ -249,18 +353,23 @@
 </div>
 <aside class="notes">
 <ul>
-<li>Spannungsfeld
+<li>Computer haben sich massiv verändert -&gt; am meisten an Oberfläche</li>
+<li>Spannungsfeld zweier Trends
 <ul>
-<li>Einfachheit vs. technisches Vorwissen</li>
-<li>Eingeschränktheit vs. Flexibilität</li>
+<li>Einfachheit –&gt; Eingeschränktheit</li>
+<li>technisches Vorwissen –&gt; Flexibilität</li>
 </ul></li>
-<li>–&gt; schwieriger Einstieg/Lernen, Sinn zu verstehen</li>
-<li>Richtiges Programmieren nicht immer zwingend, nur bis Daten in standardisiertem Format vorliegen</li>
-<li>keine Zauberei, aber sehr nützlich
+<li>Apple: GUI/Bedienung Angleichung an physische Welt</li>
+<li>Engineering: schwieriger Einstieg/Lernen, Sinn zu verstehen
 <ul>
-<li>Zeitersparnis, indem sie ganze Workflows abbilden</li>
+<li>Programmieren nicht zwingend, nur für Datenstandardisierung</li>
+<li>keine Zauberei, aber sehr nützlich</li>
 </ul></li>
-<li>von dem Wissen/Tools der Engineers profitieren</li>
+<li>von Wissen/Tools der Engineers profitieren
+<ul>
+<li>nicht selber bauen</li>
+<li>geniale Arbeitsabläufe + Modularität</li>
+</ul></li>
 </ul>
 </aside>
 </section>
@@ -269,32 +378,46 @@
 <ul>
 <li>Microsoft Windows</li>
 <li>macOS</li>
-<li>Unix / Linux <span class="emoji" data-emoji="nerd_face">🤓</span></li>
+<li>Linux / Unix <span class="emoji" data-emoji="nerd_face">🤓</span></li>
 </ul>
 <aside class="notes">
 <ul>
-<li><p>OS</p></li>
-<li><p>windows = dominator, Alltag</p></li>
-<li><p>unix = stable, secure, free. became more userfriendly, sometimes still issue</p></li>
-<li><p>mac = restricted to mac HW, beide Welten</p></li>
-<li><p>Betriebssysteme wie Autos, Fahrräder</p></li>
+<li>OS</li>
+<li>windows = dominator, Alltag</li>
+<li>unix = stable, secure, free, innovative. became more userfriendly, sometimes still issue</li>
+<li>mac = restricted to mac HW, Unix-Derivat, vereint beide Welten</li>
+<li>Betriebssysteme wie Autos, Fahrräder</li>
+<li>Angleichung über Zeit
+<ul>
+<li>Installation von Linux in Windows</li>
+</ul></li>
 </ul>
 </aside>
 </section>
-<section id="user-interfaces-ui" class="slide level2">
-<h2>User Interfaces (UI)</h2>
+<section id="user-interfaces" class="slide level2">
+<h2>User Interfaces</h2>
 <div class="columns">
 <div class="column">
 <p><strong>graphical user interface (GUI)</strong></p>
-<p><img data-src="images/graphical_user_interface.png" data-heigth="10cm" /></p>
+<p><img data-src="images/graphical_user_interface.png" style="height:7cm" /></p>
 </div><div class="column">
-<p><strong>command line</strong></p>
-<p><img data-src="images/command_line.png" data-heigth="10cm" /></p>
+<p><strong>command line interface (CLI)</strong></p>
+<p><img data-src="images/command_line.png" style="height:7cm" /></p>
 </div>
 </div>
+<aside class="notes">
+<ul>
+<li>GUI von Apple entwickelt 1984, in 90er Standard</li>
+<li>früher nur CLI
+<ul>
+<li>keine Sentimentalität</li>
+</ul></li>
+<li></li>
+</ul>
+</aside>
 </section>
-<section id="awesome-programmer-saves-the-world" class="slide level2" data-background="images/matrix_style_computer.jpeg">
-<h2 data-background="images/matrix_style_computer.jpeg">“Awesome Programmer saves the world”</h2>
+<section id="an-awesome-programmer-saves-the-world" class="slide level2" data-background="https://media.giphy.com/media/AOSwwqVjNZlDO/giphy.gif">
+<h2 data-background="https://media.giphy.com/media/AOSwwqVjNZlDO/giphy.gif">“An awesome Programmer saves the World”</h2>
 </section>
 <section id="human-machine-interaction" class="slide level2">
 <h2>Human-Machine Interaction</h2>
@@ -309,8 +432,12 @@
 </ul>
 <aside class="notes">
 <ul>
+<li>Automatisierung über GUI nicht möglich
+<ul>
+<li>statt “hier” klicken, einfach Skript</li>
+</ul></li>
 <li>viele verschiedene Sprachen</li>
-<li>sie mache genau, was man ihnen sagt, nichts mehr, nichts weniger. Nie.</li>
+<li>sie machen genau, was man ihnen sagt, nichts mehr, nichts weniger. Nie.</li>
 </ul>
 </aside>
 </section>
@@ -325,36 +452,44 @@
 <ul>
 <li>Python, R, Java, C++</li>
 </ul></li>
-<li>instructions → program == algorithm</li>
+<li>instructions → program == algorithm
+<ul>
+<li>cooking</li>
+</ul></li>
 </ul>
 <aside class="notes">
-<p>Python is a general-purpose language whereas R is a statistical programming language.</p>
+<ul>
+<li>Python is a general-purpose language whereas R is a statistical programming language.</li>
+<li>Algorithmus
+<ul>
+<li>“Algo das Böse/Mystische”</li>
+<li>schrittweise Umwandlung von Input zu Output</li>
+</ul></li>
+</ul>
 </aside>
 </section>
-<section id="packet-manager" class="slide level2">
-<h2>Packet Manager</h2>
+<section id="package-manager" class="slide level2">
+<h2>Package Manager</h2>
 <ul>
 <li><p>automation of software installation</p></li>
 <li><p>similar to app stores</p>
 <ul>
 <li>apt, Homebrew</li>
+<li>conda</li>
 </ul></li>
 <li><p>software dependencies</p></li>
 </ul>
 <aside class="notes">
-<p>software builds on other software</p>
-</aside>
-</section>
-<section id="remember" class="slide level2" data-background="#4d7e65">
-<h2 data-background="#4d7e65">Remember <span class="emoji" data-emoji="thumbsup">👍</span></h2>
-<blockquote>
-<p>«Learning by doing, doing by googleing.»</p>
-</blockquote>
-<aside class="notes">
 <ul>
-<li><p>Without the internet, you are a nobody</p></li>
-<li><p>Technical problems are normal</p></li>
-<li><p>Installation/setup/whatever is sometimes harder and much more poorly documented than mere usage</p></li>
+<li>app stores keine Innovation</li>
+<li>update aller Programme mit einem Befehl</li>
+<li>software builds on other software</li>
+<li>2 Manager
+<ul>
+<li>systemweit</li>
+<li>Python</li>
+</ul></li>
+<li>gehört auch zur Arbeitsorganisation</li>
 </ul>
 </aside>
 </section>
@@ -370,23 +505,48 @@
 <li>share + reuse</li>
 </ul></li>
 <li><p>helpful community</p></li>
-<li><p>cross-plattform portability</p></li>
+<li><p>cross-platform portability</p></li>
 </ul>
+<aside class="notes">
+<ul>
+<li>CS offenste Wissenschaft überhaupt</li>
+</ul>
+</aside>
 </section>
 <section id="resources" class="slide level2">
 <h2>Resources</h2>
 <ul>
-<li>Where you get answers to your technical questions
+<li>where you get answers to your technical questions
 <ul>
 <li><a href="https://stackoverflow.com/questions">Stack Overflow</a></li>
 </ul></li>
-<li>Where you find software
+<li>where you find software
 <ul>
 <li><a href="https://github.com/">GitHub</a></li>
 </ul></li>
 </ul>
+<aside class="notes">
+<ul>
+<li>Was heisst das praktisch?</li>
+<li>allermeiste Fragen/Probleme nicht neu, schon beantwortet</li>
+<li>bash commands auf stackoverflow</li>
+<li>installationsprobleme</li>
+</ul>
+</aside>
 </section>
-</section>
+<section id="remember" class="slide level2" data-background="#4d7e65">
+<h2 data-background="#4d7e65">Remember <span class="emoji" data-emoji="thumbsup">👍</span></h2>
+<blockquote>
+<p>«Learning by doing, doing by googleing.»</p>
+</blockquote>
+<aside class="notes">
+<ul>
+<li><p>Without the internet, you are a nobody</p></li>
+<li><p>Technical problems are normal</p></li>
+<li><p>Installation/setup/whatever is sometimes harder and much more poorly documented than mere usage</p></li>
+</ul>
+</aside>
+</section></section>
 <section>
 <section id="set-up-your-system" class="title-slide slide level1">
 <h1>Set up your System</h1>
@@ -396,25 +556,93 @@
 <h2 data-background="#b5533c">Backup</h2>
 <p>You don’t need it until you desperately need it!</p>
 </section>
-<section id="collective-installation-setting-up-your-development-environment" class="slide level2" data-background="#3c70b5">
-<h2 data-background="#3c70b5">Collective Installation: Setting up your Development Environment</h2>
-<h3 id="installation">Installation</h3>
+<section id="installation-setting-up-your-development-environment" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">Installation: Setting up your Development Environment</h2>
+<h4 id="installation">Installation</h4>
 <ul>
-<li><p>Python with Anaconda Platform</p></li>
-<li><p>Tesseract</p></li>
-<li><p>Bash tools</p></li>
+<li>Anaconda Platform with Python 3.7
+<ul>
+<li>packages for NLP + visualization</li>
+</ul></li>
+<li>Tesseract</li>
+<li>various Bash tools</li>
 </ul>
-<p>Depending on your operating system, some other components need to be installed as well i order to use regular bash tools.</p>
+<p>Follow the <a href="https://aflueckiger.github.io/KED2020/materials/installation_guide.pdf">installation guide</a> for your OS.</p>
+<aside class="notes">
+<ul>
+<li>verschiedene Installationsmöglichkeiten
+<ul>
+<li>Idee: plattformübergreifend, relativ einfach, uneingeschränkt</li>
+<li>individuell evtl. Alternativen besser</li>
+</ul></li>
+<li>Python mit Anaconda:
+<ul>
+<li>wichtigste Packages mitinstalliert</li>
+</ul></li>
+<li>Windows Leute installieren Ubuntu innerhalb um Bash verfügbar zu machen</li>
+<li>Installations Guide folgen
+<ul>
+<li>Verstehen aktuell egal</li>
+<li>Fragen willkommen</li>
+<li>Ablauf verfolgen &amp; auf Fehler achten?</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="relax.-it-takes-a-while." class="slide level2" data-background="https://media.giphy.com/media/ZsbqQrUrzRtN6/giphy.gif">
+<h2 data-background="https://media.giphy.com/media/ZsbqQrUrzRtN6/giphy.gif">Relax. <br>It takes a while.</h2>
+</section>
+<section id="spyder-ide" class="slide level2">
+<h2>Spyder IDE</h2>
+<ul>
+<li>text editor
+<ul>
+<li>search/replace, casing</li>
+</ul></li>
+<li>integrated development environment (IDE)
+<ul>
+<li>debugging, interactive development</li>
+<li>similar to RStudio</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Teil von Anaconda</li>
+<li>Spyder als Entwicklungscockpit
+<ul>
+<li>Funktionen zeigen</li>
+</ul></li>
+<li>Spyder für Python, andere Texteditoren genereller</li>
+<li>nützliche Textoperationen</li>
+</ul>
+</aside>
+</section>
+<section id="first-steps-in-python" class="slide level2">
+<h2>First steps in Python</h2>
+<p>Learn about Python in the interactive tutorials</p>
+<ul>
+<li><a href="https://pythonprinciples.com">Python Principles</a></li>
+<li><a href="https://www.learnpython.org/en/Welcome">LearnPython</a></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Python individuell vertiefen</li>
+</ul>
+</aside>
 </section>
 <section id="readings" class="slide level2">
 <h2>Readings</h2>
 <h3 id="optional-pimp-your-workflow">optional: pimp your workflow</h3>
 <p>Healy, Kieran. 2019. “The Plain Person’s Guide to Plain Text Social Science.” <a href="https://kieranhealy.org/publications/plain-person-text/">online</a>.</p>
 </section>
-<section id="references" class="slide level2">
-<h2>References</h2>
-</section>
-</section>
+<section id="references" class="slide level2 unnumbered">
+<h2 class="unnumbered">References</h2>
+<div id="refs" class="references hanging-indent" role="doc-bibliography">
+<div id="ref-Healy2019">
+<p>Healy, Kieran. 2019. “The Plain Person’s Guide to Plain Text Social Science.” <a href="https://kieranhealy.org/publications/plain-person-text/">https://kieranhealy.org/publications/plain-person-text/</a>.</p>
+</div>
+</div>
+</section></section>
     </div>
   </div>
 
