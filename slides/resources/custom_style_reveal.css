@@ -22,8 +22,16 @@
 .subtitle{
     font-size: 200%;
     color: #e7ad52;
-
 }
+
+.reveal figcaption{
+    font-size: 80%;
+}
+
+span.citation{
+    font-size: 60%;
+}
+
 p.author,
 p.date{
     margin-top: -20px;
@@ -36,6 +44,15 @@ p.date{
     color :   #00FFAA;
     font-weight: bold;
     font-size: 200%;
+}
+
+/* @import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css"); */
+
+.sourceCode{
+    font-size: 150%;
+}
+code{
+    background: #484a42 /* #272822 */
 }
 
 .reveal table {
