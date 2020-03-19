@@ -103,11 +103,11 @@ You need to submit three exercises to complete the seminar successfully. The poi
 
 
 
-| #    | Topic          | Published     | Deadline                    |
-| ---- | -------------- | ------------- | --------------------------- |
-| 1    | Data Wrangling | 19 March 2020 | 26 March 2020 (by midnight) |
-| 2    | Regex NLP      | 02 April 2020 | 09 April 2020 (by midnight) |
-| 3    | Python NLP     | 07 May 2020   | 14 May 2020 (by midnight)   |
+| #    | Topic                                                        | Published     | Deadline                    |
+| ---- | ------------------------------------------------------------ | ------------- | --------------------------- |
+| 1    | [Data Wrangling](https://aflueckiger.github.io/KED2020/exercises/KED2020_exercise_1.pdf) | 19 March 2020 | 26 March 2020 (by midnight) |
+| 2    | Regex NLP                                                    | 02 April 2020 | 09 April 2020 (by midnight) |
+| 3    | Python NLP                                                   | 07 May 2020   | 14 May 2020 (by midnight)   |
 
 
 

@@ -289,11 +289,12 @@
 <h2>Recap last Lecture</h2>
 <ul>
 <li>Was the installation successful?</li>
-<li>any questions</li>
+<li>Any questions?</li>
 </ul>
 <aside class="notes">
 <ul>
 <li>Installationsprobleme? up/downvote</li>
+<li>textacy problematisch</li>
 <li>unklare Dinge im Guide?</li>
 </ul>
 </aside>
@@ -303,6 +304,7 @@
 <ul>
 <li>learn principles of the shell</li>
 <li>perform shell commands</li>
+<li>solving exercises</li>
 </ul>
 <aside class="notes">
 <ul>
@@ -334,6 +336,7 @@
 <aside class="notes">
 <ul>
 <li>Studis sollen Bash auch öffnen</li>
+<li>Unix-Befehle übergreifend nutzbar</li>
 <li>Shell zeigen: Erscheinungsbild je System unterschiedlich</li>
 <li>ab macOS Catalina: zsh, früher Bash</li>
 </ul>
@@ -455,12 +458,12 @@
 <span id="cb4-2"><a href="#cb4-2"></a></span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="fu">ls</span>                  <span class="co"># list content of current directory</span></span>
 <span id="cb4-4"><a href="#cb4-4"></a><span class="fu">ls</span> -lh              <span class="co"># list with more information</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="fu">ls</span> slides           <span class="co"># list content of directory slides</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="fu">ls</span> dirname          <span class="co"># list content of directory dirname</span></span>
 <span id="cb4-6"><a href="#cb4-6"></a></span>
 <span id="cb4-7"><a href="#cb4-7"></a><span class="bu">cd</span> ..               <span class="co"># change directory to go folder up</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="bu">cd</span> slides/images    <span class="co"># go to folder slides/images (two folders down)</span></span></code></pre></div>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="bu">cd</span> dir/subdir       <span class="co"># go to folder dir/subdir (two folders down)</span></span></code></pre></div>
 <h4 id="open-in-a-window">open in a window</h4>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">open</span> .      <span class="co"># open path in a window (macOS)</span></span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">open</span> .      <span class="co"># open path in finder (macOS)</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="ex">nautilus</span> .  <span class="co"># same for Ubuntu (Windows)</span></span></code></pre></div>
 <aside class="notes">
 <ul>
@@ -470,9 +473,15 @@
 </ul></li>
 <li>diskutieren von ls output
 <ul>
+<li>Berechtigung/Eigentümer/Grösse/Mod.-datum/Name</li>
 <li>d für directory</li>
-<li>permission nicht relevant</li>
 </ul></li>
+<li>beliebige Verzeichnisse springen
+<ul>
+<li>oberstes Verzeichnis: C: oder /</li>
+<li>cd zurück ins home</li>
+</ul></li>
+<li>Kommentare mit #</li>
 </ul>
 </aside>
 </section>
@@ -493,18 +502,30 @@
 <li>scrolling: <em>space</em></li>
 <li>quit: <em>q</em> OR <em>CTRL + C</em></li>
 </ul>
+<aside class="notes">
+<ul>
+<li>lange Dateinamen, Programme nur halb erinnert</li>
+<li>q bspw. in Hilfe</li>
+</ul>
+</aside>
 </section>
 <section id="creating-moving-and-copying-files" class="slide level2">
 <h2>Creating, Moving, and Copying Files</h2>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">touch</span> test.txt      <span class="co"># create a new file</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="fu">mkdir</span> data          <span class="co"># make a new directory</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">cp</span> test.txt /other/.</span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">cp</span> test.txt /other/.            </span>
 <span id="cb7-5"><a href="#cb7-5"></a><span class="fu">mv</span> test.txt /other/new_name.txt <span class="co"># move or rename a file</span></span></code></pre></div>
+<aside class="notes">
+<ul>
+<li>touch abängig, ob Datei existiert</li>
+<li>mkdir -p für Subdirs</li>
+</ul>
+</aside>
 </section>
 <section id="removing-files" class="slide level2" data-background="#b5533c">
 <h2 data-background="#b5533c">Removing Files</h2>
-<p>Watch out, there is no way back and recycle bin.</p>
+<p>Watch out, there is no way back: No recycle bin.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">rm</span> old.txt          <span class="co"># remove a file</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a><span class="fu">rm</span> -r old_data      <span class="co"># remove a folder with all its files</span></span></code></pre></div>
 </section>
@@ -514,11 +535,14 @@
 <li>a single character: <code>?</code></li>
 <li>any sequence of characters: <code>*</code></li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">mv</span> data/*.txt new_data/.</span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">cp</span> **/*.txt files/.     <span class="co"># copy all files in a single folder</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">mv</span> data/*.txt new_data/.    <span class="co"># move txt-files from to other subfolder</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">cp</span> *.txt    files/.         <span class="co"># copy all txt-files in a single folder</span></span></code></pre></div>
+<aside class="notes">
 <ul>
-<li></li>
+<li>batch operation</li>
+<li>ls KED2020_0?.html</li>
 </ul>
+</aside>
 </section>
 <section id="searching" class="slide level2">
 <h2>Searching</h2>
@@ -527,36 +551,50 @@
 <span id="cb10-2"><a href="#cb10-2"></a><span class="fu">ls</span> */*.txt      <span class="co"># list all txt-files in any subfolder</span></span></code></pre></div>
 <h4 id="find-files">Find Files</h4>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">find</span> /path/to/dir -name <span class="st">&quot;filename&quot;</span>  <span class="co"># find a file in specific directory</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">locate</span> -i pattern_1 pattern_2   <span class="co"># global search of files/folders</span></span></code></pre></div>
-</section>
-<section id="expansion" class="slide level2">
-<h2>Expansion</h2>
-<ul>
-<li>Klammerxpansion texts_{2000-2020}.txt</li>
-</ul>
-<p>mkdir {2000..2010}</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">find</span> . -name <span class="st">&#39;*.png&#39;</span> -exec convert {} <span class="dt">{.}</span><span class="ex">.jpg</span> <span class="dt">\;</span></span></code></pre></div>
-</section>
-<section id="redirection-of-output" class="slide level2">
-<h2>Redirection of Output</h2>
-<p>redirect to…</p>
-<ul>
-<li>… other program: <code>I</code> (pipe)</li>
-<li>… redirect into file (overwrite): <code>&gt;</code></li>
-<li>… recdirect into file (append): <code>&gt;&gt;</code></li>
-</ul>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">locate</span> -i pattern_1 pattern_2       <span class="co"># global search of files/folders</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="fu">grep</span> -r <span class="st">&#39;pattern&#39;</span>                   <span class="co"># find files containing pattern </span></span></code></pre></div>
 <aside class="notes">
 <ul>
-<li>overwrite file as a second step</li>
+<li>grep ist mächtig, häufig brauchen</li>
+<li>grep nur für rohe Textformate (txt, html, csv etc.)</li>
+<li>arg -i case-insensitiveness</li>
 </ul>
 </aside>
 </section>
-<section id="merging" class="slide level2">
-<h2>Merging</h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">cat</span> part_1.txt part_2.txt   <span class="co"># concatenate multiple files together (merge)</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a></span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="fu">cat</span> tolstoy.txt tolstoy2.txt <span class="op">&gt;</span> tolstoy-twice.txt</span>
-<span id="cb13-4"><a href="#cb13-4"></a><span class="fu">cat</span> *.txt <span class="op">&gt;</span> everything-together.txt</span></code></pre></div>
+<section id="expansion" class="slide level2">
+<h2>Expansion</h2>
+<p>batch processing with expansion</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">touch</span> text_<span class="dt">{a..c}</span>.txt   </span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="co"># equivalent to: </span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="fu">touch</span> text_a.txt text_b.txt text_c.txt</span>
+<span id="cb12-4"><a href="#cb12-4"></a></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="fu">mkdir</span> <span class="dt">{2000..2005}{a..c}</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="co"># equivalent to: </span></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="fu">mkdir</span> 2000a 2000b 2000c 2001a 2001b 2000c</span></code></pre></div>
+<aside class="notes">
+<ul>
+<li>hilfreich um Dateien zu ordnen</li>
+</ul>
+</aside>
+</section>
+<section id="redirect-output" class="slide level2">
+<h2>Redirect Output</h2>
+<p>stream to…</p>
+<ul>
+<li>… other program: <code>I</code> (pipe)</li>
+<li>… redirect into file (overwrite): <code>&gt;</code></li>
+<li>… redirect into file (append): <code>&gt;&gt;</code></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>check output first, then overwrite file as a second step</li>
+</ul>
+</aside>
+</section>
+<section id="merging-files" class="slide level2">
+<h2>Merging Files</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">cat</span> part_1.txt part_2.txt       <span class="co"># concatenate multiple files</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">cat</span> *.txt <span class="op">&gt;</span> all_text.txt        <span class="co"># merge all txt-files into a single one</span></span></code></pre></div>
 </section>
 <section id="git" class="slide level2">
 <h2>Git</h2>
@@ -565,15 +603,24 @@
 <h4 id="update-your-local-copy">update your local copy</h4>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="bu">cd</span> KED2020</span>
 <span id="cb15-2"><a href="#cb15-2"></a><span class="fu">git</span> pull</span></code></pre></div>
+<aside class="notes">
+<ul>
+<li>version controlling</li>
+<li>pull fürs regelmässige updaten</li>
+</ul>
+</aside>
 </section>
 <section id="scripting" class="slide level2">
 <h2>Scripting</h2>
 <ul>
+<li>all commands in single script
+<ul>
+<li>one command per row</li>
+</ul></li>
 <li>start script with Shebang
 <ul>
 <li><code>#!/bin/sh</code></li>
 </ul></li>
-<li>one command per row</li>
 <li>execute with
 <ul>
 <li><code>bash scriptname</code></li>
@@ -595,9 +642,9 @@
 <section id="conventions" class="slide level2">
 <h2>Conventions</h2>
 <ul>
-<li>no spaces in names
+<li>no spaces/umlauts in names
 <ul>
-<li>underscore, hyphen, dot</li>
+<li>alphanumeric, underscore, hyphen, dot</li>
 </ul></li>
 <li>files have a suffix, folders not
 <ul>
@@ -605,9 +652,9 @@
 </ul></li>
 <li>separate data from scripts</li>
 <li>never change the raw data</li>
-<li>meaningful file organization
+<li>descriptive file organization
 <ul>
-<li><code>SOURCE/YEAR/speech_X.txt</code></li>
+<li><code>SOURCE/YEAR/speech_party_X.txt</code></li>
 </ul></li>
 </ul>
 <aside class="notes">

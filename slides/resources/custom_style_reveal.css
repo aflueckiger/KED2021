@@ -49,10 +49,11 @@ p.date{
 /* @import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css"); */
 
 .sourceCode{
-    font-size: 150%;
+    font-size: 135%;
 }
 code{
-    background: #484a42 /* #272822 */
+    background: #f7eeda; /* #484a42  #272822 */
+    color: #1c1b1b;
 }
 
 .reveal table {
