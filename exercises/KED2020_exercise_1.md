@@ -3,7 +3,7 @@ title: "KED2020 Exercise 1: Data Wrangling"
 author:  
 - name: Alex Flückiger
   email: 'alex.flueckiger@doz.unilu.ch'
-date: Spring 2020
+date: 2020
 
 ---
 
