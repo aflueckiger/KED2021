@@ -78,6 +78,25 @@ The title says it all. We are getting ready for the practical part of the course
 
 [Installation Guide](https://aflueckiger.github.io/KED2020/installation_guide.pdf)
 
+#### Optional: pimp your workflow
+
+Healy, Kieran. 2019. “The Plain Person’s Guide to Plain Text Social Science.” [online](https://kieranhealy.org/publications/plain-person-text/).
+
+
+
+### Week 4: Introduction into Command-line
+
+The command-line is a powerful tool at your disposal. It is the working horse for many data wrangling tasks. In this session, you learn the basics of shells and perform many operations by effectively substituting clicks on the screen with commands. Admittedly, it is not overly exciting at this stage, yet it is essential for more sophisticated automation later on.
+
+[Week 4 Slides](slides/KED2020_04.html)
+
+#### Additional Resources
+
+- [The Programming Historian](https://programminghistorian.org/en/lessons/intro-to-bash)
+- [DigitalOcean](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
+
+
+
 # Exercises
 
 You need to submit three exercises to complete the seminar successfully. The point of the exercises is not to make it hard to pass but rather to foster the engagement with the covered material of this class. As you like, you may prefer to work in teams to discuss different approaches. Nonetheless, each student has to submit his own solution. 
