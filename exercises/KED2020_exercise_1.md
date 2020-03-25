@@ -13,7 +13,8 @@ date: 2020
 
 - Deadline: 26 March 2020, 23:59
 - File format: executable shell script
-- Naming schema: SURNAME_KED2020_ex_NR.sh
+- Naming schema: *SURNAME*_KED2020_ex_1.sh   
+  Replace *SURNAME* with your surname. 
 - Use the shell template provided [here](https://aflueckiger.github.io/KED2020/)
 - All tasks require shell commands unless stated otherwise.
 - Please hand in your solutions via the respective exercise module on OLAT. Keep in mind to submit on time, as the module is only open until midnight.
@@ -37,18 +38,18 @@ As the project grows over time, it is crucial to organize your work properly. Ot
 3. In this folder, you make the following subfolders:  
     `reports`, `src`, `data`, `data/raw`, `data/interim`
 
-4. Create a new file called `script.sh` in your project folder. Copy the template for your bash script from the [KED2020 website](https://aflueckiger.github.io/KED2020/) and change the content as needed in this exercise. For copying the template, you may use the GUI and and don't need to show any commands in your solution. This file is your final submission. Thus, you need to add the commands that you have used so far to this script.
+4. Create a new file called `script.sh` in your project folder. Copy the bash template from the [KED2020 website](https://aflueckiger.github.io/KED2020/) and change the content as needed in this exercise. This file will be your final submission. Thus, you need to add the commands from the previous steps (1-3) to this script. For copying the template, you may use a text editor instead of the shell as this is a more advance operation.
 
 5. In your project, you may have thousands of text files, which are named inconsistently. To simulate this, create empty files with the following commands:
 
    ```bash
-    touch data/interim/speeches_{2015..2020}_{a..z}.txt 
-    touch data/interim/text_{2015..2020}_{1..30}.txt
+    touch data/raw/speeches_{2015..2020}_{a..z}.txt 
+    touch data/raw/text_{2015..2020}_{1..30}.txt
    ```
 
    Don't forget to add these commands in your script.
 
-6. Create folders for each year (2015-2020) in `data/interim`. Move the created `.txt` files from above into the folder with the corresponding year. Specifically, a file that has 2020 in its name needs to go in the directory 2020. Hint: Recall the expansion and wildcard operations. 
+6. The raw data should never be modified directly. Thus, create folders for each year (2015-2020) in `data/interim`. Copy the created `.txt` files from above into the folder with the corresponding year. Specifically, a file that has 2020 in its name needs to go into the directory `2020`. Hint: Recall the expansion and wildcard operations. 
 
 7. Rename the file from `script.sh` to `SURNAME_KED2020_ex_1.sh` and move it into `src`. By the way, `src` is a short name for *source*, meaning *source code*. 
 
@@ -60,12 +61,12 @@ Beyond this toy project, you may want to learn more about how to organize your r
 
 # Make report of your file
 
-In this second task, please give a short explanation accompanying your command. You do not need to submit the file output.
+In this second task, please give a short explanation accompanying your command.
 
 What files do you have on your computer? Let's create some reports. You are free to choose the location and names for the files. Yet, please recall the conventions that help others to understand the purpose of your scripts and outputs.
 
 1. Count the total number of all `.pdf`, `.txt`, and `.docx` files on your computer and write this number into a new file using operators. You may want to check the man page.
-2. Write a single command (piping) to get the 20 oldest `.pdf` in your document folder, including any subfolder, and write them into a new file.
+2. Write a single command (piping) to get the file names of the 20 oldest `.pdf` in your document folder, including any subfolder, and write them into a new file.
 
 
 
