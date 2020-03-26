@@ -97,6 +97,14 @@ The command-line is a powerful tool at your disposal. It is the working horse fo
 
 
 
+### Week 5: Basic NLP with Command-line
+
+Counting words is the most basic method to look at texts from a computational perspective. The command-line provides tools to quickly sift through a massive text collection to describe the use of words quantitatively. In no time, you can also take a systematic look at the word usage in context. Sounds like a Swiss knife for computational text analysis in social science? It certainly is.
+
+[Week 5 Slides](slides/KED2020_05.html)
+
+
+
 # Exercises
 
 You need to submit three exercises to complete the seminar successfully. The point of the exercises is not to make it hard to pass but rather to foster the engagement with the covered material of this class. As you like, you may prefer to work in teams to discuss different approaches. Nonetheless, each student has to submit his own solution. 
@@ -118,7 +126,7 @@ Your submission is a single script, meaning that is readily executable, and is n
 
 
 
-The script follows the order of the tasks in the exercise. In addition to the commands you have used to come up with a solution, you also provide a short, yet concise explanation of the actual solution as a comment  (lines starting with `#`). Please use the following template:
+The script follows the order of the tasks in the exercise. In addition to the commands you have used to come up with a solution, you also provide a short, yet concise explanation of the actual solution as a comment  (lines starting with `#`). Please use the following example as template:
 
 ```bash
 #!/bin/bash
