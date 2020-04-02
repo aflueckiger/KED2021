@@ -65,18 +65,18 @@ mv script.sh src/flueckiger_KED2020_ex_1.sh
 locate .pdf .docx .txt | wc -l > count_documents.txt
 
 ## task 2.2
-# more complicated solution that collects all the pdf recursively (any depth of subfolders). Explanation: https://superuser.com/questions/294161/unix-linux-find-and-sort-by-date-modified
-# found files are passed to sort, which sorts the files numerically according to their timestamp. 
-# the output is passed a second time to head, which cuts off after 20 lines.
-# this final output is then written into a file with the > operator
-find ~/Documents -name *.pdf -printf "%T@ %Tc %p\n" | sort -n | head -n 20  > oldest_pdf_files_1.txt
-
-
 # less complicated solution that collects only the pdfs in the document folder and its immediate subfolders. 
 # ls lists the pdf files up to depth one and, due to the argument -t, it orders them from new to old new.
 # after piping, tail retains only the last 20 lines.
 # this final output is then written into a file with the > operator
 ls -t ~/Documents/*.pdf ~/Documents/*/*.pdf | tail -n 20 > oldest_pdf_files_2.txt
+
+# more complicated solution that collects all the pdf recursively (any depth of subfolders). 
+# Explanation: https://superuser.com/questions/294161/unix-linux-find-and-sort-by-date-modified
+# found files are passed to sort, which sorts the files numerically according to their timestamp. 
+# the output is passed a second time to head, which cuts off after 20 lines.
+# this final output is then written into a file with the > operator
+find ~/Documents -name *.pdf -printf "%T@ %Tc %p\n" | sort -n | head -n 20  > oldest_pdf_files_1.txt
 
 
 ### feedback
