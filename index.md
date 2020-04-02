@@ -90,7 +90,7 @@ The command-line is a powerful tool at your disposal. It is the working horse fo
 
 [Week 4 Slides](slides/KED2020_04.html)
 
-#### Additional Resources
+#### Recommended Resources
 
 - [The Programming Historian](https://programminghistorian.org/en/lessons/intro-to-bash)
 - [DigitalOcean](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
@@ -105,6 +105,28 @@ Counting words is the most basic method to look at texts from a computational pe
 
 
 
+### Week 6: Learning Regular Expressions
+
+When working with text data, you spend a lot of time to clean your documents and extract some pieces of information. Doing this by hand is not only a pain but simply impossible when facing many documents. Fortunately, there is a formal language named Regular Expressions that allows writing expressive and generalizable patterns. Using these patterns, you can extract and remove any textual parts systematically without missing a single instance.
+
+[Week 6 Slides](slides/KED2020_05.html)
+
+
+
+#### Required Reading
+
+- Ben Schmidt. 2019. Regular Expressions. [online](https://github.com/HumanitiesDataAnalysis/HDA19/blob/master/Handouts/01-regex.pdf)
+
+
+
+#### Recommended Resource
+
+Everything we have touched about text processing in greater detail. 
+
+- Nikolaj Lindberg. egrep for Linguists. [online](https://stts.se/egrep_for_linguists/egrep_for_linguists.pdf)
+
+
+
 # Exercises
 
 You need to submit three exercises to complete the seminar successfully. The point of the exercises is not to make it hard to pass but rather to foster the engagement with the covered material of this class. As you like, you may prefer to work in teams to discuss different approaches. Nonetheless, each student has to submit his own solution. 
@@ -114,7 +136,7 @@ You need to submit three exercises to complete the seminar successfully. The poi
 | #    | Topic                                                        | Published     | Deadline                    |
 | ---- | ------------------------------------------------------------ | ------------- | --------------------------- |
 | 1    | [Data Wrangling](https://aflueckiger.github.io/KED2020/exercises/KED2020_exercise_1.pdf) | 19 March 2020 | 26 March 2020 (by midnight) |
-| 2    | Regex NLP                                                    | 02 April 2020 | 09 April 2020 (by midnight) |
+| 2    | Regex NLP                                                    | 02 April 2020 | 16 April 2020 (by midnight) |
 | 3    | Python NLP                                                   | 07 May 2020   | 14 May 2020 (by midnight)   |
 
 
