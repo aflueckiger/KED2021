@@ -109,7 +109,7 @@ Counting words is the most basic method to look at texts from a computational pe
 
 When working with text data, you spend a lot of time to clean your documents and extract some pieces of information. Doing this by hand is not only a pain but simply impossible when facing many documents. Fortunately, there is a formal language named Regular Expressions that allows writing expressive and generalizable patterns. Using these patterns, you can extract and remove any textual parts systematically without missing a single instance.
 
-[Week 6 Slides](slides/KED2020_05.html)
+[Week 6 Slides](slides/KED2020_06.html)
 
 
 
