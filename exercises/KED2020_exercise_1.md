@@ -9,7 +9,7 @@ date: 2020
 
 
 
-# Requirements
+# Requirements {-}
 
 - Deadline: 26 March 2020, 23:59
 - File format: executable shell script
