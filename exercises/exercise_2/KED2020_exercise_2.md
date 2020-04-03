@@ -45,19 +45,23 @@ You need to write three commands to extract the following information using regu
 
 1. number of words (e.g., 591 words)
 2. publishing date (e.g., 26 February 2004)
-3. names of authors (e.g., Von BRUNO VANONI). To cover all the cases may be too hard, just push the limit as far as you can. It is more important that you learn about performing RegEx than to get a perfect solution. Try to write a pattern that doesn't match the location (e.g., Bern).
+3. names of authors (e.g., Von BRUNO VANONI). Try to write a pattern that doesn't match the location (e.g., Bern).
 
-Write the patterns as generalizable and as simple as possible. To be clear, you need a single command for each of these three subtasks, similar to the one below. If this command fails on your system for any reason, get in touch. There as there may be a technical problem that needs troubleshooting.
+Write the patterns as specific, generalizable, and simple as possible. Moreover, try to cover all the cases without getting false positives. Covering all the cases may be too hard, just push the limit as far as you can. It is more important that you learn about performing RegEx than to get a perfect solution.
+
+To be clear, you need a single command for each of these three subtasks, similar to the one below. If this command fails on your system for any reason, get in touch. There as there may be a technical problem that needs troubleshooting.
 
 ```bash
 # extract with a pattern and write the matches into a file
-grep -Prho "words" newspaper_articles.txt > new.txt
+egrep -ho "words" newspaper_articles.txt > new.txt
 
 ### pro-tips
 # have a look at the document
 more newspaper_articles.txt
 # useful to check what grep matches before you write into a file
-grep -Prho "words" newspaper_articles.txt
+egrep -ho "words" newspaper_articles.txt
+# egrep does not support the meta-character \d to match any digit
+# se [0-9] instead
 ```
 
 Add the commands to your script and write a short comment for each of them.
@@ -71,9 +75,6 @@ Use the same patterns that you have written in the first task. Pipe multiple `se
 ```bash
 # replace the pattern with an empty sequence to remove it
 cat name.txt | sed -E "s/pattern//g" | sed -E "s/pattern2//g" > clean.txt
-
-# sed does not support the meta character \d. 
-# Use [0-9] or [[:digit:]] instead.
 ```
 
 Feel free to improve the patterns or to write new ones to remove even more parts of the document in the attempt to clean the data further.
