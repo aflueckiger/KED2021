@@ -131,7 +131,7 @@ Everything we have touched about text processing in greater detail.
 
 To this point, you have acquired the skills to cut a document into pieces and, subsequently, to extract, replace, and count any textual elements. Unless you have interesting data, these tools are neat but of no greater use. Besides some further practicing with RegEx, we turn to relevant data resources in social science. Given you have plain text at your hand, your tools cut through any text data like butter. For other formats, we learn about some remedies in next session.
 
-[Week 7 Slides](slides/KED2020_07.html){target="_blank"}
+[Week 7 Slides](slides/KED2020_07.html)
 
 
 
@@ -184,9 +184,9 @@ echo -n "test" | wc
 
 In the final session, you present a short analysis. You are free to choose your research question as well as the used computational methods and data. It is certainly more fun when you work with data from your area of interest. 
 
-Again, the aim of this project is not to overwhelm students with too ambitious requirements. It should be the other way around. You will have as much freedom as you need to engage with your data creatively. I hope you realize that your knowledge is already good enough to perform powerful analyses.
+Again, the aim of this project is not to overwhelm students with too ambitious requirements. It should be the other way around. You will have as much freedom as you need to engage with your data creatively. I will be glad when you realize that your knowledge is already good enough to perform powerful analyses.
 
-The only requirement is that you have to complement your claims with some quantitative facts about the data. You may work in teams of two.
+The only requirement is that you have to complement your claims with some quantitative facts about the data, which you can freely choose. You may work in teams of two.
 
 
 
