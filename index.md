@@ -33,9 +33,9 @@ We have 12 seminar sessions together.
 | 19 March 2020    | Introduction to the Command-line                   |
 | 26  March 2020   | Basic NLP with Command-line                        |
 | 02 April 2020    | Learning Regular Expressions                       |
-| 09 April 2020    | Data Sources + Ethics                              |
+| 09 April 2020    | Data Sources                                       |
 | 16 April 2020    | *no lecture (Osterpause)*                          |
-| 23 April 2020    | Creating new Data Sets                             |
+| 23 April 2020    | Creating new Data Sets + Ethics                    |
 | 30 April 2020    | Introduction to Python                             |
 | 07 May 2020      | NLP with Python                                    |
 | 14 May 2020      | NLP with Python + Working Session                  |
@@ -129,7 +129,7 @@ Everything we have touched about text processing in greater detail.
 
 ### Week 7: Data Sources + Ethics
 
-To this point, you have acquired the skills to cut a document into pieces and, subsequently, to extract, replace, and count any textual elements. Unless you have interesting data, these tools are neat but of no greater use. Besides some further practicing with RegEx, we turn to relevant data resources in social science. Given you have plain text at your hand, your tools cut through any text data like butter. For other formats, we learn about some remedies in next session.
+To this point, you have acquired the skills to cut a document into pieces and, subsequently, to extract, replace, and count any textual elements. Unless you have interesting data, these tools are neat but of no greater use. Besides some further practicing with RegEx, we turn to relevant data resources in social science. Given you have plain text at your hand, your tools cut through any text data like butter. For other formats, we learn about some remedies in the next session.
 
 [Week 7 Slides](slides/KED2020_07.html)
 
