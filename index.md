@@ -30,7 +30,7 @@ We have 12 seminar sessions together.
 | 27 February 2020 | Introduction + Where is the digital revolution?    |
 | 05 March 2020    | Text as Data                                       |
 | 12 March 2020    | Setting up your Development Environment            |
-| 19 March 2020    | Introduction into Command-line                     |
+| 19 March 2020    | Introduction to the Command-line                   |
 | 26  March 2020   | Basic NLP with Command-line                        |
 | 02 April 2020    | Learning Regular Expressions                       |
 | 09 April 2020    | Data Sources + Ethics                              |
@@ -84,7 +84,7 @@ Healy, Kieran. 2019. “The Plain Person’s Guide to Plain Text Social Science.
 
 
 
-### Week 4: Introduction into Command-line
+### Week 4: Introduction to the Command-line
 
 The command-line is a powerful tool at your disposal. It is the working horse for many data wrangling tasks. In this session, you learn the basics of shells and perform many operations by effectively substituting clicks on the screen with commands. Admittedly, it is not overly exciting at this stage, yet it is essential for more sophisticated automation later on.
 
@@ -124,6 +124,14 @@ When working with text data, you spend a lot of time to clean your documents and
 Everything we have touched about text processing in greater detail. 
 
 - Nikolaj Lindberg. egrep for Linguists. [online](https://stts.se/egrep_for_linguists/egrep_for_linguists.pdf)
+
+
+
+### Week 7: Data Sources + Ethics
+
+To this point, you have acquired the skills to cut a document into pieces and, subsequently, to extract, replace, and count any textual elements. Unless you have interesting data, these tools are neat but of no greater use. Besides some further practicing with RegEx, we turn to relevant data resources in social science. Given you have plain text at your hand, your tools cut through any text data like butter. For other formats, we learn about some remedies in next session.
+
+[Week 7 Slides](slides/KED2020_07.html){target="_blank"}
 
 
 
