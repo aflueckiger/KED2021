@@ -72,11 +72,18 @@ What files do you have on your computer? Let's create some reports. You are free
 
 # Test your script
 
-This task is a a simple sanity check. You don't need to include it in your submission.
+This task is a simple sanity check. You don't need to include it in your submission.
 
-Your deliverable has to be a runnable script comprising all the commands to accomplish the tasks above. Once you start the script again, it executes all the commands, one after another. To test it, you can create a new folder, copy the script into that folder, and execute it. Everything should be reconstructed accordingly. If not, correct the script so that it runs through without any issue.
+Your deliverable has to be a runnable script comprising all the commands to accomplish the tasks above. To test your script, run it with the commands below. Once you start the script again, it executes all the commands, one after another. Everything should be reconstructed accordingly. If not, correct the script so that it runs through without any issue.
+
+```bash
+# run script
+bash script_name.sh
+```
 
 # Feedback
+
+Please answer the following questions at the end of your script. Start your answers with the # symbol to make them comments that are ignored when running the script.
 
 1. Do you have any questions concerning the exercise or the commands?
 2. How long did it take to solve this exercise? Give a fair estimation.

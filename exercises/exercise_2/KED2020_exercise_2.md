@@ -16,7 +16,7 @@ Your submission needs to comply with the following requirements:
 - Deadline: 16 April 2020, 23:59
   Hand in your solutions via the respective exercise module on OLAT. Keep in mind to submit on time, as the module is only open until midnight.
 - Submission: a single, executable shell script. 
-- Naming schema: *SURNAME*_KED2020_ex_1.sh   
+- Naming schema: *SURNAME*_KED2020_ex_2.sh   
   Replace *SURNAME* with your surname. 
 - Your shell script should look similar to the template provided [here](https://aflueckiger.github.io/KED2020/). Add all the commands that you have used in this exercise to this script. Additionally, write a short comment for each command that explains what it does.
 - Find solutions individually. Ask friends or Google whenever you feel lost. In terms of programming, Google may be your best friend. When you struggle to understand a concept or have technical issues, feel free to post in the forum on OLAT.
@@ -47,24 +47,33 @@ You need to write three commands to extract the following information using regu
 2. publishing date (e.g., 26 February 2004)
 3. names of authors (e.g., Von BRUNO VANONI). Try to write a pattern that doesn't match the location (e.g., Bern).
 
-Write the patterns as specific, generalizable, and simple as possible. Moreover, try to cover all the cases without getting false positives. Covering all the cases may be too hard, just push the limit as far as you can. It is more important that you learn about performing RegEx than to get a perfect solution.
+Write the patterns as specific, generalizable, and simple as possible. Moreover, try to cover all the cases without getting false positives. Covering all the cases may be too hard[^hard_match], just push the limit as far as you can. It is more important that you learn about performing RegEx than to get a perfect solution.
 
 To be clear, you need a single command for each of these three subtasks, similar to the one below. If this command fails on your system for any reason, get in touch. There as there may be a technical problem that needs troubleshooting.
 
 ```bash
+### EXAMPLE COMMAND
 # extract with a pattern and write the matches into a file
 egrep -ho "words" newspaper_articles.txt > new.txt
 
-### pro-tips
+
+```
+
+Add the commands to your script and write a short comment for each of them.
+
+While coming up with a solution, you may find the following commands useful along the way:
+
+```bash
+### OTHER USEFUL COMMANDS
 # have a look at the document
 more newspaper_articles.txt
 # useful to check what grep matches before you write into a file
 egrep -ho "words" newspaper_articles.txt
 # egrep does not support the meta-character \d to match any digit
-# se [0-9] instead
+# use [0-9] instead
 ```
 
-Add the commands to your script and write a short comment for each of them.
+[^hard_match]: An example that may be hard to match: *Von MIT KRISTA SAGER\* SPRACH WERNER BOSSHARDT*
 
 # Removing Parts of a Document
 
@@ -96,6 +105,8 @@ bash script_name.sh
 
 
 # Feedback
+
+Please answer the following questions at the end of your script. Start your answers with the # symbol to make them comments that are ignored when running the script.
 
 1. Do you have any questions concerning the exercise or the commands?
 2. How long did it take to solve this exercise? Give a fair estimation.
