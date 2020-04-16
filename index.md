@@ -6,10 +6,12 @@ author:
 date: 2020
 ---
 
-<script>$(document).ready(function(){
-  $('#link_other a').attr('target', '_blank');
+<script>
+$(document).ready(function(){
+  $('a').attr('target', '_blank');
 });
 </script>
+
 
 # Outline
 
