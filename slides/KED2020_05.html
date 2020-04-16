@@ -117,6 +117,9 @@
   .subtitle{
       font-size: 200%;
       color: #e7ad52;
+      padding-top: 30px;
+      padding-bottom: 60px;
+
   }
 
   .reveal figcaption{
@@ -129,19 +132,25 @@
 
   p.author,
   p.date{
+      font-size: 90%;
       margin-top: -20px;
   }
 
   .reveal h2 {
       margin-bottom: +50px;
   }
-  .wow {
-      color :   #00FFAA;
-      font-weight: bold;
-      font-size: 200%;
+
+  .align-left {
+      text-align: left;
   }
 
-  /* @import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css"); */
+  .align-left-padding {
+      text-align: left;
+      padding-left: 5%;
+      margin-left: 15%;
+      border-left: 8px solid #ffffff;
+  }
+
 
   .sourceCode{
       font-size: 135%;
@@ -220,17 +229,16 @@
 
   .reveal blockquote{
       position: static;
-      text-align: center;
+      text-align: justify;
       border-style: none;
       box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
       background: inherit;
       font-family: Georgia;
-      font-size: 1.4em;
+      font-size: 1.2em;
       width:90%;
       margin:0px auto;
-      padding: 1em
-      font-style:italic;
-
+      padding: 1em;
+      font-style:normal;
   }
 
 
@@ -381,7 +389,7 @@
 <span id="cb2-4"><a href="#cb2-4"></a><span class="co"># --colour to highlight pattern</span></span>
 <span id="cb2-5"><a href="#cb2-5"></a><span class="co"># --context 2 to show 2 lines above/below</span></span></code></pre></div>
 <h4 id="count-words">count words</h4>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">grep</span> -ic <span class="st">&#39;data&#39;</span> */*.txt <span class="co"># count pattern in all txt-files, ignore case</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">grep</span> -ic <span class="st">&#39;data&#39;</span> */*.txt <span class="co"># count in all txt-files, ignore case</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>options
@@ -517,10 +525,10 @@
 </section>
 <section id="removing-and-replacing-symbols" class="slide level2">
 <h2>Removing and Replacing Symbols</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="bu">echo</span> <span class="st">&quot;3x3&quot;</span> <span class="kw">|</span> <span class="fu">tr</span> -d [:digit:]        <span class="co"># remove all digits </span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">cat</span> text.txt <span class="kw">|</span> <span class="fu">tr</span> -d [:punct:]      <span class="co"># remove punctuation like .,:; </span></span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="bu">echo</span> <span class="st">&quot;3x3&quot;</span> <span class="kw">|</span> <span class="fu">tr</span> -d [:digit:]    <span class="co"># remove all digits </span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">cat</span> text.txt <span class="kw">|</span> <span class="fu">tr</span> -d [:punct:]  <span class="co"># remove punctuation like .,:; </span></span>
 <span id="cb7-3"><a href="#cb7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">tr</span> <span class="st">&#39;Y&#39;</span> <span class="st">&#39;Z&#39;</span>                          <span class="co"># replace any Y with Z</span></span></code></pre></div>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">tr</span> <span class="st">&#39;Y&#39;</span> <span class="st">&#39;Z&#39;</span>                      <span class="co"># replace any Y with Z</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>löscht alle Einzelzeichen in Text (keine Sequenzen)</li>
@@ -552,7 +560,7 @@
 <section id="trimming" class="slide level2">
 <h2>Trimming</h2>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">more</span> -N text.txt        <span class="co"># show line numbers</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">sed</span> <span class="st">&#39;1,10d&#39;</span> text.txt    <span class="co"># remove 10 line at the top</span></span></code></pre></div>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">sed</span> <span class="st">&#39;1,10d&#39;</span> text.txt    <span class="co"># remove the first 10 lines</span></span></code></pre></div>
 </section>
 <section id="splitting" class="slide level2">
 <h2>Splitting</h2>
@@ -577,8 +585,8 @@
 </aside>
 </section></section>
 <section>
-<section id="questions" class="title-slide slide level1">
-<h1>Questions</h1>
+<section id="questions" class="title-slide slide level1" data-background="#3c70b5">
+<h1 data-background="#3c70b5">Questions</h1>
 
 </section>
 <section id="in-class-getting-ready" class="slide level2" data-background="#3c70b5">

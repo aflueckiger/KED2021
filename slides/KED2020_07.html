@@ -117,6 +117,9 @@
   .subtitle{
       font-size: 200%;
       color: #e7ad52;
+      padding-top: 30px;
+      padding-bottom: 60px;
+
   }
 
   .reveal figcaption{
@@ -129,19 +132,25 @@
 
   p.author,
   p.date{
+      font-size: 90%;
       margin-top: -20px;
   }
 
   .reveal h2 {
       margin-bottom: +50px;
   }
-  .wow {
-      color :   #00FFAA;
-      font-weight: bold;
-      font-size: 200%;
+
+  .align-left {
+      text-align: left;
   }
 
-  /* @import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css"); */
+  .align-left-padding {
+      text-align: left;
+      padding-left: 5%;
+      margin-left: 15%;
+      border-left: 8px solid #ffffff;
+  }
+
 
   .sourceCode{
       font-size: 135%;
@@ -338,7 +347,8 @@
 <li>wie Funktion von Word, nur mächtiger dank Regex</li>
 <li>Löschen = Ersetzen mit leeren Sequenz</li>
 <li>flag “global”</li>
-<li>Demonstration mit  echo “hello hell” | sed “s/ly/g”</li>
+<li>Demonstration mit \b</li>
+<li>echo <code>"hello hell" | sed "s/l\b/y/g"</code></li>
 </ul>
 </aside>
 </section>
@@ -425,7 +435,7 @@
 <span id="cb4-5"><a href="#cb4-5"></a><span class="bu">echo</span> <span class="st">&#39;an apple, other apple&#39;</span> <span class="kw">|</span> <span class="fu">egrep</span> <span class="st">&#39;a[^,]*apple&#39;</span></span></code></pre></div>
 <aside class="notes">
 <ul>
-<li>. = jegliche Zeichen, beliebige Länge</li>
+<li><code>. =</code> jegliche Zeichen, beliebige Länge</li>
 </ul>
 </aside>
 </section>
@@ -466,7 +476,7 @@
 <span id="cb6-5"><a href="#cb6-5"></a><span class="fu">egrep</span> -roh */*.txt</span></code></pre></div>
 <aside class="notes">
 <ul>
-<li>egrep -roh ‘[A-Z]{2,}’ <em>/</em>.txt | sort | uniq -c | sort -h</li>
+<li><code>egrep -roh '[A-Z]{2,}' */*.txt | sort | uniq -c | sort -h</code></li>
 </ul>
 </aside>
 </section>
@@ -515,7 +525,7 @@
 <ul>
 <li>number task
 <ul>
-<li>egrep -rho “[0-9’,%] +” | egrep -hoi ‘[a-z]+’ | sort | uniq -c | sort -h</li>
+<li><code>egrep -rho "[0-9',%] \w+" | egrep -hoi '[a-z]+' | sort | uniq -c | sort -h</code></li>
 </ul></li>
 </ul>
 </aside>

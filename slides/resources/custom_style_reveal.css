@@ -22,6 +22,9 @@
 .subtitle{
     font-size: 200%;
     color: #e7ad52;
+    padding-top: 30px;
+    padding-bottom: 60px;
+
 }
 
 .reveal figcaption{
@@ -34,19 +37,25 @@ span.citation{
 
 p.author,
 p.date{
+    font-size: 90%;
     margin-top: -20px;
 }
 
 .reveal h2 {
     margin-bottom: +50px;
 }
-.wow {
-    color :   #00FFAA;
-    font-weight: bold;
-    font-size: 200%;
+
+.align-left {
+    text-align: left;
 }
 
-/* @import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css"); */
+.align-left-padding {
+    text-align: left;
+    padding-left: 5%;
+    margin-left: 15%;
+    border-left: 8px solid #ffffff;
+}
+
 
 .sourceCode{
     font-size: 135%;
@@ -125,17 +134,16 @@ div.references{
 
 .reveal blockquote{
     position: static;
-    text-align: center;
+    text-align: justify;
     border-style: none;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
     background: inherit;
     font-family: Georgia;
-    font-size: 1.4em;
+    font-size: 1.2em;
     width:90%;
     margin:0px auto;
-    padding: 1em
-    font-style:italic;
-
+    padding: 1em;
+    font-style:normal;
 }
 
 

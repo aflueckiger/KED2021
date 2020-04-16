@@ -117,6 +117,9 @@
   .subtitle{
       font-size: 200%;
       color: #e7ad52;
+      padding-top: 30px;
+      padding-bottom: 60px;
+
   }
 
   .reveal figcaption{
@@ -129,19 +132,25 @@
 
   p.author,
   p.date{
+      font-size: 90%;
       margin-top: -20px;
   }
 
   .reveal h2 {
       margin-bottom: +50px;
   }
-  .wow {
-      color :   #00FFAA;
-      font-weight: bold;
-      font-size: 200%;
+
+  .align-left {
+      text-align: left;
   }
 
-  /* @import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css"); */
+  .align-left-padding {
+      text-align: left;
+      padding-left: 5%;
+      margin-left: 15%;
+      border-left: 8px solid #ffffff;
+  }
+
 
   .sourceCode{
       font-size: 135%;
@@ -220,17 +229,16 @@
 
   .reveal blockquote{
       position: static;
-      text-align: center;
+      text-align: justify;
       border-style: none;
       box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
       background: inherit;
       font-family: Georgia;
-      font-size: 1.4em;
+      font-size: 1.2em;
       width:90%;
       margin:0px auto;
-      padding: 1em
-      font-style:italic;
-
+      padding: 1em;
+      font-style:normal;
   }
 
 
@@ -669,12 +677,12 @@
 <section id="in-class-self-check" class="slide level2" data-background="#3c70b5">
 <h2 data-background="#3c70b5">In-class: Self-Check</h2>
 <h4 id="equivalent-patterns">equivalent patterns</h4>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="ex">a+</span> == aa*           <span class="co"># &quot;a&quot; once or more than once</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="ex">a?</span> == a<span class="kw">|</span><span class="ex">_</span>           <span class="co"># &quot;a&quot; once or nothing</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="ex">a</span><span class="dt">{3}</span> == aaa         <span class="co"># three &quot;a&quot;</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a><span class="ex">a</span><span class="dt">{2,3}</span> == aa<span class="kw">|</span><span class="ex">aaa</span>    <span class="co"># two or three &quot;a&quot;</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a>[<span class="ex">ab</span>] == a<span class="kw">|</span><span class="ex">b</span>         <span class="co"># &quot;a&quot; or &quot;b&quot;</span></span>
-<span id="cb11-6"><a href="#cb11-6"></a>\<span class="ex">d</span> == 0<span class="kw">|</span><span class="ex">1</span><span class="kw">|</span><span class="ex">2</span><span class="kw">|</span><span class="ex">3</span><span class="kw">|</span><span class="ex">4</span><span class="kw">|</span><span class="ex">5</span><span class="kw">|</span><span class="ex">6</span><span class="kw">|</span><span class="ex">7</span><span class="kw">|</span><span class="ex">8</span><span class="kw">|</span><span class="ex">9</span>   <span class="co">#any digit</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="ex">a+</span> == aa*               <span class="co"># &quot;a&quot; once or more than once</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="ex">a?</span> == (a<span class="kw">|</span><span class="ex">_</span>)             <span class="co"># &quot;a&quot; once or nothing</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="ex">a</span><span class="dt">{3}</span> == aaa             <span class="co"># three &quot;a&quot;</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="ex">a</span><span class="dt">{2,3}</span> == (aa<span class="kw">|</span><span class="ex">aaa</span>)      <span class="co"># two or three &quot;a&quot;</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>[<span class="ex">ab</span>] == (a<span class="kw">|</span><span class="ex">b</span>)           <span class="co"># &quot;a&quot; or &quot;b&quot;</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>[<span class="ex">0-9</span>] == (0<span class="kw">|</span><span class="ex">1</span><span class="kw">|</span><span class="ex">2</span><span class="kw">|</span><span class="ex">3</span><span class="kw">|</span><span class="ex">4</span><span class="kw">|</span><span class="ex">5</span><span class="kw">|</span><span class="ex">6</span><span class="kw">|</span><span class="ex">7</span><span class="kw">|</span><span class="ex">8</span><span class="kw">|</span><span class="ex">9</span>)  <span class="co">#any digit</span></span></code></pre></div>
 </section>
 <section id="in-class-exercise-ii" class="slide level2" data-background="#3c70b5">
 <h2 data-background="#3c70b5">In-class: Exercise II</h2>

@@ -117,6 +117,9 @@
   .subtitle{
       font-size: 200%;
       color: #e7ad52;
+      padding-top: 30px;
+      padding-bottom: 60px;
+
   }
 
   .reveal figcaption{
@@ -129,19 +132,25 @@
 
   p.author,
   p.date{
+      font-size: 90%;
       margin-top: -20px;
   }
 
   .reveal h2 {
       margin-bottom: +50px;
   }
-  .wow {
-      color :   #00FFAA;
-      font-weight: bold;
-      font-size: 200%;
+
+  .align-left {
+      text-align: left;
   }
 
-  /* @import url("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css"); */
+  .align-left-padding {
+      text-align: left;
+      padding-left: 5%;
+      margin-left: 15%;
+      border-left: 8px solid #ffffff;
+  }
+
 
   .sourceCode{
       font-size: 135%;
@@ -220,17 +229,16 @@
 
   .reveal blockquote{
       position: static;
-      text-align: center;
+      text-align: justify;
       border-style: none;
       box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
       background: inherit;
       font-family: Georgia;
-      font-size: 1.4em;
+      font-size: 1.2em;
       width:90%;
       margin:0px auto;
-      padding: 1em
-      font-style:italic;
-
+      padding: 1em;
+      font-style:normal;
   }
 
 
@@ -253,7 +261,7 @@
 
 <section id="title-slide">
   <h1 class="title">The ABC of computational Text Analysis</h1>
-  <p class="subtitle">04: Introduction into Command-line</p>
+  <p class="subtitle">04: Introduction to the Command-line</p>
   <p class="author">Alex Flückiger</p>
   <p class="date">19 March 2020</p>
 </section>
@@ -310,10 +318,14 @@
 <ul>
 <li>heute Einführung in Shell, nächstes Mal tatsächlich nützliche Dinge</li>
 <li>Commands statt Klicks</li>
-<li>Cockpit bis zu Osterferien</li>
+<li>Shell ist Cockpit bis zu Osterferien</li>
 <li>wichtig für alle Datei-Operationen, egal ob 1 oder Millionen</li>
 </ul>
 </aside>
+</section>
+<section id="unix-philosophy" class="slide level2" data-background="#4d7e65">
+<h2 data-background="#4d7e65">Unix Philosophy</h2>
+<h4 id="build-small-programs-that-do-one-thing-and-do-it-well.">Build small programs that <em>do one thing</em> <br>and <em>do it well</em>. <span class="emoji" data-emoji="nerd_face">🤓</span></h4>
 </section>
 <section id="starting-a-shell" class="slide level2">
 <h2>Starting a Shell</h2>
@@ -407,7 +419,6 @@
 <div class="columns">
 <div class="column">
 <ul>
-<li><p>current directory <code>.</code></p></li>
 <li><p>hierarchical file system</p>
 <ul>
 <li>tree-like</li>
@@ -416,6 +427,16 @@
 <ul>
 <li>relative works across systems</li>
 <li>data/slides</li>
+</ul></li>
+<li><p>common directories</p>
+<ul>
+<li><code>.</code> current</li>
+<li><code>..</code> parent</li>
+<li><code>~</code> home directory</li>
+</ul></li>
+<li><p>Windows</p>
+<ul>
+<li><code>/mnt/c/Users/YOUR_USERNAME/</code></li>
 </ul></li>
 </ul>
 </div><div class="column">
@@ -449,6 +470,7 @@
 <li>keine technische Notwendigkeit</li>
 </ul></li>
 <li><p>/ für Angabe von Pfad (Verzeichnis/Unterverzeichnis)</p></li>
+<li><p>Windows-Leute hinweisen auf Pfad innerhalb Ubuntu</p></li>
 <li><p>Whiteboard file structure</p></li>
 </ul>
 </aside>
@@ -494,7 +516,10 @@
 <span id="cb6-3"><a href="#cb6-3"></a><span class="fu">head</span> text.txt           <span class="co"># print first 10 lines of file      </span></span>
 <span id="cb6-4"><a href="#cb6-4"></a><span class="fu">tail</span> -5 text.txt        <span class="co"># print last 5 lines of file</span></span>
 <span id="cb6-5"><a href="#cb6-5"></a></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="fu">xdg-open</span> text.txt       <span class="co"># open file in default application</span></span></code></pre></div>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="co"># Ubuntu Linux (Windows)</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="fu">xdg-open</span> text.txt       <span class="co"># open file in default application</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="co"># macOS</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="ex">open</span> text.txt           <span class="co"># open file in default application</span></span></code></pre></div>
 </section>
 <section id="useful-key-actions" class="slide level2">
 <h2>Useful Key Actions</h2>
@@ -502,12 +527,13 @@
 <li>autocompletion: <em>tab</em></li>
 <li>get last command: ↑</li>
 <li>scrolling: <em>space</em></li>
-<li>quit: <em>q</em> OR <em>CTRL + C</em></li>
+<li>interrupt <em>CTRL + C</em></li>
+<li>quit: <em>q</em> OR <em>CTRL + D</em></li>
 </ul>
 <aside class="notes">
 <ul>
 <li>lange Dateinamen, Programme nur halb erinnert</li>
-<li>q bspw. in Hilfe</li>
+<li>q bspw. in Hilfe-Seite man</li>
 </ul>
 </aside>
 </section>
@@ -595,6 +621,7 @@
 </ul>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="bu">echo</span> <span class="st">&#39;line 1&#39;</span> <span class="op">&gt;</span> test.txt    <span class="co"># write into file</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a><span class="fu">more</span> test.txt <span class="kw">|</span> <span class="fu">tail</span> -1     <span class="co"># pass output to next command    </span></span></code></pre></div>
+<p><a href="https://unix.stackexchange.com/questions/159513/what-are-the-shells-control-and-redirection-operators">Learn more about operators</a></p>
 <aside class="notes">
 <ul>
 <li>check output first, then overwrite file as a second step</li>
