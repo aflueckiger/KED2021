@@ -3,7 +3,7 @@ title: Setting up your Development Environment
 author:  
 - name: Alex Flückiger
   email: 'alex.flueckiger@doz.unilu.ch'
-date: Spring 2020
+date: 2020
 toc: True
 toc-depth: 2
 ---
