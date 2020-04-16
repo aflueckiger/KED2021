@@ -6,7 +6,10 @@ author:
 date: 2020
 ---
 
-
+<script>$(document).ready(function(){
+  $('#link_other a').attr('target', '_blank');
+});
+</script>
 
 # Outline
 
@@ -50,7 +53,7 @@ We have 12 seminar sessions together.
 
 On the one hand, I present the goals and organization of the seminar. On the other hand, we look at some recent applications that give an impression of the fascinating prospects of computers in the area of artificial intelligence (AI) and digital humanities (DH).
 
-[Week 1 Slides](slides/KED2020_01.html)
+[Week 1 Slides](slides/KED2020_01.html){target="_blank"}
 
 #### Required Reading
 
@@ -76,7 +79,7 @@ The title says it all. We are getting ready for the practical part of the course
 
 [Week 3 Slides](slides/KED2020_03.html)
 
-[Installation Guide](https://aflueckiger.github.io/KED2020/installation_guide.pdf)
+[Installation Guide](https://aflueckiger.github.io/KED2020/materials/installation_guide.pdf)
 
 #### Optional: pimp your workflow
 
@@ -127,7 +130,15 @@ Everything we have touched about text processing in greater detail.
 
 
 
-### Week 7: Data Sources + Ethics
+#### Online Regular Expression Editor
+
+A visual editor to check your regular expressions.
+
+- [Rubular](https://rubular.com/)
+
+
+
+### Week 7: Data Sources
 
 To this point, you have acquired the skills to cut a document into pieces and, subsequently, to extract, replace, and count any textual elements. Unless you have interesting data, these tools are neat but of no greater use. Besides some further practicing with RegEx, we turn to relevant data resources in social science. Given you have plain text at your hand, your tools cut through any text data like butter. For other formats, we learn about some remedies in the next session.
 
