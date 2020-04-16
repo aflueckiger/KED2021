@@ -71,7 +71,7 @@ On the one hand, I present the goals and organization of the seminar. On the oth
 
 Computational text analysis comes with many challenges that are unique due to the fuzziness of natural language. In this session, we learn about its methodological foundation, and we conduct our first computational text analysis to understand how this translates into practice.
 
-[Week 2 Slides](slides/KED2020_02.html)
+[Week 2 Slides](slides/KED2020_02.html){:target="_blank"}
 
 
 
@@ -79,7 +79,7 @@ Computational text analysis comes with many challenges that are unique due to th
 
 The title says it all. We are getting ready for the practical part of the course: Programming. As the installation of Python and non-standard command-line tools may be tricky, we do this in class rather than doing it as homework. Moreover, I will also introduce some principles to organize research and jargon that help you to find your way in the programmer's brave new word.
 
-[Week 3 Slides](slides/KED2020_03.html)
+[Week 3 Slides](slides/KED2020_03.html){:target="_blank"}
 
 [Installation Guide](https://aflueckiger.github.io/KED2020/materials/installation_guide.pdf)
 
@@ -93,7 +93,7 @@ Healy, Kieran. 2019. “The Plain Person’s Guide to Plain Text Social Science.
 
 The command-line is a powerful tool at your disposal. It is the working horse for many data wrangling tasks. In this session, you learn the basics of shells and perform many operations by effectively substituting clicks on the screen with commands. Admittedly, it is not overly exciting at this stage, yet it is essential for more sophisticated automation later on.
 
-[Week 4 Slides](slides/KED2020_04.html)
+[Week 4 Slides](slides/KED2020_04.html){:target="_blank"}
 
 #### Recommended Resources
 
@@ -106,7 +106,7 @@ The command-line is a powerful tool at your disposal. It is the working horse fo
 
 Counting words is the most basic method to look at texts from a computational perspective. The command-line provides tools to quickly sift through a massive text collection to describe the use of words quantitatively. In no time, you can also take a systematic look at the word usage in context. Sounds like a Swiss knife for computational text analysis in social science? It certainly is.
 
-[Week 5 Slides](slides/KED2020_05.html)
+[Week 5 Slides](slides/KED2020_05.html){:target="_blank"}
 
 
 
@@ -114,7 +114,7 @@ Counting words is the most basic method to look at texts from a computational pe
 
 When working with text data, you spend a lot of time to clean your documents and extract some pieces of information. Doing this by hand is not only a pain but simply impossible when facing many documents. Fortunately, there is a formal language named Regular Expressions that allows writing expressive and generalizable patterns. Using these patterns, you can extract and remove any textual parts systematically without missing a single instance.
 
-[Week 6 Slides](slides/KED2020_06.html)
+[Week 6 Slides](slides/KED2020_06.html){:target="_blank"}
 
 
 
@@ -144,7 +144,7 @@ A visual editor to check your regular expressions.
 
 To this point, you have acquired the skills to cut a document into pieces and, subsequently, to extract, replace, and count any textual elements. Unless you have interesting data, these tools are neat but of no greater use. Besides some further practicing with RegEx, we turn to relevant data resources in social science. Given you have plain text at your hand, your tools cut through any text data like butter. For other formats, we learn about some remedies in the next session.
 
-[Week 7 Slides](slides/KED2020_07.html)
+[Week 7 Slides](slides/KED2020_07.html){:target="_blank"}
 
 
 
