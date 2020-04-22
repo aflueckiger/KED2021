@@ -43,7 +43,7 @@ German
 
 You need to write three commands to extract the following information using regular expressions and to write the resulting output into a new file:
 
-1. number of words (e.g., 591 words)
+1. number of words (e.g., 591 words, as given in the file, don't count with `wc`)
 2. publishing date (e.g., 26 February 2004)
 3. names of authors (e.g., Von BRUNO VANONI). Try to write a pattern that doesn't match the location (e.g., Bern).
 
@@ -79,7 +79,7 @@ egrep -ho "words" newspaper_articles.txt
 
 In the first task, you have extracted relevant metadata. Thus, these parts can be removed from the document to keep only the actual content of the newspaper articles.
 
-Use the same patterns that you have written in the first task. Pipe multiple `sed` commands to remove the pieces in one go and save the final, cleaned output as a new file. Your command should have the same structure as below:
+Use the same patterns[^spec] that you have written in the first task. Pipe multiple `sed` commands to remove the pieces in one go and save the final, cleaned output as a new file. Your command should have the same structure as below:
 
 ```bash
 # replace the pattern with an empty sequence to remove it
@@ -90,7 +90,7 @@ Feel free to improve the patterns or to write new ones to remove even more parts
 
 Add the commands to your script and write a short comment for each of them.
 
-
+[^spec]: Reuse the pattern only, not the entire command with egrep.
 
 # Test your script
 This task is a simple sanity check. You don't need to include it in your submission.
