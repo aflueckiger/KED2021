@@ -64,6 +64,9 @@ egrep  "^Document" newspaper_articles.txt | wc -l
 # the number of documents should equal the number of matches (e.g. words)
 egrep  "^[0-9,]+ words$" newspaper_articles.txt | wc -l
 
+# check the differences between the original file and the clean file 
+diff -y --suppress-common-lines newspaper_articles.txt clean.txt 
+
 # More poweful engines (like the one in Perl/Python) support negative/positive lookahead and lookbehind operators to make the match context-specific without matching it. 
 # See https://www.rexegg.com/regex-lookarounds.html
 # As the idea is very similar to what you already know, you are well-equipped to catch up on your own. 
