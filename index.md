@@ -38,7 +38,7 @@ We have 12 seminar sessions together.
 | 19 March 2020    | Introduction to the Command-line                   |
 | 26  March 2020   | Basic NLP with Command-line                        |
 | 02 April 2020    | Learning Regular Expressions                       |
-| 09 April 2020    | Data Sources                                       |
+| 09 April 2020    | RegEx + Data Sources                               |
 | 16 April 2020    | *no lecture (Osterpause)*                          |
 | 23 April 2020    | Creating new Data Sets + Ethics                    |
 | 30 April 2020    | Introduction to Python                             |
@@ -140,11 +140,21 @@ A visual editor to check your regular expressions.
 
 
 
-### Week 7: Data Sources
+### Week 7: RegEx + Data Sources
 
-To this point, you have acquired the skills to cut a document into pieces and, subsequently, to extract, replace, and count any textual elements. Unless you have interesting data, these tools are neat but of no greater use. Besides some further practicing with RegEx, we turn to relevant data resources in social science. Given you have plain text at your hand, your tools cut through any text data like butter. For other formats, we learn about some remedies in the next session.
+To this point, you have acquired the skills to cut a document into pieces and, subsequently, to extract, replace, and count any textual elements. Unless you have interesting data, these tools are neat but of no greater use. Besides some further practicing with RegEx, we turn to relevant data resources in social science. Given you have plain text at hand, your tools cut through this data like butter. For other formats, we learn about some remedies in the next session.
 
 [Week 7 Slides](slides/KED2020_07.html){:target="_blank"}
+
+
+
+### Week 8: Creating new Data Sets + Ethics
+
+The world we live in is not made for machines but people -- for better or for worse. While perfectly readable, documents often require a subsequent conversion to allow machine processing. Firstly, digital documents are shipped in various formats and need a conversion to plain text. Secondly, historical documents require an additional step called optical character recognition (OCR) to extract the text from the scanned original. Converting thousands of documents is easy when using the shell.
+
+
+
+[Week 8 Slides](slides/KED2020_08.html){:target="_blank"}
 
 
 
