@@ -49,25 +49,25 @@ We have 12 seminar sessions together.
 
 
 
-## Sessions
+# Sessions
 
-### Week 1: Introduction + Where is the digital revolution?
+## Week 1: Introduction + Where is the digital revolution?
 
 On the one hand, I present the goals and organization of the seminar. On the other hand, we look at some recent applications that give an impression of the fascinating prospects of computers in the area of artificial intelligence (AI) and digital humanities (DH).
 
 [Week 1 Slides](slides/KED2020_01.html){:target="_blank"}
 
-#### Required Reading
+### Required Reading
 
 - Lazer, David, Alex Pentland, Lada Adamic, Sinan Aral, Albert-László Barabási, Devon Brewer, Nicholas Christakis, Noshir Contractor, James Fowler, Myron Gutmann, Tony Jebara, Gary King, Michael Macy, Deb Roy, and Marshall Van Alstyne. 2009. “Computational Social Science.” *Science* 323(5915):721–23.
 
-#### Optional Reading
+### Optional Reading
 
 - Graham, Shawn, Ian Milligan, and Scott Weingart. 2015. *Exploring Big Historical Data: The Historian’s Macroscope*. Open Draft Version. Under contract with Imperial College Press. [online](http://themacroscope.org)
 
 
 
-### Week 2: Text as Data
+## Week 2: Text as Data
 
 Computational text analysis comes with many challenges that are unique due to the fuzziness of natural language. In this session, we learn about its methodological foundation, and we conduct our first computational text analysis to understand how this translates into practice.
 
@@ -75,7 +75,7 @@ Computational text analysis comes with many challenges that are unique due to th
 
 
 
-### Week 3: Setting up your Development Environment
+## Week 3: Setting up your Development Environment
 
 The title says it all. We are getting ready for the practical part of the course: Programming. As the installation of Python and non-standard command-line tools may be tricky, we do this in class rather than doing it as homework. Moreover, I will also introduce some principles to organize research and jargon that help you to find your way in the programmer's brave new word.
 
@@ -83,26 +83,26 @@ The title says it all. We are getting ready for the practical part of the course
 
 [Installation Guide](https://aflueckiger.github.io/KED2020/materials/installation_guide.pdf)
 
-#### Optional: pimp your workflow
+### Optional: pimp your workflow
 
-Healy, Kieran. 2019. “The Plain Person’s Guide to Plain Text Social Science.” [online](https://kieranhealy.org/publications/plain-person-text/).
+- Healy, Kieran. 2019. “The Plain Person’s Guide to Plain Text Social Science.” [online](https://kieranhealy.org/publications/plain-person-text/).
 
 
 
-### Week 4: Introduction to the Command-line
+## Week 4: Introduction to the Command-line
 
 The command-line is a powerful tool at your disposal. It is the working horse for many data wrangling tasks. In this session, you learn the basics of shells and perform many operations by effectively substituting clicks on the screen with commands. Admittedly, it is not overly exciting at this stage, yet it is essential for more sophisticated automation later on.
 
 [Week 4 Slides](slides/KED2020_04.html){:target="_blank"}
 
-#### Recommended Resources
+### Recommended Resources
 
 - [The Programming Historian](https://programminghistorian.org/en/lessons/intro-to-bash)
 - [DigitalOcean](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal)
 
 
 
-### Week 5: Basic NLP with Command-line
+## Week 5: Basic NLP with Command-line
 
 Counting words is the most basic method to look at texts from a computational perspective. The command-line provides tools to quickly sift through a massive text collection to describe the use of words quantitatively. In no time, you can also take a systematic look at the word usage in context. Sounds like a Swiss knife for computational text analysis in social science? It certainly is.
 
@@ -110,7 +110,7 @@ Counting words is the most basic method to look at texts from a computational pe
 
 
 
-### Week 6: Learning Regular Expressions
+## Week 6: Learning Regular Expressions
 
 When working with text data, you spend a lot of time to clean your documents and extract some pieces of information. Doing this by hand is not only a pain but simply impossible when facing many documents. Fortunately, there is a formal language named Regular Expressions that allows writing expressive and generalizable patterns. Using these patterns, you can extract and remove any textual parts systematically without missing a single instance.
 
@@ -118,13 +118,13 @@ When working with text data, you spend a lot of time to clean your documents and
 
 
 
-#### Required Reading
+### Required Reading
 
 - Ben Schmidt. 2019. Regular Expressions. [online](https://github.com/HumanitiesDataAnalysis/HDA19/blob/master/Handouts/01-regex.pdf)
 
 
 
-#### Recommended Resource
+### Recommended Resource
 
 Everything we have touched about text processing in greater detail. 
 
@@ -132,7 +132,7 @@ Everything we have touched about text processing in greater detail.
 
 
 
-#### Online Regular Expression Editor
+### Online Regular Expression Editor
 
 A visual editor to check your regular expressions.
 
@@ -140,7 +140,7 @@ A visual editor to check your regular expressions.
 
 
 
-### Week 7: RegEx + Data Sources
+## Week 7: RegEx + Data Sources
 
 To this point, you have acquired the skills to cut a document into pieces and, subsequently, to extract, replace, and count any textual elements. Unless you have interesting data, these tools are neat but of no greater use. Besides some further practicing with RegEx, we turn to relevant data resources in social science. Given you have plain text at hand, your tools cut through this data like butter. For other formats, we learn about some remedies in the next session.
 
@@ -148,13 +148,21 @@ To this point, you have acquired the skills to cut a document into pieces and, s
 
 
 
-### Week 8: Creating new Data Sets + Ethics
+## Week 8: Creating new Data Sets + Ethics
 
 The world we live in is not made for machines but people -- for better or for worse. While perfectly readable, documents often require a subsequent conversion to allow machine processing. Firstly, digital documents are shipped in various formats and need a conversion to plain text. Secondly, historical documents require an additional step called optical character recognition (OCR) to extract the text from the scanned original. Converting thousands of documents is easy when using the shell.
 
 
 
 [Week 8 Slides](slides/KED2020_08.html){:target="_blank"}
+
+
+
+## Week 9: Introduction to Python
+
+It may come as a surprise that we start with Python in the ninth session only. As the folks say, Python is among the coolest programming languages, relatively easy to learn, and provides excellent NLP packages so that you don't have to implement everything yourself. All true as long as you have your data ready. In this session, we begin with an introduction to the basic syntax of Python. Starting with this dry subject is necessary as it allows you to modify the more sophisticated NLP analyses to your needs.
+
+[Week 9 Slides](slides/KED2020_09.html){:target="_blank"}
 
 
 
