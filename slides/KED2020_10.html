@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Alex Flückiger">
+  <meta name="dcterms.date" content="2020-05-07">
+  <title>The ABC of computational Text Analysis</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://revealjs.com/css/reset.css">
+  <link rel="stylesheet" href="https://revealjs.com/css/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://revealjs.com/css/theme/night.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://revealjs.com/css/print/pdf.css' : 'https://revealjs.com/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://revealjs.com/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <style type='text/css'>
+  /*
+
+  ## green {data-background=#4d7e65}
+
+  ## blue {data-background=#3c70b5}
+
+  ## red {data-background=#b5533c}
+
+  ## black {data-background=#111}
+
+   */
+
+  .reveal {
+      font-size: 170%; */
+  }
+
+  .reveal .title {
+      font-size: 260%; */
+  }
+
+  .subtitle{
+      font-size: 200%;
+      color: #e7ad52;
+      padding-top: 30px;
+      padding-bottom: 60px;
+
+  }
+
+  .reveal figcaption{
+      font-size: 80%;
+  }
+
+  span.citation{
+      font-size: 60%;
+  }
+
+  p.author,
+  p.date{
+      font-size: 90%;
+      margin-top: -20px;
+  }
+
+  .reveal h2 {
+      margin-bottom: +50px;
+  }
+
+  .align-left {
+      text-align: left;
+  }
+
+  .align-left-padding {
+      text-align: left;
+      padding-left: 5%;
+      margin-left: 15%;
+      border-left: 8px solid #ffffff;
+  }
+
+
+  .sourceCode{
+      font-size: 135%;
+  }
+  code{
+      background: #f7eeda; /* #484a42  #272822 */
+      color: #1c1b1b;
+  }
+
+  .reveal table {
+      font-size: 80%;
+  }
+
+
+  ol li {
+    line-height:2em;
+  }
+
+  ul li {
+    line-height:2em;
+  }
+
+  ul li li {
+   line-height:1.3em;
+   list-style-type: None;
+   font-style: italic;
+   font-size: 90%;
+   font-family: Georgia;
+  }
+
+  ol li li {
+   line-height:1.3em;
+   list-style-type: None;
+   font-style: italic;
+   font-size: 90%;
+   font-family: Georgia;
+  }
+
+
+  hr {
+      color: white;
+  }
+
+  /* .reveal h1,
+  .reveal h2,
+  .reveal h3,
+  .reveal h4,
+  .reveal h5,
+  .reveal h6 {
+      word-wrap: normal;
+      -webkit-hyphens: manual;
+      -moz-hyphens: manual;
+      hyphens: manual;
+  } */
+
+  div.references{
+      font-size: 75%
+  }
+
+  .reveal .slide-number {
+    font-size: 18pt;
+    color: #ffffff; }
+
+  .emoji {
+      font-size: 150%
+  }
+
+  .reveal blockquote{
+      /*
+      border-left: 5px solid #428bca;
+      color: #428bca;
+      border-left: 4px solid #428bca;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      border-right: 4px solid #428bca;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+
+
+      background-color: #E6E6E6;
+      color: #000000;
+       background-color: #d2f8d2; */
+  }
+
+  .reveal blockquote{
+      position: static;
+      text-align: justify;
+      border-style: none;
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
+      background: inherit;
+      font-family: Georgia;
+      font-size: 1.2em;
+      width:90%;
+      margin:0px auto;
+      padding: 1em;
+      font-style:normal;
+  }
+
+
+
+
+  .reveal blockquote cite{
+      text-align: right;
+      font-style: normal;
+      font-size: 0.75em;
+      font-weight: bold;
+      margin-top:1em;
+  }
+
+
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">The ABC of computational Text Analysis</h1>
+  <p class="subtitle">10: NLP with Python</p>
+  <p class="author">Alex Flückiger</p>
+  <p class="date">7 May 2020</p>
+</section>
+
+<section id="recap-last-lecture" class="slide level2">
+<h2>Recap last Lecture</h2>
+<ul>
+<li>introduce Python <span class="emoji" data-emoji="snake">🐍</span>
+<ul>
+<li>editor</li>
+<li>syntax</li>
+</ul></li>
+</ul>
+<aside class="notes">
+
+</aside>
+</section>
+<section id="outline" class="slide level2">
+<h2>Outline</h2>
+<ul>
+<li>NLP, getting serious! <span class="emoji" data-emoji="innocent">😇</span></li>
+<li>interactive coding
+<ul>
+<li>interrupt, ask, complement</li>
+</ul></li>
+<li>mini-project</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Fragen sehr wichtig, da gewaltiger Sprung zu letzter Session</li>
+<li>Stellschrauben kennen lernen, Gefühl für die Sprache entwickeln
+<ul>
+<li>Details vorerst unwichtig</li>
+</ul></li>
+</ul>
+</aside>
+<!-- https://towardsdatascience.com/building-a-text-normalizer-using-nltk-ft-pos-tagger-e713e611db8 -->
+</section>
+<section>
+<section id="primer-on-nlp" class="title-slide slide level1" data-background="images/words.jpg">
+<h1 data-background="images/words.jpg"><span style="color:#ffffff">Primer on NLP</span></h1>
+
+</section>
+<section id="what-is-a-word" class="slide level2">
+<h2>What is a Word?</h2>
+<ul>
+<li>word ~ segments between whitespace</li>
+<li>yet, there are …
+<ul>
+<li>contractions: <code>U.S.</code>, <code>don't</code></li>
+<li>collocations: <code>New York</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="token" class="slide level2">
+<h2>Token</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>token ~ computational unit
+<ul>
+<li>representation of words</li>
+</ul></li>
+<li>lemma ~ base form of a word
+<ul>
+<li>texts → text</li>
+<li>goes → go</li>
+</ul></li>
+<li>stop words ~ functional words
+<ul>
+<li>lack meaning</li>
+<li>the, a, on, and</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<figure>
+<img data-src="images/tokenization.jpeg" alt="" /><figcaption>tokenization (<a href="https://medium.com/data-science-in-your-pocket/tokenization-algorithms-in-natural-language-processing-nlp-1fceab8454af">Medium</a>)</figcaption>
+</figure>
+</div>
+</div>
+<p><br></p>
+<p>Tokenize this: <code>Let's tokenize! Isn't this easy?</code> <span class="emoji" data-emoji="nerd_face">🤓</span></p>
+<aside class="notes">
+<ul>
+<li>Text wird in seine Teile gesplittet</li>
+<li>Lemma ~ Form in Duden</li>
+</ul>
+</aside>
+</section>
+<section id="nlp-processing-steps" class="slide level2">
+<h2>NLP Processing Steps</h2>
+<p><img data-src="images/spacy_parse.png" style="height:5.5cm" /></p>
+<ol type="1">
+<li>tokenizing
+<ul>
+<li>segmenting text into words, punctuations etc.</li>
+</ul></li>
+<li>tagging part-of-speech (POS)
+<ul>
+<li>assigning word types (e.g. verb, noun)</li>
+</ul></li>
+<li>parsing
+<ul>
+<li>describing syntactic relations</li>
+</ul></li>
+</ol>
+<aside class="notes">
+<ul>
+<li>Abfolge von Prozessierungsschritten</li>
+<li>alles sprachabhängig</li>
+<li>Tagging: ca. 20-30 POS tags</li>
+<li>Parsing
+<ul>
+<li>Verb ist Head von Satz</li>
+<li>Subjekt-Verb-Objekt</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="how-does-the-computer-know" class="slide level2">
+<h2>How does the computer “know”?</h2>
+<ul>
+<li>using language specific models</li>
+<li>supervised machine learning</li>
+<li>trained on human-annotated data</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>die meisten haben ihr Schulwissen wieder vergessen, wieso kann das der Computer</li>
+<li>Intuition einfach, genaue technische Funktionsweise egal
+<ul>
+<li>Genauigkeit wichtig, aber noch zu advanced</li>
+<li>best-practice</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="representation-of-corpus" class="slide level2">
+<h2>Representation of Corpus</h2>
+<h4 id="documen-term-matrix">documen term matrix</h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Doc 1: <code>NLP is great. I love NLP.</code></li>
+<li>Doc 2: <code>I want to learn more on NLP.</code></li>
+<li>Doc 3: <code>NLP, NLP, NLP.</code></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th><code>NLP</code></th>
+<th><code>I</code></th>
+<th><code>is</code></th>
+<th><em>term</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Doc 1</strong></td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td><strong>Doc 2</strong></td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>…</td>
+</tr>
+<tr class="odd">
+<td><strong>Doc 3</strong></td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td><strong><em>Doc ID</em></strong></td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td><em>term frequency</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="mini-project" class="slide level2">
+<h2>Mini-Project</h2>
+<ul>
+<li>relative frequency <span class="emoji" data-emoji="thumbsup">👍</span>, absolute frequency <span class="emoji" data-emoji="thumbsdown">👎</span></li>
+<li>multiple documents</li>
+<li>compare …
+<ul>
+<li>historically</li>
+<li>across actors</li>
+</ul></li>
+<li>write script</li>
+</ul>
+<p>:::</p>
+<ul>
+<li>überlegen, was rauskriegen</li>
+<li>script ist gemachte arbeit zur wiederverwendung</li>
+</ul>
+<p>:::</p>
+</section>
+<section id="optional-seminar-paper" class="slide level2">
+<h2>Optional Seminar Paper</h2>
+<ul>
+<li>writing a seminar paper (4 ECTS)</li>
+<li>get in touch to discuss your idea</li>
+</ul>
+</section>
+<section id="outlook-nlp" class="slide level2">
+<h2>Outlook NLP</h2>
+<ul>
+<li>explore corpus differences by political party</li>
+<li>term frequency over time</li>
+<li>data
+<ul>
+<li>party programmes</li>
+<li>1 August speeches by Federal Councillors</li>
+</ul></li>
+</ul>
+</section>
+<section id="do-nlp" class="slide level2">
+<h2>Do NLP</h2>
+<p><a href="https://github.com/aflueckiger/KED2020/tree/master/scripts/KED2020_10.ipynb">Check out the Python code</a></p>
+</section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+<h4 id="tutorials-on-spacy">tutorials on spaCy</h4>
+<ul>
+<li><p><a href="https://spacy.io/usage/spacy-101">Official spaCy 101</a></p></li>
+<li><p><a href="https://www.kaggle.com/nirant/hitchhiker-s-guide-to-nlp-in-spacy">Hitchhiker’s Guide to NLP in spaCy</a></p></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://revealjs.com/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // see https://github.com/hakimel/reveal.js/#navigation-mode
+        navigationMode: 'linear',
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://revealjs.com/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://revealjs.com/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://revealjs.com/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
