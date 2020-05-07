@@ -172,7 +172,10 @@ Python is the language of choice when it comes to serious NLP. Have you ever won
 
 [Week 10 Slides](slides/KED2020_10.html){:target="_blank"}
 
-[Week 10 Python Code](scripts/KED2020_10.ipynb){:target="_blank"}
+[Week 10 Python Code](https://github.com/aflueckiger/KED2020/blob/master/scripts/KED2020_10.ipynb){:target="_blank"}
+
+Run the code in your browser: [![Binder](https://mybinder.org/badge_logo.svg)](https://hub.gke.mybinder.org/user/aflueckiger-ked2020-2xoon32a/notebooks/scripts/KED2020_10.ipynb)
+
 
 # Exercises
 
