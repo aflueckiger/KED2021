@@ -1,0 +1,5 @@
+pandas
+spacy
+textacy
+scattertext
+plotnine
