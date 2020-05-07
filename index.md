@@ -166,6 +166,14 @@ It may come as a surprise that we start with Python in the ninth session only. A
 
 
 
+## Week 10: NLP with Python
+
+Python is the language of choice when it comes to serious NLP. Have you ever wondered how the frequency of terms evolves over the years? Or how the language differs between two groups of documents whereby the groups may be formed by any metadata (person, organization, gender etc.)? Exploring is most effective in an interactive and visual mode - so be it. Among some basic statistics, this is the serious stuff where we finally arrive in our journey. Moreover, you will learn the jargon of NLP to don't get lost in the forest of yet unknown terms.
+
+[Week 10 Slides](slides/KED2020_10.html){:target="_blank"}
+
+[Week 10 Python Code](scripts/KED2020_10.ipynb){:target="_blank"}
+
 # Exercises
 
 You need to submit three exercises to complete the seminar successfully. The point of the exercises is not to make it hard to pass but rather to foster the engagement with the covered material of this class. As you like, you may prefer to work in teams to discuss different approaches. Nonetheless, each student has to submit his own solution. 
@@ -185,9 +193,9 @@ Your submission is a single script, meaning that is readily executable, and is n
 - Bash scripts: `SURNAME_KED2020_ex_NR.sh`
 - Python scripts: `SURNAME_KED2020_ex_NR.py` 
 
+The script follows the order of the tasks in the exercise. In addition to the commands you have used to come up with a solution, you also provide a short, yet concise explanation of the actual solution as a comment  (lines starting with `#`). Please use the following examples as template:
 
-
-The script follows the order of the tasks in the exercise. In addition to the commands you have used to come up with a solution, you also provide a short, yet concise explanation of the actual solution as a comment  (lines starting with `#`). Please use the following example as template:
+Bash
 
 ```bash
 #!/bin/bash
@@ -210,6 +218,25 @@ echo -n "test" | wc
 
 ...
 ```
+
+Python
+
+```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+##################################################
+### Exercise 1
+### Seminar: The ABC of computational Text Analysis
+### University of Lucerne
+##################################################
+
+### task 1a)
+print("Hello, World")
+# outputs the provided string to the prompt
+```
+
+
 
 # Mini-Project
 
