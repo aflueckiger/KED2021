@@ -2,9 +2,7 @@
 # coding: utf-8
 
 """
-Seminar KED2020, week 10: NLP with Python
-by Alex Flückiger
-
+NLP with Python
 
 Have you ever wondered how the frequency of terms evolves over the years?
 Or how the language differs between two groups of documents whereby
@@ -12,6 +10,12 @@ the groups may be formed by any metadata (person, organization, gender etc.)?
 
 Exploring is most effective in an interactive and visual mode - so be it.
 Among some basic statistics, this is the serious stuff where we finally arrive in our journey.
+
+The ABC of computational Text Analysis
+Spring Semester 2020
+University of Lucerne
+
+Author: Alex Flueckiger
 """
 
 import scattertext as st
