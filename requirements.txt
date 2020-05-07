@@ -3,3 +3,5 @@ spacy
 textacy
 scattertext
 plotnine
+en_core_web_sm
+de_core_news_sm
