@@ -176,9 +176,23 @@ Python is the language of choice when it comes to serious NLP. Have you ever won
 
 [Week 10 Slides](slides/KED2020_10.html){:target="_blank"}
 
+### Code
+
 [Week 10 Python Code](https://github.com/aflueckiger/KED2020/blob/master/scripts/KED2020_10.ipynb){:target="_blank"}
 
  [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aflueckiger/KED2020/master) to run the code in your browser (path `scripts/KED2020_10.ipynb`)
+
+### Explore interactively:  1 August Speeches by Swiss Federal Councilors
+
+As a matter of tradition, Swiss Federal Councilors give an official speech on Swiss National Day. Simon Schmid (journalist Republik), with the collaboration of Prof. Andreas Kley (Faculty of Law, UZH), collected many of these speeches and kindly shared the resulting dataset with me. The collection comprises 166 speeches, which is a multiple of the publicly available [here](https://www.admin.ch/gov/de/start/dokumentation/reden/ansprachen-zum-nationalfeiertag.html).
+
+The interactive visualization linked below shows how the language differs between speakers of *Social Democratic Party of Switzerland* (SP) and speakers of other parties. The top right corner shows terms that have been frequently used by all parties, while the top left and the lower right corner reveal words that have been used primarily by the members of the SP and correspondingly by the center-right parties. 
+
+You can search for the terms of your interest. Moreover, you may click on the points in the plot to show the context of the corresponding words within speeches. These functions allow for a quick investigation of the corpus along the dimensions of Swiss parties.
+
+[Explore interactively](https://github.com/aflueckiger/KED2020/blob/master/analysis/viz_party_differences.html){:target="_blank"} (it takes a few seconds to load)
+
+
 
 
 # Exercises
