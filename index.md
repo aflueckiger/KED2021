@@ -190,7 +190,7 @@ The interactive visualization linked below shows how the language differs betwee
 
 You can search for the terms of your interest. Moreover, you may click on the points in the plot to show the context of the corresponding words within speeches. These functions allow for a quick investigation of the corpus along the dimensions of Swiss parties.
 
-[Explore interactively](https://github.com/aflueckiger/KED2020/blob/master/analysis/viz_party_differences.html){:target="_blank"} (it takes a few seconds to load)
+[Explore interactively](analysis/viz_party_differences.html){:target="_blank"} (it takes a few seconds to load)
 
 
 
