@@ -34,6 +34,7 @@ You aim to compare the vocabulary across two groups of documents, specifically, 
 
 1. Make sure that your local copy of the Github repository `KED2020` is up-to-date with `git pull`. You find the dataset as `.csv ` file here: `materials/dataset_speeches_federal_council_2019.csv`
 2. Open the editor *Spyder* and set the working directory to your local copy of the repository (or you need to change the file path): `YOUR_PATH/KED2020/`
+   You can use `pwd` in the command line to get the correct path when you are already in the folder of `KED2020`.
 3. Import the necessary modules in your script.
 4. Create a corpus object with the function provided on the next page. You can copy it from `/scripts/KED2020_10.py` rather than from this PDF.
 5. Create two subcorpora from the main corpus by filtering according to the following criteria (meta attributes `Sprache`, `Jahr`)[^criteria]
