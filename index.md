@@ -182,6 +182,20 @@ Python is the language of choice when it comes to serious NLP. Have you ever won
 
  [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aflueckiger/KED2020/master) to run the code in your browser (path `scripts/KED2020_10.ipynb`)
 
+
+
+## Week 11: NLP with Python II + Working Session
+
+In today's session, we continue our deep dive into NLP with Python. It is the last piece in our puzzle. During this course, you have learned about the entire workflow, from assembling datasets of documents to analyze their content and visualize your findings. As soon as you have a structured text collection along with basic meta data (e.g., publication date), you can take numerous perspectives to look at your data. At this stage, it is time for the kick-off of the mini-projects allowing you to work with your data of interest. 
+
+[Week 11 Slides](slides/KED2020_11.html){:target="_blank"}
+
+### Code
+
+[Week 11 Python Code](https://github.com/aflueckiger/KED2020/blob/master/scripts/KED2020_10.ipynb){:target="_blank"}
+
+ [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aflueckiger/KED2020/master) to run the code in your browser (path `scripts/KED2020_10.ipynb`)
+
 ### Explore interactively:  1 August Speeches by Swiss Federal Councilors
 
 As a matter of tradition, Swiss Federal Councilors give an official speech on Swiss National Day. Simon Schmid (journalist Republik), with the collaboration of Prof. Andreas Kley (Faculty of Law, UZH), collected many of these speeches and kindly shared the resulting dataset with me. The collection comprises 166 speeches, which is a multiple of the publicly available [here](https://www.admin.ch/gov/de/start/dokumentation/reden/ansprachen-zum-nationalfeiertag.html).
