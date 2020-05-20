@@ -9,8 +9,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="https://revealjs.com/css/reset.css">
-  <link rel="stylesheet" href="https://revealjs.com/css/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -81,17 +81,17 @@
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="https://revealjs.com/css/theme/night.css" id="theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/night.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://revealjs.com/css/print/pdf.css' : 'https://revealjs.com/css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css' : 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
-  <script src="https://revealjs.com/lib/js/html5shiv.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
   <style type='text/css'>
   /*
@@ -101,6 +101,8 @@
   ## blue {data-background=#3c70b5}
 
   ## red {data-background=#b5533c}
+
+  ## black {data-background=#111}
 
    */
 
@@ -172,13 +174,21 @@
   }
 
   ul li li {
-
    line-height:1.3em;
    list-style-type: None;
    font-style: italic;
    font-size: 90%;
    font-family: Georgia;
   }
+
+  ol li li {
+   line-height:1.3em;
+   list-style-type: None;
+   font-style: italic;
+   font-size: 90%;
+   font-family: Georgia;
+  }
+
 
   hr {
       color: white;
@@ -331,7 +341,7 @@
 </section>
 <section id="how-to-learn-programming" class="slide level2">
 <h2>How to learn programming?</h2>
-<h4 id="three-inconvient-truths">three inconvient truths <span class="emoji" data-emoji="cold_sweat">😰</span></h4>
+<h4 id="three-inconvenient-truths">three inconvenient truths <span class="emoji" data-emoji="cold_sweat">😰</span></h4>
 <ul>
 <li>programming cannot be learnt in a course
 <ul>
@@ -389,7 +399,8 @@
 </div>
 <aside class="notes">
 <ul>
-<li>demonstration
+<li><p>Mac User: spyder über Anaconda Navigator öffnen, da nicht über spotlight verfügbar</p></li>
+<li><p>demonstration</p>
 <ul>
 <li>script</li>
 <li>variable explorer</li>
@@ -637,11 +648,11 @@
 <div class="column" style="width:50%;">
 <p><span class="emoji" data-emoji="white_check_mark">✅</span></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="cf">if</span> <span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">2</span>:</span>
-<span id="cb7-2"><a href="#cb7-2"></a>    <span class="bu">print</span>(<span class="st">&#39;5 is greater than 2!&#39;</span>)</span></code></pre></div>
+<span id="cb7-2"><a href="#cb7-2"></a>    <span class="bu">print</span>(<span class="st">&#39;5 is greater than 2&#39;</span>)</span></code></pre></div>
 </div><div class="column" style="width:50%;">
 <p><span class="emoji" data-emoji="x">❌</span></p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="cf">if</span> <span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">2</span>:</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="bu">print</span>(<span class="st">&#39;5 is greater than 2!&#39;</span>)</span></code></pre></div>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="bu">print</span>(<span class="st">&#39;5 is greater than 2&#39;</span>)</span></code></pre></div>
 </div>
 </div>
 <aside class="notes">
@@ -834,7 +845,7 @@
     </div>
   </div>
 
-  <script src="https://revealjs.com/js/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.js"></script>
 
   <script>
 
@@ -850,9 +861,9 @@
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: 'https://revealjs.com/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'https://revealjs.com/plugin/zoom-js/zoom.js', async: true },
-          { src: 'https://revealjs.com/plugin/notes/notes.js', async: true }
+          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>

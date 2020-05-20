@@ -9,8 +9,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="https://revealjs.com/css/reset.css">
-  <link rel="stylesheet" href="https://revealjs.com/css/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -81,28 +81,28 @@
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="https://revealjs.com/css/theme/night.css" id="theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/night.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://revealjs.com/css/print/pdf.css' : 'https://revealjs.com/css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css' : 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
-  <script src="https://revealjs.com/lib/js/html5shiv.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
   <style type='text/css'>
   /*
-  #4d7e65 green
-  #b5533c red
 
   ## green {data-background=#4d7e65}
 
   ## blue {data-background=#3c70b5}
 
   ## red {data-background=#b5533c}
+
+  ## black {data-background=#111}
 
    */
 
@@ -174,13 +174,21 @@
   }
 
   ul li li {
-
    line-height:1.3em;
    list-style-type: None;
    font-style: italic;
    font-size: 90%;
    font-family: Georgia;
   }
+
+  ol li li {
+   line-height:1.3em;
+   list-style-type: None;
+   font-style: italic;
+   font-size: 90%;
+   font-family: Georgia;
+  }
+
 
   hr {
       color: white;
@@ -310,7 +318,7 @@
 </section>
 <section id="feedback-assignment-1" class="slide level2">
 <h2>Feedback Assignment #1</h2>
-<p><a href="https://github.com/aflueckiger/KED2020/blob/master/exercises/exercise_1/flueckiger_KED2020_ex_1_solutions.sh">Example solution</a></p>
+<p><a href="https://github.com/aflueckiger/KED2020/blob/master/exercises/exercise_1/flueckiger_KED2020_ex_1_solutions.sh">example solution</a></p>
 <div class="columns">
 <div class="column">
 <p><span class="emoji" data-emoji="thumbsup">👍</span></p>
@@ -639,7 +647,7 @@
 <span id="cb9-2"><a href="#cb9-2"></a><span class="bu">echo</span> <span class="st">&quot;Lastname Firstname&quot;</span> <span class="kw">|</span> <span class="fu">sed</span> -E <span class="st">&quot;s/(.*) (.*)/\2 \1/&quot;</span></span>
 <span id="cb9-3"><a href="#cb9-3"></a></span>
 <span id="cb9-4"><a href="#cb9-4"></a><span class="co"># matching also supports grouping</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a><span class="co"># match any two digit pair</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="co"># match any pair of digits (two identical digits)</span></span>
 <span id="cb9-6"><a href="#cb9-6"></a><span class="fu">egrep</span> -r <span class="st">&quot;([0-9])\1([0-9])\2&quot;</span></span></code></pre></div>
 <aside class="notes">
 <ul>
@@ -710,7 +718,7 @@
     </div>
   </div>
 
-  <script src="https://revealjs.com/js/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.js"></script>
 
   <script>
 
@@ -726,9 +734,9 @@
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: 'https://revealjs.com/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'https://revealjs.com/plugin/zoom-js/zoom.js', async: true },
-          { src: 'https://revealjs.com/plugin/notes/notes.js', async: true }
+          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>

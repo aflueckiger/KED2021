@@ -9,8 +9,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="https://revealjs.com/css/reset.css">
-  <link rel="stylesheet" href="https://revealjs.com/css/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -81,28 +81,28 @@
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="https://revealjs.com/css/theme/night.css" id="theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/night.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://revealjs.com/css/print/pdf.css' : 'https://revealjs.com/css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css' : 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
-  <script src="https://revealjs.com/lib/js/html5shiv.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
   <style type='text/css'>
   /*
-  #4d7e65 green
-  #b5533c red
 
   ## green {data-background=#4d7e65}
 
   ## blue {data-background=#3c70b5}
 
   ## red {data-background=#b5533c}
+
+  ## black {data-background=#111}
 
    */
 
@@ -174,13 +174,21 @@
   }
 
   ul li li {
-
    line-height:1.3em;
    list-style-type: None;
    font-style: italic;
    font-size: 90%;
    font-family: Georgia;
   }
+
+  ol li li {
+   line-height:1.3em;
+   list-style-type: None;
+   font-style: italic;
+   font-size: 90%;
+   font-family: Georgia;
+  }
+
 
   hr {
       color: white;
@@ -484,13 +492,16 @@
 <span id="cb3-2"><a href="#cb3-2"></a><span class="ex">convert</span> -density 300 -depth 8 -strip -background white -alpha off \</span>
 <span id="cb3-3"><a href="#cb3-3"></a>file_in.pdf temp.tiff</span>
 <span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="co"># run OCR for German (&quot;eng&quot; for English, &quot;fra&quot; for French)</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="ex">tesseract</span> -l deu temp.tiff file_out</span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="bu">echo</span> test \</span>
+<span id="cb3-6"><a href="#cb3-6"></a>t</span>
 <span id="cb3-7"><a href="#cb3-7"></a></span>
-<span id="cb3-8"><a href="#cb3-8"></a></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="co">### Install first with</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a><span class="ex">brew</span> install imagemagick            <span class="co"># macOS</span></span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="fu">sudo</span> apt install imagemagick-6.q16  <span class="co"># Ubuntu</span></span></code></pre></div>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="co"># run OCR for German (&quot;eng&quot; for English, &quot;fra&quot; for French)</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="ex">tesseract</span> -l deu temp.tiff file_out</span>
+<span id="cb3-10"><a href="#cb3-10"></a></span>
+<span id="cb3-11"><a href="#cb3-11"></a></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="co">### Install first with</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="ex">brew</span> install imagemagick            <span class="co"># macOS</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="fu">sudo</span> apt install imagemagick-6.q16  <span class="co"># Ubuntu</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Zwei Schritte: Bildumwandlung + OCR</li>
@@ -509,13 +520,14 @@
 <h2 data-background="#4d7e65">#LifeHack: Make a PDF searchable</h2>
 <h4 id="use-case-scanned-book-chapters">use case: scanned book chapters</h4>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># output searchable pdf instead of txt</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="ex">convert</span> -density 300 -depth 8 -strip -background white -alpha off \</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="ex">convert</span> -density 300 -depth 8 -strip -background white -alpha off -compress group4 \</span>
 <span id="cb4-3"><a href="#cb4-3"></a>file_in.pdf temp.tiff</span>
 <span id="cb4-4"><a href="#cb4-4"></a><span class="ex">tesseract</span> -l deu temp.tiff file_out pdf</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Output als PDF statt Text</li>
 <li>für Suchen/Zitate rauskopieren</li>
+<li>convert hier mit Kompression, da PDFs zu gross werden ansonsten</li>
 </ul>
 </aside>
 </section>
@@ -754,7 +766,7 @@
     </div>
   </div>
 
-  <script src="https://revealjs.com/js/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.js"></script>
 
   <script>
 
@@ -770,9 +782,9 @@
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: 'https://revealjs.com/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'https://revealjs.com/plugin/zoom-js/zoom.js', async: true },
-          { src: 'https://revealjs.com/plugin/notes/notes.js', async: true }
+          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
