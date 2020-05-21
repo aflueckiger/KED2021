@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Alex Flückiger">
+  <meta name="dcterms.date" content="2020-04-23">
+  <title>The ABC of computational Text Analysis</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/night.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css' : 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <style type='text/css'>
+  /*
+
+  ## green {data-background=#4d7e65}
+
+  ## blue {data-background=#3c70b5}
+
+  ## red {data-background=#b5533c}
+
+  ## black {data-background=#111}
+
+   */
+
+  .reveal {
+      font-size: 170%; */
+  }
+
+  .reveal .title {
+      font-size: 260%; */
+  }
+
+  .subtitle{
+      font-size: 200%;
+      color: #e7ad52;
+      padding-top: 30px;
+      padding-bottom: 60px;
+
+  }
+
+  .reveal figcaption{
+      font-size: 80%;
+  }
+
+  span.citation{
+      font-size: 60%;
+  }
+
+  p.author,
+  p.date{
+      font-size: 90%;
+      margin-top: -20px;
+  }
+
+  .reveal h2 {
+      margin-bottom: +50px;
+  }
+
+  .align-left {
+      text-align: left;
+  }
+
+  .align-left-padding {
+      text-align: left;
+      padding-left: 5%;
+      margin-left: 15%;
+      border-left: 8px solid #ffffff;
+  }
+
+
+  .sourceCode{
+      font-size: 135%;
+  }
+  code{
+      background: #f7eeda; /* #484a42  #272822 */
+      color: #1c1b1b;
+  }
+
+  .reveal table {
+      font-size: 80%;
+  }
+
+
+  ol li {
+    line-height:2em;
+  }
+
+  ul li {
+    line-height:2em;
+  }
+
+  ul li li {
+   line-height:1.3em;
+   list-style-type: None;
+   font-style: italic;
+   font-size: 90%;
+   font-family: Georgia;
+  }
+
+  ol li li {
+   line-height:1.3em;
+   list-style-type: None;
+   font-style: italic;
+   font-size: 90%;
+   font-family: Georgia;
+  }
+
+
+  hr {
+      color: white;
+  }
+
+  /* .reveal h1,
+  .reveal h2,
+  .reveal h3,
+  .reveal h4,
+  .reveal h5,
+  .reveal h6 {
+      word-wrap: normal;
+      -webkit-hyphens: manual;
+      -moz-hyphens: manual;
+      hyphens: manual;
+  } */
+
+  div.references{
+      font-size: 75%
+  }
+
+  .reveal .slide-number {
+    font-size: 18pt;
+    color: #ffffff; }
+
+  .emoji {
+      font-size: 150%
+  }
+
+  .reveal blockquote{
+      /*
+      border-left: 5px solid #428bca;
+      color: #428bca;
+      border-left: 4px solid #428bca;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      border-right: 4px solid #428bca;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+
+
+      background-color: #E6E6E6;
+      color: #000000;
+       background-color: #d2f8d2; */
+  }
+
+  .reveal blockquote{
+      position: static;
+      text-align: justify;
+      border-style: none;
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
+      background: inherit;
+      font-family: Georgia;
+      font-size: 1.2em;
+      width:90%;
+      margin:0px auto;
+      padding: 1em;
+      font-style:normal;
+  }
+
+
+
+
+  .reveal blockquote cite{
+      text-align: right;
+      font-style: normal;
+      font-size: 0.75em;
+      font-weight: bold;
+      margin-top:1em;
+  }
+
+
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">The ABC of computational Text Analysis</h1>
+  <p class="subtitle">08: Create your own Data Sets + Ethics</p>
+  <p class="author">Alex Flückiger</p>
+  <p class="date">23 April 2020</p>
+</section>
+
+<section id="recap-last-lecture" class="slide level2">
+<h2>Recap last Lecture</h2>
+<ul>
+<li>cleaning with regular expression</li>
+<li>finding data sources</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Osterpause</li>
+<li>Regex primär fürs säubern/preprocessing hilfreich</li>
+<li>interessante Quellen für Sozialwissenschaften</li>
+</ul>
+</aside>
+</section>
+<section id="outline" class="slide level2">
+<h2>Outline</h2>
+<ul>
+<li>feedback assignment #2</li>
+<li>use your texts as data <span class="emoji" data-emoji="white_check_mark">✅</span>
+<ul>
+<li>anything</li>
+<li>from anytime</li>
+<li>from anywhere</li>
+</ul></li>
+<li>care about ethics <span class="emoji" data-emoji="see_no_evil">🙈</span><span class="emoji" data-emoji="hear_no_evil">🙉</span><span class="emoji" data-emoji="speak_no_evil">🙊</span></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>dreiteilige Sitzung</li>
+<li>nach heute gerüstet um mit (fast) allen Textdaten zu arbeiten
+<ul>
+<li>meistens Dokumente nicht in maschinenlesbarer Form</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section>
+<section id="assignment-2" class="title-slide slide level1">
+<h1>Assignment #2</h1>
+
+</section>
+<section id="feedback-assignment-2" class="slide level2">
+<h2>Feedback Assignment #2</h2>
+<p><a href="https://github.com/aflueckiger/KED2020/blob/master/exercises/exercise_2/flueckiger_KED2020_ex_2_solutions.sh">example solution</a></p>
+<ul>
+<li>make patterns more general
+<ul>
+<li>date: <code>DD* Month DDDD</code></li>
+</ul></li>
+<li>keep it simple
+<ul>
+<li>name of month ~ any word ~ <code>\w+</code></li>
+</ul></li>
+<li>avoid false positives with positional information
+<ul>
+<li>start of line: <code>^</code></li>
+</ul></li>
+<li>names are hard to extract
+<ul>
+<li>variation + inconsistency</li>
+</ul></li>
+</ul>
+<p><br></p>
+<p><span class="emoji" data-emoji="nerd_face">🤓</span> check the count of matches</p>
+<aside class="notes">
+<ul>
+<li>posititv: gut gelöst, weniger Zeit gebraucht als Übung 1</li>
+<li>Ziel Patterns: allgemeine Struktur/Eigenschaften beschreiben</li>
+<li>tradeoff: generalisierung vs. spezifizität
+<ul>
+<li>so generell wie möglich, so spezifisch wie nötig</li>
+</ul></li>
+<li>Checks
+<ul>
+<li>Zählen der matches, wenn Anzahl Metadaten bekannt</li>
+<li>Differenz File vor und nach Bereinigung</li>
+</ul></li>
+<li>Fragen</li>
+</ul>
+</aside>
+</section></section>
+<section>
+<section id="converting-documents" class="title-slide slide level1">
+<h1>Converting Documents</h1>
+
+</section>
+<section id="section" class="slide level2" data-background="../images/file_types.jpg">
+<h2 data-background="../images/file_types.jpg"></h2>
+<!-- https://www.studio-24-7.com/file-formats-and-their-uses-explained/ -->
+<aside class="notes">
+<ul>
+<li>extrem viele File-Typen</li>
+<li>mühsam, aber es gibt einfache Tools für Umwandlung</li>
+</ul>
+</aside>
+</section>
+<section id="a-world-for-humans" class="slide level2">
+<h2>A world for humans …</h2>
+<p><strong><em>news, press releases, reports from organizations</em></strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>digital documents <br><code>.pdf</code>, <code>.docx</code>, <code>.html</code><br></p>
+<p><span class="emoji" data-emoji="arrow_down">⬇️</span></p>
+<p><strong>convert to <code>.txt</code></strong></p>
+</div><div class="column" style="width:50%;">
+<p>scans of (old) documents <br><code>.pdf</code>, <code>.jpg</code>, <code>.png</code><br></p>
+<p><span class="emoji" data-emoji="arrow_down">⬇️</span></p>
+<p><strong>Optical Character Recognition (OCR) </strong></p>
+</div>
+</div>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span></p>
+<p><strong>machine-readable</strong></p>
+<aside class="notes">
+<ul>
+<li>PDF ist Publikationsstandard
+<ul>
+<li>neue (digital) vs. alte (scans)</li>
+<li>Kriterium: Suche möglich?</li>
+</ul></li>
+<li>anschliessend Schritte zur Umwandlung der wichtigsten Formate</li>
+<li>Keine Konzepte lernen, wie bei RegEx
+<ul>
+<li>nur welches Tool, für welche Umwandlung</li>
+<li>mehr oder weniger copy-paste</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="conversion-of-docx" class="slide level2">
+<h2>Conversion of DOCX</h2>
+<h4 id="use-case-news-articles-from-nexis">use case: news articles from <a href="https://www.nexisuni.com/">Nexis</a></h4>
+<ul>
+<li><code>pandoc</code> to convert file formats</li>
+<li>download as single articles in <code>.docx</code> on Nexis</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># convert docx to txt</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="ex">pandoc</span> file_in.docx -t plain -o file_out.txt</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co">### Install first with</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="ex">brew</span> install pandoc     <span class="co"># macOS</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">sudo</span> apt install pandoc <span class="co"># Ubuntu</span></span></code></pre></div>
+<!-- [](../images/nexis.png) -->
+<aside class="notes">
+<ul>
+<li>Nexis = News-Datenbank
+<ul>
+<li>freier Zugang ezproxy</li>
+<li>kennen ezproxy alle?</li>
+</ul></li>
+<li>kann auch html konvertieren
+<ul>
+<li>pandoc slides/KED2020_01.html -t plain</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="conversion-of-digital-pdf" class="slide level2">
+<h2>Conversion of digital PDF</h2>
+<h4 id="use-case-swiss-party-programmes">use case: <a href="https://visuals.manifesto-project.wzb.eu/mpdb-shiny/cmp_dashboard_dataset/">Swiss party programmes</a></h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># convert digital native pdf to txt</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="ex">pdftotext</span> -nopgbrk -eol unix file_in.pdf</span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="co">### Install first with</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="ex">brew</span> install poppler            <span class="co"># macOS</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="fu">sudo</span> apt install poppler-utils  <span class="co"># Ubuntu</span></span></code></pre></div>
+<aside class="notes">
+<ul>
+<li>dieselben Parteiprogramme, die wir schon analysiert haben</li>
+<li>Layout kann Extraktion erschweren
+<ul>
+<li>Spalten/Tabelle</li>
+</ul></li>
+<li>Häufigkeitsanalysen von Wörter sind robust, Struktur egal</li>
+</ul>
+</aside>
+</section>
+<section id="optical-character-recognition-ocr" class="slide level2">
+<h2>Optical Character Recognition (OCR)</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>OCR ~ convert ../images into text
+<ul>
+<li>text from scans/../images</li>
+<li>handwriting + Fraktur texts</li>
+</ul></li>
+<li>image quality is crucial</li>
+<li>open-source software: <code>tesseract</code>
+<ul>
+<li>language-specific models</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<figure>
+<img data-src="../images/ocr.png" alt="" /><figcaption>example OCR <a href="https://de.wikipedia.org/wiki/Texterkennung">(Wikipedia)</a></figcaption>
+</figure>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li><p>tatsächlicher Buchstabe, nicht nur Bild davon</p></li>
+<li><p>Zwischenschritt Verbesserung Kontrast, B/W</p></li>
+<li><p>technisch Deep-Learning, nicht weiter von Bedeutung</p></li>
+<li><p>auch von Handy möglich, ohne teure Programmen</p></li>
+</ul>
+</aside>
+</section>
+<section id="conversion-of-digitalized-pdf" class="slide level2">
+<h2>Conversion of digitalized PDF</h2>
+<h4 id="use-case-historical-party-programmes">use-case: <a href="https://visuals.manifesto-project.wzb.eu/mpdb-shiny/cmp_dashboard_dataset/">historical party programmes</a></h4>
+<ol type="1">
+<li>extract image from PDF + improve contrast</li>
+<li>run optical character recognition (OCR) on the image</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># convert scanned pdf to tiff, control quality with parameters</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">convert</span> -density 300 -depth 8 -strip -background white -alpha off \</span>
+<span id="cb3-3"><a href="#cb3-3"></a>file_in.pdf temp.tiff</span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="bu">echo</span> test \</span>
+<span id="cb3-6"><a href="#cb3-6"></a>t</span>
+<span id="cb3-7"><a href="#cb3-7"></a></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="co"># run OCR for German (&quot;eng&quot; for English, &quot;fra&quot; for French)</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="ex">tesseract</span> -l deu temp.tiff file_out</span>
+<span id="cb3-10"><a href="#cb3-10"></a></span>
+<span id="cb3-11"><a href="#cb3-11"></a></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="co">### Install first with</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="ex">brew</span> install imagemagick            <span class="co"># macOS</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="fu">sudo</span> apt install imagemagick-6.q16  <span class="co"># Ubuntu</span></span></code></pre></div>
+<aside class="notes">
+<ul>
+<li>Zwei Schritte: Bildumwandlung + OCR</li>
+<li>tesseract funktioniert für viele Bildformate
+<ul>
+<li>nicht direkt für PDF</li>
+</ul></li>
+<li>Beispiel: Kassenbon fotografieren &amp; mit Regex parsen
+<ul>
+<li>Wirtschaftswissenschaften: indexierter Warenkorb</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="lifehack-make-a-pdf-searchable" class="slide level2" data-background="#4d7e65">
+<h2 data-background="#4d7e65">#LifeHack: Make a PDF searchable</h2>
+<h4 id="use-case-scanned-book-chapters">use case: scanned book chapters</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># output searchable pdf instead of txt</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="ex">convert</span> -density 300 -depth 8 -strip -background white -alpha off -compress group4 \</span>
+<span id="cb4-3"><a href="#cb4-3"></a>file_in.pdf temp.tiff</span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="ex">tesseract</span> -l deu temp.tiff file_out pdf</span></code></pre></div>
+<aside class="notes">
+<ul>
+<li>Output als PDF statt Text</li>
+<li>für Suchen/Zitate rauskopieren</li>
+<li>convert hier mit Kompression, da PDFs zu gross werden ansonsten</li>
+</ul>
+</aside>
+</section>
+<section id="scraping-pdf-from-websites" class="slide level2">
+<h2>Scraping PDF from Websites</h2>
+<h4 id="use-case-swiss-voting-booklet">use case: <a href="https://www.bk.admin.ch/bk/de/home/dokumentation/abstimmungsbuechlein.html">Swiss voting booklet</a></h4>
+<ul>
+<li><code>wget</code> to download any files from the internet</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># get a single file</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">wget</span> EXACT_URL</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># get all linked pdf from a single webpage</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">wget</span> --recursive --accept pdf -nH --cut-dirs=5 \</span>
+<span id="cb5-6"><a href="#cb5-6"></a>--ignore-case --wait 1 --level 1 --directory-prefix=data \</span>
+<span id="cb5-7"><a href="#cb5-7"></a>https://www.bk.admin.ch/bk/de/home/dokumentation/abstimmungsbuechlein.html</span>
+<span id="cb5-8"><a href="#cb5-8"></a></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="co"># --accept FORMAT_OF_YOUR_INTEREST</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="co"># --directory-prefix YOUR_OUTPUT_DIRECTORY</span></span></code></pre></div>
+<aside class="notes">
+<ul>
+<li>Download &amp; Dokumentation von Quellen</li>
+<li>Haupt-URL angeben, wo PDF verlinkt sind</li>
+<li>Scraping von Blogs möglich über Python (nicht Teil von Seminar)</li>
+<li>nicht auf alle Argumente eingehen</li>
+</ul>
+</aside>
+</section>
+<section id="example-sources" class="slide level2">
+<h2>Example Sources</h2>
+<ul>
+<li><a href="https://visuals.manifesto-project.wzb.eu/mpdb-shiny/cmp_dashboard_dataset/">Party Programmes across Europe</a></li>
+<li><a href="https://www.bk.admin.ch/bk/de/home/dokumentation/abstimmungsbuechlein.html">Swiss voting booklets</a></li>
+<li><a href="https://www.admin.ch/gov/de/start/dokumentation/reden/ansprachen-zum-nationalfeiertag.html">1 August speeches by Swiss Federal Councillors</a></li>
+<li><a href="https://www.nestle.com/csv/performance/downloads">Nestlé Annual Reports</a></li>
+<li>… any organization of your interest <span class="emoji" data-emoji="thumbsup">👍</span></li>
+</ul>
+</section>
+<section id="foundation-of-batch-processing" class="slide level2">
+<h2>Foundation of Batch Processing</h2>
+<h4 id="perform-the-same-operation-on-many-files">perform the same operation on many files</h4>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># loop over all txt files</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="kw">for</span> <span class="fu">file</span> in *.txt<span class="kw">;</span> <span class="kw">do</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a>    <span class="co"># indent all commands in loop with a tab</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a></span>
+<span id="cb6-6"><a href="#cb6-6"></a>    <span class="co"># rename each file</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>    <span class="co"># e.g. a.txt -&gt; new_a.txt</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>    <span class="fu">mv</span> <span class="va">$file</span> new_<span class="va">$file</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="kw">done</span></span></code></pre></div>
+<aside class="notes">
+<ul>
+<li>Batch Processing = gleiche Operation durchführen für alle Files</li>
+<li>Erklären von Loop/Schleife und Variable
+<ul>
+<li>Wildcard zur Selektion &gt; Liste von Files &gt; Variable</li>
+</ul></li>
+<li>for-loop wichtiges Programmierkonzept</li>
+<li>Tabulator fürs Einrücken</li>
+</ul>
+</aside>
+</section>
+<section id="perform-batch-ocr-from-pdf" class="slide level2">
+<h2>Perform Batch OCR from PDF</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">for</span> <span class="ex">FILEPATH</span> in *.pdf<span class="kw">;</span> <span class="kw">do</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>    <span class="co"># convert pdf to image</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>    <span class="ex">convert</span> -density 300 <span class="va">$FILEPATH</span> -depth 8 -strip \</span>
+<span id="cb7-4"><a href="#cb7-4"></a>    -background white -alpha off temp.tiff</span>
+<span id="cb7-5"><a href="#cb7-5"></a>    </span>
+<span id="cb7-6"><a href="#cb7-6"></a>    <span class="co"># define output name (remove .pdf from input)</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>    <span class="va">OUTFILE=${FILEPATH%</span>.pdf<span class="va">}</span> </span>
+<span id="cb7-8"><a href="#cb7-8"></a>    </span>
+<span id="cb7-9"><a href="#cb7-9"></a>    <span class="co"># perform OCR on the tiff image</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>    <span class="ex">tesseract</span> -l deu temp.tiff <span class="va">$OUTFILE</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a>    </span>
+<span id="cb7-12"><a href="#cb7-12"></a>    <span class="co"># remove the intermediate tiff image</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a>    <span class="fu">rm</span> temp.tiff</span>
+<span id="cb7-14"><a href="#cb7-14"></a></span>
+<span id="cb7-15"><a href="#cb7-15"></a><span class="kw">done</span></span></code></pre></div>
+</section>
+<section id="preprocessing-regex" class="slide level2" data-background="#b5533c">
+<h2 data-background="#b5533c">Preprocessing → RegEx</h2>
+<p><img data-src="../images/clean_data.png" /></p>
+<aside class="notes">
+<ul>
+<li>Aufbereitung unterschiedlich aufwendig</li>
+<li>für schnelle Analyse nicht notwendig</li>
+<li>nun alles da für Mini-Project, ausser wenn Lösung in Python</li>
+</ul>
+</aside>
+</section></section>
+<section>
+<section id="bias-ethics" class="title-slide slide level1">
+<h1>Bias &amp; Ethics</h1>
+
+</section>
+<section id="dont-be-a-fool" class="slide level2" data-background="#b5533c">
+<h2 data-background="#b5533c">Don’t be a fool …</h2>
+<p>… be wise, think twice.</p>
+<aside class="notes">
+<ul>
+<li><p>wichtiges Thema, über Seminar hinaus</p>
+<ul>
+<li><p>Studien/Geschäftsmodelle, die daneben sind</p></li>
+<li><p>Ungleichheit: Geschlecht, Ethnie, sozioökonomisch</p></li>
+<li><p>z.B. Unterschiede auf eine natürliche Basis stellen</p></li>
+<li><p>ohne Prozess/Struktur zu bedenken</p></li>
+</ul></li>
+<li><p>alle betroffen: automatische Vorselektion Bewerbungen</p></li>
+<li><p>bestenfalls: naiv, schlechtensfalls: anti-liberal/diskriminierend</p></li>
+<li><p>Ethik ist nicht abstrakt und gehört nicht nur in Philosophie</p>
+<ul>
+<li>nicht Begriff ist wichtig, sondern Denkart</li>
+<li>nachdenken über Ausgangslage + Konsequenzen</li>
+</ul></li>
+<li><p>besseres Verständnis = bessere Data Science</p></li>
+</ul>
+</aside>
+</section>
+<section id="data-digital-traces" class="slide level2">
+<h2>Data = Digital Traces</h2>
+<ul>
+<li>collecting, curating, preserving traces → uncover patterns</li>
+<li>data don’t disclose anything, you can speak with it though</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Was sind Daten?
+<ul>
+<li>Daten sind kein Abbild der Welt, nichts natürliches.</li>
+</ul></li>
+<li>Daten liegen nicht einfach herum, sondern gemacht (siehe Schritte)</li>
+</ul>
+</aside>
+</section>
+<section id="imperfect-data-a-tail-of-bias" class="slide level2">
+<h2>Imperfect Data: A Tail of Bias</h2>
+<ul>
+<li><p>data/archive holes</p>
+<ul>
+<li>lost, uncollected</li>
+</ul></li>
+<li><p>noise in data</p>
+<ul>
+<li>OCR errors, inconsistent spelling, non-content</li>
+</ul></li>
+<li><p>corpus curation</p>
+<ul>
+<li>supposition that key-word indicates topic</li>
+</ul></li>
+<li><p>social context</p></li>
+</ul>
+<p><br></p>
+<p><span class="emoji" data-emoji="arrow_right">➡️</span> solution: reflect + tackle</p>
+<aside class="notes">
+<ul>
+<li>fehlende, rauschende, selektive &amp; verzerrte Daten</li>
+<li>sozialer Kontext
+<ul>
+<li>z.B. Budgetkürzung oder Neuausrichtung –&gt; Wegfall von Thema</li>
+<li>Sicht von weisen Männern auf Thema</li>
+</ul></li>
+<li>non-content elements
+<ul>
+<li>Metadaten, Kopfzeilen etc.</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="section-1" class="slide level2" data-background="#4d7e65">
+<h2 data-background="#4d7e65"></h2>
+<blockquote>
+<p>Raw data is an oxymoron. <br><span class="citation" data-cites="Gitelman2013">(Gitelman 2013)</span></p>
+</blockquote>
+</section>
+<section id="data-vs.-capta" class="slide level2">
+<h2>Data vs. Capta</h2>
+<blockquote>
+<p>Differences in the etymological roots of the terms data and capta make the distinction between constructivist and realist approaches clear. <em>Capta</em> is <span style="color:#b5533c"><strong>“taken”</strong></span> actively while <em>data</em> is assumed to be a <span style="color:#b5533c"><strong>“given”</strong></span> able to be recorded and observed. From this distinction, a world of differences arises. Humanistic inquiry acknowledges the situated, partial, and constitutive character of knowledge production, the recognition that knowledge is constructed, <em>taken</em>, <span style="color:#b5533c"><strong>not simply given as a natural representation</strong></span> of pre-existing fact.</p>
+<p><span class="citation" data-cites="Drucker2011">(Drucker 2011)</span></p>
+</blockquote>
+</section>
+<section id="key-principles" class="slide level2">
+<h2>Key Principles</h2>
+<ul>
+<li>Who has a voice in your data?
+<ul>
+<li>social context</li>
+</ul></li>
+<li>bigger is not necessarily better
+<ul>
+<li>more vs. more diverse data</li>
+</ul></li>
+<li>clean your data thoroughly
+<ul>
+<li>noisy vs. clean data</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-2" class="slide level2" data-background="../images/datahumanism.jpeg">
+<h2 data-background="../images/datahumanism.jpeg"></h2>
+<!-- https://giorgialupi.com/data-humanism-my-manifesto-for-a-new-data-wold -->
+</section>
+<section id="data-represents-real-life." class="slide level2" data-background="#4d7e65">
+<h2 data-background="#4d7e65">Data represents real life.</h2>
+</section>
+<section id="in-class-exercises-i" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">In-class: Exercises I</h2>
+<ol type="1">
+<li>Make sure that your local copy of the Github repository KED2020 is up-to-date with <code>git pull</code>. Check out the data samples and scripts in <code>materials/</code>.</li>
+<li>Install the missing tools with the commands given on the respective slides: <code>pandoc, imagemagick, poppler</code></li>
+<li><strong>Digest the commands. Test them. Check the resources. Ask questions. Think about your mini-project.</strong></li>
+<li>Download one or all <em>cogito</em> issues (PDF files) from the <a href="https://www.unilu.ch/magazin/service/pdf-und-archiv/#section=c67079">UniLu website</a>.</li>
+<li><code>wget</code> is a powerful tool. Have a look at its arguments and search for more examples in tutorials.</li>
+</ol>
+</section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+<h4 id="make-a-more-sophisticated-script-for-pdf-conversion">Make a more sophisticated script for PDF conversion</h4>
+<ul>
+<li>Erick Peirson. 2015. Tutorial: Text Extraction and OCR with Tesseract and ImageMagick - Methods in Digital and Computational Humanities - DigInG Confluence. <a href="https://diging.atlassian.net/wiki/spaces/DCH/pages/5275668/Tutorial+Text+Extraction+and+OCR+with+Tesseract+and+ImageMagick">online</a></li>
+</ul>
+</section>
+<section id="references" class="slide level2 unnumbered">
+<h2 class="unnumbered">References</h2>
+<div id="refs" class="references hanging-indent" role="doc-bibliography">
+<div id="ref-Drucker2011">
+<p>Drucker, Johanna. 2011. “Humanities Approaches to Graphical Display.” <em>Digital Humanities Quarterly</em> 5 (1). <a href="http://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html">http://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html</a>.</p>
+</div>
+<div id="ref-Gitelman2013">
+<p>Gitelman, Lisa. 2013. <em>Raw Data Is an Oxymoron</em>. Cambridge: MIT.</p>
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // see https://github.com/hakimel/reveal.js/#navigation-mode
+        navigationMode: 'linear',
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

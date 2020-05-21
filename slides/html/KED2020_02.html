@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Alex Flückiger">
+  <meta name="dcterms.date" content="2020-03-05">
+  <title>The ABC of computational Text Analysis</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/night.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css' : 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <style type='text/css'>
+  /*
+
+  ## green {data-background=#4d7e65}
+
+  ## blue {data-background=#3c70b5}
+
+  ## red {data-background=#b5533c}
+
+  ## black {data-background=#111}
+
+   */
+
+  .reveal {
+      font-size: 170%; */
+  }
+
+  .reveal .title {
+      font-size: 260%; */
+  }
+
+  .subtitle{
+      font-size: 200%;
+      color: #e7ad52;
+      padding-top: 30px;
+      padding-bottom: 60px;
+
+  }
+
+  .reveal figcaption{
+      font-size: 80%;
+  }
+
+  span.citation{
+      font-size: 60%;
+  }
+
+  p.author,
+  p.date{
+      font-size: 90%;
+      margin-top: -20px;
+  }
+
+  .reveal h2 {
+      margin-bottom: +50px;
+  }
+
+  .align-left {
+      text-align: left;
+  }
+
+  .align-left-padding {
+      text-align: left;
+      padding-left: 5%;
+      margin-left: 15%;
+      border-left: 8px solid #ffffff;
+  }
+
+
+  .sourceCode{
+      font-size: 135%;
+  }
+  code{
+      background: #f7eeda; /* #484a42  #272822 */
+      color: #1c1b1b;
+  }
+
+  .reveal table {
+      font-size: 80%;
+  }
+
+
+  ol li {
+    line-height:2em;
+  }
+
+  ul li {
+    line-height:2em;
+  }
+
+  ul li li {
+   line-height:1.3em;
+   list-style-type: None;
+   font-style: italic;
+   font-size: 90%;
+   font-family: Georgia;
+  }
+
+  ol li li {
+   line-height:1.3em;
+   list-style-type: None;
+   font-style: italic;
+   font-size: 90%;
+   font-family: Georgia;
+  }
+
+
+  hr {
+      color: white;
+  }
+
+  /* .reveal h1,
+  .reveal h2,
+  .reveal h3,
+  .reveal h4,
+  .reveal h5,
+  .reveal h6 {
+      word-wrap: normal;
+      -webkit-hyphens: manual;
+      -moz-hyphens: manual;
+      hyphens: manual;
+  } */
+
+  div.references{
+      font-size: 75%
+  }
+
+  .reveal .slide-number {
+    font-size: 18pt;
+    color: #ffffff; }
+
+  .emoji {
+      font-size: 150%
+  }
+
+  .reveal blockquote{
+      /*
+      border-left: 5px solid #428bca;
+      color: #428bca;
+      border-left: 4px solid #428bca;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      border-right: 4px solid #428bca;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+
+
+      background-color: #E6E6E6;
+      color: #000000;
+       background-color: #d2f8d2; */
+  }
+
+  .reveal blockquote{
+      position: static;
+      text-align: justify;
+      border-style: none;
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
+      background: inherit;
+      font-family: Georgia;
+      font-size: 1.2em;
+      width:90%;
+      margin:0px auto;
+      padding: 1em;
+      font-style:normal;
+  }
+
+
+
+
+  .reveal blockquote cite{
+      text-align: right;
+      font-style: normal;
+      font-size: 0.75em;
+      font-weight: bold;
+      margin-top:1em;
+  }
+
+
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">The ABC of computational Text Analysis</h1>
+  <p class="subtitle">02: Text as Data</p>
+  <p class="author">Alex Flückiger</p>
+  <p class="date">05 March 2020</p>
+</section>
+
+<section id="outline" class="slide level2">
+<h2>Outline</h2>
+<ul>
+<li>recap + reading</li>
+<li>methodological ground <span class="emoji" data-emoji="grimacing">😬</span></li>
+<li>first computational investigation</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Diskussion der letzten Sitzung</li>
+<li>Hauptteil: Bedeutung/Grundlage von Textanalyse</li>
+<li>zweite Lektion: erste Analyse</li>
+</ul>
+</aside>
+</section>
+<section id="recap-last-lecture" class="slide level2">
+<h2>Recap last Lecture</h2>
+<h4 id="computer-as">computer as …</h4>
+<ul>
+<li>… an intelligent device</li>
+<li>… a tool for analysis</li>
+</ul>
+<p><br></p>
+<h4 id="datafication">datafication</h4>
+<ul>
+<li>abundance of data</li>
+<li>exploit new form of data</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Technologie verändert Welt</li>
+<li>Computer als Werkzeug/interaktiver Partner
+<ol type="1">
+<li>nehmen an sozialen Prozessen teil -&gt; wie verändert sich das Soziale (Arbeit, Jobmarkt, Benachteiligung)</li>
+<li>für CSS: Daten wichtiger als ML</li>
+</ol></li>
+<li>Daten sind da -&gt; erst Programmieren ermöglicht Auswertung</li>
+</ul>
+</aside>
+</section>
+<section id="reading" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">Reading</h2>
+<h4 id="computational-social-science-lazer2009">Computational Social Science <span class="citation" data-cites="Lazer2009">(Lazer et al. 2009)</span></h4>
+<div class="fragment">
+<ul>
+<li>data-driven</li>
+<li>network analysis + text analysis</li>
+<li>historical perspective vs. real-time dynamics</li>
+<li>limited access to data</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>methodical focus because of Nature paper</li>
+<li>more than self-reported data</li>
+<li>Zugang
+<ul>
+<li>organisationsintern, Kundendaten</li>
+<li>historische Daten einfacher zugänglich</li>
+</ul></li>
+</ul>
+</aside>
+</div>
+</section>
+<section id="semiotic-triangle" class="slide level2">
+<h2>Semiotic Triangle</h2>
+<div class="columns">
+<div class="column">
+<p>Loose coupling between</p>
+<ul>
+<li>World</li>
+<li>Cognition</li>
+<li>Language</li>
+</ul>
+</div><div class="column">
+<figure>
+<img data-src="../images/ogden_semiotic_triangle.png" alt="" /><figcaption>Semiotic Triangle <span class="citation" data-cites="Ogden1923">(Ogden and Richards 1923)</span></figcaption>
+</figure>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>Was ist Sprache?
+<ul>
+<li>Keine Philosophie-Vorlesung</li>
+<li>technisch auch von Bedeutung</li>
+</ul></li>
+<li>Versuch der Einheit: Ding, Konzept und Wort</li>
+<li>keine direkte Beziehung zwischen Symbol &amp; Gegenstand
+<ul>
+<li>keine Eineindeutigkeit wie in Datenbanken –&gt; schwierig für Computer
+<ul>
+<li>Personen, Orte, Frucht/Hülsenfrüchte</li>
+</ul></li>
+<li>jede Ecke kann wechseln
+<ul>
+<li>Gleiches heisst anders, anderes heisst gleich</li>
+</ul></li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<blockquote>
+<p>«Language shapes the way we think, <br> and determines what we can think about.»</p>
+<p><cite>― Benjamin Lee Whorf</cite></p>
+</blockquote>
+<aside class="notes">
+<ul>
+<li>zweiteilige These umstritten
+<ul>
+<li>Sprache formt das Denken</li>
+<li>unabhängig der Determination: überragende Bedeutung für das Soziale</li>
+</ul></li>
+<li>Sprache ist das Soziale schlechthin
+<ul>
+<li>Vermittlungsmedium</li>
+<li>weitere Formen: Zeichnen, Mathematik, Fotos</li>
+</ul></li>
+<li>wenn nicht vorhanden, dann gesellschaftlich ohne Bedeutung (aber nicht unbedingt unvorstellbar)
+<ul>
+<li>Wörter</li>
+<li>Unterscheidungen</li>
+<li>Link zu Luhmann</li>
+</ul></li>
+<li>Eskimo-Anekdote falsch</li>
+</ul>
+</aside>
+</section>
+<section>
+<section id="working-with-texts" class="title-slide slide level1">
+<h1>Working with Texts</h1>
+
+</section>
+<section id="a-micro-and-macro-perspective-i" class="slide level2">
+<h2>A micro and macro perspective I</h2>
+<p><strong>individual cases vs. collective trends</strong></p>
+<div class="columns">
+<div class="column">
+<figure>
+<img data-src="../images/close_reading.png" style="height:8cm" alt="" /><figcaption>close reading <a href="https://i1.wp.com/elevenews.com/wp-content/uploads/2018/03/golf-cart-repair-manuals.png">(source)</a></figcaption>
+</figure>
+</div><div class="column">
+<figure>
+<img data-src="../images/nlp-natural-language-processing.jpg" style="height:8cm" alt="" /><figcaption>distant reading <a href="https://www.100worte.de/wp-content/uploads/2019/08/nlp-natural-language-processing.jpg">(source)</a></figcaption>
+</figure>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>Nun klar, wieso Textanalyse wichtig, aber welche Herangehensweise?</li>
+<li>Traditionell
+<ul>
+<li>Inhaltsanalyse, close reading</li>
+<li>Einzeldokumente</li>
+<li>lange Zeit alternativlos</li>
+</ul></li>
+<li>computergestützte Textanalyse
+<ul>
+<li>NLP, distant reading</li>
+<li>Textsammlungen</li>
+</ul></li>
+<li>Rauszoomen bringt auch Verständnis, nicht nur Reinzoomen</li>
+<li>Methodik ändert Fragestellung
+<ul>
+<li>NLP: nicht Individuum, sondern Gesellschaft/Gruppe</li>
+<li>strukturelle Beschreibungen und Kultur/Stimmung</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="a-micro-and-macro-perspective-ii" class="slide level2">
+<h2>A micro and macro perspective II</h2>
+<p><strong>non-scalability vs. abstraction</strong></p>
+<div class="columns">
+<div class="column">
+<figure>
+<img data-src="../images/newspapers-in-pile.jpg" style="height:8cm" alt="" /><figcaption>tons of text <a href="https://independencedaily.co.uk/sunday-papers-12-august-2018/">(source)</a></figcaption>
+</figure>
+</div><div class="column">
+<figure>
+<img data-src="../images/icon_diagram.svg" style="height:8cm" alt="" /><figcaption>meaning of numbers <a href="http://opendata.cityofnewyork.us/wp-content/themes/opendata-wp/assets/img/icons-home-data-catalog.svg">(source)</a></figcaption>
+</figure>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>je ein Problem je Approach
+<ul>
+<li>close: nicht skalierbar
+<ul>
+<li>ist das generalisierbar?</li>
+</ul></li>
+<li>distant: kontextlos, da Narrativ/Einzelheiten verloren gehen
+<ul>
+<li>verlieren wer/was/wo/wie/wann/warum</li>
+<li>was bedeuten Zahlen? Verweis: BIP (informelle Wirtschaft)</li>
+</ul></li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="from-micro-to-macro-and-back-again" class="slide level2">
+<h2>From micro to macro…<br> …and back again</h2>
+<aside class="notes">
+<ul>
+<li>Lösung: Vogelperspektive, dann Eintauchen</li>
+<li>Grösser nicht immer besser</li>
+</ul>
+</aside>
+</section>
+<section id="two-research-paradigms" class="slide level2">
+<h2>Two Research Paradigms</h2>
+<h4 id="data-exploration-vs.-hypothesis-testing">data exploration vs. hypothesis testing</h4>
+<ul>
+<li>add nuance</li>
+<li>develop new narratives</li>
+<li>verify hypothesis</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>genauere Einordnung: exaktere Epochenbestimmung</li>
+<li>Agnostik/Induktion ausnutzen für anderes Narrativ</li>
+<li>Modelvorhersagen zu Kausalitätsaussagen
+<ul>
+<li>z.B. Klimawandel Berichterstattung -&gt; Erfolg grüne Parte</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="remember" class="slide level2" data-background="#4d7e65">
+<h2 data-background="#4d7e65">Remember <span class="emoji" data-emoji="thumbsup">👍</span> ​</h2>
+<p>Quantification and qualitative analysis go well together. <br></p>
+<p><strong>Numbers do not talk, never.</strong></p>
+<aside class="notes">
+<ul>
+<li>alter Konflikt Quali/Quanti
+<ul>
+<li>beide Lager kritisch gegenüber NLP</li>
+<li>zu wenig rigoros, zu arbiträr</li>
+</ul></li>
+<li>Zahlen sprechen nicht für sich selbst</li>
+<li>komplementär</li>
+</ul>
+</aside>
+</section>
+<section id="text-as-data" class="slide level2">
+<h2>Text as Data</h2>
+<ul>
+<li>synonymy</li>
+<li>ambiguities</li>
+<li>compositonality of meaning</li>
+<li>agnostic, discrete symbols</li>
+<li>unstructured, messy data</li>
+</ul>
+<p><span class="citation" data-cites="Grimmer2013">(see also Grimmer and Stewart 2013)</span></p>
+<aside class="notes">
+<ul>
+<li>Link zu semiotischem Dreieck</li>
+<li>Text inhärent schwierig
+<ul>
+<li>herausfordernste Datenform</li>
+<li>Front der AI</li>
+</ul></li>
+<li>Wörter = diskrete Symbole
+<ul>
+<li>nominales Skalenniveau</li>
+<li>agnostik tokens</li>
+</ul></li>
+<li>compositional
+<ul>
+<li>letters, morphems, phrases, sentences</li>
+<li>grosse Fliegen, kleine Elefanten</li>
+</ul></li>
+<li>unstrukturiert
+<ul>
+<li>anders als Tabelle/Datenbank</li>
+<li>unterschiedliche Datenformate</li>
+<li>Inhalt nicht von Metadaten separiert</li>
+</ul></li>
+</ul>
+</aside>
+</section></section>
+<section>
+<section id="data-formats" class="title-slide slide level1">
+<h1>Data Formats</h1>
+
+</section>
+<section id="in-class-task-file-types" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">In-class task: File types</h2>
+<div class="columns blockstyle">
+<ul>
+<li>What file formats do you know?</li>
+<li>Open files of different types in a text editor. <br> Which look nice?</li>
+</ul>
+</div>
+<aside class="notes">
+<ul>
+<li>alle möglichen Filetypen, nicht nur Text
+<ul>
+<li>zip/tar, exe, dmg/iso, jpg/png/gif</li>
+</ul></li>
+<li></li>
+</ul>
+</aside>
+</section>
+<section id="file-formats" class="slide level2">
+<h2>File formats</h2>
+<ul>
+<li>machine-readability
+<ul>
+<li>raw: txt, csv, tsv</li>
+<li>formatted: docx, pdf, html, xml</li>
+</ul></li>
+<li>open vs. proprietary</li>
+<li>digital sustainability</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Papier altert langsamer als Software</li>
+<li><strong>Pause</strong>
+<ul>
+<li>Übung: Datenaufbereitung bereits gemacht</li>
+</ul></li>
+</ul>
+</aside>
+</section></section>
+<section>
+<section id="lets-dive-into-it" class="title-slide slide level1">
+<h1>Let’s dive into it!</h1>
+
+</section>
+<section id="ngram-viewer" class="slide level2">
+<h2>Ngram Viewer</h2>
+<p><a href="https://books.google.com/ngrams">Google Ngram Viewer</a></p>
+<ul>
+<li>historical perspective with n-grams</li>
+<li>5.2 million books</li>
+<li>rise and fall of cultural ideas and phenomena</li>
+</ul>
+<p><a href="http://www.culturomics.org/Resources/faq">More information</a></p>
+<aside class="notes">
+<ul>
+<li>Google Books:
+<ul>
+<li>indexiert ganze Bibliotheken</li>
+</ul></li>
+<li>See how ideas evolve/change over time</li>
+<li>y: relative Worthäufigkeiten</li>
+<li>x: Bücher indexiert nach Publikationsjahr</li>
+</ul>
+</aside>
+</section>
+<section id="in-class-task-environmental-discourse" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">In-Class Task: Environmental Discourse</h2>
+<div class="columns blockstyle">
+<h4 id="questions-about-environmental-discourse">questions about environmental discourse</h4>
+<ul>
+<li><p>What other terms have been used to describe nature?</p>
+<ul>
+<li>e.g. environment</li>
+</ul></li>
+<li><p>What environmental issues are debated the strongest? When?</p>
+<ul>
+<li>e.g. nuclear power plant</li>
+</ul></li>
+<li><p>Are there any differences between languages?</p>
+<ul>
+<li>i.e. similar words with non-equivalent curves over time</li>
+</ul></li>
+<li><p><strong>→ What do you conclude from your observation?</strong></p></li>
+</ul>
+</div>
+<aside class="notes">
+<ul>
+<li>Dauer: 20 Minuten</li>
+<li>By whom?</li>
+<li>Herumgehen + selbst ausprobieren</li>
+<li>Wikipedia nutzen</li>
+</ul>
+</aside>
+</section>
+<section id="refine-your-queries" class="slide level2">
+<h2>Refine your Queries</h2>
+<p>check out case-sensitiveness, wildcards (*) ​an​d ​operators <span class="emoji" data-emoji="nerd_face">🤓</span></p>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 88%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>+</code></td>
+<td>sums multiple expressions into one</td>
+</tr>
+<tr class="even">
+<td><code>-</code></td>
+<td>subtracts the expression on the right from the expression on the left, giving you a way to measure one ngram relative to another.</td>
+</tr>
+<tr class="odd">
+<td><code>/</code></td>
+<td>divides the expression on the left by the expression on the right, which is useful for isolating the behavior of an ngram with respect to another.</td>
+</tr>
+<tr class="even">
+<td><code>*</code></td>
+<td>multiplies the expression on the left by the number on the right, making it easier to compare ngrams of very different frequencies. (Be sure to enclose the entire ngram in parentheses so that * isn’t interpreted as a wildcard.)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="remember-1" class="slide level2" data-background="#4d7e65">
+<h2 data-background="#4d7e65">Remember <span class="emoji" data-emoji="thumbsup">👍</span></h2>
+<p>Has the language evolved over time or the social perception?</p>
+<div class="fragment">
+<p><br></p>
+<p><strong>Both, most likely.</strong></p>
+<p>Similarly, language may vary across regions and communities.</p>
+<aside class="notes">
+<ul>
+<li>Link zu Odgen Dreieck von nicht fixer Beziehungen</li>
+<li>Link zu Whorf-Hypothese</li>
+</ul>
+</aside>
+</div>
+</section>
+<section id="no-culturomics-but-meaning-making" class="slide level2">
+<h2>No Culturomics but Meaning-Making</h2>
+<p>phenomena in collective memory</p>
+<ul>
+<li>semantic drifts</li>
+<li>lexical shifts</li>
+</ul>
+<p><em>Read, read, read</em> to complement stats with context!</p>
+<aside class="notes">
+<ul>
+<li><p>Kontextuelle Verwendung von Wort kann sich völlig verändern</p></li>
+<li><p>Eigentum hat sich etabliert, Religion degeneriert</p></li>
+<li><p>Patterns EN</p>
+<ul>
+<li>dessert=&gt;*_ADJ</li>
+<li>*=&gt;public_ADJ</li>
+<li>*=&gt;personal_ADJ</li>
+</ul></li>
+<li><p>Pattern DE</p>
+<ul>
+<li>Kulturen=&gt;*_ADJ</li>
+<li>Kinder=&gt;*_ADJ</li>
+</ul></li>
+<li><p>only entire words, yet: _INF</p></li>
+</ul>
+</aside>
+</section>
+<section id="questions-of-interpretation" class="slide level2">
+<h2>Questions of Interpretation</h2>
+<p>Example: interpretation of decreasing frequency</p>
+<ul>
+<li>loosing interest</li>
+<li>becoming an established fact</li>
+<li>new reference
+<ul>
+<li>The Great War → World War I</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Kommunikation
+<ul>
+<li>Weisse Schafe nicht erwähnenswert, nur schwarze</li>
+<li>Nachrichtenwerte</li>
+<li>Themenkonjunkturen</li>
+</ul></li>
+<li>einzelne Wörter bilden schlechte Evidenzbasis</li>
+</ul>
+</aside>
+</section>
+<section id="a-word-of-caution" class="slide level2" data-background="#b5533c">
+<h2 data-background="#b5533c">A word of caution</h2>
+<p>The unknowns of Google Ngram Viewer</p>
+<ul>
+<li>indexed books
+<ul>
+<li>genre, authors, quantity</li>
+</ul></li>
+<li>artifacts of digitalization</li>
+</ul>
+<p>use alternative: <a href="https://bookworm.htrc.illinois.edu/develop/">bookworm HathiTrust</a></p>
+<aside class="notes">
+<ul>
+<li>Google: ~4% of all books ever published</li>
+<li>zitierfähig</li>
+<li>curated collection</li>
+<li>filter by many meta data</li>
+</ul>
+</aside>
+</section>
+<section id="interacting-not-mapping" class="slide level2">
+<h2>Interacting, not mapping</h2>
+<p><strong>It is a lense, not a map.</strong></p>
+<figure>
+<img data-src="../images/dikw_pyramid.svg" alt="" /><figcaption>DIKW pyramid <a href="https://en.wikipedia.org/wiki/DIKW_pyramid#/media/File:DIKW_Pyramid.svg">(Wikipedia)</a></figcaption>
+</figure>
+<aside class="notes">
+<ul>
+<li>Lens / transformation like biology/physics
+<ul>
+<li>allerdings keine Labordaten</li>
+<li>Soziales ohne ceteris paribus</li>
+</ul></li>
+<li>not just mapping but interacting
+<ul>
+<li>Daten erlauben eine Sicht</li>
+<li>deshalb nicht CS überlassen</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="references" class="slide level2 unnumbered">
+<h2 class="unnumbered">References</h2>
+<div id="refs" class="references hanging-indent" role="doc-bibliography">
+<div id="ref-Grimmer2013">
+<p>Grimmer, Justin, and Brandon M. Stewart. 2013. “Text as Data: The Promise and Pitfalls of Automatic Content Analysis Methods for Political Texts.” <em>Political Analysis</em> 21 (3): 267–97. <a href="https://doi.org/10.1093/pan/mps028">https://doi.org/10.1093/pan/mps028</a>.</p>
+</div>
+<div id="ref-Lazer2009">
+<p>Lazer, David, Alex Pentland, Lada Adamic, Sinan Aral, Albert-László Barabási, Devon Brewer, Nicholas Christakis, et al. 2009. “Computational Social Science.” <em>Science</em> 323 (5915): 721–23. <a href="https://doi.org/10.1126/science.1167742">https://doi.org/10.1126/science.1167742</a>.</p>
+</div>
+<div id="ref-Ogden1923">
+<p>Ogden, Charles Kay, and Ivor Armstrong Richards. 1923. <em>The Meaning of Meaning: A Study of the Influence of Language Upon Thought and of the Science of Symbolism. Supplementary Essays by B. Malinowski and F.G. Crookshank</em>. New York: Harcourt. <a href="http://books.google.com?id=i3MIAQAAIAAJ">http://books.google.com?id=i3MIAQAAIAAJ</a>.</p>
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // see https://github.com/hakimel/reveal.js/#navigation-mode
+        navigationMode: 'linear',
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

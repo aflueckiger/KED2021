@@ -40,16 +40,19 @@ CROSSREF = --filter pandoc-crossref -M figPrefix:"Figure" -M eqnPrefix:"Equation
 
 # SLIDES
 SLIDES_DIR?= slides
-SLIDES_PDF_DIR?= slides/pdf
+SLIDES_MD_DIR?= $(SLIDES_DIR)/md
+SLIDES_HTML_DIR?= $(SLIDES_DIR)/html
+SLIDES_PDF_DIR?= $(SLIDES_DIR)/pdf
 NOTES_DIR?= $(SLIDES_DIR)/notes
-slides-md := $(wildcard $(SLIDES_DIR)/*.md)
-slides-html := $(patsubst $(SLIDES_DIR)/%.md,$(SLIDES_DIR)/%.html,$(slides-md))
-notes-pdf := $(patsubst $(SLIDES_DIR)/%.md,$(NOTES_DIR)/%.notes.pdf,$(slides-md))
+
+slides-md := $(wildcard $(SLIDES_MD_DIR)/*.md)
+slides-html := $(patsubst $(SLIDES_MD_DIR)/%.md,$(SLIDES_HTML_DIR)/%.html,$(slides-md))
+notes-pdf := $(patsubst $(SLIDES_MD_DIR)/%.md,$(NOTES_DIR)/%.notes.pdf,$(slides-md))
 notes: $(notes-pdf)
 slides:	$(slides-html) $(notes-pdf)
 
 BASE_URL?= file:///home/alex/drive/lehrauftrag_unilu/KED2020
-slides-pdf := $(patsubst $(SLIDES_DIR)/%.html,$(SLIDES_PDF_DIR)/%.pdf,$(slides-html))
+slides-pdf := $(patsubst $(SLIDES_HTML_DIR)/%.html,$(SLIDES_PDF_DIR)/%.pdf,$(slides-html))
 slides-pdf: $(slides-pdf)
 
 
@@ -75,15 +78,18 @@ print-%:
 
 prepare-dir:
 	mkdir -p $(SLIDES_DIR)
+	mkdir -p $(SLIDES_PDF_DIR)
+	mkdir -p $(SLIDES_HTML_DIR)
+	mkdir -p $(SLIDES_MD_DIR)
 	mkdir -p $(NOTES_DIR)
 	mkdir -p $(EXERCISES_DIR)
 	mkdir -p $(MATERIALS_DIR)
-	mkdir -p $(SLIDES_PDF_DIR)
 
-all:	$(slides-html) $(materials-pdf) $(exercises-pdf) $(NOTES)
-#https://revealjs.com
-# -V revealjs-url=https://cdn.jsdelivr.net/reveal.js/4.0.0
-%.html:	%.md $(CSS)
+
+all: $(slides-html) $(slides-pdf) $(materials-pdf) $(exercises-pdf) $(notes-pdf)
+
+
+$(SLIDES_HTML_DIR)/%.html: $(SLIDES_MD_DIR)/%.md $(CSS)
 	pandoc -f markdown+emoji+strikeout -t revealjs -s -o $@ $< \
 	-V revealjs-url="https://cdn.jsdelivr.net/npm/reveal.js" \
 	-V theme=night \
@@ -101,8 +107,7 @@ all:	$(slides-html) $(materials-pdf) $(exercises-pdf) $(NOTES)
 $(NOTES_DIR)/%.notes.pdf: $(SLIDES_DIR)/%.md lib/extract_notes.py
 	python lib/extract_notes.py < $< | pandoc -o $@ -f markdown
 
-$(SLIDES_PDF_DIR)/%.pdf: $(SLIDES_DIR)/%.html
-	echo $<
+$(SLIDES_PDF_DIR)/%.pdf: $(SLIDES_HTML_DIR)/%.html
 	decktape --size 1920x1080 $(BASE_URL)/$<  $@
 
 
