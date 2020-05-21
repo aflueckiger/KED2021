@@ -59,7 +59,7 @@ We have 12 seminar sessions together.
 
 On the one hand, I present the goals and organization of the seminar. On the other hand, we look at some recent applications that give an impression of the fascinating prospects of computers in the area of artificial intelligence (AI) and digital humanities (DH).
 
-**Slides:** [HTML](slides/KED2020_01.html){:target="_blank"} | [PDF](slides/pdf/KED2020_01.pdf){:target="_blank"}
+**Slides:** [HTML](slides/html/KED2020_01.html){:target="_blank"} | [PDF](slides/pdf/KED2020_01.pdf){:target="_blank"}
 
 ### Required Reading
 
@@ -75,7 +75,7 @@ On the one hand, I present the goals and organization of the seminar. On the oth
 
 Computational text analysis comes with many challenges that are unique due to the fuzziness of natural language. In this session, we learn about its methodological foundation, and we conduct our first computational text analysis to understand how this translates into practice.
 
-**Slides:** [HTML](slides/KED2020_02.html){:target="_blank"} | [PDF](slides/pdf/KED2020_02.pdf){:target="_blank"}
+**Slides:** [HTML](slides/html/KED2020_02.html){:target="_blank"} | [PDF](slides/pdf/KED2020_02.pdf){:target="_blank"}
 
 
 
@@ -83,7 +83,7 @@ Computational text analysis comes with many challenges that are unique due to th
 
 The title says it all. We are getting ready for the practical part of the course: Programming. As the installation of Python and non-standard command-line tools may be tricky, we do this in class rather than doing it as homework. Moreover, I will also introduce some principles to organize research and jargon that help you to find your way in the programmer's brave new word.
 
-**Slides:** [HTML](slides/KED2020_03.html){:target="_blank"} | [PDF](slides/pdf/KED2020_03.pdf){:target="_blank"}
+**Slides:** [HTML](slides/html/KED2020_03.html){:target="_blank"} | [PDF](slides/pdf/KED2020_03.pdf){:target="_blank"}
 
 [Installation Guide](https://aflueckiger.github.io/KED2020/materials/installation_guide.pdf)
 
@@ -99,7 +99,7 @@ The command-line is a powerful tool at your disposal. It is the working horse fo
 
 
 
-**Slides:** [HTML](slides/KED2020_04.html){:target="_blank"} | [PDF](slides/pdf/KED2020_04.pdf){:target="_blank"}
+**Slides:** [HTML](slides/html/KED2020_04.html){:target="_blank"} | [PDF](slides/pdf/KED2020_04.pdf){:target="_blank"}
 
 ### Recommended Resources
 
@@ -112,7 +112,7 @@ The command-line is a powerful tool at your disposal. It is the working horse fo
 
 Counting words is the most basic method to look at texts from a computational perspective. The command-line provides tools to quickly sift through a massive text collection to describe the use of words quantitatively. In no time, you can also take a systematic look at the word usage in context. Sounds like a Swiss knife for computational text analysis in social science? It certainly is.
 
-**Slides:** [HTML](slides/KED2020_05.html){:target="_blank"} | [PDF](slides/pdf/KED2020_05.pdf){:target="_blank"}
+**Slides:** [HTML](slides/html/KED2020_05.html){:target="_blank"} | [PDF](slides/pdf/KED2020_05.pdf){:target="_blank"}
 
 
 
@@ -120,7 +120,7 @@ Counting words is the most basic method to look at texts from a computational pe
 
 When working with text data, you spend a lot of time to clean your documents and extract some pieces of information. Doing this by hand is not only a pain but simply impossible when facing many documents. Fortunately, there is a formal language named Regular Expressions that allows writing expressive and generalizable patterns. Using these patterns, you can extract and remove any textual parts systematically without missing a single instance.
 
-**Slides:** [HTML](slides/KED2020_06.html){:target="_blank"} | [PDF](slides/pdf/KED2020_06.pdf){:target="_blank"}
+**Slides:** [HTML](slides/html/KED2020_06.html){:target="_blank"} | [PDF](slides/pdf/KED2020_06.pdf){:target="_blank"}
 
 
 
@@ -150,7 +150,7 @@ A visual editor to check your regular expressions.
 
 To this point, you have acquired the skills to cut a document into pieces and, subsequently, to extract, replace, and count any textual elements. Unless you have interesting data, these tools are neat but of no greater use. Besides some further practicing with RegEx, we turn to relevant data resources in social science. Given you have plain text at hand, your tools cut through this data like butter. For other formats, we learn about some remedies in the next session.
 
-**Slides:** [HTML](slides/KED2020_07.html){:target="_blank"} | [PDF](slides/pdf/KED2020_07.pdf){:target="_blank"}
+**Slides:** [HTML](slides/html/KED2020_07.html){:target="_blank"} | [PDF](slides/pdf/KED2020_07.pdf){:target="_blank"}
 
 
 
@@ -160,7 +160,7 @@ The world we live in is not made for machines but people -- for better or for wo
 
 
 
-**Slides:** [HTML](slides/KED2020_08.html){:target="_blank"} | [PDF](slides/pdf/KED2020_08.pdf){:target="_blank"}
+**Slides:** [HTML](slides/html/KED2020_08.html){:target="_blank"} | [PDF](slides/pdf/KED2020_08.pdf){:target="_blank"}
 
 
 
@@ -168,7 +168,7 @@ The world we live in is not made for machines but people -- for better or for wo
 
 It may come as a surprise that we start with Python in the ninth session only. As the folks say, Python is among the coolest programming languages, relatively easy to learn, and provides excellent NLP packages so that you don't have to implement everything yourself. All true as long as you have your data ready. In this session, we begin with an introduction to the basic syntax of Python. Starting with this dry subject is necessary as it allows you to modify the more sophisticated NLP analyses to your needs.
 
-**Slides:** [HTML](slides/KED2020_09.html){:target="_blank"} | [PDF](slides/pdf/KED2020_09.pdf){:target="_blank"}
+**Slides:** [HTML](slides/html/KED2020_09.html){:target="_blank"} | [PDF](slides/pdf/KED2020_09.pdf){:target="_blank"}
 
 
 
@@ -176,7 +176,7 @@ It may come as a surprise that we start with Python in the ninth session only. A
 
 Python is the language of choice when it comes to serious NLP. Have you ever wondered how the frequency of terms evolves over the years? Or how the language differs between two groups of documents whereby the groups may be formed by any metadata (person, organization, gender etc.)? Exploring is most effective in an interactive and visual mode - so be it. Among some basic statistics, this is the serious stuff where we finally arrive in our journey. Moreover, you will learn the jargon of NLP to don't get lost in the forest of yet unknown terms.
 
-**Slides:** [HTML](slides/KED2020_10.html){:target="_blank"} | [PDF](slides/pdf/KED2020_10.pdf){:target="_blank"}
+**Slides:** [HTML](slides/html/KED2020_10.html){:target="_blank"} | [PDF](slides/pdf/KED2020_10.pdf){:target="_blank"}
 
 ### Code
 
@@ -190,7 +190,7 @@ Python is the language of choice when it comes to serious NLP. Have you ever won
 
 In today's session, we continue our deep dive into NLP with Python. It is the last piece in our puzzle. During this course, you have learned about the entire workflow, from assembling datasets of documents to analyze their content and visualize your findings. As soon as you have a structured text collection along with basic meta data (e.g., publication date), you can take numerous perspectives to look at your data. At this stage, it is time for the kick-off of the mini-projects allowing you to work with your data of interest. 
 
-**Slides:** [HTML](slides/KED2020_11.html){:target="_blank"} | [PDF](slides/pdf/KED2020_11.pdf){:target="_blank"}
+**Slides:** [HTML](slides/html/KED2020_11.html){:target="_blank"} | [PDF](slides/pdf/KED2020_11.pdf){:target="_blank"}
 
 ### Code
 
