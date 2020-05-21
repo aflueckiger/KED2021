@@ -59,7 +59,7 @@ We have 12 seminar sessions together.
 
 On the one hand, I present the goals and organization of the seminar. On the other hand, we look at some recent applications that give an impression of the fascinating prospects of computers in the area of artificial intelligence (AI) and digital humanities (DH).
 
-[Week 1 Slides](slides/KED2020_01.html){:target="_blank"}
+[HTML slides](slides/KED2020_01.html){:target="_blank"} [PDF slides](slides/pdf/KED2020_01.pdf){:target="_blank"}
 
 ### Required Reading
 

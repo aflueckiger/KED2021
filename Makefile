@@ -40,12 +40,18 @@ CROSSREF = --filter pandoc-crossref -M figPrefix:"Figure" -M eqnPrefix:"Equation
 
 # SLIDES
 SLIDES_DIR?= slides
+SLIDES_PDF_DIR?= slides/pdf
 NOTES_DIR?= $(SLIDES_DIR)/notes
 slides-md := $(wildcard $(SLIDES_DIR)/*.md)
 slides-html := $(patsubst $(SLIDES_DIR)/%.md,$(SLIDES_DIR)/%.html,$(slides-md))
 notes-pdf := $(patsubst $(SLIDES_DIR)/%.md,$(NOTES_DIR)/%.notes.pdf,$(slides-md))
 notes: $(notes-pdf)
 slides:	$(slides-html) $(notes-pdf)
+
+BASE_URL?= file:///home/alex/drive/lehrauftrag_unilu/KED2020
+slides-pdf := $(patsubst $(SLIDES_DIR)/%.html,$(SLIDES_PDF_DIR)/%.pdf,$(slides-html))
+slides-pdf: $(slides-pdf)
+
 
 # EXERCISES
 EXERCISES_DIR = exercises
@@ -59,6 +65,10 @@ materials-md := $(wildcard $(MATERIALS_DIR)/*.md)
 materials-pdf := $(materials-md:.md=.pdf)
 materials:	$(materials-pdf)
 
+# SYLLABUS
+syllabus-pdf:= KED2020_syllabus.pdf
+syllabus: $(syllabus-pdf)
+
 
 print-%:
 	@echo $* = $($*)
@@ -68,12 +78,15 @@ prepare-dir:
 	mkdir -p $(NOTES_DIR)
 	mkdir -p $(EXERCISES_DIR)
 	mkdir -p $(MATERIALS_DIR)
+	mkdir -p $(SLIDES_PDF_DIR)
 
 all:	$(slides-html) $(materials-pdf) $(exercises-pdf) $(NOTES)
-
+#https://revealjs.com
+# -V revealjs-url=https://cdn.jsdelivr.net/reveal.js/4.0.0
 %.html:	%.md $(CSS)
 	pandoc -f markdown+emoji+strikeout -t revealjs -s -o $@ $< \
-	-V revealjs-url=https://revealjs.com -V theme=night  \
+	-V revealjs-url="https://cdn.jsdelivr.net/npm/reveal.js" \
+	-V theme=night \
 	-V navigationMode=linear \
 	-V slideNumber=true \
 	-V biblio-title:References \
@@ -88,19 +101,26 @@ all:	$(slides-html) $(materials-pdf) $(exercises-pdf) $(NOTES)
 $(NOTES_DIR)/%.notes.pdf: $(SLIDES_DIR)/%.md lib/extract_notes.py
 	python lib/extract_notes.py < $< | pandoc -o $@ -f markdown
 
+$(SLIDES_PDF_DIR)/%.pdf: $(SLIDES_DIR)/%.html
+	echo $<
+	decktape --size 1920x1080 $(BASE_URL)/$<  $@
 
 
-OPTIONS = markdown+simple_tables+table_captions+yaml_metadata_block+smart
+KED2020_syllabus.pdf: index.md
+	cat $< | sed 's/{:target="_blank"}//g' > temp.md
+	pandoc -o $@ temp.md \
+	--variable urlcolor=blue \
+	--lua-filter=/home/alex/lua-filters/scholarly-metadata/scholarly-metadata.lua \
+	--lua-filter=/home/alex/lua-filters/author-info-blocks/author-info-blocks.lua \
+	--number-sections
 
-
-
-%.pdf:	%.md
+%.pdf: %.md
 	pandoc -o $@ $< \
 	--variable urlcolor=blue \
 	--lua-filter=/home/alex/lua-filters/scholarly-metadata/scholarly-metadata.lua \
 	--lua-filter=/home/alex/lua-filters/author-info-blocks/author-info-blocks.lua \
 	--number-sections
-	# --template=$(PREFIX)/templates/latex_alex.template 
+	# --template=$(PREFIX)/templates/latex_alex.template
 	# --filter pandoc-citeproc --csl=$(CSL) --bibliography=$(BIB)
 
 clean:
