@@ -36,18 +36,18 @@ We have 12 seminar sessions together.
 
 | Date             | Topic                                                        |
 | ---------------- | ------------------------------------------------------------ |
-| 27 February 2020 | [Introduction + Where is the digital revolution?](#week-1:-introduction-+-where-is-the-digital-revolution?) |
-| 05 March 2020    | Text as Data                                                 |
-| 12 March 2020    | Setting up your Development Environment                      |
-| 19 March 2020    | Introduction to the Command-line                             |
-| 26 March 2020    | Basic NLP with Command-line                                  |
-| 02 April 2020    | Learning Regular Expressions                                 |
-| 09 April 2020    | RegEx + Data Sources                                         |
+| 27 February 2020 | [Introduction + Where is the digital revolution?](#week-1-introduction--where-is-the-digital-revolution) |
+| 05 March 2020    | [Text as Data](#week-2-text-as-data)                         |
+| 12 March 2020    | [Setting up your Development Environment](#week-3-setting-up-your-development-environment) |
+| 19 March 2020    | [Introduction to the Command-line](#week-4-introduction-to-the-command-line) |
+| 26 March 2020    | [Basic NLP with Command-line](#week-5-basic-nlp-with-command-line) |
+| 02 April 2020    | [Learning Regular Expressions](#week-6-learning-regular-expressions) |
+| 09 April 2020    | [RegEx + Data Sources](#week-7-regex--data-sources)          |
 | 16 April 2020    | *no lecture (Osterpause)*                                    |
-| 23 April 2020    | Creating new Data Sets + Ethics                              |
-| 30 April 2020    | Introduction to Python                                       |
-| 07 May 2020      | NLP with Python                                              |
-| 14 May 2020      | NLP with Python + Working Session                            |
+| 23 April 2020    | [Creating new Data Sets + Ethics](#week-8-creating-new-data-sets--ethics) |
+| 30 April 2020    | [Introduction to Python](#week-9-introduction-to-python)     |
+| 07 May 2020      | [NLP with Python](#week-10-nlp-with-python)                  |
+| 14 May 2020      | [NLP with Python + Working Session](#week-11-nlp-with-python-ii--working-session) |
 | 21 May 2020      | *no lecture (Christi Himmelfahrt)*                           |
 | 28 May 2020      | Mini-Project Presentations + concluding Discussion           |
 
@@ -83,9 +83,7 @@ Computational text analysis comes with many challenges that are unique due to th
 
 The title says it all. We are getting ready for the practical part of the course: Programming. As the installation of Python and non-standard command-line tools may be tricky, we do this in class rather than doing it as homework. Moreover, I will also introduce some principles to organize research and jargon that help you to find your way in the programmer's brave new word.
 
-**Slides:** [HTML](slides/html/KED2020_03.html){:target="_blank"} | [PDF](slides/pdf/KED2020_03.pdf){:target="_blank"}
-
-[Installation Guide](https://aflueckiger.github.io/KED2020/materials/installation_guide.pdf)
+**Slides:** [HTML](slides/html/KED2020_03.html){:target="_blank"} | [PDF](slides/pdf/KED2020_03.pdf){:target="_blank"} | [Installation Guide](https://aflueckiger.github.io/KED2020/materials/installation_guide.pdf)
 
 ### Optional: pimp your workflow
 
