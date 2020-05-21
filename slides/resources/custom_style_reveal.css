@@ -1,13 +1,13 @@
 <style type='text/css'>
 /*
-#4d7e65 green
-#b5533c red
 
 ## green {data-background=#4d7e65}
 
 ## blue {data-background=#3c70b5}
 
 ## red {data-background=#b5533c}
+
+## black {data-background=#111}
 
  */
 
@@ -79,13 +79,21 @@ ul li {
 }
 
 ul li li {
-
  line-height:1.3em;
  list-style-type: None;
  font-style: italic;
  font-size: 90%;
  font-family: Georgia;
 }
+
+ol li li {
+ line-height:1.3em;
+ list-style-type: None;
+ font-style: italic;
+ font-size: 90%;
+ font-family: Georgia;
+}
+
 
 hr {
     color: white;
