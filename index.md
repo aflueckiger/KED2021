@@ -34,22 +34,22 @@ This is a new course. The material emphasized, as well as the schedule, will be 
 
 We have 12 seminar sessions together.
 
-| Date             | Topic                                              |
-| ---------------- | -------------------------------------------------- |
-| 27 February 2020 | Introduction + Where is the digital revolution?    |
-| 05 March 2020    | Text as Data                                       |
-| 12 March 2020    | Setting up your Development Environment            |
-| 19 March 2020    | Introduction to the Command-line                   |
-| 26 March 2020    | Basic NLP with Command-line                        |
-| 02 April 2020    | Learning Regular Expressions                       |
-| 09 April 2020    | RegEx + Data Sources                               |
-| 16 April 2020    | *no lecture (Osterpause)*                          |
-| 23 April 2020    | Creating new Data Sets + Ethics                    |
-| 30 April 2020    | Introduction to Python                             |
-| 07 May 2020      | NLP with Python                                    |
-| 14 May 2020      | NLP with Python + Working Session                  |
-| 21 May 2020      | *no lecture (Christi Himmelfahrt)*                 |
-| 28 May 2020      | Mini-Project Presentations + concluding Discussion |
+| Date             | Topic                                                        |
+| ---------------- | ------------------------------------------------------------ |
+| 27 February 2020 | [Introduction + Where is the digital revolution?](#week-1:-introduction-+-where-is-the-digital-revolution?) |
+| 05 March 2020    | Text as Data                                                 |
+| 12 March 2020    | Setting up your Development Environment                      |
+| 19 March 2020    | Introduction to the Command-line                             |
+| 26 March 2020    | Basic NLP with Command-line                                  |
+| 02 April 2020    | Learning Regular Expressions                                 |
+| 09 April 2020    | RegEx + Data Sources                                         |
+| 16 April 2020    | *no lecture (Osterpause)*                                    |
+| 23 April 2020    | Creating new Data Sets + Ethics                              |
+| 30 April 2020    | Introduction to Python                                       |
+| 07 May 2020      | NLP with Python                                              |
+| 14 May 2020      | NLP with Python + Working Session                            |
+| 21 May 2020      | *no lecture (Christi Himmelfahrt)*                           |
+| 28 May 2020      | Mini-Project Presentations + concluding Discussion           |
 
 
 
