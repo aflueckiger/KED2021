@@ -26,7 +26,9 @@ Along the road, we deal with questions like these:
 * How to download data automatically from a website and process *en masse*? 
 * How can historical texts be extracted from PDFs using Optical Character Recognition (OCR)?
 
+[Syllabus](KED2020_syllabus.pdf){:target="_blank"} | [Link to lecture on UniLu website](https://vv.unilu.ch/details?code=FS201497)
 
+\newpage
 
 # Schedule
 
@@ -49,7 +51,7 @@ We have 12 seminar sessions together.
 | 07 May 2020      | [NLP with Python](#week-10-nlp-with-python)                  |
 | 14 May 2020      | [NLP with Python + Working Session](#week-11-nlp-with-python-ii--working-session) |
 | 21 May 2020      | *no lecture (Christi Himmelfahrt)*                           |
-| 28 May 2020      | Mini-Project Presentations + concluding Discussion           |
+| 28 May 2020      | Mini-Project Presentations + Discussion(#week-12-mini-project-presentations--discussion) |
 
 
 
@@ -178,23 +180,19 @@ Python is the language of choice when it comes to serious NLP. Have you ever won
 
 ### Code
 
-[Week 10 Python Code](https://github.com/aflueckiger/KED2020/blob/master/scripts/KED2020_10.ipynb){:target="_blank"}
+Go to the static code: [Python NLP](https://github.com/aflueckiger/KED2020/blob/master/scripts/KED2020_10.ipynb){:target="_blank"}
 
- [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aflueckiger/KED2020/master) to run the code in your browser (path `scripts/KED2020_10.ipynb`)
+To run the code in your browser without any installation:
 
+ [![Binder](https://mybinder.org/badge_logo.svg){ height=0.4cm } ](https://mybinder.org/v2/gh/aflueckiger/KED2020/master) 
 
+(path `scripts/KED2020_10.ipynb`)
 
 ## Week 11: NLP with Python II + Working Session
 
 In today's session, we continue our deep dive into NLP with Python. It is the last piece in our puzzle. During this course, you have learned about the entire workflow, from assembling datasets of documents to analyze their content and visualize your findings. As soon as you have a structured text collection along with basic meta data (e.g., publication date), you can take numerous perspectives to look at your data. At this stage, it is time for the kick-off of the mini-projects allowing you to work with your data of interest. 
 
 **Slides:** [HTML](slides/html/KED2020_11.html){:target="_blank"} | [PDF](slides/pdf/KED2020_11.pdf){:target="_blank"}
-
-### Code
-
-[Week 11 Python Code](https://github.com/aflueckiger/KED2020/blob/master/scripts/KED2020_10.ipynb){:target="_blank"}
-
- [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aflueckiger/KED2020/master) to run the code in your browser (path `scripts/KED2020_10.ipynb`)
 
 ### Explore interactively: 1 August Speeches by Swiss Federal Councilors
 
@@ -204,16 +202,22 @@ The interactive visualization linked below shows how the language differs betwee
 
 You can search for the terms of your interest. Moreover, you may click on the points in the plot to show the context of the corresponding words within speeches. These functions allow for a quick investigation of the corpus along the dimensions of Swiss parties.
 
-[Explore interactively](analysis/viz_party_differences.html){:target="_blank"} (it takes a few seconds to load)
+[Explore in Browser](analysis/viz_party_differences.html){:target="_blank"}  *(it takes a few seconds to load)*
 
 
+
+## Week 12: Mini-Project Presentations + Discussion
+
+In this session, it is entirely your turn. Going beyond mere toy examples, you present what you have worked on in groups and showing off your first harvest of computational text analysis. 
+
+The seminar is coming to an end, yet it doesn't have to be a dead-end. You may have gotten more proficient in cursing your computer but also making your way through the jungle of technology. Continue the journey, cheers!
+
+**Slides:** [HTML](slides/html/KED2020_12.html){:target="_blank"} | [PDF](slides/pdf/KED2020_12.pdf){:target="_blank"}
 
 
 # Exercises
 
 You need to submit three exercises to complete the seminar successfully. The point of the exercises is not to make it hard to pass but rather to foster the engagement with the covered material of this class. As you like, you may prefer to work in teams to discuss different approaches. Nonetheless, each student has to submit his own solution. 
-
-
 
 | #    | Topic                                                        | Published     | Deadline                    |
 | ---- | ------------------------------------------------------------ | ------------- | --------------------------- |
@@ -221,7 +225,7 @@ You need to submit three exercises to complete the seminar successfully. The poi
 | 2    | [Regex NLP](https://aflueckiger.github.io/KED2020/exercises/exercise_2/KED2020_exercise_2.pdf) | 02 April 2020 | 16 April 2020 (by midnight) |
 | 3    | [Python NLP](https://aflueckiger.github.io/KED2020/exercises/exercise_3/KED2020_exercise_3.pdf) | 07 May 2020   | 14 May 2020 (by midnight)   |
 
-
+## Formal Instructions
 
 Your submission is a single script, meaning that is readily executable, and is named as follows:
 
@@ -230,7 +234,7 @@ Your submission is a single script, meaning that is readily executable, and is n
 
 The script follows the order of the tasks in the exercise. In addition to the commands you have used to come up with a solution, you also provide a short, yet concise explanation of the actual solution as a comment (lines starting with `#`). Please use the following examples as template:
 
-Bash
+### Bash
 
 ```bash
 #!/bin/bash
@@ -254,7 +258,7 @@ echo -n "test" | wc
 ...
 ```
 
-Python
+### Python
 
 ```python
 #!/usr/bin/env python3
@@ -269,6 +273,8 @@ Python
 ### task 1a)
 print("Hello, World")
 # outputs the provided string to the prompt
+
+...
 ```
 
 
