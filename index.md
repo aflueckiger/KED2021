@@ -185,7 +185,7 @@ Go to the static code: [Python NLP](https://github.com/aflueckiger/KED2020/blob/
 
 To run the code in your browser without any installation:
 
- [![Binder](https://mybinder.org/badge_logo.svg){ height=0.4cm } ](https://mybinder.org/v2/gh/aflueckiger/KED2020/master) 
+ [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aflueckiger/KED2020/master) 
 
 (path `scripts/KED2020_10.ipynb`)
 
