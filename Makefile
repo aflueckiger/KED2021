@@ -114,10 +114,16 @@ $(SLIDES_PDF_DIR)/%.pdf: $(SLIDES_HTML_DIR)/%.html
 KED2020_syllabus.pdf: index.md
 	cat $< | sed 's/{:target="_blank"}//g' > temp.md
 	pandoc -o $@ temp.md \
-	--variable urlcolor=blue \
+	--toc \
+	--toc-depth=1 \
+	--number-sections \
+	-V geometry:margin=2.5cm \
+	-V urlcolor='[HTML]{111bab}' \
+	-V linkcolor='[HTML]{111bab}' \
+	-V filecolor='[HTML]{111bab}' \
 	--lua-filter=/home/alex/lua-filters/scholarly-metadata/scholarly-metadata.lua \
-	--lua-filter=/home/alex/lua-filters/author-info-blocks/author-info-blocks.lua \
-	--number-sections
+	--lua-filter=/home/alex/lua-filters/author-info-blocks/author-info-blocks.lua
+	rm temp.md
 
 %.pdf: %.md
 	pandoc -o $@ $< \
