@@ -28,7 +28,8 @@ Along the road, we deal with questions like these:
 
 [Syllabus](KED2020_syllabus.pdf){:target="_blank"} | [Link to lecture on UniLu website](https://vv.unilu.ch/details?code=FS201497)
 
-\newpage
+<p style="page-break-after: always;">&nbsp;</p>
+<p style="page-break-before: always;">&nbsp;</p>
 
 # Schedule
 
@@ -51,7 +52,7 @@ We have 12 seminar sessions together.
 | 07 May 2020      | [NLP with Python](#week-10-nlp-with-python)                  |
 | 14 May 2020      | [NLP with Python + Working Session](#week-11-nlp-with-python-ii--working-session) |
 | 21 May 2020      | *no lecture (Christi Himmelfahrt)*                           |
-| 28 May 2020      | Mini-Project Presentations + Discussion(#week-12-mini-project-presentations--discussion) |
+| 28 May 2020      | [Mini-Project Presentations + Discussion](#week-12-mini-project-presentations--discussion) |
 
 
 
