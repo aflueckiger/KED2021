@@ -7,7 +7,7 @@ date: 2020-05-31
 categories: Sociology "Digital Humanities" "Computational Text Analysis"
 ---
 
-<meta content="{{ site.url }}/{{ page.image }}" property="og:image">
+<meta property="og:image" content="https://github.com/aflueckiger/KED2020/blob/master/social_media_preview.png">
 
 <script>
 $(document).ready(function(){
