@@ -4,10 +4,9 @@ author:
 - name: Alex Flückiger
   affiliation: University of Lucerne
 date: 2020-05-31
+og_image: social_media_preview.png
 categories: Sociology "Digital Humanities" "Computational Text Analysis"
 ---
-
-<meta property="og:image" content="https://github.com/aflueckiger/KED2020/blob/master/social_media_preview.png">
 
 <script>
 $(document).ready(function(){
