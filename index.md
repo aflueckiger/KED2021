@@ -3,8 +3,11 @@ title: 'Seminar: The ABC of computational Text Analysis'
 author:
 - name: Alex Flückiger
   affiliation: University of Lucerne
-date: 2020
+date: 2020-05-31
+categories: Sociology "Digital Humanities" "Computational Text Analysis"
 ---
+
+<meta content="{{ site.url }}/{{ page.image }}" property="og:image">
 
 <script>
 $(document).ready(function(){
