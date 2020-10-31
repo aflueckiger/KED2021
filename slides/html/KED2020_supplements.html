@@ -9,8 +9,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reset.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -80,19 +80,9 @@
     code span.va { color: #19177c; } /* Variable */
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/night.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css' : 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/night.css" id="theme">
   <style type='text/css'>
   /*
 
@@ -290,12 +280,12 @@
 </section>
 <section id="key-word-in-context-kwic" class="slide level2">
 <h2>Key Word in Context (KWIC)</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">ptx</span> -f -w 50 */*.txt <span class="op">&gt;</span> ptx.txt</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">egrep</span> -i <span class="st">&quot;[a-z]  word&quot;</span> ptx.txt</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">ptx</span> -f -w 50 */*.txt <span class="op">&gt;</span> ptx.txt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="fu">egrep</span> -i <span class="st">&quot;[a-z]  word&quot;</span> ptx.txt</span></code></pre></div>
 </section>
 <section id="select-column-in-dataset" class="slide level2">
 <h2>Select Column in Dataset</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">cut</span> -d\t -f1    <span class="co"># extract the 2nd column from a tab-separated file</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="fu">cut</span> -d\t -f1    # extract the 2nd column from a tab-separated file</span></code></pre></div>
 </section>
 <section id="extract-texts-from-tsv" class="slide level2">
 <h2>Extract texts from tsv:</h2>
@@ -305,24 +295,24 @@
 </section>
 <section id="variables" class="slide level2">
 <h2>Variables</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="bu">echo</span> <span class="st">&quot;Starting program at </span><span class="va">$(</span><span class="fu">date</span><span class="va">)</span><span class="st">&quot;</span> </span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="bu">echo</span> <span class="st">&quot;Starting program at </span><span class="va">$(</span><span class="fu">date</span><span class="va">)</span><span class="st">&quot;</span> </span></code></pre></div>
 </section>
 <section id="batch-processing" class="slide level2">
 <h2>Batch Processing</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">for</span> <span class="fu">file</span> in *.txt<span class="kw">;</span> <span class="kw">do</span>           <span class="co"># loop over all text files</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a> <span class="fu">cat</span> <span class="st">&quot;</span><span class="va">$file</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="ex">pipe</span> commands <span class="op">&gt;</span> <span class="st">&quot;proc_</span><span class="va">$file</span><span class="st">&quot;</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="kw">done</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">for</span> <span class="fu">file</span> in *.txt<span class="kw">;</span> <span class="kw">do</span>           # <span class="ex">loop</span> over all text files</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a> <span class="fu">cat</span> <span class="st">&quot;</span><span class="va">$file</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="ex">pipe</span> commands <span class="op">&gt;</span> <span class="st">&quot;proc_</span><span class="va">$file</span><span class="st">&quot;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="kw">done</span></span></code></pre></div>
 </section>
 <section id="batch-renaming" class="slide level2">
 <h2>Batch Renaming</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">rename</span>  <span class="st">&quot; &quot;</span> <span class="st">&quot;_&quot;</span> *.txt   <span class="co"># replace spaces with underscores</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="co"># since there are different versions, if this doesn&#39;t work try:</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># rename &#39;s/ /_/&#39; *.txt</span></span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="va">i=</span>1</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="kw">for</span> <span class="fu">file</span> in *.txt<span class="kw">;</span> <span class="kw">do</span>           <span class="co"># loop over all text files</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a> <span class="fu">mv</span> -- <span class="st">&quot;</span><span class="va">$file</span><span class="st">&quot;</span> <span class="st">&quot;text_</span><span class="va">$i</span><span class="st">.txt&quot;</span>    <span class="co"># rename each file with a sequential number</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a> <span class="va">i=$((</span>i+1<span class="va">))</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="kw">done</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="ex">rename</span>  <span class="st">&quot; &quot;</span> <span class="st">&quot;_&quot;</span> *.txt   # replace spaces with underscores</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="co"># since there are different versions, if this doesn&#39;t work try:</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="co"># rename &#39;s/ /_/&#39; *.txt</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="va">i=</span>1</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="kw">for</span> <span class="fu">file</span> in *.txt<span class="kw">;</span> <span class="kw">do</span>           # <span class="ex">loop</span> over all text files</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a> <span class="fu">mv</span> -- <span class="st">&quot;</span><span class="va">$file</span><span class="st">&quot;</span> <span class="st">&quot;text_</span><span class="va">$i</span><span class="st">.txt&quot;</span>    # rename each file with a sequential number</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a> <span class="va">i=$((</span>i+1<span class="va">))</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="kw">done</span></span></code></pre></div>
 </section>
 <section id="data-cleaning" class="slide level2">
 <h2>Data Cleaning</h2>
@@ -333,25 +323,30 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
         // Display the page number of the current slide
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
-        // see https://github.com/hakimel/reveal.js/#navigation-mode
+        // see https://revealjs.com/vertical-slides/#navigation-mode
         navigationMode: 'linear',
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>

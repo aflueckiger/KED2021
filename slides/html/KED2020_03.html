@@ -9,8 +9,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reset.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -18,19 +18,9 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/night.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css' : 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/night.css" id="theme">
   <style type='text/css'>
   /*
 
@@ -314,7 +304,7 @@
 </ul>
 </div><div class="column" style="width:50%;">
 <figure>
-<img data-src="../images/zotero.png" alt="" /><figcaption><a href="https://www.zotero.org/">Zotero</a></figcaption>
+<img data-src="../images/zotero.png" alt="Zotero" /><figcaption aria-hidden="true"><a href="https://www.zotero.org/">Zotero</a></figcaption>
 </figure>
 </div>
 </div>
@@ -361,10 +351,10 @@
 <li>workflow for data science</li>
 </ul></li>
 </ul>
-<p><span class="citation" data-cites="Healy2019">(see also Healy 2019)</span></p>
+<p><span class="citation" data-cites="Healy2019">[see also @Healy2019]</span></p>
 </div><div class="column" style="width:17%;">
 <figure>
-<img data-src="../images/original-apple-iphone.jpg" alt="" /><figcaption>Apple Original iPhone</figcaption>
+<img data-src="../images/original-apple-iphone.jpg" alt="Apple Original iPhone" /><figcaption aria-hidden="true">Apple Original iPhone</figcaption>
 </figure>
 </div>
 </div>
@@ -691,36 +681,36 @@
 <h3 id="optional-pimp-your-workflow">optional: pimp your workflow</h3>
 <p>Healy, Kieran. 2019. “The Plain Person’s Guide to Plain Text Social Science.” <a href="https://kieranhealy.org/publications/plain-person-text/">online</a>.</p>
 </section>
-<section id="references" class="slide level2 unnumbered">
-<h2 class="unnumbered">References</h2>
-<div id="refs" class="references hanging-indent" role="doc-bibliography">
-<div id="ref-Healy2019">
-<p>Healy, Kieran. 2019. “The Plain Person’s Guide to Plain Text Social Science.” <a href="https://kieranhealy.org/publications/plain-person-text/">https://kieranhealy.org/publications/plain-person-text/</a>.</p>
-</div>
-</div>
+<section id="references" class="slide level2">
+<h2>References</h2>
 </section></section>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
         // Display the page number of the current slide
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
-        // see https://github.com/hakimel/reveal.js/#navigation-mode
+        // see https://revealjs.com/vertical-slides/#navigation-mode
         navigationMode: 'linear',
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>

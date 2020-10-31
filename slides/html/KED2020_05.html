@@ -9,8 +9,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reset.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -80,19 +80,9 @@
     code span.va { color: #19177c; } /* Variable */
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/night.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css' : 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/night.css" id="theme">
   <style type='text/css'>
   /*
 
@@ -317,7 +307,7 @@
 <section id="when-politics-changes-language-changes." class="slide level2">
 <h2>When Politics changes, <br>Language changes.</h2>
 <figure>
-<img data-src="../images/swiss_party_politics.gif" style="height:11cm" alt="" /><figcaption>historical development of Swiss party politics (<a href="https://blog.tagesanzeiger.ch/datenblog/index.php/1791/wie-sich-die-svp-aus-dem-buergerblock-verabschiedet-hat">Tagesanzeiger</a>)</figcaption>
+<img data-src="../images/swiss_party_politics.gif" style="height:11cm" alt="historical development of Swiss party politics (Tagesanzeiger)" /><figcaption aria-hidden="true">historical development of Swiss party politics (<a href="https://blog.tagesanzeiger.ch/datenblog/index.php/1791/wie-sich-die-svp-aus-dem-buergerblock-verabschiedet-hat">Tagesanzeiger</a>)</figcaption>
 </figure>
 <aside class="notes">
 <ul>
@@ -361,7 +351,7 @@
 </ul>
 </div><div class="column" style="width:40%;">
 <figure>
-<img data-src="../images/word_magnets.jpg" alt="" /><figcaption>text as a bag of words (<a href="https://cdn02.plentymarkets.com/r3pmentklgg2/item/../images/1716/full/Magnetwoerter.jpg">source</a>)</figcaption>
+<img data-src="../images/word_magnets.jpg" alt="text as a bag of words (source)" /><figcaption aria-hidden="true">text as a bag of words (<a href="https://cdn02.plentymarkets.com/r3pmentklgg2/item/../images/1716/full/Magnetwoerter.jpg">source</a>)</figcaption>
 </figure>
 </div>
 </div>
@@ -380,7 +370,7 @@
 </section>
 <section id="key-figures-of-texts" class="slide level2">
 <h2>Key Figures of Texts</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">wc</span> *.txt    <span class="co"># count number of lines, words, characters</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">wc</span> *.txt    # count number of lines, words, characters</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>zuerst Charakterisierung Datenquelle, nicht nur Inhalt</li>
@@ -391,13 +381,13 @@
 <section id="word-occurrences" class="slide level2">
 <h2>Word Occurrences</h2>
 <h4 id="show-in-context">show in context</h4>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">grep</span> -ir <span class="st">&#39;data&#39;</span>         <span class="co"># search in current folder, ignore case</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co"># other options</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># --colour to highlight pattern</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="co"># --context 2 to show 2 lines above/below</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="fu">grep</span> -ir <span class="st">&#39;data&#39;</span>         # search in current folder, ignore case</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="co"># other options</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="co"># --colour to highlight pattern</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="co"># --context 2 to show 2 lines above/below</span></span></code></pre></div>
 <h4 id="count-words">count words</h4>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">grep</span> -ic <span class="st">&#39;data&#39;</span> */*.txt <span class="co"># count in all txt-files, ignore case</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="fu">grep</span> -ic <span class="st">&#39;data&#39;</span> */*.txt <span class="co"># count in all txt-files, ignore case</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>options
@@ -434,13 +424,13 @@
 <li>sort words</li>
 <li>count how often each word appears</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># piping steps to get word frequencies</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">cat</span> text.txt <span class="kw">|</span> <span class="fu">tr</span> <span class="st">&#39; &#39;</span> <span class="st">&#39;\n&#39;</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> -c <span class="kw">|</span> <span class="fu">sort</span> -h <span class="op">&gt;</span> wordfreq.txt</span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># explanation of individual steps</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="fu">tr</span> <span class="st">&#39; &#39;</span> <span class="st">&#39;\n&#39;</span>     <span class="co"># replace spaces with newline </span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="fu">sort</span>            <span class="co"># sort lines alphanumerically</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="fu">uniq</span> -c         <span class="co"># count repeated lines</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co"># piping steps to get word frequencies</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="fu">cat</span> text.txt <span class="kw">|</span> <span class="fu">tr</span> <span class="st">&#39; &#39;</span> <span class="st">&#39;\n&#39;</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> -c <span class="kw">|</span> <span class="fu">sort</span> -h <span class="op">&gt;</span> wordfreq.txt</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a><span class="co"># explanation of individual steps</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="fu">tr</span> <span class="st">&#39; &#39;</span> <span class="st">&#39;\n&#39;</span>     # replace spaces with newline </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a><span class="fu">sort</span>            # sort lines alphanumerically</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a><span class="fu">uniq</span> -c         # count repeated lines</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Zweck: Häufigkeiten aller Wörter</li>
@@ -487,10 +477,10 @@
 <li>export to Excel</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># convert word frequencies into tsv-file</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="co"># additional step: replace a sequence of spaces with a tabulator</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">cat</span> text.txt <span class="kw">|</span> <span class="fu">tr</span> <span class="st">&#39; &#39;</span> <span class="st">&#39;\n&#39;</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> -c  <span class="kw">|</span> <span class="fu">sort</span> -h <span class="kw">|</span> <span class="kw">\</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">tr</span> -s <span class="st">&#39; &#39;</span> <span class="st">&#39;\t&#39;</span>  <span class="op">&gt;</span> test.tsv  </span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co"># convert word frequencies into tsv-file</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="co"># additional step: replace a sequence of spaces with a tabulator</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="fu">cat</span> text.txt <span class="kw">|</span> <span class="fu">tr</span> <span class="st">&#39; &#39;</span> <span class="st">&#39;\n&#39;</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> -c  <span class="kw">|</span> <span class="fu">sort</span> -h <span class="kw">|</span> <span class="kw">\</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a><span class="fu">tr</span> -s <span class="st">&#39; &#39;</span> <span class="st">&#39;\t&#39;</span>  <span class="op">&gt;</span> test.tsv  </span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>alle Leerschläge durch Tabulator ersetzen</li>
@@ -524,7 +514,7 @@
 <ul>
 <li>reduce word forms</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="bu">echo</span> <span class="st">&#39;ÜBER&#39;</span> <span class="kw">|</span> <span class="fu">tr</span> <span class="st">&quot;A-ZÄÖÜ&quot;</span> <span class="st">&quot;a-zäöü&quot;</span>  <span class="co"># fold text to lowercase</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="bu">echo</span> <span class="st">&#39;ÜBER&#39;</span> <span class="kw">|</span> <span class="fu">tr</span> <span class="st">&quot;A-ZÄÖÜ&quot;</span> <span class="st">&quot;a-zäöü&quot;</span>  # fold text to lowercase</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Grossschreibung Satzanfang</li>
@@ -533,10 +523,10 @@
 </section>
 <section id="removing-and-replacing-symbols" class="slide level2">
 <h2>Removing and Replacing Symbols</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="bu">echo</span> <span class="st">&quot;3x3&quot;</span> <span class="kw">|</span> <span class="fu">tr</span> -d [:digit:]    <span class="co"># remove all digits </span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">cat</span> text.txt <span class="kw">|</span> <span class="fu">tr</span> -d [:punct:]  <span class="co"># remove punctuation like .,:; </span></span>
-<span id="cb7-3"><a href="#cb7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">tr</span> <span class="st">&#39;Y&#39;</span> <span class="st">&#39;Z&#39;</span>                      <span class="co"># replace any Y with Z</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="bu">echo</span> <span class="st">&quot;3x3&quot;</span> <span class="kw">|</span> <span class="fu">tr</span> -d [:digit:]    # remove all digits </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="fu">cat</span> text.txt <span class="kw">|</span> <span class="fu">tr</span> -d [:punct:]  # remove punctuation like .,:<span class="kw">;</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a><span class="fu">tr</span> <span class="st">&#39;Y&#39;</span> <span class="st">&#39;Z&#39;</span>                      # replace any Y with Z</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>löscht alle Einzelzeichen in Text (keine Sequenzen)</li>
@@ -548,8 +538,8 @@
 <ul>
 <li>save preprocessed documents</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">cat</span> speech.txt <span class="kw">|</span> <span class="fu">tr</span> A-ZÄÖÜ a-zäöü <span class="kw">|</span> <span class="kw">\</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">tr</span> -d [:punct:] <span class="kw">|</span> <span class="fu">tr</span> -d [:digit:] <span class="op">&gt;</span> speech_clean.txt</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="fu">cat</span> speech.txt <span class="kw">|</span> <span class="fu">tr</span> A-ZÄÖÜ a-zäöü <span class="kw">|</span> <span class="kw">\</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="fu">tr</span> -d [:punct:] <span class="kw">|</span> <span class="fu">tr</span> -d [:digit:] <span class="op">&gt;</span> speech_clean.txt</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Kleinschreibung , keine Interpunktion, keine Zahlen</li>
@@ -558,7 +548,7 @@
 </section>
 <section id="join-lines" class="slide level2">
 <h2>Join Lines</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">cat</span> test.txt <span class="kw">|</span> <span class="fu">tr</span> -s <span class="st">&#39;\n&#39;</span> <span class="st">&#39; &#39;</span>   <span class="co"># replace newlines with spaces</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="fu">cat</span> test.txt <span class="kw">|</span> <span class="fu">tr</span> -s <span class="st">&#39;\n&#39;</span> <span class="st">&#39; &#39;</span>   # replace newlines with spaces</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>harte Zeilenumbrüche entfernen</li>
@@ -567,19 +557,19 @@
 </section>
 <section id="trimming" class="slide level2">
 <h2>Trimming</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">more</span> -N text.txt        <span class="co"># show line numbers</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">sed</span> <span class="st">&#39;1,10d&#39;</span> text.txt    <span class="co"># remove the first 10 lines</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="fu">more</span> -N text.txt        # show line numbers</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a><span class="fu">sed</span> <span class="st">&#39;1,10d&#39;</span> text.txt    # remove the first 10 lines</span></code></pre></div>
 </section>
 <section id="splitting" class="slide level2">
 <h2>Splitting</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># splits file at every delimiter into a stand-alone file</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="ex">csplit</span> huge_text.txt  <span class="st">&quot;/delimiter/&quot;</span> <span class="dt">{*}</span>    </span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="co"># splits file at every delimiter into a stand-alone file</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a><span class="ex">csplit</span> huge_text.txt  <span class="st">&quot;/delimiter/&quot;</span> <span class="dt">{*}</span>    </span></code></pre></div>
 </section>
 <section id="check-differences-between-files" class="slide level2">
 <h2>Check Differences between Files</h2>
 <h4 id="sanity-check-after-modification">sanity check after modification</h4>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># show differences side-by-side and only differing lines</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">diff</span> -y --suppress-common-lines text_raw.txt text_proc.txt</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="co"># show differences side-by-side and only differing lines</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a><span class="fu">diff</span> -y --suppress-common-lines text_raw.txt text_proc.txt</span></code></pre></div>
 </section>
 <section id="where-there-is-a-shell-there-is-a-way" class="slide level2" data-background="#4d7e65">
 <h2 data-background="#4d7e65">Where there is a Shell,<br>there is a Way <span class="emoji" data-emoji="thumbsup">👍</span></h2>
@@ -637,25 +627,30 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
         // Display the page number of the current slide
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
-        // see https://github.com/hakimel/reveal.js/#navigation-mode
+        // see https://revealjs.com/vertical-slides/#navigation-mode
         navigationMode: 'linear',
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>

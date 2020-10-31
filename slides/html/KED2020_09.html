@@ -9,8 +9,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reset.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -80,19 +80,9 @@
     code span.va { color: #19177c; } /* Variable */
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/night.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css' : 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/night.css" id="theme">
   <style type='text/css'>
   /*
 
@@ -393,7 +383,7 @@
 </ul>
 </div><div class="column" style="width:50%;">
 <figure>
-<img data-src="../images/spyder_screenshot.png" alt="" /><figcaption><a href="https://www.spyder-ide.org/">Spyder IDE</a></figcaption>
+<img data-src="../images/spyder_screenshot.png" alt="Spyder IDE" /><figcaption aria-hidden="true"><a href="https://www.spyder-ide.org/">Spyder IDE</a></figcaption>
 </figure>
 </div>
 </div>
@@ -435,17 +425,17 @@
 <section id="variables" class="slide level2">
 <h2>Variables</h2>
 <h4 id="variables-are-kind-of-storage-boxes">variables are kind of storage boxes</h4>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># define variables</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>x <span class="op">=</span> <span class="st">&quot;at your service&quot;</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a>y <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a>z <span class="op">=</span> <span class="st">&quot;, most of the time.&quot;</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="co"># combine variables</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a>int_combo <span class="op">=</span> y <span class="op">*</span> y       <span class="co"># for numbers any mathematical operation</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a>str_combo <span class="op">=</span> x <span class="op">+</span> z       <span class="co"># for text only concatenation with +</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># show content of variable</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="bu">print</span>(str_combo)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co"># define variables</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>x <span class="op">=</span> <span class="st">&quot;at your service&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>y <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>z <span class="op">=</span> <span class="st">&quot;, most of the time.&quot;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co"># combine variables</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>int_combo <span class="op">=</span> y <span class="op">*</span> y       <span class="co"># for numbers any mathematical operation</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>str_combo <span class="op">=</span> x <span class="op">+</span> z       <span class="co"># for text only concatenation with +</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="co"># show content of variable</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="bu">print</span>(str_combo)</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Variablen sind wie Schachteln
@@ -528,17 +518,17 @@
 <section id="data-type-conversion" class="slide level2">
 <h2>Data Type Conversion</h2>
 <h4 id="combine-variables-of-the-same-type-only">combine variables of the same type only</h4>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># check the type</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="bu">type</span>(YOUR_VARIABLE)</span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># convert types (similar for other types)</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="bu">int</span>(<span class="st">&#39;100&#39;</span>)  <span class="co"># convert to integer</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="bu">str</span>(<span class="dv">100</span>)    <span class="co"># convert to string</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="co"># combine two types</span></span>
-<span id="cb2-9"><a href="#cb2-9"></a>x <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a>mixed <span class="op">=</span> <span class="st">&quot;x has the value: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(x)</span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="bu">print</span>(mixed)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co"># check the type</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="bu">type</span>(YOUR_VARIABLE)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="co"># convert types (similar for other types)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="bu">int</span>(<span class="st">&#39;100&#39;</span>)  <span class="co"># convert to integer</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="bu">str</span>(<span class="dv">100</span>)    <span class="co"># convert to string</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a><span class="co"># combine two types</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>x <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>mixed <span class="op">=</span> <span class="st">&quot;x has the value: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(x)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a><span class="bu">print</span>(mixed)</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Analogie: nur gleiche Schachteln können kombiniert werden</li>
@@ -548,13 +538,13 @@
 <section id="equal-sign-vs." class="slide level2">
 <h2>Equal-Sign: = vs. ==</h2>
 <h4 id="contradicts-the-intuition"><code>=</code> contradicts the intuition</h4>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># assign a value to a variable</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>x <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>word <span class="op">=</span> <span class="st">&quot;Test&quot;</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="co"># compare two values if they are identical</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="dv">1</span> <span class="op">==</span> <span class="dv">2</span>              <span class="co"># False</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a>word <span class="op">==</span> <span class="st">&quot;Test&quot;</span>      <span class="co"># True</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co"># assign a value to a variable</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>x <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>word <span class="op">=</span> <span class="st">&quot;Test&quot;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="co"># compare two values if they are identical</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a><span class="dv">1</span> <span class="op">==</span> <span class="dv">2</span>              <span class="co"># False</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>word <span class="op">==</span> <span class="st">&quot;Test&quot;</span>      <span class="co"># True</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>= mit ungewohnter Funktion</li>
@@ -577,26 +567,26 @@
 <li>to understand later</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># single line comment</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="co">comment across </span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="co">multiple </span></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="co">lines</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="co">&quot;&quot;&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co"># single line comment</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="co">comment across </span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a><span class="co">multiple </span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a><span class="co">lines</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a><span class="co">&quot;&quot;&quot;</span></span></code></pre></div>
 </section>
 <section id="iterations" class="slide level2">
 <h2>Iterations</h2>
 <h4 id="for-loop">for-loop</h4>
 <p>do something with each element of a collection</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>sentence <span class="op">=</span> [<span class="st">&#39;This&#39;</span>, <span class="st">&#39;is&#39;</span>, <span class="st">&#39;a&#39;</span>, <span class="st">&#39;sentence&#39;</span>]</span>
-<span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># iterate over each element</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="cf">for</span> token <span class="kw">in</span> sentence:</span>
-<span id="cb5-5"><a href="#cb5-5"></a>    </span>
-<span id="cb5-6"><a href="#cb5-6"></a>    <span class="co"># do something with the element</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a>    <span class="bu">print</span>(token)    </span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>sentence <span class="op">=</span> [<span class="st">&#39;This&#39;</span>, <span class="st">&#39;is&#39;</span>, <span class="st">&#39;a&#39;</span>, <span class="st">&#39;sentence&#39;</span>]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="co"># iterate over each element</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a><span class="cf">for</span> token <span class="kw">in</span> sentence:</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>    </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>    <span class="co"># do something with the element</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>    <span class="bu">print</span>(token)    </span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Anwendungsfall
@@ -615,14 +605,14 @@
 <h2>Conditionals</h2>
 <h4 id="if-else-statement">if-else statement</h4>
 <p>condition action on variable content</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>sentence <span class="op">=</span> [<span class="st">&#39;This&#39;</span>, <span class="st">&#39;is&#39;</span>, <span class="st">&#39;a&#39;</span>, <span class="st">&#39;sentence&#39;</span>]</span>
-<span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="cf">if</span> <span class="bu">len</span>(sentence) <span class="op">&lt;</span> <span class="dv">3</span>:</span>
-<span id="cb6-4"><a href="#cb6-4"></a>    <span class="bu">print</span>(<span class="st">&#39;This sentence is shorter than 3 tokens&#39;</span>)</span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="cf">elif</span> <span class="bu">len</span>(sentence) <span class="op">==</span> <span class="dv">3</span>:</span>
-<span id="cb6-6"><a href="#cb6-6"></a>    <span class="bu">print</span>(<span class="st">&#39;This sentence has 3 tokens&#39;</span>)</span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="cf">else</span>:</span>
-<span id="cb6-8"><a href="#cb6-8"></a>    <span class="bu">print</span>(<span class="st">&#39;This sentence is longer than 3 tokens&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>sentence <span class="op">=</span> [<span class="st">&#39;This&#39;</span>, <span class="st">&#39;is&#39;</span>, <span class="st">&#39;a&#39;</span>, <span class="st">&#39;sentence&#39;</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="cf">if</span> <span class="bu">len</span>(sentence) <span class="op">&lt;</span> <span class="dv">3</span>:</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&#39;This sentence is shorter than 3 tokens&#39;</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="cf">elif</span> <span class="bu">len</span>(sentence) <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&#39;This sentence has 3 tokens&#39;</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a><span class="cf">else</span>:</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&#39;This sentence is longer than 3 tokens&#39;</span>)</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Anwendungsfall
@@ -647,12 +637,12 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><span class="emoji" data-emoji="white_check_mark">✅</span></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="cf">if</span> <span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">2</span>:</span>
-<span id="cb7-2"><a href="#cb7-2"></a>    <span class="bu">print</span>(<span class="st">&#39;5 is greater than 2&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="cf">if</span> <span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">2</span>:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&#39;5 is greater than 2&#39;</span>)</span></code></pre></div>
 </div><div class="column" style="width:50%;">
 <p><span class="emoji" data-emoji="x">❌</span></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="cf">if</span> <span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">2</span>:</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="bu">print</span>(<span class="st">&#39;5 is greater than 2&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="cf">if</span> <span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">2</span>:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="bu">print</span>(<span class="st">&#39;5 is greater than 2&#39;</span>)</span></code></pre></div>
 </div>
 </div>
 <aside class="notes">
@@ -664,18 +654,18 @@
 </section>
 <section id="methods" class="slide level2">
 <h2>Methods</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># split at whitespace</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>tokens <span class="op">=</span> <span class="st">&#39;This is a sentence&#39;</span>.split(<span class="st">&#39; &#39;</span>)    </span>
-<span id="cb9-3"><a href="#cb9-3"></a></span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="co"># check the variable</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a><span class="bu">print</span>(tokens, <span class="bu">type</span>(tokens))                 </span>
-<span id="cb9-6"><a href="#cb9-6"></a></span>
-<span id="cb9-7"><a href="#cb9-7"></a><span class="co"># add something to a list</span></span>
-<span id="cb9-8"><a href="#cb9-8"></a>tokens.append(<span class="st">&#39;.&#39;</span>)</span>
-<span id="cb9-9"><a href="#cb9-9"></a></span>
-<span id="cb9-10"><a href="#cb9-10"></a><span class="co"># join elements to string</span></span>
-<span id="cb9-11"><a href="#cb9-11"></a>tokens <span class="op">=</span> <span class="st">&#39; &#39;</span>.join(tokens)</span>
-<span id="cb9-12"><a href="#cb9-12"></a><span class="bu">print</span>(tokens, <span class="bu">type</span>(tokens))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="co"># split at whitespace</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>tokens <span class="op">=</span> <span class="st">&#39;This is a sentence&#39;</span>.split(<span class="st">&#39; &#39;</span>)    </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a><span class="co"># check the variable</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a><span class="bu">print</span>(tokens, <span class="bu">type</span>(tokens))                 </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a><span class="co"># add something to a list</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a>tokens.append(<span class="st">&#39;.&#39;</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true"></a><span class="co"># join elements to string</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true"></a>tokens <span class="op">=</span> <span class="st">&#39; &#39;</span>.join(tokens)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true"></a><span class="bu">print</span>(tokens, <span class="bu">type</span>(tokens))</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>jedes Objekt/Variable stellt Methoden zur Verfügung</li>
@@ -691,19 +681,19 @@
 </ul></li>
 <li>functions may have arguments</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># define a new function</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="kw">def</span> word_properties(word):</span>
-<span id="cb10-3"><a href="#cb10-3"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a><span class="co">    My first function to print word properties.</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a><span class="co">    It takes any string as argument (variable word).</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb10-7"><a href="#cb10-7"></a>    </span>
-<span id="cb10-8"><a href="#cb10-8"></a>    <span class="co"># print(), len() and sorted() work also as functions  </span></span>
-<span id="cb10-9"><a href="#cb10-9"></a>    length <span class="op">=</span> <span class="bu">len</span>(word)</span>
-<span id="cb10-10"><a href="#cb10-10"></a>    sorted_letters <span class="op">=</span> <span class="bu">sorted</span>(word, reverse<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb10-11"><a href="#cb10-11"></a>    <span class="bu">print</span>(word, <span class="st">&#39;length:&#39;</span>, length, <span class="st">&#39;letters:&#39;</span>, sorted_letters)</span>
-<span id="cb10-12"><a href="#cb10-12"></a></span>
-<span id="cb10-13"><a href="#cb10-13"></a>word_properties(<span class="st">&#39;computer&#39;</span>) <span class="co"># call function with any word</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="co"># define a new function</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a><span class="kw">def</span> word_properties(word):</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a><span class="co">    My first function to print word properties.</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a><span class="co">    It takes any string as argument (variable word).</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true"></a>    </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true"></a>    <span class="co"># print(), len() and sorted() work also as functions  </span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true"></a>    length <span class="op">=</span> <span class="bu">len</span>(word)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true"></a>    sorted_letters <span class="op">=</span> <span class="bu">sorted</span>(word, reverse<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true"></a>    <span class="bu">print</span>(word, <span class="st">&#39;length:&#39;</span>, length, <span class="st">&#39;letters:&#39;</span>, sorted_letters)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true"></a>word_properties(<span class="st">&#39;computer&#39;</span>) <span class="co"># call function with any word</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Anwendungsfall
@@ -718,16 +708,16 @@
 <section id="indexing" class="slide level2">
 <h2>Indexing</h2>
 <h4 id="python-starts-counting-from-zero">python starts counting from zero!</h4>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>sentence <span class="op">=</span> [<span class="st">&#39;This&#39;</span>, <span class="st">&#39;is&#39;</span>, <span class="st">&#39;a&#39;</span>, <span class="st">&#39;sentence&#39;</span>]</span>
-<span id="cb11-2"><a href="#cb11-2"></a></span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="co"># element at position X</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a>first_tok <span class="op">=</span> sentence[<span class="dv">0</span>]     <span class="co"># &#39;This&#39;</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a></span>
-<span id="cb11-6"><a href="#cb11-6"></a><span class="co"># elements of subsequence [start:end]</span></span>
-<span id="cb11-7"><a href="#cb11-7"></a>sub_seq <span class="op">=</span> sentence[<span class="dv">0</span>:<span class="dv">3</span>]     <span class="co"># [&#39;This&#39;, &#39;is&#39;, &#39;a&#39;]</span></span>
-<span id="cb11-8"><a href="#cb11-8"></a></span>
-<span id="cb11-9"><a href="#cb11-9"></a><span class="co"># elements of subsequence backwards</span></span>
-<span id="cb11-10"><a href="#cb11-10"></a>sub_seq_back <span class="op">=</span> sentence[<span class="op">-</span><span class="dv">2</span>:]        <span class="co"># [&#39;a&#39;, &#39;sentence&#39;]</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a>sentence <span class="op">=</span> [<span class="st">&#39;This&#39;</span>, <span class="st">&#39;is&#39;</span>, <span class="st">&#39;a&#39;</span>, <span class="st">&#39;sentence&#39;</span>]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a><span class="co"># element at position X</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true"></a>first_tok <span class="op">=</span> sentence[<span class="dv">0</span>]     <span class="co"># &#39;This&#39;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true"></a><span class="co"># elements of subsequence [start:end]</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true"></a>sub_seq <span class="op">=</span> sentence[<span class="dv">0</span>:<span class="dv">3</span>]     <span class="co"># [&#39;This&#39;, &#39;is&#39;, &#39;a&#39;]</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true"></a><span class="co"># elements of subsequence backwards</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true"></a>sub_seq_back <span class="op">=</span> sentence[<span class="op">-</span><span class="dv">2</span>:]        <span class="co"># [&#39;a&#39;, &#39;sentence&#39;]</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Anwendungsfall
@@ -752,7 +742,7 @@
 </div><div class="column" style="width:50%;">
 <!-- https://gifer.com/en/78BJ -->
 <figure>
-<img data-src="../images/google_rubiks.gif" alt="" /><figcaption><a href="https://www.google.com/search?q=syntaxerror+python+stack+overflow">Learning by doing, doing by googling</a></figcaption>
+<img data-src="../images/google_rubiks.gif" alt="Learning by doing, doing by googling" /><figcaption aria-hidden="true"><a href="https://www.google.com/search?q=syntaxerror+python+stack+overflow">Learning by doing, doing by googling</a></figcaption>
 </figure>
 </div>
 </div>
@@ -793,22 +783,22 @@
 </section>
 <section id="in-class-install-packages-for-next-week" class="slide level2" data-background="#3c70b5">
 <h2 data-background="#3c70b5">In-class: Install Packages for next week</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Windows users</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="co"># open a Anaconda Prompt and install the following</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a>pip install spacy</span>
-<span id="cb12-4"><a href="#cb12-4"></a>conda install <span class="op">-</span>c conda<span class="op">-</span>forge pyemd</span>
-<span id="cb12-5"><a href="#cb12-5"></a>pip install textacy</span>
-<span id="cb12-6"><a href="#cb12-6"></a>pip install scattertext</span>
-<span id="cb12-7"><a href="#cb12-7"></a></span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="co"># Mac users</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a><span class="co"># open a Terminal and install after replacing the username</span></span>
-<span id="cb12-10"><a href="#cb12-10"></a><span class="op">/</span>Users<span class="op">/&lt;</span>Your username<span class="op">&gt;/</span>anaconda3<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>python <span class="op">-</span>m pip install spacy</span>
-<span id="cb12-11"><a href="#cb12-11"></a><span class="op">/</span>Users<span class="op">/&lt;</span>Your username<span class="op">&gt;/</span>anaconda3<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>python <span class="op">-</span>m pip install textacy</span>
-<span id="cb12-12"><a href="#cb12-12"></a><span class="op">/</span>Users<span class="op">/&lt;</span>Your username<span class="op">&gt;/</span>anaconda3<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>python <span class="op">-</span>m pip install scattertext</span>
-<span id="cb12-13"><a href="#cb12-13"></a></span>
-<span id="cb12-14"><a href="#cb12-14"></a><span class="co"># All users: install language specific models</span></span>
-<span id="cb12-15"><a href="#cb12-15"></a>python <span class="op">-</span>m spacy download de_core_news_sm</span>
-<span id="cb12-16"><a href="#cb12-16"></a>python <span class="op">-</span>m spacy download en_core_web_sm</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="co"># Windows users</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a><span class="co"># open a Anaconda Prompt and install the following</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true"></a>pip install spacy</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true"></a>conda install <span class="op">-</span>c conda<span class="op">-</span>forge pyemd</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true"></a>pip install textacy</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true"></a>pip install scattertext</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true"></a><span class="co"># Mac users</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true"></a><span class="co"># open a Terminal and install after replacing the username</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true"></a><span class="op">/</span>Users<span class="op">/&lt;</span>Your username<span class="op">&gt;/</span>anaconda3<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>python <span class="op">-</span>m pip install spacy</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true"></a><span class="op">/</span>Users<span class="op">/&lt;</span>Your username<span class="op">&gt;/</span>anaconda3<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>python <span class="op">-</span>m pip install textacy</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true"></a><span class="op">/</span>Users<span class="op">/&lt;</span>Your username<span class="op">&gt;/</span>anaconda3<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>python <span class="op">-</span>m pip install scattertext</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true"></a><span class="co"># All users: install language specific models</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true"></a>python <span class="op">-</span>m spacy download de_core_news_sm</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true"></a>python <span class="op">-</span>m spacy download en_core_web_sm</span></code></pre></div>
 </section>
 <section id="in-class-exercises-i" class="slide level2" data-background="#3c70b5">
 <h2 data-background="#3c70b5">In-class: Exercises I</h2>
@@ -845,25 +835,30 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
         // Display the page number of the current slide
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
-        // see https://github.com/hakimel/reveal.js/#navigation-mode
+        // see https://revealjs.com/vertical-slides/#navigation-mode
         navigationMode: 'linear',
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>

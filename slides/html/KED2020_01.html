@@ -9,8 +9,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reset.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -18,19 +18,9 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/night.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css' : 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/night.css" id="theme">
   <style type='text/css'>
   /*
 
@@ -237,7 +227,7 @@
 <section id="the-world-has-changed-hasnt-it" class="slide level2">
 <h2>The world has changed, hasn’t it?</h2>
 <figure>
-<img data-src="../images/ai_illustration_new.jpg" style="height:10cm" alt="" /><figcaption>symbol of artificial intelligence (<a href="https://www.hwzdigital.ch/artificial-intelligence-part-1/">HWZ</a>)</figcaption>
+<img data-src="../images/ai_illustration_new.jpg" style="height:10cm" alt="symbol of artificial intelligence (HWZ)" /><figcaption aria-hidden="true">symbol of artificial intelligence (<a href="https://www.hwzdigital.ch/artificial-intelligence-part-1/">HWZ</a>)</figcaption>
 </figure>
 <aside class="notes">
 <ul>
@@ -307,7 +297,7 @@
 <section id="seeing-like-a-human" class="slide level2">
 <h2>Seeing like a Human</h2>
 <figure>
-<img data-src="../images/facebook_detectron2.png" class="center" style="width:60.0%" alt="" /><figcaption>image segmentation with <a href="https://ai.facebook.com/blog/-detectron2-a-pytorch-based-modular-object-detection-library-/">Facebook’s Detectron2</a></figcaption>
+<img data-src="../images/facebook_detectron2.png" class="center" style="width:60.0%" alt="image segmentation with Facebook’s Detectron2" /><figcaption aria-hidden="true">image segmentation with <a href="https://ai.facebook.com/blog/-detectron2-a-pytorch-based-modular-object-detection-library-/">Facebook’s Detectron2</a></figcaption>
 </figure>
 <aside class="notes">
 <p>Unbeschriftete Dinge? → ontologische Frage</p>
@@ -316,7 +306,7 @@
 <section id="speaking-like-a-human" class="slide level2">
 <h2>Speaking like a Human?</h2>
 <figure>
-<img data-src="../images/meena.png" style="height:11cm" alt="" /><figcaption>Chatting with <a href="https://ai.googleblog.com/2020/01/towards-conversational-agent-that-can.html">Google’s Meena</a></figcaption>
+<img data-src="../images/meena.png" style="height:11cm" alt="Chatting with Google’s Meena" /><figcaption aria-hidden="true">Chatting with <a href="https://ai.googleblog.com/2020/01/towards-conversational-agent-that-can.html">Google’s Meena</a></figcaption>
 </figure>
 <div class="fragment">
 <p><span class="emoji" data-emoji="see_no_evil">🙈</span> Not really, Arizona is not by the sea.</p>
@@ -393,12 +383,12 @@
 <h2>Computational Social Science</h2>
 <h4 id="data-driven-research">data-driven research</h4>
 <ul>
-<li>computational social science <span class="citation" data-cites="Lazer2009">(Lazer et al. 2009)</span>
+<li>computational social science <span class="citation" data-cites="Lazer2009">[@Lazer2009]</span>
 <ul>
 <li>Digital Humanities, Computational History, Data Science</li>
 </ul></li>
 <li>highly interdisciplinary</li>
-<li>early computational history already in 1960s <span class="citation" data-cites="Graham2015">(Graham, Milligan, and Weingart 2015)</span></li>
+<li>early computational history already in 1960s <span class="citation" data-cites="Graham2015">[@Graham2015]</span></li>
 </ul>
 <aside class="notes">
 <ul>
@@ -777,39 +767,36 @@
 <h4 id="optional">Optional</h4>
 <p>Graham, Shawn, Ian Milligan, and Scott Weingart. 2015. <em>Exploring Big Historical Data: The Historian’s Macroscope</em>. Open Draft Version. Under contract with Imperial College Press. <a href="http://www.themacroscope.org/?page_id=584">online</a></p>
 </section>
-<section id="references" class="slide level2 unnumbered">
-<h2 class="unnumbered">References</h2>
-<div id="refs" class="references hanging-indent" role="doc-bibliography">
-<div id="ref-Graham2015">
-<p>Graham, Shawn, Ian Milligan, and Scott Weingart. 2015. <em>Exploring Big Historical Data: The Historian’s Macroscope</em>. Open Draft Version. Under contract with Imperial College Press. <a href="http://themacroscope.org">http://themacroscope.org</a>.</p>
-</div>
-<div id="ref-Lazer2009">
-<p>Lazer, David, Alex Pentland, Lada Adamic, Sinan Aral, Albert-László Barabási, Devon Brewer, Nicholas Christakis, et al. 2009. “Computational Social Science.” <em>Science</em> 323 (5915): 721–23. <a href="https://doi.org/10.1126/science.1167742">https://doi.org/10.1126/science.1167742</a>.</p>
-</div>
-</div>
+<section id="references" class="slide level2">
+<h2>References</h2>
 </section></section>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
         // Display the page number of the current slide
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
-        // see https://github.com/hakimel/reveal.js/#navigation-mode
+        // see https://revealjs.com/vertical-slides/#navigation-mode
         navigationMode: 'linear',
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>

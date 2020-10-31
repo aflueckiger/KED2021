@@ -9,8 +9,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reset.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -80,19 +80,9 @@
     code span.va { color: #19177c; } /* Variable */
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/night.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css' : 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/night.css" id="theme">
   <style type='text/css'>
   /*
 
@@ -409,12 +399,12 @@
 <li><code>pandoc</code> to convert file formats</li>
 <li>download as single articles in <code>.docx</code> on Nexis</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># convert docx to txt</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="ex">pandoc</span> file_in.docx -t plain -o file_out.txt</span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co">### Install first with</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="ex">brew</span> install pandoc     <span class="co"># macOS</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">sudo</span> apt install pandoc <span class="co"># Ubuntu</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co"># convert docx to txt</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">pandoc</span> file_in.docx -t plain -o file_out.txt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="co">### Install first with</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="ex">brew</span> install pandoc     # macOS</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="fu">sudo</span> apt install pandoc <span class="co"># Ubuntu</span></span></code></pre></div>
 <!-- [](../images/nexis.png) -->
 <aside class="notes">
 <ul>
@@ -433,12 +423,12 @@
 <section id="conversion-of-digital-pdf" class="slide level2">
 <h2>Conversion of digital PDF</h2>
 <h4 id="use-case-swiss-party-programmes">use case: <a href="https://visuals.manifesto-project.wzb.eu/mpdb-shiny/cmp_dashboard_dataset/">Swiss party programmes</a></h4>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># convert digital native pdf to txt</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="ex">pdftotext</span> -nopgbrk -eol unix file_in.pdf</span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co">### Install first with</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="ex">brew</span> install poppler            <span class="co"># macOS</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="fu">sudo</span> apt install poppler-utils  <span class="co"># Ubuntu</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co"># convert digital native pdf to txt</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="ex">pdftotext</span> -nopgbrk -eol unix file_in.pdf</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="co">### Install first with</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="ex">brew</span> install poppler            # macOS</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="fu">sudo</span> apt install poppler-utils  # Ubuntu</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>dieselben Parteiprogramme, die wir schon analysiert haben</li>
@@ -468,7 +458,7 @@
 </ul>
 </div><div class="column" style="width:50%;">
 <figure>
-<img data-src="../images/ocr.png" alt="" /><figcaption>example OCR <a href="https://de.wikipedia.org/wiki/Texterkennung">(Wikipedia)</a></figcaption>
+<img data-src="../images/ocr.png" alt="example OCR (Wikipedia)" /><figcaption aria-hidden="true">example OCR <a href="https://de.wikipedia.org/wiki/Texterkennung">(Wikipedia)</a></figcaption>
 </figure>
 </div>
 </div>
@@ -488,20 +478,20 @@
 <li>extract image from PDF + improve contrast</li>
 <li>run optical character recognition (OCR) on the image</li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># convert scanned pdf to tiff, control quality with parameters</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">convert</span> -density 300 -depth 8 -strip -background white -alpha off \</span>
-<span id="cb3-3"><a href="#cb3-3"></a>file_in.pdf temp.tiff</span>
-<span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="bu">echo</span> test \</span>
-<span id="cb3-6"><a href="#cb3-6"></a>t</span>
-<span id="cb3-7"><a href="#cb3-7"></a></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="co"># run OCR for German (&quot;eng&quot; for English, &quot;fra&quot; for French)</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="ex">tesseract</span> -l deu temp.tiff file_out</span>
-<span id="cb3-10"><a href="#cb3-10"></a></span>
-<span id="cb3-11"><a href="#cb3-11"></a></span>
-<span id="cb3-12"><a href="#cb3-12"></a><span class="co">### Install first with</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a><span class="ex">brew</span> install imagemagick            <span class="co"># macOS</span></span>
-<span id="cb3-14"><a href="#cb3-14"></a><span class="fu">sudo</span> apt install imagemagick-6.q16  <span class="co"># Ubuntu</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co"># convert scanned pdf to tiff, control quality with parameters</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="ex">convert</span> -density 300 -depth 8 -strip -background white -alpha off <span class="kw">\</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="ex">file_in.pdf</span> temp.tiff</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="bu">echo</span> test <span class="kw">\</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a><span class="ex">t</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a><span class="co"># run OCR for German (&quot;eng&quot; for English, &quot;fra&quot; for French)</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a><span class="ex">tesseract</span> -l deu temp.tiff file_out</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a><span class="co">### Install first with</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a><span class="ex">brew</span> install imagemagick            # macOS</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a><span class="fu">sudo</span> apt install imagemagick-6.q16  # Ubuntu</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Zwei Schritte: Bildumwandlung + OCR</li>
@@ -519,10 +509,10 @@
 <section id="lifehack-make-a-pdf-searchable" class="slide level2" data-background="#4d7e65">
 <h2 data-background="#4d7e65">#LifeHack: Make a PDF searchable</h2>
 <h4 id="use-case-scanned-book-chapters">use case: scanned book chapters</h4>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># output searchable pdf instead of txt</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="ex">convert</span> -density 300 -depth 8 -strip -background white -alpha off -compress group4 \</span>
-<span id="cb4-3"><a href="#cb4-3"></a>file_in.pdf temp.tiff</span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="ex">tesseract</span> -l deu temp.tiff file_out pdf</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co"># output searchable pdf instead of txt</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="ex">convert</span> -density 300 -depth 8 -strip -background white -alpha off -compress group4 <span class="kw">\</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="ex">file_in.pdf</span> temp.tiff</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a><span class="ex">tesseract</span> -l deu temp.tiff file_out pdf</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Output als PDF statt Text</li>
@@ -537,16 +527,16 @@
 <ul>
 <li><code>wget</code> to download any files from the internet</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># get a single file</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">wget</span> EXACT_URL</span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># get all linked pdf from a single webpage</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">wget</span> --recursive --accept pdf -nH --cut-dirs=5 \</span>
-<span id="cb5-6"><a href="#cb5-6"></a>--ignore-case --wait 1 --level 1 --directory-prefix=data \</span>
-<span id="cb5-7"><a href="#cb5-7"></a>https://www.bk.admin.ch/bk/de/home/dokumentation/abstimmungsbuechlein.html</span>
-<span id="cb5-8"><a href="#cb5-8"></a></span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="co"># --accept FORMAT_OF_YOUR_INTEREST</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a><span class="co"># --directory-prefix YOUR_OUTPUT_DIRECTORY</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co"># get a single file</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="fu">wget</span> EXACT_URL</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a><span class="co"># get all linked pdf from a single webpage</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a><span class="fu">wget</span> --recursive --accept pdf -nH --cut-dirs=5 <span class="kw">\</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a><span class="ex">--ignore-case</span> --wait 1 --level 1 --directory-prefix=data <span class="kw">\</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a><span class="ex">https</span>://www.bk.admin.ch/bk/de/home/dokumentation/abstimmungsbuechlein.html</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a><span class="co"># --accept FORMAT_OF_YOUR_INTEREST</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a><span class="co"># --directory-prefix YOUR_OUTPUT_DIRECTORY</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Download &amp; Dokumentation von Quellen</li>
@@ -569,16 +559,16 @@
 <section id="foundation-of-batch-processing" class="slide level2">
 <h2>Foundation of Batch Processing</h2>
 <h4 id="perform-the-same-operation-on-many-files">perform the same operation on many files</h4>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># loop over all txt files</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="kw">for</span> <span class="fu">file</span> in *.txt<span class="kw">;</span> <span class="kw">do</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a>    <span class="co"># indent all commands in loop with a tab</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a></span>
-<span id="cb6-6"><a href="#cb6-6"></a>    <span class="co"># rename each file</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>    <span class="co"># e.g. a.txt -&gt; new_a.txt</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a>    <span class="fu">mv</span> <span class="va">$file</span> new_<span class="va">$file</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a></span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="kw">done</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co"># loop over all txt files</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="kw">for</span> <span class="fu">file</span> in *.txt<span class="kw">;</span> <span class="kw">do</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>    <span class="co"># indent all commands in loop with a tab</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>    <span class="co"># rename each file</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>    <span class="co"># e.g. a.txt -&gt; new_a.txt</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>    <span class="fu">mv</span> <span class="va">$file</span> new_<span class="va">$file</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a><span class="kw">done</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Batch Processing = gleiche Operation durchführen für alle Files</li>
@@ -593,21 +583,21 @@
 </section>
 <section id="perform-batch-ocr-from-pdf" class="slide level2">
 <h2>Perform Batch OCR from PDF</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">for</span> <span class="ex">FILEPATH</span> in *.pdf<span class="kw">;</span> <span class="kw">do</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>    <span class="co"># convert pdf to image</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a>    <span class="ex">convert</span> -density 300 <span class="va">$FILEPATH</span> -depth 8 -strip \</span>
-<span id="cb7-4"><a href="#cb7-4"></a>    -background white -alpha off temp.tiff</span>
-<span id="cb7-5"><a href="#cb7-5"></a>    </span>
-<span id="cb7-6"><a href="#cb7-6"></a>    <span class="co"># define output name (remove .pdf from input)</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a>    <span class="va">OUTFILE=${FILEPATH%</span>.pdf<span class="va">}</span> </span>
-<span id="cb7-8"><a href="#cb7-8"></a>    </span>
-<span id="cb7-9"><a href="#cb7-9"></a>    <span class="co"># perform OCR on the tiff image</span></span>
-<span id="cb7-10"><a href="#cb7-10"></a>    <span class="ex">tesseract</span> -l deu temp.tiff <span class="va">$OUTFILE</span></span>
-<span id="cb7-11"><a href="#cb7-11"></a>    </span>
-<span id="cb7-12"><a href="#cb7-12"></a>    <span class="co"># remove the intermediate tiff image</span></span>
-<span id="cb7-13"><a href="#cb7-13"></a>    <span class="fu">rm</span> temp.tiff</span>
-<span id="cb7-14"><a href="#cb7-14"></a></span>
-<span id="cb7-15"><a href="#cb7-15"></a><span class="kw">done</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">for</span> <span class="ex">FILEPATH</span> in *.pdf<span class="kw">;</span> <span class="kw">do</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    <span class="co"># convert pdf to image</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    <span class="ex">convert</span> -density 300 <span class="va">$FILEPATH</span> -depth 8 -strip <span class="kw">\</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    <span class="ex">-background</span> white -alpha off temp.tiff</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>    </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>    <span class="co"># define output name (remove .pdf from input)</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a>    <span class="va">OUTFILE=${FILEPATH%</span>.pdf<span class="va">}</span> </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>    </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a>    <span class="co"># perform OCR on the tiff image</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a>    <span class="ex">tesseract</span> -l deu temp.tiff <span class="va">$OUTFILE</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a>    </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a>    <span class="co"># remove the intermediate tiff image</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a>    <span class="fu">rm</span> temp.tiff</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a><span class="kw">done</span></span></code></pre></div>
 </section>
 <section id="preprocessing-regex" class="slide level2" data-background="#b5533c">
 <h2 data-background="#b5533c">Preprocessing → RegEx</h2>
@@ -701,14 +691,14 @@
 <section id="section-1" class="slide level2" data-background="#4d7e65">
 <h2 data-background="#4d7e65"></h2>
 <blockquote>
-<p>Raw data is an oxymoron. <br><span class="citation" data-cites="Gitelman2013">(Gitelman 2013)</span></p>
+<p>Raw data is an oxymoron. <br><span class="citation" data-cites="Gitelman2013">[@Gitelman2013]</span></p>
 </blockquote>
 </section>
 <section id="data-vs.-capta" class="slide level2">
 <h2>Data vs. Capta</h2>
 <blockquote>
 <p>Differences in the etymological roots of the terms data and capta make the distinction between constructivist and realist approaches clear. <em>Capta</em> is <span style="color:#b5533c"><strong>“taken”</strong></span> actively while <em>data</em> is assumed to be a <span style="color:#b5533c"><strong>“given”</strong></span> able to be recorded and observed. From this distinction, a world of differences arises. Humanistic inquiry acknowledges the situated, partial, and constitutive character of knowledge production, the recognition that knowledge is constructed, <em>taken</em>, <span style="color:#b5533c"><strong>not simply given as a natural representation</strong></span> of pre-existing fact.</p>
-<p><span class="citation" data-cites="Drucker2011">(Drucker 2011)</span></p>
+<p><span class="citation" data-cites="Drucker2011">[@Drucker2011]</span></p>
 </blockquote>
 </section>
 <section id="key-principles" class="slide level2">
@@ -752,39 +742,36 @@
 <li>Erick Peirson. 2015. Tutorial: Text Extraction and OCR with Tesseract and ImageMagick - Methods in Digital and Computational Humanities - DigInG Confluence. <a href="https://diging.atlassian.net/wiki/spaces/DCH/pages/5275668/Tutorial+Text+Extraction+and+OCR+with+Tesseract+and+ImageMagick">online</a></li>
 </ul>
 </section>
-<section id="references" class="slide level2 unnumbered">
-<h2 class="unnumbered">References</h2>
-<div id="refs" class="references hanging-indent" role="doc-bibliography">
-<div id="ref-Drucker2011">
-<p>Drucker, Johanna. 2011. “Humanities Approaches to Graphical Display.” <em>Digital Humanities Quarterly</em> 5 (1). <a href="http://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html">http://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html</a>.</p>
-</div>
-<div id="ref-Gitelman2013">
-<p>Gitelman, Lisa. 2013. <em>Raw Data Is an Oxymoron</em>. Cambridge: MIT.</p>
-</div>
-</div>
+<section id="references" class="slide level2">
+<h2>References</h2>
 </section></section>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
         // Display the page number of the current slide
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
-        // see https://github.com/hakimel/reveal.js/#navigation-mode
+        // see https://revealjs.com/vertical-slides/#navigation-mode
         navigationMode: 'linear',
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>

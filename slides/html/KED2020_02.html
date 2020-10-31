@@ -9,8 +9,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reset.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -18,19 +18,9 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/night.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css' : 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/night.css" id="theme">
   <style type='text/css'>
   /*
 
@@ -254,7 +244,7 @@
 </section>
 <section id="reading" class="slide level2" data-background="#3c70b5">
 <h2 data-background="#3c70b5">Reading</h2>
-<h4 id="computational-social-science-lazer2009">Computational Social Science <span class="citation" data-cites="Lazer2009">(Lazer et al. 2009)</span></h4>
+<h4 id="computational-social-science-lazer2009">Computational Social Science <span class="citation" data-cites="Lazer2009">[@Lazer2009]</span></h4>
 <div class="fragment">
 <ul>
 <li>data-driven</li>
@@ -287,7 +277,7 @@
 </ul>
 </div><div class="column">
 <figure>
-<img data-src="../images/ogden_semiotic_triangle.png" alt="" /><figcaption>Semiotic Triangle <span class="citation" data-cites="Ogden1923">(Ogden and Richards 1923)</span></figcaption>
+<img data-src="../images/ogden_semiotic_triangle.png" alt="Semiotic Triangle [@Ogden1923]" /><figcaption aria-hidden="true">Semiotic Triangle <span class="citation" data-cites="Ogden1923">[@Ogden1923]</span></figcaption>
 </figure>
 </div>
 </div>
@@ -352,11 +342,11 @@
 <div class="columns">
 <div class="column">
 <figure>
-<img data-src="../images/close_reading.png" style="height:8cm" alt="" /><figcaption>close reading <a href="https://i1.wp.com/elevenews.com/wp-content/uploads/2018/03/golf-cart-repair-manuals.png">(source)</a></figcaption>
+<img data-src="../images/close_reading.png" style="height:8cm" alt="close reading (source)" /><figcaption aria-hidden="true">close reading <a href="https://i1.wp.com/elevenews.com/wp-content/uploads/2018/03/golf-cart-repair-manuals.png">(source)</a></figcaption>
 </figure>
 </div><div class="column">
 <figure>
-<img data-src="../images/nlp-natural-language-processing.jpg" style="height:8cm" alt="" /><figcaption>distant reading <a href="https://www.100worte.de/wp-content/uploads/2019/08/nlp-natural-language-processing.jpg">(source)</a></figcaption>
+<img data-src="../images/nlp-natural-language-processing.jpg" style="height:8cm" alt="distant reading (source)" /><figcaption aria-hidden="true">distant reading <a href="https://www.100worte.de/wp-content/uploads/2019/08/nlp-natural-language-processing.jpg">(source)</a></figcaption>
 </figure>
 </div>
 </div>
@@ -389,11 +379,11 @@
 <div class="columns">
 <div class="column">
 <figure>
-<img data-src="../images/newspapers-in-pile.jpg" style="height:8cm" alt="" /><figcaption>tons of text <a href="https://independencedaily.co.uk/sunday-papers-12-august-2018/">(source)</a></figcaption>
+<img data-src="../images/newspapers-in-pile.jpg" style="height:8cm" alt="tons of text (source)" /><figcaption aria-hidden="true">tons of text <a href="https://independencedaily.co.uk/sunday-papers-12-august-2018/">(source)</a></figcaption>
 </figure>
 </div><div class="column">
 <figure>
-<img data-src="../images/icon_diagram.svg" style="height:8cm" alt="" /><figcaption>meaning of numbers <a href="http://opendata.cityofnewyork.us/wp-content/themes/opendata-wp/assets/img/icons-home-data-catalog.svg">(source)</a></figcaption>
+<img data-src="../images/icon_diagram.svg" style="height:8cm" alt="meaning of numbers (source)" /><figcaption aria-hidden="true">meaning of numbers <a href="http://opendata.cityofnewyork.us/wp-content/themes/opendata-wp/assets/img/icons-home-data-catalog.svg">(source)</a></figcaption>
 </figure>
 </div>
 </div>
@@ -467,7 +457,7 @@
 <li>agnostic, discrete symbols</li>
 <li>unstructured, messy data</li>
 </ul>
-<p><span class="citation" data-cites="Grimmer2013">(see also Grimmer and Stewart 2013)</span></p>
+<p><span class="citation" data-cites="Grimmer2013">[see also @Grimmer2013]</span></p>
 <aside class="notes">
 <ul>
 <li>Link zu semiotischem Dreieck</li>
@@ -717,7 +707,7 @@
 <h2>Interacting, not mapping</h2>
 <p><strong>It is a lense, not a map.</strong></p>
 <figure>
-<img data-src="../images/dikw_pyramid.svg" alt="" /><figcaption>DIKW pyramid <a href="https://en.wikipedia.org/wiki/DIKW_pyramid#/media/File:DIKW_Pyramid.svg">(Wikipedia)</a></figcaption>
+<img data-src="../images/dikw_pyramid.svg" alt="DIKW pyramid (Wikipedia)" /><figcaption aria-hidden="true">DIKW pyramid <a href="https://en.wikipedia.org/wiki/DIKW_pyramid#/media/File:DIKW_Pyramid.svg">(Wikipedia)</a></figcaption>
 </figure>
 <aside class="notes">
 <ul>
@@ -734,42 +724,36 @@
 </ul>
 </aside>
 </section>
-<section id="references" class="slide level2 unnumbered">
-<h2 class="unnumbered">References</h2>
-<div id="refs" class="references hanging-indent" role="doc-bibliography">
-<div id="ref-Grimmer2013">
-<p>Grimmer, Justin, and Brandon M. Stewart. 2013. “Text as Data: The Promise and Pitfalls of Automatic Content Analysis Methods for Political Texts.” <em>Political Analysis</em> 21 (3): 267–97. <a href="https://doi.org/10.1093/pan/mps028">https://doi.org/10.1093/pan/mps028</a>.</p>
-</div>
-<div id="ref-Lazer2009">
-<p>Lazer, David, Alex Pentland, Lada Adamic, Sinan Aral, Albert-László Barabási, Devon Brewer, Nicholas Christakis, et al. 2009. “Computational Social Science.” <em>Science</em> 323 (5915): 721–23. <a href="https://doi.org/10.1126/science.1167742">https://doi.org/10.1126/science.1167742</a>.</p>
-</div>
-<div id="ref-Ogden1923">
-<p>Ogden, Charles Kay, and Ivor Armstrong Richards. 1923. <em>The Meaning of Meaning: A Study of the Influence of Language Upon Thought and of the Science of Symbolism. Supplementary Essays by B. Malinowski and F.G. Crookshank</em>. New York: Harcourt. <a href="http://books.google.com?id=i3MIAQAAIAAJ">http://books.google.com?id=i3MIAQAAIAAJ</a>.</p>
-</div>
-</div>
+<section id="references" class="slide level2">
+<h2>References</h2>
 </section></section>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
         // Display the page number of the current slide
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
-        // see https://github.com/hakimel/reveal.js/#navigation-mode
+        // see https://revealjs.com/vertical-slides/#navigation-mode
         navigationMode: 'linear',
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>

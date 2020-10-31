@@ -91,15 +91,16 @@ all: $(slides-html) $(slides-pdf) $(materials-pdf) $(exercises-pdf) $(notes-pdf)
 
 $(SLIDES_HTML_DIR)/%.html: $(SLIDES_MD_DIR)/%.md $(CSS)
 	pandoc -f markdown+emoji+strikeout -t revealjs -s -o $@ $< \
-	-V revealjs-url="https://cdn.jsdelivr.net/npm/reveal.js" \
 	-V theme=night \
 	-V navigationMode=linear \
 	-V slideNumber=true \
 	-V biblio-title:References \
 	--include-in-header $(CSS) \
-	-V $(TEX_REF) \
-	--filter pandoc-citeproc \
-	--bibliography=$(BIB) \
+	#--citeproc \
+	#-V $(TEX_REF) \
+	# --bibliography=$(BIB)
+	# --filter pandoc-citeproc \
+
 	# --metadata link-citations \
 	# --csl=$(CSL)
 	# $(CROSSREF)

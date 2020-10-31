@@ -9,8 +9,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reset.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -80,19 +80,9 @@
     code span.va { color: #19177c; } /* Variable */
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/night.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css' : 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/night.css" id="theme">
   <style type='text/css'>
   /*
 
@@ -342,10 +332,10 @@
 </ul></li>
 <li><code>sed</code> replaces any sequence, <code>tr</code> only single symbols</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="bu">echo</span> <span class="st">&quot;hello&quot;</span> <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&quot;s/llo/y/g&quot;</span>      <span class="co"># replace &quot;llo&quot; with a &quot;y&quot;</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># by setting the g flag in &quot;s/llo/y/g&quot;,</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># sed replaces all occurences, not only the first one</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="bu">echo</span> <span class="st">&quot;hello&quot;</span> <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&quot;s/llo/y/g&quot;</span>      # replace <span class="st">&quot;llo&quot;</span> with a <span class="st">&quot;y&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co"># by setting the g flag in &quot;s/llo/y/g&quot;,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="co"># sed replaces all occurences, not only the first one</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>egrep für Extraktion, sed für Manipulation
@@ -370,12 +360,12 @@
 <li>…</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># swap order of name (last first -&gt; first last)</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="bu">echo</span> <span class="st">&quot;Lastname Firstname&quot;</span> <span class="kw">|</span> <span class="fu">sed</span> -E <span class="st">&quot;s/(.*) (.*)/\2 \1/&quot;</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># egrep also supports grouping</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="co"># match any two digit pair</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="fu">egrep</span> -r <span class="st">&quot;([0-9])\1([0-9])\2&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co"># swap order of name (last first -&gt; first last)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="bu">echo</span> <span class="st">&quot;Lastname Firstname&quot;</span> <span class="kw">|</span> <span class="fu">sed</span> -E <span class="st">&quot;s/(.*) (.*)/\2 \1/&quot;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="co"># egrep also supports grouping</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="co"># match any two digit pair</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="fu">egrep</span> -r <span class="st">&quot;([0-9])\1([0-9])\2&quot;</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Teilausdruck zu gruppieren zur Wiederverwendung</li>
@@ -413,13 +403,13 @@
 <section id="something-actually-useful" class="slide level2">
 <h2>Something actually useful</h2>
 <h4 id="combining-regular-expressions-with-frequency-analysis">combining regular expressions with frequency analysis</h4>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># get political areas </span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="co"># by counting words ending with &quot;politik&quot;</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">egrep</span> -rioh <span class="st">&#39;\w*politik\b&#39;</span> */*.txt <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> -c <span class="kw">|</span> <span class="fu">sort</span> -h</span>
-<span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="co"># get ideologies/concepts </span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="co"># by counting words ending with -ismus</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="fu">egrep</span> -rioh <span class="st">&#39;\w*ismus\b&#39;</span> */*.txt <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> -c <span class="kw">|</span> <span class="fu">sort</span> -h</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co"># get political areas </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="co"># by counting words ending with &quot;politik&quot;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="fu">egrep</span> -rioh <span class="st">&#39;\w*politik\b&#39;</span> */*.txt <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> -c <span class="kw">|</span> <span class="fu">sort</span> -h</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="co"># get ideologies/concepts </span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a><span class="co"># by counting words ending with -ismus</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a><span class="fu">egrep</span> -rioh <span class="st">&#39;\w*ismus\b&#39;</span> */*.txt <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> -c <span class="kw">|</span> <span class="fu">sort</span> -h</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li></li>
@@ -436,11 +426,11 @@
 <li><code>[^EXCLUDE_SYMBOLS]</code> instead of <code>.*</code></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># greedy: an apple, other apple</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="bu">echo</span> <span class="st">&#39;an apple, other apple&#39;</span> <span class="kw">|</span> <span class="fu">egrep</span> <span class="st">&#39;a.*apple&#39;</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># non-greedy: an apple</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="bu">echo</span> <span class="st">&#39;an apple, other apple&#39;</span> <span class="kw">|</span> <span class="fu">egrep</span> <span class="st">&#39;a[^,]*apple&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co"># greedy: an apple, other apple</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="bu">echo</span> <span class="st">&#39;an apple, other apple&#39;</span> <span class="kw">|</span> <span class="fu">egrep</span> <span class="st">&#39;a.*apple&#39;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a><span class="co"># non-greedy: an apple</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="bu">echo</span> <span class="st">&#39;an apple, other apple&#39;</span> <span class="kw">|</span> <span class="fu">egrep</span> <span class="st">&#39;a[^,]*apple&#39;</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li><code>. =</code> jegliche Zeichen, beliebige Länge</li>
@@ -452,11 +442,11 @@
 <ul>
 <li>tokenization ~ splitting into words</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># new, improved approach</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">cat</span> text.txt <span class="kw">|</span> <span class="fu">tr</span> -sc <span class="st">&quot;[a-zäöüA-ZÄÖÜ0-9-]&quot;</span> <span class="st">&quot;\n&quot;</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># old approach</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">cat</span> text.txt <span class="kw">|</span> <span class="fu">tr</span> <span class="st">&#39; &#39;</span> <span class="st">&#39;\n&#39;</span>  </span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co"># new, improved approach</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="fu">cat</span> text.txt <span class="kw">|</span> <span class="fu">tr</span> -sc <span class="st">&quot;[a-zäöüA-ZÄÖÜ0-9-]&quot;</span> <span class="st">&quot;\n&quot;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a><span class="co"># old approach</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a><span class="fu">cat</span> text.txt <span class="kw">|</span> <span class="fu">tr</span> <span class="st">&#39; &#39;</span> <span class="st">&#39;\n&#39;</span>  </span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Tokenisierung = in Wörter splitten</li>
@@ -477,11 +467,11 @@
 <li>Use <code>egrep</code> to extract all uppercased words like <code>UNO, OECD, SP</code> and count their frequency.</li>
 <li>Post the most frequent abbreviation from 2) on <a href="www.menti.com">www.menti.com</a>.</li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Some not so random hints </span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="ex">piping</span> with <span class="kw">|</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">sort</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">uniq</span> -c</span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="fu">egrep</span> -roh */*.txt</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co"># Some not so random hints </span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="ex">piping</span> with <span class="kw">|</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="fu">sort</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="fu">uniq</span> -c</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="fu">egrep</span> -roh */*.txt</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li><code>egrep -roh '[A-Z]{2,}' */*.txt | sort | uniq -c | sort -h</code></li>
@@ -505,21 +495,21 @@
 <section id="in-class-self-check" class="slide level2" data-background="#3c70b5">
 <h2 data-background="#3c70b5">In-class: Self-Check</h2>
 <h4 id="equivalent-patterns">equivalent patterns</h4>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="ex">a+</span> == aa*               <span class="co"># &quot;a&quot; once or more than once</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="ex">a?</span> == (a<span class="kw">|</span><span class="ex">_</span>)             <span class="co"># &quot;a&quot; once or nothing</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="ex">a</span><span class="dt">{3}</span> == aaa             <span class="co"># three &quot;a&quot;</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="ex">a</span><span class="dt">{2,3}</span> == (aa<span class="kw">|</span><span class="ex">aaa</span>)      <span class="co"># two or three &quot;a&quot;</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a>[<span class="ex">ab</span>] == (a<span class="kw">|</span><span class="ex">b</span>)           <span class="co"># &quot;a&quot; or &quot;b&quot;</span></span>
-<span id="cb7-6"><a href="#cb7-6"></a>[<span class="ex">0-9</span>] == (0<span class="kw">|</span><span class="ex">1</span><span class="kw">|</span><span class="ex">2</span><span class="kw">|</span><span class="ex">3</span><span class="kw">|</span><span class="ex">4</span><span class="kw">|</span><span class="ex">5</span><span class="kw">|</span><span class="ex">6</span><span class="kw">|</span><span class="ex">7</span><span class="kw">|</span><span class="ex">8</span><span class="kw">|</span><span class="ex">9</span>)  <span class="co">#any digit</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="ex">a+</span> == aa*               # <span class="st">&quot;a&quot;</span> once or more than once</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="ex">a?</span> == (a<span class="kw">|</span><span class="ex">_</span>)             # <span class="st">&quot;a&quot;</span> <span class="ex">once</span> or nothing</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a><span class="ex">a</span><span class="dt">{3}</span> == aaa             # three <span class="st">&quot;a&quot;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a><span class="ex">a</span><span class="dt">{2,3}</span> == (aa<span class="kw">|</span><span class="ex">aaa</span>)      # <span class="ex">two</span> or three <span class="st">&quot;a&quot;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>[<span class="ex">ab</span>] == (a<span class="kw">|</span><span class="ex">b</span>)           # <span class="st">&quot;a&quot;</span> <span class="ex">or</span> <span class="st">&quot;b&quot;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>[<span class="ex">0-9</span>] == (0<span class="kw">|</span><span class="ex">1</span><span class="kw">|</span><span class="ex">2</span><span class="kw">|</span><span class="ex">3</span><span class="kw">|</span><span class="ex">4</span><span class="kw">|</span><span class="ex">5</span><span class="kw">|</span><span class="ex">6</span><span class="kw">|</span><span class="ex">7</span><span class="kw">|</span><span class="ex">8</span><span class="kw">|</span><span class="ex">9</span>)  #<span class="ex">any</span> digit</span></code></pre></div>
 </section>
 <section id="in-class-exercise-ii" class="slide level2" data-background="#3c70b5">
 <h2 data-background="#3c70b5">In-class: Exercise II</h2>
 <ol type="1">
 <li><p>Since you know about RegEx, we can use a more sophisticated tokenizer to split a text into words. What is the difference between the old and new approach? Test it and check the helper page with <code>man</code>.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># new, improved approach</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">cat</span> text.txt <span class="kw">|</span> <span class="fu">tr</span> -sc <span class="st">&quot;[a-zäöüA-ZÄÖÜ0-9-]&quot;</span> <span class="st">&quot;\n&quot;</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="co"># old approach</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="fu">cat</span> text.txt <span class="kw">|</span> <span class="fu">tr</span> <span class="st">&#39; &#39;</span> <span class="st">&#39;\n&#39;</span>   </span></code></pre></div></li>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co"># new, improved approach</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="fu">cat</span> text.txt <span class="kw">|</span> <span class="fu">tr</span> -sc <span class="st">&quot;[a-zäöüA-ZÄÖÜ0-9-]&quot;</span> <span class="st">&quot;\n&quot;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="co"># old approach</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a><span class="fu">cat</span> text.txt <span class="kw">|</span> <span class="fu">tr</span> <span class="st">&#39; &#39;</span> <span class="st">&#39;\n&#39;</span>   </span></code></pre></div></li>
 </ol>
 </section>
 <section id="in-class-exercise-iii" class="slide level2" data-background="#3c70b5">
@@ -724,25 +714,30 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
         // Display the page number of the current slide
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
-        // see https://github.com/hakimel/reveal.js/#navigation-mode
+        // see https://revealjs.com/vertical-slides/#navigation-mode
         navigationMode: 'linear',
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>
