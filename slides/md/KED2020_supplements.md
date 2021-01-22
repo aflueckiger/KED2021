@@ -93,3 +93,26 @@ done
 
 
 
+
+
+## Grid Example
+
+<div class="l-double">
+
+::: 
+
+**COL 1**
+
+- text processing
+
+:::
+
+::: 
+
+**COL 2**
+
+- existing resources
+- creating new resources
+
+:::
+</div>
