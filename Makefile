@@ -91,19 +91,16 @@ all: $(slides-html) $(slides-pdf) $(materials-pdf) $(exercises-pdf) $(notes-pdf)
 
 $(SLIDES_HTML_DIR)/%.html: $(SLIDES_MD_DIR)/%.md $(CSS)
 	pandoc -f markdown+emoji+strikeout -t revealjs -s -o $@ $< \
-	-V theme=night \
-	-V navigationMode=linear \
-	-V slideNumber=true \
+    --no-highlight \
+    -V theme=simple \
+    -V navigationMode=linear \
+    -V slideNumber=true \
+    -V width=1920 -V height=1080 \
+    --include-in-header slides/resources/custom_style_reveal.css slides/resources/code_highlighting.html \
 	-V biblio-title:References \
-	--include-in-header $(CSS) \
-	#--citeproc \
-	#-V $(TEX_REF) \
-	# --bibliography=$(BIB)
-	# --filter pandoc-citeproc \
+    --citeproc \
+    --bibliography /home/alex/drive/zotero/references.bib
 
-	# --metadata link-citations \
-	# --csl=$(CSL)
-	# $(CROSSREF)
 
 $(NOTES_DIR)/%.notes.pdf: $(SLIDES_DIR)/%.md lib/extract_notes.py
 	python lib/extract_notes.py < $< | pandoc -o $@ -f markdown

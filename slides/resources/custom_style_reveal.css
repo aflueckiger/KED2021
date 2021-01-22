@@ -1,163 +1,238 @@
 <style type='text/css'>
-/*
 
-## green {data-background=#4d7e65}
 
-## blue {data-background=#3c70b5}
+/*********************************************
+* CUSTOM COLORS
+*********************************************/
 
-## red {data-background=#b5533c}
-
-## black {data-background=#111}
-
- */
-
-.reveal {
-    font-size: 170%; */
+:root {
+    --green: #4d7e65;
+    --blue: #3c70b5;
+    --red: #b5533c;
+    --black: #1d1e1f;
 }
 
-.reveal .title {
-    font-size: 260%; */
+/*********************************************
+* GLOBAL STYLES
+*********************************************/
+
+.reveal-viewport {
+    background: #f7f6f7;
+    background-color: #f7f6f7;
+  }
+
+.reveal {
+   font-size: 2.4em;
+   font-weight: normal;
+   color: #1d1e1f;
+}
+
+.reveal ::selection {
+   color: #f7f6f7;
+   background: #588da8;
+   text-shadow: none;
+}
+
+.reveal ::-moz-selection {
+   color: #f7f6f7;
+   background: #588da8;
+   text-shadow: none;
+}
+
+.reveal ::marker {
+    color: #588da8;
+}
+section.has-dark-background ::marker {
+    color: white;
+}
+
+.reveal .controls {
+    font-size: 8px;
+    bottom: 16px;
+    right: 2px;
+    color: #588da8;
+}
+
+.reveal .progress {
+    color: #588da8;
+}
+
+.reveal .slide-number {
+    right: 18px;
+    bottom: 4px;
+    font-size: 14px;
+    background-color: transparent;
+    color: #1d1e1f;
+}
+
+
+/*********************************************
+* HEADERS
+*********************************************/
+
+h1.title {
+    font-size: 2em;
+    font-weight: bold;
 }
 
 .subtitle{
-    font-size: 200%;
-    color: #e7ad52;
-    padding-top: 30px;
-    padding-bottom: 60px;
-
-}
-
-.reveal figcaption{
-    font-size: 80%;
-}
-
-span.citation{
-    font-size: 60%;
+    font-size: 1.5em;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    color: #25384F;
 }
 
 p.author,
-p.date{
-    font-size: 90%;
-    margin-top: -20px;
+p.date,
+.institute{
+    text-align: left;
+    font-size: 0.7em;
+    margin-top: -0.7em;
+    margin-left: 19%;
+}
+
+.institute{
+    font-size: 0.5em
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    color: #4b729e;
 }
 
 .reveal h2 {
     margin-bottom: +50px;
 }
 
-.align-left {
-    text-align: left;
-}
-
-.align-left-padding {
-    text-align: left;
-    padding-left: 5%;
-    margin-left: 15%;
-    border-left: 8px solid #ffffff;
+.reveal h3 {
+    font-size: 1.3em;
 }
 
 
-.sourceCode{
-    font-size: 135%;
+/*********************************************
+* FULL SCREEN SLIDES
+*********************************************/
+
+.reveal section[data-background*="images"] {
+    background-color: rgba(00, 00, 00, .2);
+    padding: 3em;
+    width: 80% !important;
+    left: 10%;
+    margin: auto;
+    /* border-bottom: 30px solid orange; */
 }
-code{
-    background: #f7eeda; /* #484a42  #272822 */
-    color: #1c1b1b;
-}
-
-.reveal table {
-    font-size: 80%;
-}
-
-
-ol li {
-  line-height:2em;
-}
-
-ul li {
-  line-height:2em;
-}
-
-ul li li {
- line-height:1.3em;
- list-style-type: None;
- font-style: italic;
- font-size: 90%;
- font-family: Georgia;
-}
-
-ol li li {
- line-height:1.3em;
- list-style-type: None;
- font-style: italic;
- font-size: 90%;
- font-family: Georgia;
-}
-
-
-hr {
+.reveal h2[data-background*="images"] {
     color: white;
 }
 
-/* .reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
-    word-wrap: normal;
-    -webkit-hyphens: manual;
-    -moz-hyphens: manual;
-    hyphens: manual;
-} */
 
-div.references{
-    font-size: 75%
+/*********************************************
+* LISTS
+*********************************************/
+
+ol li,
+ul li {
+  margin-top: 0.6em;
 }
 
-.reveal .slide-number {
-  font-size: 18pt;
-  color: #ffffff; }
+ol li li,
+ul li li {
+ margin-top: 0.2em;
+ list-style-type: None;
+ font-style: italic;
+ font-size: 0.8em;
+ font-family: Georgia;
+}
+
+/*********************************************
+* OTHER TEXT
+*********************************************/
+
+section section:not(.has-dark-background) strong,
+section section:not(.has-dark-background) b {
+  color: #729E2A;
+}
+
+.reveal a {
+    color: #588da8
+}
+
+.reveal a:hover {
+  color: #9E4B72;
+  text-shadow: none;
+  border: none;
+}
+
+.reveal section.has-dark-background a {
+    color: white;
+    text-decoration: underline;
+}
+
+.reveal figure figcaption {
+  font-style: italic;
+  font-size: 75%; }
+
+span.citation{
+    font-size: 60%;
+    font-style: italic;
+    color: grey;
+    vertical-align: top;
+}
+
+.reveal pre {
+    margin-top: 3em;
+}
+
+.reveal pre code {
+    font-size: 2em;
+    padding: 1.5em;
+}
+
+
+.reveal table {
+    font-size: 0.8em;
+}
 
 .emoji {
-    font-size: 150%
+    font-size: 1.3em
 }
 
-.reveal blockquote{
-    /*
-    border-left: 5px solid #428bca;
-    color: #428bca;
-    border-left: 4px solid #428bca;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-right: 4px solid #428bca;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+/*********************************************
+* QUOTES
+*********************************************/
 
+.reveal blockquote {
+  font-family: Georgia;
+  color: #1d1e1f;
 
-    background-color: #E6E6E6;
-    color: #000000;
-     background-color: #d2f8d2; */
-}
-
-.reveal blockquote{
-    position: static;
-    text-align: justify;
-    border-style: none;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
-    background: inherit;
-    font-family: Georgia;
-    font-size: 1.2em;
-    width:90%;
-    margin:0px auto;
-    padding: 1em;
-    font-style:normal;
-}
-
-
+  width: 80%;
+  text-align: left;
+  box-shadow: none;
+  line-height: 1.55;
+  font-size: 130%;
+  position: relative; }
+  .reveal blockquote p:first-child::before,
+  .reveal blockquote p:first-child::after {
+    position: absolute;
+    font-size: 2.5em;
+    font-family: Georgia, serif;
+    color: #4b729e; }
+  .reveal blockquote p::before {
+    top: -0.25em;
+    left: -0.5em;
+    content: '\201C'; }
+  .reveal blockquote p::after {
+    bottom: 0;
+    right: -0.4em;
+    content: '\201D'; }
 
 
 .reveal blockquote cite{
+    color: #4b729e;
     text-align: right;
     font-style: normal;
     font-size: 0.75em;
@@ -165,5 +240,78 @@ div.references{
     margin-top:1em;
 }
 
+.reveal blockquote cite:before {
+    content: "\2014";
+}
+
+/*********************************************
+* CUSTOM CLASSES
+*********************************************/
+
+.answer {
+    font-style: italic;
+    background-color: rgba(00, 00, 00, .2);
+    padding: 0.8em;
+    margin-top: 0.3em;
+    width: 70%;
+    margin: auto;
+    margin-top: 1em;
+}
+
+.highlight {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size: 2em;
+    background: rgba(255, 255, 255, .5);
+    width: 80%;
+    margin:auto;
+    padding:1em;
+}
+
+.reading p,
+.reading h3,
+.csl-entry {
+    text-align: left;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.reading p,
+.references {
+    font-size: 0.7em;
+
+}
+
+.references > div{
+    margin-bottom: 0.4em;
+}
+
+/*********************************************
+* CUSTOM LAYOUT CLASSES
+*********************************************/
+
+.l-double {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.l-multiple {
+  display: flex;
+  justify-content: space-around;
+}
+
+.l-double strong {
+  font-size: 1.3em;
+  color: #4b729e;
+}
+
+.l-image-corner {
+    position: absolute;
+    right: 0;
+    transform: translate(0%,-55%);
+}
 
 </style>
