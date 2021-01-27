@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Alex Flückiger">
+  <meta name="dcterms.date" content="2020-04-09">
+  <title>The ABC of computational Text Analysis</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
+  <style type='text/css'>
+
+
+  /*********************************************
+  * CUSTOM COLORS
+  *********************************************/
+
+  :root {
+      --green: #4d7e65;
+      --blue: #3c70b5;
+      --red: #b5533c;
+      --black: #1d1e1f;
+  }
+
+  /*********************************************
+  * GLOBAL STYLES
+  *********************************************/
+
+  .reveal-viewport {
+      background: #f7f6f7;
+      background-color: #f7f6f7;
+    }
+
+  .reveal {
+     font-size: 2.4em;
+     font-weight: normal;
+     color: #1d1e1f;
+  }
+
+  .reveal ::selection {
+     color: #f7f6f7;
+     background: #588da8;
+     text-shadow: none;
+  }
+
+  .reveal ::-moz-selection {
+     color: #f7f6f7;
+     background: #588da8;
+     text-shadow: none;
+  }
+
+  .reveal ::marker {
+      color: #588da8;
+  }
+  section.has-dark-background ::marker {
+      color: white;
+  }
+
+  .reveal .controls {
+      font-size: 8px;
+      bottom: 16px;
+      right: 2px;
+      color: #588da8;
+  }
+
+  .reveal .progress {
+      color: #588da8;
+  }
+
+  .reveal .slide-number {
+      right: 18px;
+      bottom: 4px;
+      font-size: 14px;
+      background-color: transparent;
+      color: #1d1e1f;
+  }
+
+
+  /*********************************************
+  * HEADERS
+  *********************************************/
+
+  h1.title {
+      font-size: 2em;
+      font-weight: bold;
+  }
+
+  .subtitle{
+      font-size: 1.5em;
+      padding-top: 1em;
+      padding-bottom: 2em;
+      color: #25384F;
+  }
+
+  p.author,
+  p.date,
+  .institute{
+      text-align: left;
+      font-size: 0.7em;
+      margin-top: -0.7em;
+      margin-left: 19%;
+  }
+
+  .institute{
+      font-size: 0.5em
+  }
+
+  .reveal h1,
+  .reveal h2,
+  .reveal h3,
+  .reveal h4,
+  .reveal h5,
+  .reveal h6 {
+      color: #4b729e;
+  }
+
+  .reveal h2 {
+      margin-bottom: +50px;
+  }
+
+  .reveal h3 {
+      font-size: 1.3em;
+  }
+
+
+  /*********************************************
+  * FULL SCREEN SLIDES
+  *********************************************/
+
+  .reveal section[data-background*="images"] {
+      background-color: rgba(00, 00, 00, .2);
+      padding: 3em;
+      width: 80% !important;
+      left: 10%;
+      margin: auto;
+      /* border-bottom: 30px solid orange; */
+  }
+  .reveal h2[data-background*="images"] {
+      color: white;
+  }
+
+
+  /*********************************************
+  * LISTS
+  *********************************************/
+
+  ol li,
+  ul li {
+    margin-top: 0.6em;
+  }
+
+  ol li li,
+  ul li li {
+   margin-top: 0.2em;
+   list-style-type: None;
+   font-style: italic;
+   font-size: 0.8em;
+   font-family: Georgia;
+  }
+
+  /*********************************************
+  * OTHER TEXT
+  *********************************************/
+
+  section section:not(.has-dark-background) strong,
+  section section:not(.has-dark-background) b {
+    color: #729E2A;
+  }
+
+  .reveal a {
+      color: #588da8
+  }
+
+  .reveal a:hover {
+    color: #9E4B72;
+    text-shadow: none;
+    border: none;
+  }
+
+  .reveal section.has-dark-background a {
+      color: white;
+      text-decoration: underline;
+  }
+
+  .reveal figure figcaption {
+    font-style: italic;
+    font-size: 75%; }
+
+  section:not(.has-dark-background) span.citation{
+      font-size: 60%;
+      font-style: italic;
+      color: gray;
+      vertical-align: top;
+  }
+
+  .reveal pre {
+      margin-top: 3em;
+  }
+
+  .reveal pre code {
+      font-size: 2em;
+      padding: 1.5em;
+  }
+
+
+  .reveal table {
+      font-size: 0.8em;
+  }
+
+  .emoji {
+      font-size: 1.3em
+  }
+
+  /*********************************************
+  * QUOTES
+  *********************************************/
+
+  .reveal blockquote {
+    font-family: Georgia;
+    color: #1d1e1f;
+
+    width: 80%;
+    text-align: left;
+    box-shadow: none;
+    line-height: 1.55;
+    font-size: 130%;
+    position: relative; }
+    .reveal blockquote p:first-child::before,
+    .reveal blockquote p:first-child::after {
+      position: absolute;
+      font-size: 2.5em;
+      font-family: Georgia, serif;
+      color: #4b729e; }
+    .reveal blockquote p::before {
+      top: -0.25em;
+      left: -0.5em;
+      content: '\201C'; }
+    .reveal blockquote p::after {
+      bottom: 0;
+      right: -0.4em;
+      content: '\201D'; }
+
+
+  .reveal blockquote cite{
+      color: #4b729e;
+      text-align: right;
+      font-style: normal;
+      font-size: 0.75em;
+      font-weight: bold;
+      margin-top:1em;
+  }
+
+  .reveal blockquote cite:before {
+      content: "\2014";
+  }
+
+  /*********************************************
+  * CUSTOM CLASSES
+  *********************************************/
+
+  .answer {
+      font-style: italic;
+      background-color: rgba(00, 00, 00, .2);
+      padding: 0.8em;
+      margin-top: 0.3em;
+      width: 70%;
+      margin: auto;
+      margin-top: 1em;
+  }
+
+  .highlight {
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      font-size: 2em;
+      background: rgba(255, 255, 255, .5);
+      width: 80%;
+      margin:auto;
+      padding:1em;
+  }
+
+  .reading p,
+  .reading h3,
+  .csl-entry {
+      text-align: left;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+
+  }
+  .reading p,
+  .references {
+      font-size: 0.7em;
+
+  }
+
+  .references > div{
+      margin-bottom: 0.4em;
+  }
+
+  /*********************************************
+  * CUSTOM LAYOUT CLASSES
+  *********************************************/
+
+  .l-double {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .l-multiple {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .l-double strong {
+    font-size: 1.3em;
+    color: #4b729e;
+  }
+
+  .l-image-corner {
+      position: absolute;
+      right: 0;
+      transform: translate(0%,-55%);
+  }
+
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">The ABC of computational Text Analysis</h1>
+  <p class="subtitle">07: Data Sources and Ethics</p>
+  <p class="author">Alex Flückiger</p>
+  <p class="date">9 April 2020</p>
+</section>
+
+<section id="outline" class="slide level2">
+<h2>Outline</h2>
+<ul>
+<li>deepen the understanding of regex</li>
+<li>learn about available data resources</li>
+<li>think about ethics + bias → next session</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Audio funktioniert + Flackern Bildschirm weg</li>
+<li>3 Blöcke, Kursgestaltung noch offen</li>
+</ul>
+</aside>
+</section>
+<section id="ready-for-some-interaction" class="slide level2">
+<h2>Ready for some interaction?</h2>
+<h3 id="join-the-fun">Join the fun <span class="emoji" data-emoji="iphone">📱</span></h3>
+<p>access with a code <strong>51 63 60</strong>: <a href="https://www.menti.com">https://www.menti.com</a></p>
+<p>access directly: <a href="https://www.menti.com/sqs8kqsf6g">https://www.menti.com/sqs8kqsf6g</a></p>
+<aside class="notes">
+<ul>
+<li>Smartphone nutzen parallel zu Zoom</li>
+<li>Fragen weiterhin über Chat/Audio</li>
+<li>Standortbestimmung</li>
+<li>Gestaltung heutige Sitzung</li>
+</ul>
+</aside>
+</section>
+<section id="section" class="slide level2" data-background-iframe="https://www.mentimeter.com/embed/112d65f11d4dead10673437e52279113/39cfafd03655">
+<h2 data-background-iframe="https://www.mentimeter.com/embed/112d65f11d4dead10673437e52279113/39cfafd03655"></h2>
+</section>
+<section id="section-1" class="slide level2" data-background-iframe="https://www.mentimeter.com/embed/112d65f11d4dead10673437e52279113/ae68b52b0d04">
+<h2 data-background-iframe="https://www.mentimeter.com/embed/112d65f11d4dead10673437e52279113/ae68b52b0d04"></h2>
+</section>
+<section id="recap-last-lecture" class="slide level2">
+<h2>Recap last Lecture</h2>
+<ul>
+<li>regex to extract + replace particular text</li>
+<li>match text with generalized patterns</li>
+<li>2 types of symbols
+<ul>
+<li>literal: <code>abc</code></li>
+<li>meta: <code>\w \s [^abc] *</code></li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Regex für Extraktion + Säubern
+<ul>
+<li>man muss nur ungefähr wissen wonach suchen</li>
+<li>generalisierte Form = Muster</li>
+</ul></li>
+<li>Literale = Zeichen steht für tatsächliches Zeichen (buchstabentreu)</li>
+<li>Meta-Zeichen = Zeichen mit spezieller Bedeutung</li>
+<li>Probleme bei Mac-User –&gt; OLAT</li>
+</ul>
+</aside>
+</section>
+<section id="replacing-removing" class="slide level2">
+<h2>Replacing + Removing</h2>
+<h4 id="stream-editor-sed">stream editor (sed)</h4>
+<ul>
+<li>advanced find + replace using regex
+<ul>
+<li><code>sed "s/WHAT/WITH/g" FILE</code></li>
+</ul></li>
+<li><code>sed</code> replaces any sequence, <code>tr</code> only single symbols</li>
+</ul>
+<pre class="bash"><code>echo &quot;hello&quot; | sed &quot;s/llo/y/g&quot;      # replace &quot;llo&quot; with a &quot;y&quot;
+
+# by setting the g flag in &quot;s/llo/y/g&quot;,
+# sed replaces all occurences, not only the first one</code></pre>
+<aside class="notes">
+<ul>
+<li>egrep für Extraktion, sed für Manipulation
+<ul>
+<li>wichtig um Daten aufzubereiten</li>
+</ul></li>
+<li>wie Funktion von Word, nur mächtiger dank Regex</li>
+<li>Löschen = Ersetzen mit leeren Sequenz</li>
+<li>flag “global”</li>
+<li>Demonstration mit \b</li>
+<li>echo <code>"hello hell" | sed "s/l\b/y/g"</code></li>
+</ul>
+</aside>
+</section>
+<section id="contextual-replacing" class="slide level2">
+<h2>Contextual Replacing</h2>
+<ul>
+<li>reuse match with grouping <code>(pattern)</code>
+<ul>
+<li><code>\1</code> equals the expression inside first pair of parentheses</li>
+<li><code>\2</code> expression of second pair</li>
+<li>…</li>
+</ul></li>
+</ul>
+<pre class="bash"><code># swap order of name (last first -&gt; first last)
+echo &quot;Lastname Firstname&quot; | sed -E &quot;s/(.*) (.*)/\2 \1/&quot;
+
+# egrep also supports grouping
+# match any two digit pair
+egrep -r &quot;([0-9])\1([0-9])\2&quot;</code></pre>
+<aside class="notes">
+<ul>
+<li>Teilausdruck zu gruppieren zur Wiederverwendung</li>
+<li>Klammern
+<ul>
+<li>ebenfalls Metazeichen</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="even-more-symbols" class="slide level2">
+<h2>Even more Symbols</h2>
+<ul>
+<li><p><code>\b</code> word boundary</p>
+<ul>
+<li><code>word\b</code> does not match <code>words</code></li>
+</ul></li>
+<li><p><code>^</code> begin of line and <code>$</code> end of line</p>
+<ul>
+<li><code>^A</code> matches only <code>A</code> at line start</li>
+</ul></li>
+<li><p><code>|</code> disjunction (OR)</p>
+<ul>
+<li><code>(Mr|Mrs|Mr\.|Mrs\.) Green</code> matches alternatives</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>diese Symbole sind leer, sie matchen keine Zeichen</li>
+<li>spezifizieren Positon von regulärem Ausdruck</li>
+<li>line start hilfreich für übung</li>
+</ul>
+</aside>
+</section>
+<section id="something-actually-useful" class="slide level2">
+<h2>Something actually useful</h2>
+<h4 id="combining-regular-expressions-with-frequency-analysis">combining regular expressions with frequency analysis</h4>
+<pre class="bash"><code># get political areas 
+# by counting words ending with &quot;politik&quot;
+egrep -rioh &#39;\w*politik\b&#39; */*.txt | sort | uniq -c | sort -h
+
+# get ideologies/concepts 
+# by counting words ending with -ismus
+egrep -rioh &#39;\w*ismus\b&#39; */*.txt | sort | uniq -c | sort -h</code></pre>
+<aside class="notes">
+<ul>
+<li></li>
+</ul>
+</aside>
+</section>
+<section id="greediness-trap" class="slide level2">
+<h2>Greediness Trap</h2>
+<ul>
+<li>greedy ~ match the longest string possible</li>
+<li>quantifiers <code>*</code> or <code>+</code> are greedy</li>
+<li>non-greedy by excluding some symbols
+<ul>
+<li><code>[^EXCLUDE_SYMBOLS]</code> instead of <code>.*</code></li>
+</ul></li>
+</ul>
+<pre class="bash"><code># greedy: an apple, other apple
+echo &#39;an apple, other apple&#39; | egrep &#39;a.*apple&#39;
+
+# non-greedy: an apple
+echo &#39;an apple, other apple&#39; | egrep &#39;a[^,]*apple&#39;</code></pre>
+<aside class="notes">
+<ul>
+<li><code>. =</code> jegliche Zeichen, beliebige Länge</li>
+</ul>
+</aside>
+</section>
+<section id="better-tokenization" class="slide level2">
+<h2>Better Tokenization</h2>
+<ul>
+<li>tokenization ~ splitting into words</li>
+</ul>
+<pre class="bash"><code># new, improved approach
+cat text.txt | tr -sc &quot;[a-zäöüA-ZÄÖÜ0-9-]&quot; &quot;\n&quot;
+
+# old approach
+cat text.txt | tr &#39; &#39; &#39;\n&#39;  </code></pre>
+<aside class="notes">
+<ul>
+<li>Tokenisierung = in Wörter splitten</li>
+<li>Interpunktion “klebt nicht mehr an Wörtern”</li>
+<li>-s = beliebig viele Zeichen</li>
+<li>-c = Komplement (also nicht diese Zeichen)</li>
+<li>angegebene Zeichen werden NICHT ersetzt</li>
+</ul>
+</aside>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+</section>
+<section id="in-class-game" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">In-class: Game</h2>
+<ol type="1">
+<li>Make sure that your local copy of the Github repository KED2020 is up-to-date with <code>git pull</code>. Go to the party programmes in <code>materials/party_programmes/txt</code>.</li>
+<li>Use <code>egrep</code> to extract all uppercased words like <code>UNO, OECD, SP</code> and count their frequency.</li>
+<li>Post the most frequent abbreviation from 2) on <a href="www.menti.com">www.menti.com</a>.</li>
+</ol>
+<pre class="bash"><code># Some not so random hints 
+piping with |
+sort
+uniq -c
+egrep -roh */*.txt</code></pre>
+<aside class="notes">
+<ul>
+<li><code>egrep -roh '[A-Z]{2,}' */*.txt | sort | uniq -c | sort -h</code></li>
+</ul>
+</aside>
+</section>
+<section id="section-2" class="slide level2" data-background-iframe="https://www.mentimeter.com/embed/112d65f11d4dead10673437e52279113/762fc5476a3a">
+<h2 data-background-iframe="https://www.mentimeter.com/embed/112d65f11d4dead10673437e52279113/762fc5476a3a"></h2>
+</section>
+<section id="section-3" class="slide level2" data-background-iframe="https://www.mentimeter.com/embed/112d65f11d4dead10673437e52279113/0bdd6cae3a6e">
+<h2 data-background-iframe="https://www.mentimeter.com/embed/112d65f11d4dead10673437e52279113/0bdd6cae3a6e"></h2>
+</section>
+<section id="in-class-exercises-i" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">In-class: Exercises I</h2>
+<ol type="1">
+<li><p>Use <code>egrep</code> to extract words following any of these strings: <code>der die das</code>.</p></li>
+<li><p>Do the self-check on the next slide.</p></li>
+<li><p>Use <code>sed -E</code> to remove the table of content, the footer and the page number in the programme of the Green Party. Check the PDF to get a visual impression and test your regular expression with <code>egrep</code> to see if you match the correct parts in the document.</p></li>
+</ol>
+</section>
+<section id="in-class-self-check" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">In-class: Self-Check</h2>
+<h4 id="equivalent-patterns">equivalent patterns</h4>
+<pre class="bash"><code>a+ == aa*               # &quot;a&quot; once or more than once
+a? == (a|_)             # &quot;a&quot; once or nothing
+a{3} == aaa             # three &quot;a&quot;
+a{2,3} == (aa|aaa)      # two or three &quot;a&quot;
+[ab] == (a|b)           # &quot;a&quot; or &quot;b&quot;
+[0-9] == (0|1|2|3|4|5|6|7|8|9)  #any digit</code></pre>
+</section>
+<section id="in-class-exercise-ii" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">In-class: Exercise II</h2>
+<ol type="1">
+<li><p>Since you know about RegEx, we can use a more sophisticated tokenizer to split a text into words. What is the difference between the old and new approach? Test it and check the helper page with <code>man</code>.</p>
+<pre class="bash"><code># new, improved approach
+cat text.txt | tr -sc &quot;[a-zäöüA-ZÄÖÜ0-9-]&quot; &quot;\n&quot;
+# old approach
+cat text.txt | tr &#39; &#39; &#39;\n&#39;   </code></pre></li>
+</ol>
+</section>
+<section id="in-class-exercise-iii" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">In-class: Exercise III</h2>
+<ol type="1">
+<li>Count all the bigrams (sequence of two words) using character sets and quantifiers. What about trigrams (three words)?</li>
+<li>Extract the words following numbers (also consider numbers like: <code>1'000, 1,000 or 5%</code>). Then, count all the words while excluding the numbers themselves. Hint: Pipe another grep to remove the digits.</li>
+<li>You are ready to come up with your own patterns…</li>
+</ol>
+<aside class="notes">
+<ul>
+<li>number task
+<ul>
+<li><code>egrep -rho "[0-9',%] \w+" | egrep -hoi '[a-z]+' | sort | uniq -c | sort -h</code></li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section>
+<section id="data-sources" class="title-slide slide level1">
+<h1>Data Sources</h1>
+
+</section>
+<section id="forms-of-data" class="slide level2">
+<h2>Forms of Data</h2>
+<ul>
+<li>content data
+<ul>
+<li>clean, plain text data</li>
+<li>preferable <code>.txt</code></li>
+</ul></li>
+<li>metadata ~ information about the actual data
+<ul>
+<li>publishing date, authors, source, version</li>
+<li>preferable as <code>.csv</code></li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Block über Datensätze für Mini-Projekt</li>
+<li>Metadaten für feinere und vergleichende Analysen</li>
+<li>Daten in unterschiedlichen Formaten</li>
+</ul>
+</aside>
+</section>
+<section id="what-data-sources-are-there" class="slide level2">
+<h2>What data sources are there?</h2>
+<ul>
+<li>broadly social
+<ul>
+<li>newspapers + magazines</li>
+<li>websites + social media</li>
+<li>reports by NGOs/GOs</li>
+</ul></li>
+<li>scientific
+<ul>
+<li>journals</li>
+</ul></li>
+<li>economic
+<ul>
+<li>business plans/reports</li>
+<li>contracts</li>
+<li>patents</li>
+</ul></li>
+<li>any textual source…</li>
+</ul>
+</section>
+<section id="interesting-publishers" class="slide level2">
+<h2>Interesting Publishers</h2>
+<ul>
+<li><a href="http://www.nexisuni.com/">Nexis Uni</a>
+<ul>
+<li>newspaper, business + legal reports (international)</li>
+<li>licensed by the university</li>
+</ul></li>
+<li><a href="https://www.hathitrust.org/datasets">HathiTrust</a>
+<ul>
+<li>massive collection of books (international)</li>
+<li>open, requires agreement</li>
+</ul></li>
+<li><a href="https://www.gutenberg.org/">Project Gutenberg</a>
+<ul>
+<li>huge collection of books (international)</li>
+<li>open-access</li>
+</ul></li>
+<li><a href="https://www.jstor.org/dfr/">JSTOR</a>
+<ul>
+<li>scientific articles across disciplines</li>
+<li>requires account, only 1-3-grams</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Nexis vielleicht spannendste Quelle
+<ul>
+<li>ezproxy</li>
+<li>download docx –&gt; Umwandlung in text</li>
+</ul></li>
+<li>Wieso Literatur?
+<ul>
+<li>genderspezifische Sprache, Verweise Natur/Umwelt</li>
+</ul></li>
+<li><h2 id="jstor">JSTOR</h2></li>
+</ul>
+</aside>
+</section>
+<section id="dataset-search" class="slide level2">
+<h2>Dataset Search</h2>
+<ul>
+<li><a href="https://dataverse.harvard.edu/">Harvard Dataverse</a>
+<ul>
+<li>free scientific data repository</li>
+</ul></li>
+<li><a href="https://datasetsearch.research.google.com">Google Dataset Search</a>
+<ul>
+<li>Google for datasets basically</li>
+</ul></li>
+<li>corpora by the <a href="https://www.cl.uzh.ch/en/texttechnologies/research/others.html">Department of Computational Linguistics @ UZH</a></li>
+</ul>
+<p><br></p>
+<p><span class="emoji" data-emoji="nerd_face">🤓</span> search for your topic followed by <em>corpus</em> or <em>text collection</em></p>
+<aside class="notes">
+<ul>
+<li><p>Suchmaschinen für Datensätze</p></li>
+<li><p>allerlei Datensätze, primär aus Wissenschaft</p></li>
+<li><p>Credit Suisse PDF Bulletin Corpus</p></li>
+<li><p>Boolean searches</p></li>
+</ul>
+</aside>
+</section>
+<section id="some-great-historical-corpora" class="slide level2">
+<h2>Some great historical Corpora</h2>
+<h4 id="ready-off-the-shelf-machine-readable">ready off the shelf, machine-readable</h4>
+<ul>
+<li><a href="https://www.republik.ch/2019/08/01/anleitung-fuer-die-perfekte-ansprache-zum-1-august">1 August speeches by Swiss Federal Councillors</a>
+<ul>
+<li>ask me for access to this corpus</li>
+</ul></li>
+<li><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/IAH8OY">Human Rights Texts</a></li>
+<li><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/0TJX8Y">United Nations General Debate Corpus</a></li>
+</ul>
+</section>
+<section id="online-computational-text-analysis" class="slide level2">
+<h2>Online Computational Text Analysis</h2>
+<ul>
+<li><a href="https://impresso-project.ch/app/">Impresso</a>
+<ul>
+<li>many historical newspapers + magazines (LU, CH)</li>
+<li>requires account</li>
+</ul></li>
+<li><a href="https://bookworm.htrc.illinois.edu">bookworm HathiTrust</a>
+<ul>
+<li>great filtering by metadata</li>
+<li>credible scientific source</li>
+</ul></li>
+<li><a href="https://books.google.com/ngrams#">Google Ngram Viewer</a>
+<ul>
+<li>no filtering option</li>
+<li>useful for quick analysis</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Datenanalysen online durchführen</li>
+<li>Absicherung über andere Quellen</li>
+<li>Impresso: Complete re-digitisation of the NZZ (together with the Zurich Central Library and Swiss National Library)</li>
+</ul>
+</aside>
+</section>
+<section id="copyright" class="slide level2">
+<h2>Copyright</h2>
+<ul>
+<li>restricted access to high quality data <span class="emoji" data-emoji="no_entry_sign">🚫</span></li>
+<li>check the rights to process the data</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>open data unterschiedlich unterstützt</li>
+<li>Daten oftmals Teil von Geschäftsmodell</li>
+<li>nutzt Graubereich</li>
+</ul>
+</aside>
+</section>
+<section id="todo-next-steps" class="slide level2">
+<h2>ToDo: Next steps</h2>
+<ul>
+<li>submit exercise #2</li>
+<li>check out the data resources</li>
+<li>think about the mini-project
+<ul>
+<li>groups</li>
+<li>data</li>
+</ul></li>
+</ul>
+</section>
+<section id="have-a-nice-easter-break" class="slide level2" data-background="../images/easter-eggs.jpg">
+<h2 data-background="../images/easter-eggs.jpg">Have a nice <br>Easter break!</h2>
+</section>
+<section id="references" class="slide level2">
+<h2>References</h2>
+<!-- Adapted from https://www.artembutusov.com/pandoc-markdown-syntax-highlighting-with-highlight-js/ -->
+<p><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"></p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atom-one-dark-reasonable.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script>
+$(function() {
+    $("pre > code").each(function(i, block) {
+        var codeClass = $(this).parent().attr("class");
+        if (codeClass == null || codeClass === "") {
+            $(this).addClass("hljs");
+        } else {
+            var map = {
+                js: "javascript"
+            };
+            if (map[codeClass]) {
+                codeClass = map[codeClass];
+            }
+            $(this).addClass(codeClass);
+            hljs.highlightBlock(this);
+        }
+    });
+});
+</script>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1920,
+        height: 1080,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

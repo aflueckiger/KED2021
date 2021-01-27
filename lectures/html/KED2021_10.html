@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Alex Flückiger">
+  <meta name="dcterms.date" content="2020-05-07">
+  <title>The ABC of computational Text Analysis</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
+  <style type='text/css'>
+
+
+  /*********************************************
+  * CUSTOM COLORS
+  *********************************************/
+
+  :root {
+      --green: #4d7e65;
+      --blue: #3c70b5;
+      --red: #b5533c;
+      --black: #1d1e1f;
+  }
+
+  /*********************************************
+  * GLOBAL STYLES
+  *********************************************/
+
+  .reveal-viewport {
+      background: #f7f6f7;
+      background-color: #f7f6f7;
+    }
+
+  .reveal {
+     font-size: 2.4em;
+     font-weight: normal;
+     color: #1d1e1f;
+  }
+
+  .reveal ::selection {
+     color: #f7f6f7;
+     background: #588da8;
+     text-shadow: none;
+  }
+
+  .reveal ::-moz-selection {
+     color: #f7f6f7;
+     background: #588da8;
+     text-shadow: none;
+  }
+
+  .reveal ::marker {
+      color: #588da8;
+  }
+  section.has-dark-background ::marker {
+      color: white;
+  }
+
+  .reveal .controls {
+      font-size: 8px;
+      bottom: 16px;
+      right: 2px;
+      color: #588da8;
+  }
+
+  .reveal .progress {
+      color: #588da8;
+  }
+
+  .reveal .slide-number {
+      right: 18px;
+      bottom: 4px;
+      font-size: 14px;
+      background-color: transparent;
+      color: #1d1e1f;
+  }
+
+
+  /*********************************************
+  * HEADERS
+  *********************************************/
+
+  h1.title {
+      font-size: 2em;
+      font-weight: bold;
+  }
+
+  .subtitle{
+      font-size: 1.5em;
+      padding-top: 1em;
+      padding-bottom: 2em;
+      color: #25384F;
+  }
+
+  p.author,
+  p.date,
+  .institute{
+      text-align: left;
+      font-size: 0.7em;
+      margin-top: -0.7em;
+      margin-left: 19%;
+  }
+
+  .institute{
+      font-size: 0.5em
+  }
+
+  .reveal h1,
+  .reveal h2,
+  .reveal h3,
+  .reveal h4,
+  .reveal h5,
+  .reveal h6 {
+      color: #4b729e;
+  }
+
+  .reveal h2 {
+      margin-bottom: +50px;
+  }
+
+  .reveal h3 {
+      font-size: 1.3em;
+  }
+
+
+  /*********************************************
+  * FULL SCREEN SLIDES
+  *********************************************/
+
+  .reveal section[data-background*="images"] {
+      background-color: rgba(00, 00, 00, .2);
+      padding: 3em;
+      width: 80% !important;
+      left: 10%;
+      margin: auto;
+      /* border-bottom: 30px solid orange; */
+  }
+  .reveal h2[data-background*="images"] {
+      color: white;
+  }
+
+
+  /*********************************************
+  * LISTS
+  *********************************************/
+
+  ol li,
+  ul li {
+    margin-top: 0.6em;
+  }
+
+  ol li li,
+  ul li li {
+   margin-top: 0.2em;
+   list-style-type: None;
+   font-style: italic;
+   font-size: 0.8em;
+   font-family: Georgia;
+  }
+
+  /*********************************************
+  * OTHER TEXT
+  *********************************************/
+
+  section section:not(.has-dark-background) strong,
+  section section:not(.has-dark-background) b {
+    color: #729E2A;
+  }
+
+  .reveal a {
+      color: #588da8
+  }
+
+  .reveal a:hover {
+    color: #9E4B72;
+    text-shadow: none;
+    border: none;
+  }
+
+  .reveal section.has-dark-background a {
+      color: white;
+      text-decoration: underline;
+  }
+
+  .reveal figure figcaption {
+    font-style: italic;
+    font-size: 75%; }
+
+  section:not(.has-dark-background) span.citation{
+      font-size: 60%;
+      font-style: italic;
+      color: gray;
+      vertical-align: top;
+  }
+
+  .reveal pre {
+      margin-top: 3em;
+  }
+
+  .reveal pre code {
+      font-size: 2em;
+      padding: 1.5em;
+  }
+
+
+  .reveal table {
+      font-size: 0.8em;
+  }
+
+  .emoji {
+      font-size: 1.3em
+  }
+
+  /*********************************************
+  * QUOTES
+  *********************************************/
+
+  .reveal blockquote {
+    font-family: Georgia;
+    color: #1d1e1f;
+
+    width: 80%;
+    text-align: left;
+    box-shadow: none;
+    line-height: 1.55;
+    font-size: 130%;
+    position: relative; }
+    .reveal blockquote p:first-child::before,
+    .reveal blockquote p:first-child::after {
+      position: absolute;
+      font-size: 2.5em;
+      font-family: Georgia, serif;
+      color: #4b729e; }
+    .reveal blockquote p::before {
+      top: -0.25em;
+      left: -0.5em;
+      content: '\201C'; }
+    .reveal blockquote p::after {
+      bottom: 0;
+      right: -0.4em;
+      content: '\201D'; }
+
+
+  .reveal blockquote cite{
+      color: #4b729e;
+      text-align: right;
+      font-style: normal;
+      font-size: 0.75em;
+      font-weight: bold;
+      margin-top:1em;
+  }
+
+  .reveal blockquote cite:before {
+      content: "\2014";
+  }
+
+  /*********************************************
+  * CUSTOM CLASSES
+  *********************************************/
+
+  .answer {
+      font-style: italic;
+      background-color: rgba(00, 00, 00, .2);
+      padding: 0.8em;
+      margin-top: 0.3em;
+      width: 70%;
+      margin: auto;
+      margin-top: 1em;
+  }
+
+  .highlight {
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      font-size: 2em;
+      background: rgba(255, 255, 255, .5);
+      width: 80%;
+      margin:auto;
+      padding:1em;
+  }
+
+  .reading p,
+  .reading h3,
+  .csl-entry {
+      text-align: left;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+
+  }
+  .reading p,
+  .references {
+      font-size: 0.7em;
+
+  }
+
+  .references > div{
+      margin-bottom: 0.4em;
+  }
+
+  /*********************************************
+  * CUSTOM LAYOUT CLASSES
+  *********************************************/
+
+  .l-double {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .l-multiple {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .l-double strong {
+    font-size: 1.3em;
+    color: #4b729e;
+  }
+
+  .l-image-corner {
+      position: absolute;
+      right: 0;
+      transform: translate(0%,-55%);
+  }
+
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">The ABC of computational Text Analysis</h1>
+  <p class="subtitle">10: NLP with Python</p>
+  <p class="author">Alex Flückiger</p>
+  <p class="date">7 May 2020</p>
+</section>
+
+<section id="recap-last-lecture" class="slide level2">
+<h2>Recap last Lecture</h2>
+<ul>
+<li>introduce Python <span class="emoji" data-emoji="snake">🐍</span>
+<ul>
+<li>editor</li>
+<li>syntax</li>
+</ul></li>
+</ul>
+<aside class="notes">
+
+</aside>
+</section>
+<section id="outline" class="slide level2">
+<h2>Outline</h2>
+<ul>
+<li>NLP, getting serious! <span class="emoji" data-emoji="innocent">😇</span></li>
+<li>interactive coding
+<ul>
+<li>interrupt, ask, complement</li>
+</ul></li>
+<li>mini-project</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Fragen sehr wichtig, da gewaltiger Sprung zu letzter Session</li>
+<li>Stellschrauben kennen lernen, Gefühl für die Sprache entwickeln
+<ul>
+<li>Details vorerst unwichtig</li>
+</ul></li>
+</ul>
+</aside>
+<!-- https://towardsdatascience.com/building-a-text-normalizer-using-nltk-ft-pos-tagger-e713e611db8 -->
+</section>
+<section>
+<section id="primer-on-nlp" class="title-slide slide level1" data-background="../images/words.jpg">
+<h1 data-background="../images/words.jpg"><span style="color:#ffffff">Primer on NLP</span></h1>
+
+</section>
+<section id="what-is-a-word" class="slide level2">
+<h2>What is a Word?</h2>
+<ul>
+<li>word ~ segments between whitespace</li>
+<li>yet, there are …
+<ul>
+<li>contractions: <code>U.S.</code>, <code>don't</code></li>
+<li>collocations: <code>New York</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="token" class="slide level2">
+<h2>Token</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>token ~ computational unit
+<ul>
+<li>representation of words</li>
+</ul></li>
+<li>lemma ~ base form of a word
+<ul>
+<li>texts → text</li>
+<li>goes → go</li>
+</ul></li>
+<li>stop words ~ functional words
+<ul>
+<li>lack meaning</li>
+<li>the, a, on, and</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<figure>
+<img data-src="../images/tokenization.jpeg" alt="tokenization (Medium)" /><figcaption aria-hidden="true">tokenization (<a href="https://medium.com/data-science-in-your-pocket/tokenization-algorithms-in-natural-language-processing-nlp-1fceab8454af">Medium</a>)</figcaption>
+</figure>
+</div>
+</div>
+<p><br></p>
+<p>Tokenize this: <code>Let's tokenize! Isn't this easy?</code> <span class="emoji" data-emoji="nerd_face">🤓</span></p>
+<aside class="notes">
+<ul>
+<li>Text wird in seine Teile gesplittet</li>
+<li>Lemma ~ Form in Duden</li>
+</ul>
+</aside>
+</section>
+<section id="nlp-processing-steps" class="slide level2">
+<h2>NLP Processing Steps</h2>
+<p><img data-src="../images/spacy_parse.png" style="height:5.5cm" /></p>
+<ol type="1">
+<li>tokenizing
+<ul>
+<li>segmenting text into words, punctuations etc.</li>
+</ul></li>
+<li>tagging part-of-speech (POS)
+<ul>
+<li>assigning word types (e.g. verb, noun)</li>
+</ul></li>
+<li>parsing
+<ul>
+<li>describing syntactic relations</li>
+</ul></li>
+</ol>
+<aside class="notes">
+<ul>
+<li>Abfolge von Prozessierungsschritten</li>
+<li>alles sprachabhängig</li>
+<li>Tagging: ca. 20-30 POS tags</li>
+<li>Parsing
+<ul>
+<li>Verb ist Head von Satz</li>
+<li>Subjekt-Verb-Objekt</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="how-does-the-computer-know" class="slide level2">
+<h2>How does the computer “know?”</h2>
+<ul>
+<li>using language specific models</li>
+<li>supervised machine learning</li>
+<li>trained on human-annotated data</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>die meisten haben ihr Schulwissen wieder vergessen, wieso kann das der Computer</li>
+<li>Intuition einfach, genaue technische Funktionsweise egal
+<ul>
+<li>Genauigkeit wichtig, aber noch zu advanced</li>
+<li>best-practice</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="representation-of-corpus" class="slide level2">
+<h2>Representation of Corpus</h2>
+<h4 id="document-term-matrix">document term matrix</h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Doc 1: <code>NLP is great. I love NLP.</code></li>
+<li>Doc 2: <code>I understand NLP.</code></li>
+<li>Doc 3: <code>NLP, NLP, NLP.</code></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th><code>NLP</code></th>
+<th><code>I</code></th>
+<th><code>is</code></th>
+<th><em>term</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Doc 1</strong></td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td><strong>Doc 2</strong></td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>…</td>
+</tr>
+<tr class="odd">
+<td><strong>Doc 3</strong></td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td><strong><em>Doc ID</em></strong></td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td><em>term frequency</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="mini-project" class="slide level2">
+<h2>Mini-Project</h2>
+<ul>
+<li>multiple documents</li>
+<li>write a script</li>
+<li>compare …
+<ul>
+<li>historically</li>
+<li>across actors</li>
+</ul></li>
+<li>relative frequency <span class="emoji" data-emoji="thumbsup">👍</span>, absolute frequency <span class="emoji" data-emoji="thumbsdown">👎</span></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>noch nicht alle in Liste?</li>
+<li>“Forschungsfrage” überlegen</li>
+<li>script ist gemachte arbeit zur wiederverwendung</li>
+</ul>
+</aside>
+</section>
+<section id="optional-seminar-paper" class="slide level2">
+<h2>Optional Seminar Paper</h2>
+<ul>
+<li>writing a seminar paper (4 ECTS)</li>
+<li>get in touch to discuss your idea</li>
+</ul>
+</section>
+<section id="outlook-nlp" class="slide level2">
+<h2>Outlook NLP</h2>
+<ul>
+<li>explore corpus differences by political party</li>
+<li>term frequency over time</li>
+<li>data
+<ul>
+<li>party programmes</li>
+<li>1 August speeches by Swiss Federal Councillors</li>
+</ul></li>
+</ul>
+</section>
+<section id="do-nlp" class="slide level2">
+<h2>Do NLP</h2>
+<p><a href="https://github.com/aflueckiger/KED2020/tree/master/scripts/KED2020_10.ipynb">Check out the Python code</a></p>
+</section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+<h4 id="tutorials-on-spacy">tutorials on spaCy</h4>
+<ul>
+<li><a href="https://spacy.io/usage/spacy-101">official spaCy 101</a></li>
+<li><a href="https://course.spacy.io/en/chapter1">official online course spaCy</a></li>
+<li><a href="https://www.kaggle.com/nirant/hitchhiker-s-guide-to-nlp-in-spacy">Hitchhiker’s Guide to NLP in spaCy</a> <!-- Adapted from https://www.artembutusov.com/pandoc-markdown-syntax-highlighting-with-highlight-js/ --></li>
+</ul>
+<p><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"></p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atom-one-dark-reasonable.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script>
+$(function() {
+    $("pre > code").each(function(i, block) {
+        var codeClass = $(this).parent().attr("class");
+        if (codeClass == null || codeClass === "") {
+            $(this).addClass("hljs");
+        } else {
+            var map = {
+                js: "javascript"
+            };
+            if (map[codeClass]) {
+                codeClass = map[codeClass];
+            }
+            $(this).addClass(codeClass);
+            hljs.highlightBlock(this);
+        }
+    });
+});
+</script>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1920,
+        height: 1080,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
