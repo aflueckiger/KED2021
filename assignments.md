@@ -35,7 +35,7 @@ The script follows the order of the tasks in the exercise. In addition to the co
 
 ### task 1a)
 echo "this is a test"
-# solution: echo prints out the provided text in the commandline 
+# solution: echo prints out the provided text in the command-line 
 
 ### task 1b)
 echo -n "test" | wc
