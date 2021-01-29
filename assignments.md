@@ -5,13 +5,13 @@ layout: page
 
 
 
-You have to submit three exercises to complete the seminar successfully. The purpose of the assignments is not to make it hard to pass the course but rather to foster your engagement with the covered topics. As you like, you may prefer to work in teams to discuss different approaches. Nonetheless, each student has to submit his own solution. 
+You have to submit three assignments to complete the seminar successfully. The purpose of the assignments is not to make it hard to pass the course but rather to foster your engagement with the covered topics. As you like, you may prefer to work in teams to discuss different approaches. Nonetheless, each student has to submit his own solution. 
 
 | #    | Topic                                                        | Published     | Deadline                    |
 | ---- | ------------------------------------------------------------ | ------------- | --------------------------- |
-| 1    | [Data Wrangling](https://aflueckiger.github.io/KED2021/exercises/exercise_1/KED2021_exercise_1.pdf) | 18 March 2021 | 25 March 2021 (by midnight) |
-| 2    | [Regex NLP](https://aflueckiger.github.io/KED2021/exercises/exercise_2/KED2021_exercise_2.pdf) | 01 April 2021 | 08 April 2021 (by midnight) |
-| 3    | [Python NLP](https://aflueckiger.github.io/KED2021/exercises/exercise_3/KED2021_exercise_3.pdf) | 06 May 2021   | 13 May 2021 (by midnight)   |
+| 1    | [Data Wrangling](https://aflueckiger.github.io/KED2021/assignments/assignment_1/KED2021_assignment_1.pdf) | 18 March 2021 | 25 March 2021 (by midnight) |
+| 2    | [Regex NLP](https://aflueckiger.github.io/KED2021/assignments/assignment_2/KED2021_assignment_2.pdf) | 01 April 2021 | 08 April 2021 (by midnight) |
+| 3    | [Python NLP](https://aflueckiger.github.io/KED2021/assignments/assignment_3/KED2021_assignment_3.pdf) | 06 May 2021   | 13 May 2021 (by midnight)   |
 
 ## Formal Instructions
 
@@ -20,7 +20,7 @@ Your submission is a single script, meaning that is readily executable, and is n
 - Bash scripts: `SURNAME_KED2021_NR.sh`
 - Python scripts: `SURNAME_KED2021_NR.py` 
 
-The script follows the order of the tasks in the exercise. In addition to the commands you have used to come up with a solution, you also provide a short, yet concise explanation of the actual solution as a comment (lines starting with `#`). Please use the following examples as template:
+The script follows the order of the tasks in the assignment. In addition to the commands you have used to come up with a solution, you also provide a short, yet concise explanation of the actual solution as a comment (lines starting with `#`). Please use the following examples as template:
 
 ### Bash
 
@@ -28,7 +28,7 @@ The script follows the order of the tasks in the exercise. In addition to the co
 #!/bin/bash
 
 ##################################################
-### Exercise 1
+### assignment 1
 ### Seminar: The ABC of Computational Text Analysis
 ### University of Lucerne
 ##################################################
@@ -53,7 +53,7 @@ echo -n "test" | wc
 # -*- coding: utf-8 -*-
 
 ##################################################
-### Exercise 1
+### assignment 1
 ### Seminar: The ABC of Computational Text Analysis
 ### University of Lucerne
 ##################################################

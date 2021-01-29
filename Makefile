@@ -36,17 +36,17 @@ lectures-md := $(wildcard $(LECTURES_MD_DIR)/*.md)
 lectures-html := $(patsubst $(LECTURES_MD_DIR)/%.md,$(LECTURES_HTML_DIR)/%.html,$(lectures-md))
 notes-pdf := $(patsubst $(LECTURES_MD_DIR)/%.md,$(NOTES_DIR)/%.notes.pdf,$(lectures-md))
 notes: $(notes-pdf)
-lectures:	$(lectures-html) $(notes-pdf)
+lectures: $(lectures-html) $(notes-pdf)
 
 lectures-pdf := $(patsubst $(LECTURES_HTML_DIR)/%.html,$(LECTURES_PDF_DIR)/%.pdf,$(lectures-html))
 lectures-pdf: $(lectures-pdf)
 
 
-# EXERCISES
-EXERCISES_DIR = exercises
-exercises-md := $(wildcard $(EXERCISES_DIR)/**/*.md)
-exercises-pdf := $(exercises-md:.md=.pdf)
-exercises:	$(exercises-pdf)
+# ASSIGNMENTS
+ASSIGNMENTS_DIR = assignments
+assignments-md := $(wildcard $(ASSIGNMENTS_DIR)/**/*.md)
+assignments-pdf := $(assignments-md:.md=.pdf)
+assignments:	$(assignments-pdf)
 
 # MATERIALS
 MATERIALS_DIR = materials
@@ -66,16 +66,15 @@ jekyll-run-local:
 	bundle exec jekyll serve
 
 prepare-dir:
-	mkdir -p $(LECTURES_DIR)
 	mkdir -p $(LECTURES_PDF_DIR)
 	mkdir -p $(LECTURES_HTML_DIR)
 	mkdir -p $(LECTURES_MD_DIR)
 	mkdir -p $(NOTES_DIR)
-	mkdir -p $(EXERCISES_DIR)
+	mkdir -p $(ASSIGNMENTS_DIR)
 	mkdir -p $(MATERIALS_DIR)
 
 
-all: $(lectures-html) $(lectures-pdf) $(materials-pdf) $(exercises-pdf) $(syllabus-pdf) $(notes-pdf)
+all: $(lectures-html) $(lectures-pdf) $(materials-pdf) $(assignments-pdf) $(syllabus-pdf) $(notes-pdf)
 
 
 $(LECTURES_HTML_DIR)/%.html: $(LECTURES_MD_DIR)/%.md $(CSS)
@@ -95,12 +94,12 @@ $(NOTES_DIR)/%.notes.pdf: $(LECTURES_DIR)/%.md lib/extract_notes.py
 	python lib/extract_notes.py < $< | pandoc -o $@ -f markdown
 
 $(LECTURES_PDF_DIR)/%.pdf: $(LECTURES_HTML_DIR)/%.html
-	decktape --size 1920x1080 $<  $@
+	decktape --load-pause 500 $< $@
 
 
 KED2021_syllabus.pdf: index.md schedule.md lectures.md assignments.md
 	cat index.md | sed '/<div/,/div>/d' > index.md.tmp
-	sed '5 a # Schedule' schedule.md | sed 's/lectures.*lectures//' > schedule.md.tmp
+	sed '5 a # Schedule' schedule.md | sed 's/.lectures//' > schedule.md.tmp
 	sed '5 a # Lectures' lectures.md > lectures.md.tmp
 	sed '5 a # Assignments' assignments.md > assignments.md.tmp
 	pandoc -o $@ index.md.tmp schedule.md.tmp lectures.md.tmp assignments.md.tmp --from markdown \
@@ -111,7 +110,8 @@ KED2021_syllabus.pdf: index.md schedule.md lectures.md assignments.md
 	-V urlcolor='[HTML]{111bab}' \
 	-V linkcolor='[HTML]{111bab}' \
 	-V filecolor='[HTML]{111bab}' \
-	--metadata title=$(TITLE)
+	--metadata title=$(TITLE) \
+	--metadata date="`date -u '+%d %B %Y'`"
 	rm *.tmp
 
 %.pdf: %.md
@@ -120,6 +120,7 @@ KED2021_syllabus.pdf: index.md schedule.md lectures.md assignments.md
 	-V linkcolor='[HTML]{111bab}' \
 	-V filecolor='[HTML]{111bab}' \
 	--number-sections
+	--metadata date="`date -u '+%d %B %Y'`"
 
 
 clean:
