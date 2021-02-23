@@ -119,7 +119,7 @@ KED2021_syllabus.pdf: index.md schedule.md lectures.md assignments.md
 	-V urlcolor='[HTML]{111bab}' \
 	-V linkcolor='[HTML]{111bab}' \
 	-V filecolor='[HTML]{111bab}' \
-	--number-sections
+	--number-sections \
 	--metadata date="`date -u '+%d %B %Y'`"
 
 
