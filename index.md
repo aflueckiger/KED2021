@@ -10,7 +10,7 @@ date: "2021"
 <div class="course-title">{{ site.subtitle }}</div>
 <div class="course-info">{{ site.lecture_type }}, {{ site.semester }}, {{ site.university }}</div>
 
-In this hands-on seminar, bachelor students of social and cultural sciences learn the basics of programming among other essential technical skills. Building on a modern technology stack, it aims to prepare students to conduct data-driven research as well as to make everyday life easier by fostering technological fundamentals. While learning about the role of computation in solving problems, we also discuss the current developments in information technology. In short, the course promotes practical and theoretical digital literacy.
+In this hands-on seminar, bachelor students of social and cultural sciences learn the basics of programming among other essential technical skills. Building on a modern technology stack, it aims to prepare students to conduct data-driven text analysis as well as to make everyday life easier by fostering technological fundamentals. While learning about the role of computation in solving problems, we also discuss the current developments in information technology. In short, the course promotes practical and theoretical digital literacy.
 
 
 
