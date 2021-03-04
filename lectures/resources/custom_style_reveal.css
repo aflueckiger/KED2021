@@ -209,41 +209,38 @@ section:not(.has-dark-background) span.citation{
 }
 
 .emoji {
-    font-size: 1.3em
+    font-size: 1.2em
 }
 
 /*********************************************
 * QUOTES
 *********************************************/
 
-.reveal blockquote {
+.reveal blockquote  {
   font-family: Georgia;
   color: #1d1e1f;
-
-  width: 80%;
+  max-width: 80%;
   text-align: left;
   box-shadow: none;
-  line-height: 1.55;
   font-size: 130%;
   position: relative; }
-  .reveal blockquote p:first-child::before,
-  .reveal blockquote p:first-child::after {
-    position: absolute;
-    font-size: 2.5em;
+  .reveal blockquote p{
+      line-height: 1.15em;
+  }
+  .reveal blockquote p:first-child::before {
+    font-size: 1.5em;
     font-family: Georgia, serif;
-    color: #4b729e; }
-  .reveal blockquote p::before {
-    top: -0.25em;
-    left: -0.5em;
-    content: '\201C'; }
-  .reveal blockquote p::after {
-    bottom: 0;
-    right: -0.4em;
-    content: '\201D'; }
+    color: rgb(10, 102, 180);
+    content: '«'; }
+.reveal blockquote p:first-child::after {
+  font-size: 1.5em;
+  font-family: Georgia, serif;
+  color: rgb(10, 102, 180);
+  content: '»'; }
 
 
 .reveal blockquote cite{
-    color: #4b729e;
+    color: rgb(10, 102, 180);
     text-align: right;
     font-style: normal;
     font-size: 0.75em;
