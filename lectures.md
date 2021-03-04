@@ -8,6 +8,7 @@ Below you find a brief description of all the lectures. I make the slides availa
 - HTML to open in a browser <i class="fas fa-desktop"></i> 
 - PDF document <i class="fas fa-file-pdf"></i>
 - Markdown source <i class="fab fa-github"></i>
+- recorded video of session  <i class="fas fa-video"></i>
 
 ## Week 1: Introduction + Where is the digital revolution?
 
@@ -16,8 +17,7 @@ On the one hand, I present the goals and organization of the seminar. On the oth
 [<i class="fas fa-desktop"></i>](https://aflueckiger.github.io/KED2021/lectures/html/KED2021_01.html)
 [<i class="fas fa-file-pdf"></i>](https://aflueckiger.github.io/KED2021/lectures/pdf/KED2021_01.pdf)
 [<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/lectures/md/KED2021_01.md)
-
-
+[<i class="fas fa-video"></i>](https://tube.switch.ch/videos/1d07f265)
 
 ### Required Reading
 
@@ -36,6 +36,7 @@ Computational text analysis comes with many challenges that are unique due to th
 [<i class="fas fa-desktop"></i>](https://aflueckiger.github.io/KED2021/lectures/html/KED2021_02.html)
 [<i class="fas fa-file-pdf"></i>](https://aflueckiger.github.io/KED2021/lectures/pdf/KED2021_02.pdf)
 [<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/lectures/md/KED2021_02.md)
+[<i class="fas fa-video"></i>](https://tube.switch.ch/videos/60dbcd87)
 
 ## Week 3: Setting up your Development Environment
 
