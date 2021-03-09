@@ -1,6 +1,7 @@
 ---
 title: 'Lectures'
 layout: page
+date: "2021-03-01"
 ---
 
 Below you find a brief description of all the lectures. I make the slides available before the lecture starts. The slides are provided in the following formats and may be opened by clicking the icon: 

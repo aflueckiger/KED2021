@@ -1,6 +1,7 @@
 ---
 title: 'Schedule'
 layout: page
+date: "2021-03-01"
 ---
 
 We have 12 seminar sessions together.
