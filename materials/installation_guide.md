@@ -1,7 +1,7 @@
 ---
 title: Setting up your Development Environment
 author: Alex Flückiger
-date: 2020
+date: 2021
 toc: True
 toc-depth: 2
 ---
@@ -281,7 +281,7 @@ Additionally, we install some extensions for the JupyterLab that make programmin
 
    ```bash
 # Kite
-sudo bash -c "$(wget -q -O - https://linux.kite.com/dls/linux/current)"
+bash -c "$(wget -q -O - https://linux.kite.com/dls/linux/current)"
 pip install "jupyter-kite<2.0.0"
 jupyter labextension install "@kiteco/jupyterlab-kite"
 
