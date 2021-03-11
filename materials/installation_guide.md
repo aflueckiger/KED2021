@@ -145,7 +145,9 @@ Source: [Tesseract](https://github.com/tesseract-ocr/tesseract/wiki)
 
 <!--macOS Catalina introduced Zsh as the new default shell instead of Bash. To enable Zsh as new default on your system, type: chsh -s /bin/zsh -->
 
+## Install Kite
 
+Install Kite from the [official website](https://www.kite.com/download/). Kite assists you with smart recommendations while programming.
 
 # Installation Guide for Windows
 
@@ -185,7 +187,7 @@ dism.exe /online /enable-feature `
 
    ```bash
     cd ~
-    ln -s /mnt/c/Users/<YOUR_WINDOWS_USERNAME>/Documents documents/
+    ln -s /mnt/c/Users/<YOUR_WINDOWS_USERNAME>/Documents documents
    ```
 
 10. Annoyingly, the copy/paste behavior is different in command lines on Windows. Any selected text is copied automatically and to paste it, you have to right-click on your mouse. You may want to reassign the shortcuts to `Ctrl+Shift+C` and `Ctrl+Shift+V` in the menu (`right-click` on the windows title bar &rarr; `Properties` &rarr; `Options` ). Using `Ctrl+C` is not possible as it is used to cancel a running program.
@@ -261,9 +263,29 @@ Source: [Anaconda](https://docs.anaconda.com/anaconda/install/windows/), [conda-
 
 Source: [Tesseract](https://github.com/tesseract-ocr/tesseract/wiki)
 
+## Install Kite
+
+Install Kite that assist you with smart recommendations when programming.
+
+```bash
+bash -c "$(wget -q -O - https://linux.kite.com/dls/linux/current)"
+```
+
+
+
 # Installation Guide for Linux
 
 You presumably have installed some of the required tools already or you have the necessary knowledge to do so. Otherwise, ask me anytime or just Google for a manual. Anyways, you are lucky as it is simpler than on the other platforms. Linux rules them all when it comes to development.
+
+## Install Kite
+
+Even when you are a pro, Kite is worth a shot. It assists you with smart recommendations while programming. Install Kite before you proceed with the setup of JupyterLab as described in the next chapter.
+
+```bash
+bash -c "$(wget -q -O - https://linux.kite.com/dls/linux/current)"
+```
+
+
 
 # Install Python packages (all Systems)
 
@@ -280,8 +302,7 @@ conda install -c conda-forge plotnine
 Additionally, we install some extensions for the JupyterLab that make programming easier. If you run into issues, skip these steps and let me know:
 
    ```bash
-# Kite
-bash -c "$(wget -q -O - https://linux.kite.com/dls/linux/current)"
+# set up Kite for jupyterlab
 pip install "jupyter-kite<2.0.0"
 jupyter labextension install "@kiteco/jupyterlab-kite"
 
