@@ -43,13 +43,11 @@ Computational text analysis comes with many challenges that are unique due to th
 
 The title says it all. We are getting ready for the practical part of the course: Programming. As the installation of Python and non-standard command-line tools may be tricky, we do this in class rather than doing it as homework. Moreover, I will also introduce some principles to organize research and jargon that help you to find your way in the programmer's brave new word.
 
-<!-- 
-
 [<i class="fas fa-desktop"></i>](https://aflueckiger.github.io/KED2021/lectures/html/KED2021_03.html)
 [<i class="fas fa-file-pdf"></i>](https://aflueckiger.github.io/KED2021/lectures/pdf/KED2021_03.pdf)
 [<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/lectures/md/KED2021_03.md) 
 
--->
+
 
 ### Optional: pimp your workflow
 
