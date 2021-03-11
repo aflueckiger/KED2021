@@ -46,6 +46,7 @@ The title says it all. We are getting ready for the practical part of the course
 [<i class="fas fa-desktop"></i>](https://aflueckiger.github.io/KED2021/lectures/html/KED2021_03.html)
 [<i class="fas fa-file-pdf"></i>](https://aflueckiger.github.io/KED2021/lectures/pdf/KED2021_03.pdf)
 [<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/lectures/md/KED2021_03.md) 
+[<i class="fas fa-video"></i>](https://tube.switch.ch/videos/J1UAHX6GxT)
 
 
 
@@ -216,4 +217,4 @@ The seminar is coming to an end, yet it doesn't have to be a dead-end. You may h
 [<i class="fas fa-file-pdf"></i>](https://aflueckiger.github.io/KED2021/lectures/pdf/KED2021_12.pdf)
 [<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/lectures/md/KED2021_12.md)
 
--->
+-->z
