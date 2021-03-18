@@ -95,6 +95,8 @@ $(NOTES_DIR)/%.notes.pdf: $(LECTURES_DIR)/%.md lib/extract_notes.py
 
 $(LECTURES_PDF_DIR)/%.pdf: $(LECTURES_HTML_DIR)/%.html
 	decktape --load-pause 500 $< $@
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$@.temp $@
+	mv $@.temp $@
 
 
 KED2021_syllabus.pdf: index.md schedule.md lectures.md assignments.md
