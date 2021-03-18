@@ -8,15 +8,13 @@ date: "2021-03-01"
 
 You have to submit three assignments to complete the seminar successfully. The purpose of the assignments is not making the course hard to pass but rather to foster your engagement with the covered topics. As you like, you may prefer to work in teams to discuss different approaches. Nonetheless, each student has to come up with their own solution and submit it before the deadline. 
 
-| #    | Topic          | Published     | Deadline                    |
-| ---- | -------------- | ------------- | --------------------------- |
-| 1    | Data Wrangling | 18 March 2021 | 25 March 2021 (by midnight) |
-| 2    | Regex NLP      | 01 April 2021 | 08 April 2021 (by midnight) |
-| 3    | Python NLP     | 06 May 2021   | 13 May 2021 (by midnight)   |
+| #    | Topic                                                        | Published     | Deadline                    |
+| ---- | ------------------------------------------------------------ | ------------- | --------------------------- |
+| 1    | [Data Wrangling](https://aflueckiger.github.io/KED2021/assignments/assignment_1/KED2021_assignment_1.pdf) | 18 March 2021 | 25 March 2021 (by midnight) |
+| 2    | Regex NLP                                                    | 01 April 2021 | 08 April 2021 (by midnight) |
+| 3    | Python NLP                                                   | 06 May 2021   | 13 May 2021 (by midnight)   |
 
 <!-- 
-
-[Data Wrangling](https://aflueckiger.github.io/KED2021/assignments/assignment_1/KED2021_assignment_1.pdf)
 
 [Regex NLP](https://aflueckiger.github.io/KED2021/assignments/assignment_2/KED2021_assignment_2.pdf)
 
