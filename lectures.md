@@ -63,7 +63,7 @@ The command-line is a powerful tool at your disposal. It is the working horse fo
 [<i class="fas fa-desktop"></i>](https://aflueckiger.github.io/KED2021/lectures/html/KED2021_04.html)
 [<i class="fas fa-file-pdf"></i>](https://aflueckiger.github.io/KED2021/lectures/pdf/KED2021_04.pdf)
 [<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/lectures/md/KED2021_04.md)
-
+[<i class="fas fa-video"></i>](https://tube.switch.ch/videos/653RjYgn8R)
 
 
 ### Recommended Resources
