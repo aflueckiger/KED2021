@@ -77,13 +77,9 @@ The command-line is a powerful tool at your disposal. It is the working horse fo
 
 Counting words is the most basic method to look at texts from a computational perspective. The command-line provides tools to quickly sift through a massive text collection to describe the use of words quantitatively. In no time, you can also take a systematic look at the word usage in context. Sounds like a Swiss knife for computational text analysis in social science? It certainly is.
 
-<!-- 
-
 [<i class="fas fa-desktop"></i>](https://aflueckiger.github.io/KED2021/lectures/html/KED2021_05.html)
 [<i class="fas fa-file-pdf"></i>](https://aflueckiger.github.io/KED2021/lectures/pdf/KED2021_05.pdf)
 [<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/lectures/md/KED2021_05.md)
-
--->
 
 ## Week 6: Learning Regular Expressions
 
