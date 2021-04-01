@@ -20,11 +20,11 @@ On the one hand, I present the goals and organization of the seminar. On the oth
 [<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/lectures/md/KED2021_01.md)
 [<i class="fas fa-video"></i>](https://tube.switch.ch/videos/1d07f265)
 
-### Required Reading
+#### Required Reading
 
 - Lazer, David, Alex Pentland, Lada Adamic, Sinan Aral, Albert-László Barabási, Devon Brewer, Nicholas Christakis, Noshir Contractor, James Fowler, Myron Gutmann, Tony Jebara, Gary King, Michael Macy, Deb Roy, and Marshall Van Alstyne. 2009. “Computational Social Science.” *Science* 323(5915):721–23.
 
-### Optional Reading
+#### Optional Reading
 
 - Graham, Shawn, Ian Milligan, and Scott Weingart. 2015. *Exploring Big Historical Data: The Historian’s Macroscope*. Open Draft Version. Under contract with Imperial College Press. [online](http://themacroscope.org)
 
@@ -50,7 +50,7 @@ The title says it all. We are getting ready for the practical part of the course
 
 
 
-### Optional: pimp your workflow
+#### Optional: pimp your workflow
 
 - Healy, Kieran. 2019. “The Plain Person’s Guide to Plain Text Social Science.” [online](https://kieranhealy.org/publications/plain-person-text/).
 
@@ -86,35 +86,23 @@ Counting words is the most basic method to look at texts from a computational pe
 
 When working with text data, you spend a lot of time cleaning your documents and extract some pieces of information. Doing this by hand is not only a pain but simply impossible when facing many documents. Fortunately, there is a formal language named Regular Expressions that allows writing expressive and generalizable patterns. Using these patterns, you can extract and remove any textual parts systematically without missing a single instance.
 
-<!-- 
-
 [<i class="fas fa-desktop"></i>](https://aflueckiger.github.io/KED2021/lectures/html/KED2021_06.html)
 [<i class="fas fa-file-pdf"></i>](https://aflueckiger.github.io/KED2021/lectures/pdf/KED2021_06.pdf)
 [<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/lectures/md/KED2021_06.md)
 
--->
-
-### Required Reading
+#### Required Reading
 
 - Ben Schmidt. 2019. Regular Expressions. [online](https://github.com/HumanitiesDataAnalysis/HDA19/blob/master/Handouts/01-regex.pdf)
 
+#### Recommended Resource
 
-
-### Recommended Resource
-
-Everything we have touched about text processing in greater detail. 
+Everything we have touched about text processing in greater detail.
 
 - Nikolaj Lindberg. egrep for Linguists. [online](https://stts.se/egrep_for_linguists/egrep_for_linguists.pdf)
 
+#### Online Regular Expression Editor
 
-
-### Online Regular Expression Editor
-
-A visual editor to check your regular expressions.
-
-- [Rubular](https://rubular.com/)
-
-
+[Rubular](https://rubular.com/) is a visual editor to check your regular expressions.
 
 ## Week 7: RegEx + Data Sources
 
