@@ -89,6 +89,7 @@ When working with text data, you spend a lot of time cleaning your documents and
 [<i class="fas fa-desktop"></i>](https://aflueckiger.github.io/KED2021/lectures/html/KED2021_06.html)
 [<i class="fas fa-file-pdf"></i>](https://aflueckiger.github.io/KED2021/lectures/pdf/KED2021_06.pdf)
 [<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/lectures/md/KED2021_06.md)
+[<i class="fas fa-video"></i>](https://tube.switch.ch/videos/n7Z4sut3Re)
 
 #### Required Reading
 
