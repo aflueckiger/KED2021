@@ -428,7 +428,7 @@ For specific questions ask Mrs. Green (a.green@mail.com).
 Reach out to support@me.ch</code></pre>
 <div class="fragment">
 <p><strong>Solution:</strong> Write a single pattern to match any valid email all</p>
-<pre class="bash"><code>[\w._-]+@[\w._-]+       # matches any valid email address</code></pre>
+<pre class="bash"><code>[\w.-_]+@[\w-_]+\.[a-z]{2,}     # matches any valid email address</code></pre>
 <aside class="notes">
 <ul>
 <li>Was meint Text als Pattern?
@@ -580,7 +580,7 @@ egrep -r &#39;[Gg]rüne&#39;
 egrep -r [aeiou]{3}
 
 # extract all bigrams (sequence of two words)
-egrep -roshi &#39;[a-z]+ [a-z]+&#39;</code></pre>
+egrep -rohi &#39;[a-z]+ [a-z]+&#39;</code></pre>
 </section>
 <section id="special-symbols" class="slide level2">
 <h2>Special Symbols</h2>
@@ -613,11 +613,11 @@ egrep -r &#39;\(.*\)&#39;</code></pre>
 </section>
 <section id="more-complex-examples" class="slide level2">
 <h2>More complex Examples</h2>
-<pre class="bash"><code># extract websites
-egrep -ro &quot;www\.\w+\.\w+&quot;
+<pre class="bash"><code># extract basename of URLs
+egrep -ro &quot;www\.[\w-_]+\.[a-z]{2,}&quot;
 
-# extract emails
-egrep -ro &quot;[\w._-]+@[\w._-]+&quot; */*.txt</code></pre>
+# extract valid email adresses
+egrep -ro &quot;[\w.-_]+@[\w-_]+\.[a-z]{2,}&quot; */*.txt</code></pre>
 <aside class="notes">
 <ul>
 <li>bei Erstellung von Online-Accounts prüfen RegEx Validität von Email</li>
