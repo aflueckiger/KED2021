@@ -11,7 +11,7 @@ You have to submit three assignments to complete the seminar successfully. The p
 | #    | Topic                                                        | Published     | Deadline                    | Solution                                                     |
 | ---- | ------------------------------------------------------------ | ------------- | --------------------------- | ------------------------------------------------------------ |
 | 1    | [Data Wrangling](https://aflueckiger.github.io/KED2021/assignments/assignment_1/KED2021_assignment_1.pdf) | 18 March 2021 | 25 March 2021 (by midnight) | [Example](https://aflueckiger.github.io/KED2021/assignments/assignment_1/flueckiger_KED2021_1_solutions.sh) |
-| 2    | Regex NLP                                                    | 01 April 2021 | 08 April 2021 (by midnight) |                                                              |
+| 2    | Regex NLP                                                    | 02 April 2021 | 09 April 2021 (by midnight) |                                                              |
 | 3    | Python NLP                                                   | 06 May 2021   | 13 May 2021 (by midnight)   |                                                              |
 
 <!-- 
