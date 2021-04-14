@@ -39,7 +39,8 @@ While coming up with a solution, you may find the following commands useful alon
 more newspaper_articles.txt
 
 # useful to check what grep matches before you write into a file
-egrep -ho "words" newspaper_articles.txt
+# colouring output is probably activated by default
+egrep --colour "words" newspaper_articles.txt
 
 # egrep does not support the meta-character \d to match any digit
 # use [0-9] instead
@@ -90,7 +91,7 @@ Write a single line consisting of multiple `sed` commands to remove non-content 
 ```bash
 ### EXAMPLE COMMAND
 # replace the pattern with an empty sequence to remove it
-cat name.txt | sed -E "s/pattern//g" | sed -E "s/pattern2//g" > clean.txt
+cat name.txt | sed -E "s/pattern1//g" | sed -E "s/pattern2//g" > clean.txt
 ```
 
 Feel free to improve your patterns or to write new ones to remove even more parts of the document on the mission to clean the data.
