@@ -17,8 +17,8 @@ The plan below is provisional. I am happy to adapt the topics, as well as the sc
 | 25 March 2021    | [Basic NLP with Command-line](/KED2021/lectures#week-5-basic-nlp-with-command-line) |
 | 01 April 2021    | [Learning Regular Expressions](/KED2021/lectures#week-6-learning-regular-expressions) |
 | 08 April 2021    | *no lecture (Osterpause)*                                    |
-| 15 April 2021    | [Advanced RegEx + Data Sources](/KED2021/lectures#week-7-regex--data-sources) |
-| 22 April 2021    | [Creating new Data Sets + Ethics](/KED2021/lectures#week-8-creating-new-data-sets--ethics) |
+| 15 April 2021    | [Working with (your own) Data](/KED2021/lectures#week-7-regex--data-sources) |
+| 22 April 2021    | [Ethics and the Evolution of NLP](/KED2021/lectures#week-8-ethics-and-the-evolution-of-nlp) |
 | 29 April 2021    | [Introduction to Python](/KED2021/lectures#week-9-introduction-to-python) |
 | 06 May 2021      | [NLP with Python](/KED2021/lectures#week-10-nlp-with-python) |
 | 13 May 2021      | *no lecture (Christi Himmelfahrt)*                           |

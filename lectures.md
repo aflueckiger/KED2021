@@ -105,21 +105,26 @@ Everything we have touched about text processing in greater detail.
 
 [Rubular](https://rubular.com/) is a visual editor to check your regular expressions.
 
-## Week 7: RegEx + Data Sources
+## Week 7: Working with Data
 
-To this point, you have acquired the skills to cut a document into pieces and, subsequently, to extract, replace, and count any textual elements. Unless you have interesting data, these tools are neat but of no greater use. Besides some further practising with RegEx, we turn to relevant data resources in social science. Given you have plain text at hand, your tools cut through this data like butter. For other formats, we learn about some remedies in the next session.
-
-<!-- 
+To this point, you have acquired the skills to cut a document into pieces and, subsequently, to extract, replace, and count any textual elements. Unless you have interesting data, these tools are neat but of no greater use. Thus, we turn to relevant data resources for social science. Given you have plain text at hand, your tools cut through data like butter. For other formats like PDF or DOCX, we learn some remedies to convert them into plain text. Most notably, we perform optical character recognition (OCR) .
 
 [<i class="fas fa-desktop"></i>](https://aflueckiger.github.io/KED2021/lectures/html/KED2021_07.html)
 [<i class="fas fa-file-pdf"></i>](https://aflueckiger.github.io/KED2021/lectures/pdf/KED2021_07.pdf)
 [<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/lectures/md/KED2021_07.md)
+[<i class="fas fa-video"></i>](https://tube.switch.ch/videos/yqvP9Ve8jv)
 
--->
+## Week 8: Ethics and the Evolution of NLP
 
-## Week 8: Creating new Data Sets + Ethics
+Ethics are not just an abstract topic in Philosophy. Unfortunately, although more powerful than ever before, modern NLP exhibits severe and not yet well-understood bias that does harm. With the recent *data-driven deep learning turn*, NLP overcame many theoretical limitations -- yet, this comes at a cost. It is our duty to better understand the impacts of this technology. 
+
+
+
+<!-- 
 
 The world we live in is not made for machines but people -- for better or for worse. While perfectly readable, documents often require a subsequent conversion to allow machine processing. Firstly, digital documents are shipped in various formats and need a conversion to plain text. Secondly, historical documents require an additional step called optical character recognition (OCR) to extract the text from the scanned original. Converting thousands of documents is easy when using the shell.
+
+-->
 
 <!-- 
 
