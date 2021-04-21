@@ -10,11 +10,9 @@ date: "2021-03-01"
 <div class="course-title">{{ site.subtitle }}</div>
 <div class="course-info">{{ site.lecture_type }}, {{ site.semester }}, {{ site.university }}</div>
 
-In this hands-on seminar, bachelor students of social and cultural sciences learn the basics of programming among other essential technical skills. Building on a modern technology stack, it aims to prepare students to conduct data-driven text analysis as well as to make everyday life easier by fostering technological fundamentals. While learning about the role of computation in solving problems, we also discuss the current developments in information technology. In short, the course promotes practical and theoretical digital literacy.
+In this hands-on seminar, bachelor students of social and cultural sciences learn the basics of programming, among other essential technical skills. Building on a modern technology stack, it aims to prepare students to conduct data-driven text analysis and to make everyday life easier by fostering technological fundamentals. While learning about the importance of computation in solving problems, we also discuss the current developments in information technology. In short, the course promotes digital literacy on a practical and theoretical level.
 
-
-
-This seminar focuses on the computational processing of digital and digitized texts, using Python and the command-line. For any empirical research, the systematic preparation and aggregation of data as well as the swift retrieval of relevant pieces of information. These tasks require handling a wide variety of data forms, including data that is not yet structured in a tabular format. The seminar covers the full workflow from gathering textual data to analyzing an entire text collection to producing interactive visualizations. Sounds cool? It certainly is.
+This seminar focuses on the computational processing of digital and digitized texts using Python and the command-line. For any empirical research, the systematic preparation and aggregation of data and the swift retrieval of information are critical. These tasks require the handling of various data forms, including data that is not yet structured in a tabular format. The seminar covers the complete workflow, from gathering textual data to analyzing an entire text collection to producing interactive visualizations. Sounds cool? It certainly is.
 
 
 
