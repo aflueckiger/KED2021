@@ -116,7 +116,11 @@ To this point, you have acquired the skills to cut a document into pieces and, s
 
 ## Week 8: Ethics and the Evolution of NLP
 
-Ethics are not just an abstract topic in Philosophy. Unfortunately, although more powerful than ever before, modern NLP exhibits severe and not yet well-understood bias that does harm. With the recent *data-driven deep learning turn*, NLP overcame many theoretical limitations -- yet, this comes at a cost. It is our duty to better understand the impacts of this technology. 
+Ethics are not just an abstract topic of Philosophy. Modern NLP is more powerful than ever before and, thus, embedded in many aspects of life. Unfortunately, it also exhibits severe and not yet well-understood bias that causes harm. With the recent *data-driven deep learning turn*, NLP overcame many theoretical limitations -- yet, this comes at a cost. It is our duty to better understand the working and impact of this technology. 
+
+[<i class="fas fa-desktop"></i>](https://aflueckiger.github.io/KED2021/lectures/html/KED2021_08.html)
+[<i class="fas fa-file-pdf"></i>](https://aflueckiger.github.io/KED2021/lectures/pdf/KED2021_08.pdf)
+[<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/lectures/md/KED2021_08.md)
 
 
 
@@ -126,13 +130,9 @@ The world we live in is not made for machines but people -- for better or for wo
 
 -->
 
-<!-- 
 
-[<i class="fas fa-desktop"></i>](https://aflueckiger.github.io/KED2021/lectures/html/KED2021_08.html)
-[<i class="fas fa-file-pdf"></i>](https://aflueckiger.github.io/KED2021/lectures/pdf/KED2021_08.pdf)
-[<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/lectures/md/KED2021_08.md)
 
--->
+
 
 ## Week 9: Introduction to Python
 
