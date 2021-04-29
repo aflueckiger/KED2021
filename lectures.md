@@ -139,6 +139,7 @@ It may come as a surprise that we start with Python in the ninth session only. A
 [<i class="fas fa-desktop"></i>](https://aflueckiger.github.io/KED2021/lectures/html/KED2021_09.html)
 [<i class="fas fa-file-pdf"></i>](https://aflueckiger.github.io/KED2021/lectures/pdf/KED2021_09.pdf)
 [<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/lectures/md/KED2021_09.md)
+[<i class="fas fa-video"></i>](https://tube.switch.ch/videos/hz6jdU36Ek)
 
 
 
