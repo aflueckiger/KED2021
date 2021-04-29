@@ -24,3 +24,10 @@ The cheatsheet contains commands relevant for data wrangling task preceding any 
 [<i class="fas fa-file-pdf"></i>](https://aflueckiger.github.io/KED2021/materials/cheatsheet_command_line.pdf)
 [<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/materials/cheatsheet_command_line.md)
 
+
+
+## Python Basics
+
+The Jupyter Notebook contains basic Python statements that you need to know before you can make use of the third-party libraries.
+[<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/materials/code/python_basics.ipynb)
+
