@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Alex Flückiger">
+  <title>The ABC of Computational Text Analysis</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
+  <style type='text/css'>
+
+
+  /*********************************************
+  * CUSTOM COLORS
+
+  https://colorate.azurewebsites.net/Color/0A66B4
+  *********************************************/
+
+  :root {
+      --green: #4d7e65;
+      --blue: #3c70b5;
+      --red: #b5533c;
+      --black: #1d1e1f;
+  }
+
+  /*********************************************
+  * GLOBAL STYLES
+  *********************************************/
+
+  .reveal-viewport {
+      background: #f7f6f7;
+      background-color: #f7f6f7;
+    }
+
+  .reveal {
+     font-size: 2.4em;
+     font-weight: normal;
+     color: #1d1e1f;
+  }
+
+  .reveal ::selection {
+     color: #f7f6f7;
+     background: rgb(10, 102, 180);
+     text-shadow: none;
+  }
+
+  .reveal ::-moz-selection {
+     color: #f7f6f7;
+     background: rgb(10, 102, 180);
+     text-shadow: none;
+  }
+
+  .reveal ::marker {
+      color: rgb(10, 102, 180);
+  }
+  section.has-dark-background ::marker {
+      color: white;
+  }
+
+  .reveal .controls {
+      font-size: 8px;
+      bottom: 16px;
+      right: 2px;
+      color: rgb(10, 102, 180);
+  }
+
+  .reveal .progress {
+      color: rgb(10, 102, 180);
+  }
+
+  .reveal .slide-number {
+      right: 18px;
+      bottom: 4px;
+      font-size: 14px;
+      background-color: transparent;
+      color: #1d1e1f;
+  }
+
+
+  /*********************************************
+  * HEADERS
+  *********************************************/
+
+  h1.title {
+      font-size: 3em;
+      font-weight: bold;
+      color: rgb(10, 102, 180);
+  }
+
+  .subtitle{
+      font-size: 1.5em;
+      padding-top: 1em;
+      padding-bottom: 3em;
+      color: rgb(4, 43, 77);
+  }
+
+  p.author,
+  p.date,
+  .institute{
+      text-align: left;
+      font-size: 0.7em;
+      margin-top: -0.7em;
+      margin-left: 2.5%;
+  }
+
+  .institute{
+      font-size: 0.5em
+  }
+
+  .reveal h1,
+  .reveal h2 {
+      color: rgb(10, 102, 180);
+  }
+
+  .reveal h3,
+  .reveal h4,
+  .reveal h5,
+  .reveal h6 {
+      color: rgb(7, 72, 128);
+  }
+
+  .reveal h2 {
+      margin-bottom: +50px;
+  }
+
+  .reveal h3 {
+      font-size: 1.3em;
+  }
+
+
+  /*********************************************
+  * FULL SCREEN SLIDES
+  *********************************************/
+
+  .reveal section[data-background*="images"] {
+      font-size: 1.2em;
+      background-color: rgba(00, 00, 00, .2);
+      padding: 1em;
+      width: 80% !important;
+      left: 10%;
+      margin: auto;
+      /* border-bottom: 30px solid orange; */
+  }
+  .reveal h2[data-background*="images"] {
+      color: white;
+      font-family: Lato;
+      font-weight: bold;
+  }
+
+
+  /*********************************************
+  * LISTS
+  *********************************************/
+  .reveal ul,
+  .reveal ol {
+      margin-bottom: 0.6em;
+  }
+
+  ol li,
+  ul li {
+    margin-top: 0.6em;
+  }
+
+  ol li li,
+  ul li li {
+   margin-top: 0.2em;
+   list-style-type: None;
+   font-style: italic;
+   font-size: 0.8em;
+   font-family: Georgia;
+  }
+
+  /*********************************************
+  * OTHER TEXT
+  *********************************************/
+
+  section section:not(.has-dark-background) strong,
+  section section:not(.has-dark-background) b {
+    color: rgb(170, 180, 10);
+  }
+
+  .reveal a {
+      color: rgb(84, 151, 207);
+  }
+
+  .reveal a:hover {
+    color: rgb(180, 10, 34);
+    text-shadow: none;
+    border: none;
+  }
+
+  .reveal section.has-dark-background a {
+      color: white;
+      text-decoration: underline;
+  }
+
+  .reveal figure figcaption {
+    font-style: italic;
+    font-size: 75%; }
+
+  section:not(.has-dark-background) span.citation{
+      font-size: 60%;
+      font-style: italic;
+      color: gray;
+      vertical-align: bottom;
+  }
+
+  .reveal pre {
+      margin-top: 2em;
+      margin-bottom: 4em;
+  }
+
+  .reveal pre code {
+      font-size: 1.5em;
+      padding: 1.5em;
+      line-height: 1.2em;
+      max-height: 600px;
+  }
+
+
+  .reveal table {
+      font-size: 0.8em;
+  }
+
+  .emoji {
+      font-size: 1.2em
+  }
+
+  /*********************************************
+  * QUOTES
+  *********************************************/
+
+  .reveal blockquote  {
+    font-family: Georgia;
+    color: #1d1e1f;
+    max-width: 80%;
+    text-align: left;
+    box-shadow: none;
+    font-size: 130%;
+    position: relative; }
+    .reveal blockquote p{
+        line-height: 1.15em;
+    }
+    .reveal blockquote p:first-child::before {
+      font-size: 1.5em;
+      font-family: Georgia, serif;
+      color: rgb(10, 102, 180);
+      content: '«'; }
+  .reveal blockquote p:first-child::after {
+    font-size: 1.5em;
+    font-family: Georgia, serif;
+    color: rgb(10, 102, 180);
+    content: '»'; }
+
+
+  .reveal blockquote cite{
+      color: rgb(10, 102, 180);
+      text-align: right;
+      font-style: normal;
+      font-size: 0.75em;
+      font-weight: bold;
+      margin-top:1em;
+  }
+
+  .reveal blockquote cite:before {
+      content: "\2014";
+  }
+
+  /*********************************************
+  * CUSTOM CLASSES
+  *********************************************/
+  .white-text {
+      color:#f9f9ff !important;
+  }
+  .dark-text {
+      color:#0c0c0c !important;
+      font-weight: bold;
+  }
+
+  .answer {
+      font-style: italic;
+      background-color: rgba(00, 00, 00, .2);
+      padding: 0.8em;
+      margin-top: 0.3em;
+      width: 70%;
+      margin: auto;
+      margin-top: 1em;
+  }
+
+  .highlight {
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      font-size: 2em;
+      background: rgba(255, 255, 255, .5);
+      width: 80%;
+      margin:auto;
+      padding:1em;
+  }
+
+  .reading p,
+  .reading h3,
+  .csl-entry {
+      text-align: left;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+
+  }
+  .reading p,
+  .references {
+      font-size: 0.7em;
+
+  }
+
+  .references > div{
+      margin-bottom: 0.4em;
+  }
+
+  /*********************************************
+  * CUSTOM LAYOUT CLASSES
+  *********************************************/
+
+  .l-double {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .l-multiple {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .l-double strong {
+    font-size: 1.3em;
+    color: #4b729e;
+  }
+
+  .l-image-corner {
+      position: absolute;
+      right: 0;
+      transform: translate(0%,-55%);
+  }
+
+  .l-left-align {
+    text-align: left;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">The ABC of Computational Text Analysis</h1>
+  <p class="subtitle">#9 Introduction to Python</p>
+  <p class="author">Alex Flückiger</p>
+  <p class="date">29 April 2021<br></br>
+<div class="institute">
+Faculty of Humanities and Social Sciences<br>University of Lucerne
+</div></p>
+</section>
+
+<section id="recap-last-lecture" class="slide level2">
+<h2>Recap last Lecture</h2>
+<ul>
+<li>from words to embeddings <span class="emoji" data-emoji="rainbow">🌈</span>
+<ul>
+<li>relational, re-contextualized word meaning</li>
+</ul></li>
+<li>data-driven NLP is both powerful and biased <span class="emoji" data-emoji="facepunch">👊</span> <span class="emoji" data-emoji="face_with_head_bandage">🤕</span></li>
+<li>data is never raw but depends on many decisions <span class="emoji" data-emoji="thought_balloon">💭</span></li>
+<li>Questions <span class="emoji" data-emoji="question">❓</span></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Problem der Unvergleichbarkeit von Wörter
+<ul>
+<li>relationale statt intrinsische Definition</li>
+<li>Embedding als kompakte Repräsentation von Wörtern</li>
+</ul></li>
+<li>Man kann dem Computer nicht Gutes/Richtiges und Schlechtes/Falsches füttern und erwarten, dass er nur Gutes/Richtiges macht</li>
+<li>Daten haben eine Geschichte
+<ul>
+<li>Geschichte der Gesellschaft, Organisationen, Individuen</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="outline" class="slide level2">
+<h2>Outline</h2>
+<h4 id="enter-the-shiny-world-of-python">enter the shiny world of Python <span class="emoji" data-emoji="sunglasses">😎</span></h4>
+<ul>
+<li>development environment</li>
+<li>basic Python syntax</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Ziel: mehr als 30min Praxis</li>
+</ul>
+</aside>
+</section>
+<section>
+<section id="python" class="title-slide slide level1" data-background="../images/green_python.jpeg">
+<h1 data-background="../images/green_python.jpeg">Python</h1>
+
+</section>
+<section id="python-is" class="slide level2">
+<h2>Python is …</h2>
+<!-- https://pixabay.com/de/photos/gr%C3%BCne-baumpython-python-baumpython-543243/ -->
+<h4 id="a-programming-language">a programming language</h4>
+<ul>
+<li>general-purpose
+<ul>
+<li>not specific to any domain</li>
+</ul></li>
+<li>interpreted
+<ul>
+<li>no compiling</li>
+</ul></li>
+<li>standard language in data science</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Python + R
+<ul>
+<li>Standardsprachen in Data Science</li>
+<li>keine Kompilierung, direkte Ausführung</li>
+</ul></li>
+<li>Python vs. R
+<ul>
+<li>Python breitere Anwendung, nicht nur DataScience (z.B. Webserver)</li>
+<li>sehr viele Tools für beide Sprachen</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="how-to-learn-programming" class="slide level2">
+<h2>How to learn programming?</h2>
+<h4 id="three-inconvenient-truths">three inconvenient truths <span class="emoji" data-emoji="cold_sweat">😰</span></h4>
+<ul>
+<li>programming cannot be learnt in a course
+<ul>
+<li>my goal is to make the <strong>start</strong> as easy as possible!</li>
+</ul></li>
+<li>frustration is normal
+<ul>
+<li><strong>fight</strong> your way!</li>
+</ul></li>
+<li>the Python ecosystem is huge
+<ul>
+<li><strong>grow</strong> skills by step-by-step!</li>
+</ul></li>
+</ul>
+<p><strong>Programming can be absolutely captivating! <span class="emoji" data-emoji="v">✌️</span></strong></p>
+<aside class="notes">
+<ul>
+<li>Programmieren ist nicht einfach, aber es ist es wert
+<ul>
+<li>unheimlich viele Möglichkeiten, die Seminar übersteigen</li>
+</ul></li>
+<li>Ziel eine gute Grundlage zu schaffen, auf der Studis aufbauen können
+<ul>
+<li>vieles wird nicht unmittelbar klar</li>
+</ul></li>
+<li>Frustration
+<ul>
+<li>lernen aus Fehlern, wenn sie passieren</li>
+</ul></li>
+<li>Beispiele sind möglichst kurz / einfach geschrieben</li>
+<li>Programmieren ist Art von Gamification
+<ul>
+<li>unmittelbares Feedback</li>
+<li>tolles Gefühl, wenns klappt</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="jupyter-lab-editor" class="slide level2">
+<h2>Jupyter Lab Editor</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="getting-started">Getting started</h4>
+<ul>
+<li>Open Terminal/Ubuntu</li>
+<li><code>jupyter lab --no-browser</code></li>
+<li>Copy the link and open in your browser</li>
+<li><code>print("Hello, World!")</code></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h4 id="features">Features</h4>
+<ul>
+<li>web-based editor</li>
+<li>interactive development</li>
+<li>showing code next to output and comments</li>
+<li>language-agnostic</li>
+</ul>
+</div>
+</div>
+<figure>
+<img data-src="../images/jupyterlab.png" alt="Jupyter Lab Editor" /><figcaption aria-hidden="true"><a href="https://jupyter.org/">Jupyter Lab Editor</a></figcaption>
+</figure>
+<aside class="notes">
+<ul>
+<li>students should open Jupyter Lab</li>
+<li>in class demonstration
+<ul>
+<li>open jupyter lab</li>
+<li>new notebook</li>
+<li>tab for Kite completion with docs</li>
+<li>Error because of wrong Syntax</li>
+</ul></li>
+</ul>
+<p>Plot:</p>
+<ul>
+<li>lexikale Unterschiede zwischen SP und anderen Parteien</li>
+</ul>
+</aside>
+</section></section>
+<section id="wheting-your-appetite" class="title-slide slide level1" data-background="../images/scattertext_example.png">
+<h1 data-background="../images/scattertext_example.png"><span style="color:#1c1b1b">Wheting your Appetite</span></h1>
+
+</section>
+
+<section>
+<section id="python-syntax" class="title-slide slide level1">
+<h1>Python Syntax</h1>
+
+</section>
+<section id="variables" class="slide level2">
+<h2>Variables</h2>
+<h3 id="variables-are-kind-of-storage-boxes">variables are kind of storage boxes</h3>
+<pre class="python"><code># define variables
+x = &quot;at your service&quot;
+y = 2
+z = &quot;, most of the time.&quot;
+
+# combine variables
+int_combo = y * y       # for numbers any mathematical operation
+str_combo = x + z       # for text only concatenation with +
+
+# show content of variable
+print(str_combo)</code></pre>
+<aside class="notes">
+<ul>
+<li>Variablen sind wie Schachteln (Tupperware)
+<ul>
+<li>etwas (Objekte) reinstecken</li>
+<li>bei Gebrauch hervorholen</li>
+</ul></li>
+<li>Namen von Variablen: Kleinschreibung, English, underscore statt space</li>
+<li>Studis auffordern String und Integer zu kombinieren
+<ul>
+<li>TypeError diskutieren</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="data-types" class="slide level2">
+<h2>Data Types</h2>
+<h4 id="the-objects-type-is-implicit-dynamic">The object’s type is implicit (dynamic)</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>What for?</th>
+<th>Type</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>String</td>
+<td>Text</td>
+<td>str</td>
+<td><code>"Hi!"</code></td>
+</tr>
+<tr class="even">
+<td>Integer, Float</td>
+<td>Numbers</td>
+<td>int, float</td>
+<td><code>20</code>, <code>4.5</code></td>
+</tr>
+<tr class="odd">
+<td>List</td>
+<td>Lists (ordered, mutable)</td>
+<td>list</td>
+<td><code>["Good", "Afternoon", "Everybody"]</code></td>
+</tr>
+<tr class="even">
+<td>Boolean</td>
+<td>Truth values</td>
+<td>bool</td>
+<td><code>True</code>, <code>False</code></td>
+</tr>
+<tr class="odd">
+<td><span>⋮</span></td>
+<td><span>⋮</span></td>
+<td><span>⋮</span></td>
+<td><span>⋮</span></td>
+</tr>
+<tr class="even">
+<td>Tuple</td>
+<td>Lists (ordered, immutable)</td>
+<td>tuple</td>
+<td><code>(1, 2)</code></td>
+</tr>
+<tr class="odd">
+<td>Dictionary</td>
+<td>Relations (unordered, mutable)</td>
+<td>dict</td>
+<td><code>{"a":1, "b": 2, "c": 3}</code></td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<ul>
+<li>es gibt verschiedene Aufbewahrungsmöglichkeiten
+<ul>
+<li>Tupperware vs. Büchergestell</li>
+</ul></li>
+<li>ja nach Typ andere Eigenschaften</li>
+<li>Liste ist eine grosse Box, die kleine Boxen aufnehmen kann</li>
+</ul>
+</aside>
+</section>
+<section id="data-type-conversion" class="slide level2">
+<h2>Data Type Conversion</h2>
+<h4 id="combine-variables-of-the-same-type-only">combine variables of the same type only</h4>
+<pre class="python"><code># check the type
+type(YOUR_VARIABLE)
+
+# convert types (similar for other types)
+int(&#39;100&#39;)  # convert to integer
+str(100)    # convert to string
+
+# include variable in a f-string
+x = 3
+mixed = f&quot;x has the value: {x}&quot;
+print(mixed)</code></pre>
+<aside class="notes">
+<ul>
+<li>Analogie: nur gleiche Schachteln können kombiniert werden</li>
+</ul>
+</aside>
+</section>
+<section id="confusing-equal-sign" class="slide level2">
+<h2>Confusing Equal-Sign</h2>
+<h4 id="vs.-contradicts-the-intuition"><code>=</code> vs. <code>==</code> contradicts the intuition</h4>
+<pre class="python"><code># assign a value to a variable
+x = 1
+word = &quot;Test&quot;
+
+# compare two values if they are identical
+1 == 2              # False
+word == &quot;Test&quot;      # True</code></pre>
+<aside class="notes">
+<ul>
+<li>= mit ungewohnter Funktion</li>
+<li>= Zuweisungsoperator
+<ul>
+<li>in Schule gelernt: Entsprechung linker + rechter Seite</li>
+<li>R nutzt &lt;-</li>
+</ul></li>
+<li>== Vergleichsoperator</li>
+</ul>
+</aside>
+</section>
+<section id="comments" class="slide level2">
+<h2>Comments</h2>
+<ul>
+<li><code># comments</code> ~ lines ignored by Python</li>
+<li>do it, it helps you …
+<ul>
+<li>to learn initially</li>
+<li>to understand later</li>
+</ul></li>
+</ul>
+<pre class="python"><code># single line comment
+
+&quot;&quot;&quot;
+comment across 
+multiple 
+lines
+&quot;&quot;&quot;</code></pre>
+</section>
+<section id="iterations" class="slide level2">
+<h2>Iterations</h2>
+<h4 id="for-loop">for-loop</h4>
+<p>do something with each element of a collection</p>
+<pre class="python"><code>sentence = [&#39;This&#39;, &#39;is&#39;, &#39;a&#39;, &#39;sentence&#39;]
+
+# iterate over each element
+for token in sentence:
+    
+    # do something with the element
+    print(token)    </code></pre>
+<aside class="notes">
+<ul>
+<li>Anwendungsfall
+<ul>
+<li>für viele Objekte das gleiche machen</li>
+</ul></li>
+<li>Objekt innerhalb loop bearbeiten</li>
+<li>sentence + token sind Variablen
+<ul>
+<li>token ist temporäre Variable</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="conditionals" class="slide level2">
+<h2>Conditionals</h2>
+<h4 id="if-else-statement">if-else statement</h4>
+<p>condition action on variable content</p>
+<pre class="python"><code>sentence = [&#39;This&#39;, &#39;is&#39;, &#39;a&#39;, &#39;sentence&#39;]
+
+if len(sentence) == 3:
+    print(&#39;This sentence has exactly 3 tokens&#39;)
+elif len(sentence) &lt; 5:
+    print(&#39;This sentence has less than 5 tokens&#39;)
+else:
+    print(&#39;This sentence is longer than 5 tokens&#39;)</code></pre>
+<aside class="notes">
+<ul>
+<li>Anwendungsfall
+<ul>
+<li>Aktion abhängig machen von Variableninhalt</li>
+</ul></li>
+<li>Frage: Was wird ausgegeben?</li>
+</ul>
+</aside>
+</section>
+<section id="indentation" class="slide level2">
+<h2>Indentation</h2>
+<h4 id="indentation-matters">indentation matters!</h4>
+<ul>
+<li>intend code within code blocks
+<ul>
+<li>loops, if-statements etc.</li>
+</ul></li>
+<li>press <code>tab</code> to intend</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="white_check_mark">✅</span></p>
+<pre class="python"><code>if 5 &gt; 2:
+    print(&#39;5 is greater than 2&#39;)</code></pre>
+</div><div class="column" style="width:50%;">
+<p><span class="emoji" data-emoji="x">❌</span></p>
+<pre class="python"><code>if 5 &gt; 2:
+print(&#39;5 is greater than 2&#39;)</code></pre>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>shift + tab für unintend</li>
+<li>tab wird umgewandelt in 4 spaces</li>
+</ul>
+</aside>
+</section>
+<section id="methods" class="slide level2">
+<h2>Methods</h2>
+<pre class="python"><code># split at whitespace
+tokens = &#39;This is a sentence&#39;.split(&#39; &#39;)    
+
+# check the variable
+print(tokens, type(tokens))                 
+
+# add something to a list
+tokens.append(&#39;.&#39;)
+
+# join elements to string
+tokens = &#39; &#39;.join(tokens)
+print(tokens, type(tokens))</code></pre>
+<aside class="notes">
+<ul>
+<li>jedes Objekt/Variable stellt Methoden zur Verfügung</li>
+</ul>
+</aside>
+</section>
+<section id="functions-and-arguments" class="slide level2">
+<h2>Functions and Arguments</h2>
+<ul>
+<li>functions have the form
+<ul>
+<li><code>function_name(arg1, arg2)</code></li>
+</ul></li>
+<li>functions may have arguments</li>
+</ul>
+<pre class="python"><code># define a new function
+def word_properties(word):
+    &quot;&quot;&quot;
+    Print some properties of the provided word.
+    It takes any string as argument (variable word).
+    &quot;&quot;&quot;
+
+    # print(), len() and sorted() are functions themeselves
+    word_length = len(word)
+    sorted_letters = sorted(word, reverse=True)
+    print(f&quot;Properties for the word &#39;{word}&#39;:&quot;)
+    print(&quot;length:&quot;, word_length, &quot;letters:&quot;, sorted_letters)
+
+word_properties(&quot;computer&quot;) # call function with the word &quot;computer&quot;</code></pre>
+<aside class="notes">
+<ul>
+<li>Anwendungsfall
+<ul>
+<li>Code strukturieren, Redundanzen vermeiden</li>
+</ul></li>
+<li>zwei Teile: definieren + aufrufen</li>
+<li>Funktion mit vordefinierten Argumenten</li>
+</ul>
+</aside>
+</section>
+<section id="indexing" class="slide level2">
+<h2>Indexing</h2>
+<h4 id="python-starts-counting-from-zero">Python starts counting from zero!</h4>
+<pre class="python"><code>sentence = [&#39;This&#39;, &#39;is&#39;, &#39;a&#39;, &#39;sentence&#39;]
+
+# element at position X
+first_tok = sentence[0]     # &#39;This&#39;
+
+# elements of subsequence [start:end]
+sub_seq = sentence[0:3]     # [&#39;This&#39;, &#39;is&#39;, &#39;a&#39;]
+
+# elements of subsequence backwards
+sub_seq_back = sentence[-2:]        # [&#39;a&#39;, &#39;sentence&#39;]</code></pre>
+<aside class="notes">
+<ul>
+<li>Anwendungsfall
+<ul>
+<li>nur ein Teil der Objekte auswählen</li>
+</ul></li>
+</ul>
+</aside>
+</section>
+<section id="syntax-errors" class="slide level2">
+<h2>Syntax Errors</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol type="1">
+<li>read the error message</li>
+<li>find the source of the error
+<ul>
+<li>script name + line number</li>
+</ul></li>
+<li>paste message into Google
+<ul>
+<li>check answers on stackoverflow</li>
+</ul></li>
+</ol>
+</div><div class="column" style="width:50%;">
+<!-- https://gifer.com/en/78BJ -->
+<figure>
+<img data-src="../images/google_rubiks.gif" alt="Learning by doing, doing by googling" /><figcaption aria-hidden="true"><a href="https://www.google.com/search?q=syntaxerror+python+stack+overflow">Learning by doing, doing by googling</a></figcaption>
+</figure>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>produce NameError, TypeError</li>
+</ul>
+</aside>
+</section>
+<section id="modulespackages" class="slide level2">
+<h2>Modules/Packages</h2>
+<ul>
+<li>modules provide functionalities</li>
+<li>no programming from scratch <span class="emoji" data-emoji="tada">🎉</span></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Programme schreibt man nicht von grundauf</li>
+<li>man baut auf Arbeit anderer auf</li>
+<li>von dieser Modularität kommt die Produktivität der Informatik</li>
+</ul>
+</aside>
+</section>
+<section id="nlp-packages" class="slide level2">
+<h2>NLP Packages</h2>
+<ul>
+<li><a href="https://spacy.io/usage/spacy-101">spaCy</a>
+<ul>
+<li>industrial-strength Natural Language Processing (NLP)</li>
+</ul></li>
+<li><a href="https://chartbeat-labs.github.io/textacy/build/html/index.html">textaCy</a>
+<ul>
+<li>NLP, before and after spaCy</li>
+</ul></li>
+<li><a href="https://github.com/JasonKessler/scattertext">scattertext</a>
+<ul>
+<li>beautiful visualizations of how language differs across corpora</li>
+</ul></li>
+</ul>
+</section>
+<section id="in-class-install-packages-for-next-week" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">In-class: Install Packages for next week</h2>
+<h3 id="open-terminalubuntu">open Terminal/Ubuntu</h3>
+<pre class="python"><code># install scattertext
+conda install -c conda-forge scattertext
+
+# install language specific models for spacy
+python -m spacy download de_core_news_sm
+python -m spacy download en_core_web_sm</code></pre>
+<aside class="notes">
+<p>Mac users</p>
+<p>open a Terminal and install after replacing the username</p>
+<p>/Users/<Your username>/anaconda3/bin/python -m pip install scattertext</p>
+</aside>
+</section>
+<section id="in-class-exercises-i" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">In-class: Exercises I</h2>
+<ol type="1">
+<li>Make sure that your local copy of the Github repository KED2021 is up-to-date with <code>git pull</code>. Open the Notebook with the Python Basics in Jupyter Lab: <code>materials/code/python_basics.ipynb</code>.</li>
+<li>Try to understand and run the commands line-wise. Modify them to see how the output changes. Initially, the try-and-error is good strategy to learn.</li>
+</ol>
+</section>
+<section id="in-class-exercises-ii" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">In-class: Exercises II</h2>
+<ol type="1">
+<li><p>Write a Python script in Jupyter Lab that</p>
+<ul>
+<li>takes a text (a string)</li>
+<li>splits it into words (a list)</li>
+<li>iterates over all the tokens and print all tokens that are longer than 5 characters</li>
+<li>Bonus: wrap your code in a function.</li>
+</ul></li>
+<li><p>Go to the next slide. Start with some of the great interactive exercises out there in the web.</p></li>
+</ol>
+</section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+<h4 id="learn-basics-interactively">learn basics interactively</h4>
+<ul>
+<li><a href="https://pythonprinciples.com">Python Principles</a></li>
+<li><a href="https://www.learnpython.org/en/Welcome">LearnPython</a></li>
+</ul>
+<h4 id="official-python-introduction">official Python introduction</h4>
+<ul>
+<li><a href="https://docs.python.org/3/tutorial/introduction.html">Python introduction</a></li>
+</ul>
+</section></section>
+<section>
+<section id="questions" class="title-slide slide level1 white-text" data-background="../images/paint-anna-kolosyuk-unsplash.jpg">
+<h1 class="white-text" data-background="../images/paint-anna-kolosyuk-unsplash.jpg">Questions?</h1>
+
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<!-- Adapted from https://www.artembutusov.com/pandoc-markdown-syntax-highlighting-with-highlight-js/ -->
+<p><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"></p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atom-one-dark-reasonable.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script>
+$(function() {
+    $("pre > code").each(function(i, block) {
+        var codeClass = $(this).parent().attr("class");
+        if (codeClass == null || codeClass === "") {
+            $(this).addClass("hljs");
+        } else {
+            var map = {
+                js: "javascript"
+            };
+            if (map[codeClass]) {
+                codeClass = map[codeClass];
+            }
+            $(this).addClass(codeClass);
+            hljs.highlightBlock(this);
+        }
+    });
+});
+</script>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+      
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1920,
+        height: 1080,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
