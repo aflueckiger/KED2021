@@ -151,15 +151,13 @@ Python is the language of choice when it comes to advanced NLP. Have you ever wo
 [<i class="fas fa-file-pdf"></i>](https://aflueckiger.github.io/KED2021/lectures/pdf/KED2021_10.pdf)
 [<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/lectures/md/KED2021_10.md)
 
+[<i class="fas fa-video"></i>](https://tube.switch.ch/videos/mm25aFfzWz)
+
 ### Code
 
-Go to the static code: 
+ [<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/blob/master/scripts/KED2021_10.ipynb) Click to open the static code
 
-[<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/blob/master/scripts/KED2021_10.ipynb)
-
-To run the code in your browser without any installation:
-
- [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aflueckiger/KED2021/HEAD?filepath=materials%2Fcode%2FKED2021_10.ipynb) 
+ [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aflueckiger/KED2021/HEAD?filepath=materials%2Fcode%2FKED2021_10.ipynb) Click to run the code in your browser without any installation
 
 ## Week 11: NLP with Python II + Working Session
 
