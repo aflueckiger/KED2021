@@ -29,5 +29,14 @@ The cheatsheet contains commands relevant for data wrangling task preceding any 
 ## Python Basics
 
 The Jupyter Notebook contains basic Python statements that you need to know before you can make use of the third-party libraries.
+
 [<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/materials/code/python_basics.ipynb)
+
+## NLP with Python - Example of Analysis
+
+In this online-hosted notebook, you find many bits to start a powerful analysis based on simple techniques. It is a starters guide to enable social scientists to conduct NLP analysis. The kind of data, the relative simplicity of the methods, and the general approach are in line with social science practices and bring statistics together with the context of documents.
+
+You can execute the code online to get a brief glimpse without bothering with installation.
+
+ [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aflueckiger/KED2021/HEAD?filepath=materials%2Fcode%2FKED2021_10.ipynb) 
 

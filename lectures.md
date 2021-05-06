@@ -145,9 +145,7 @@ It may come as a surprise that we start with Python in the ninth session only. A
 
 ## Week 10: NLP with Python
 
-Python is the language of choice when it comes to advanced NLP. Have you ever wondered how the frequency of terms evolves over the years? Or how the language differs between two groups of documents whereby the groups may be formed by any metadata (person, organization, gender etc.)? Exploring is most effective in an interactive and visual mode - so be it. Among some basic statistics, this is the serious stuff where we finally arrive in our journey. Moreover, you will learn the jargon of NLP to don't get lost in the forest of yet unknown terms.
-
-<!-- 
+Python is the language of choice when it comes to advanced NLP. Have you ever wondered how the frequency of terms evolves over the years? Or how the language differs between two groups whereby the groups may be formed by any metadata (person, organization, gender etc.)? Exploring is most effective in an interactive and visual mode - so be it. Among some basic statistics, this is the serious stuff where we finally arrive in our journey. Moreover, you will learn the jargon of NLP to don't get lost in the forest of yet unknown terms.
 
 [<i class="fas fa-desktop"></i>](https://aflueckiger.github.io/KED2021/lectures/html/KED2021_10.html)
 [<i class="fas fa-file-pdf"></i>](https://aflueckiger.github.io/KED2021/lectures/pdf/KED2021_10.pdf)
@@ -155,15 +153,13 @@ Python is the language of choice when it comes to advanced NLP. Have you ever wo
 
 ### Code
 
-Go to the static code: [Python NLP](https://github.com/aflueckiger/KED2021/blob/master/scripts/KED2021_10.ipynb){:target="_blank"}
+Go to the static code: 
+
+[<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/blob/master/scripts/KED2021_10.ipynb)
 
 To run the code in your browser without any installation:
 
- [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aflueckiger/KED2021/master) 
-
-(path `scripts/KED2021_10.ipynb`)
-
--->
+ [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aflueckiger/KED2021/HEAD?filepath=materials%2Fcode%2FKED2021_10.ipynb) 
 
 ## Week 11: NLP with Python II + Working Session
 
