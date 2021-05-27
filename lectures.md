@@ -177,20 +177,17 @@ The interactive visualization linked below shows how the language differs betwee
 
 You can search for the terms of your interest. Moreover, you may click on the points in the plot to show the context of the corresponding words within speeches. These functions allow for a quick investigation of the corpus along the dimensions of Swiss parties.
 
-[<i class="fas fa-desktop"></i>](materials/analysis/viz_party_differences.html) Click to explore in your browser<br>*(it takes a few seconds to load)*
+[<i class="fas fa-desktop"></i>](materials/analysis/viz_party_differences.html) Click to explore in your browser<br>*(it may take a few seconds to load)*
 
 
 
 ## Week 12: Mini-Project Presentations + Discussion
 
-In this session, it is entirely your turn. Going beyond mere toy examples, you present what you have worked on in groups and showing off your first harvest of computational text analysis. 
+In this session, it is your turn. Going beyond mere toy examples, you present what you have worked on and show off your first harvest of computational text analysis. 
 
-The seminar is coming to an end, yet it doesn't have to be a dead-end. You may have gotten more proficient in cursing your computer but also making your way through the jungle of technology. Continue the journey, cheers!
-
-<!--
+The seminar is coming to an end, yet it doesn't have to be a dead-end. You may have gotten more proficient in cursing your computer but also making your way through the jungle of technology. Keep going, cheers!
 
 [<i class="fas fa-desktop"></i>](https://aflueckiger.github.io/KED2021/lectures/html/KED2021_12.html)
 [<i class="fas fa-file-pdf"></i>](https://aflueckiger.github.io/KED2021/lectures/pdf/KED2021_12.pdf)
 [<i class="fab fa-github"></i>](https://github.com/aflueckiger/KED2021/tree/master/lectures/md/KED2021_12.md)
-
--->
+[<i class="fas fa-video"></i>](https://tube.switch.ch/videos/F0yHkSqnuy)
