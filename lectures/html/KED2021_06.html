@@ -155,6 +155,8 @@
   }
   .reveal h2[data-background*="images"] {
       color: white;
+      font-family: Lato;
+      font-weight: bold;
   }
 
 
@@ -183,9 +185,8 @@
   /*********************************************
   * OTHER TEXT
   *********************************************/
-
-  section section:not(.has-dark-background) strong,
-  section section:not(.has-dark-background) b {
+  section:not(.has-dark-background) strong,
+  section:not(.has-dark-background) b {
     color: rgb(170, 180, 10);
   }
 
@@ -282,6 +283,11 @@
   .white-text {
       color:#f9f9ff !important;
   }
+  .dark-text {
+      color:#0c0c0c !important;
+      font-weight: bold;
+  }
+
   .answer {
       font-style: italic;
       background-color: rgba(00, 00, 00, .2);
@@ -348,6 +354,10 @@
       transform: translate(0%,-55%);
   }
 
+  .l-left-align {
+    text-align: left;
+  }
+
   </style>
 </head>
 <body>
@@ -357,6 +367,8 @@
 <section id="title-slide">
   <h1 class="title">The ABC of Computational Text Analysis</h1>
   <p class="subtitle">#6 Learning Regular Expressions</p>
+  <p class="institute"><div class="line-block">Faculty of Humanities and Social Sciences<br />
+University of Lucerne</div></p>
   <p class="date">01 April 2021<br></br>
 <div class="institute">
 Faculty of Humanities and Social Sciences<br>University of Lucerne
@@ -366,7 +378,7 @@ Faculty of Humanities and Social Sciences<br>University of Lucerne
 <section id="recap-last-lecture" class="slide level2">
 <h2>Recap last Lecture</h2>
 <ul>
-<li>well solved assignment <span class="emoji" data-emoji="confetti_ball">🎊</span>
+<li>well solved assignment #1 <span class="emoji" data-emoji="confetti_ball">🎊</span>
 <ul>
 <li><a href="https://github.com/aflueckiger/KED2021/blob/master/assignments/assignment_1/flueckiger_KED2021_1_solutions.sh">example solution</a></li>
 </ul></li>
@@ -761,6 +773,24 @@ echo &#39;an apple, other apple&#39; | egrep &#39;a[^,]*apple&#39;</code></pre>
 </ul>
 </aside>
 </section>
+<section id="in-class-game" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">In-class: Game</h2>
+<ol type="1">
+<li>Make sure that your local copy of the Github repository KED2021 is up-to-date with <code>git pull</code>. Go to the party programmes in <code>materials/party_programmes/txt</code>.</li>
+<li>Use <code>egrep</code> to extract all uppercased words like <code>UNO, OECD, SP</code> and count their frequency.</li>
+<li>Send me a private chat message with the most frequent abbreviation from 2).</li>
+</ol>
+<pre class="bash"><code># Some not so random hints 
+piping with |
+sort
+uniq -c
+egrep -roh */*.txt</code></pre>
+<aside class="notes">
+<ul>
+<li><code>egrep -roh '[A-Z]{2,}' */*.txt | sort | uniq -c | sort -h</code></li>
+</ul>
+</aside>
+</section>
 <section id="in-class-exercises-i" class="slide level2" data-background="#3c70b5">
 <h2 data-background="#3c70b5">In-class: Exercises I</h2>
 <ol type="1">
@@ -792,6 +822,22 @@ cat text.txt | tr -sc &quot;[a-zäöüA-ZÄÖÜ0-9-]&quot; &quot;\n&quot;
 cat text.txt | tr &#39; &#39; &#39;\n&#39;   </code></pre></li>
 </ol>
 </section>
+<section id="in-class-exercise-iii" class="slide level2" data-background="#3c70b5">
+<h2 data-background="#3c70b5">In-class: Exercise III</h2>
+<ol type="1">
+<li>Count all the bigrams (sequence of two words) using character sets and quantifiers. What about trigrams (three words)?</li>
+<li>Extract the words following numbers (also consider numbers like: <code>1'000, 1,000 or 5%</code>). Then, count all the words while excluding the numbers themselves. Hint: Pipe another grep to remove the digits.</li>
+<li>You are ready to come up with your own patterns…</li>
+</ol>
+<aside class="notes">
+<ul>
+<li>number task
+<ul>
+<li><code>egrep -rho "[0-9',%] \w+" | egrep -hoi '[a-z]+' | sort | uniq -c | sort -h</code></li>
+</ul></li>
+</ul>
+</aside>
+</section>
 <section id="more-resources" class="slide level2">
 <h2>More Resources</h2>
 <h4 id="required">required</h4>
@@ -802,6 +848,9 @@ cat text.txt | tr &#39; &#39; &#39;\n&#39;   </code></pre></li>
 <ul>
 <li>Nikolaj Lindberg. egrep for Linguists. <a href="https://stts.se/egrep_for_linguists/egrep_for_linguists.pdf">online</a></li>
 </ul>
+</section>
+<section id="have-a-nice-easter-break" class="slide level2" data-background="../images/easter-eggs.jpg">
+<h2 data-background="../images/easter-eggs.jpg">Have a nice <br>Easter break!</h2>
 <!-- Adapted from https://www.artembutusov.com/pandoc-markdown-syntax-highlighting-with-highlight-js/ -->
 <p><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"></p>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atom-one-dark-reasonable.min.css">
@@ -832,7 +881,7 @@ $(function() {
 
   <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
 
-  // reveal.js plugins
+  <!-- reveal.js plugins -->
   <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
@@ -842,10 +891,12 @@ $(function() {
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
+      
         // Display the page number of the current slide
         slideNumber: true,
-        // Push each slide change to the browser history
-        history: true,
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
         // see https://revealjs.com/vertical-slides/#navigation-mode
         navigationMode: 'linear',
         // The "normal" size of the presentation, aspect ratio will be preserved

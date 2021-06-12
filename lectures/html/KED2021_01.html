@@ -175,6 +175,8 @@
   }
   .reveal h2[data-background*="images"] {
       color: white;
+      font-family: Lato;
+      font-weight: bold;
   }
 
 
@@ -203,9 +205,8 @@
   /*********************************************
   * OTHER TEXT
   *********************************************/
-
-  section section:not(.has-dark-background) strong,
-  section section:not(.has-dark-background) b {
+  section:not(.has-dark-background) strong,
+  section:not(.has-dark-background) b {
     color: rgb(170, 180, 10);
   }
 
@@ -236,12 +237,15 @@
   }
 
   .reveal pre {
-      margin-top: 3em;
+      margin-top: 2em;
+      margin-bottom: 4em;
   }
 
   .reveal pre code {
-      font-size: 2em;
+      font-size: 1.5em;
       padding: 1.5em;
+      line-height: 1.2em;
+      max-height: 600px;
   }
 
 
@@ -250,41 +254,38 @@
   }
 
   .emoji {
-      font-size: 1.3em
+      font-size: 1.2em
   }
 
   /*********************************************
   * QUOTES
   *********************************************/
 
-  .reveal blockquote {
+  .reveal blockquote  {
     font-family: Georgia;
     color: #1d1e1f;
-
-    width: 80%;
+    max-width: 80%;
     text-align: left;
     box-shadow: none;
-    line-height: 1.55;
     font-size: 130%;
     position: relative; }
-    .reveal blockquote p:first-child::before,
-    .reveal blockquote p:first-child::after {
-      position: absolute;
-      font-size: 2.5em;
+    .reveal blockquote p{
+        line-height: 1.15em;
+    }
+    .reveal blockquote p:first-child::before {
+      font-size: 1.5em;
       font-family: Georgia, serif;
-      color: #4b729e; }
-    .reveal blockquote p::before {
-      top: -0.25em;
-      left: -0.5em;
-      content: '\201C'; }
-    .reveal blockquote p::after {
-      bottom: 0;
-      right: -0.4em;
-      content: '\201D'; }
+      color: rgb(10, 102, 180);
+      content: '«'; }
+  .reveal blockquote p:first-child::after {
+    font-size: 1.5em;
+    font-family: Georgia, serif;
+    color: rgb(10, 102, 180);
+    content: '»'; }
 
 
   .reveal blockquote cite{
-      color: #4b729e;
+      color: rgb(10, 102, 180);
       text-align: right;
       font-style: normal;
       font-size: 0.75em;
@@ -300,8 +301,13 @@
   * CUSTOM CLASSES
   *********************************************/
   .white-text {
-      color:white !important;
+      color:#f9f9ff !important;
   }
+  .dark-text {
+      color:#0c0c0c !important;
+      font-weight: bold;
+  }
+
   .answer {
       font-style: italic;
       background-color: rgba(00, 00, 00, .2);
@@ -368,6 +374,10 @@
       transform: translate(0%,-55%);
   }
 
+  .l-left-align {
+    text-align: left;
+  }
+
   </style>
 </head>
 <body>
@@ -378,6 +388,8 @@
   <h1 class="title">The ABC of Computational Text Analysis</h1>
   <p class="subtitle">#1 Introduction +<br>Where is the digital revolution?</p>
   <p class="author">Alex Flückiger</p>
+  <p class="institute"><div class="line-block">Faculty of Humanities and Social Sciences<br />
+University of Lucerne</div></p>
   <p class="date">25 February 2021<br></br>
 <div class="institute">
 Faculty of Humanities and Social Sciences<br>University of Lucerne
@@ -1135,10 +1147,10 @@ $(function() {
 </script>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-Graham2015" class="csl-entry" role="doc-biblioentry">
-<p>Graham, Shawn, Ian Milligan, and Scott Weingart. 2015. <em>Exploring <span>Big Historical Data</span>: <span>The Historian</span>’s <span>Macroscope</span></em>. Open Draft Version. <span>Under contract with Imperial College Press</span>. <a href="http://themacroscope.org">http://themacroscope.org</a>.</p>
+Graham, Shawn, Ian Milligan, and Scott Weingart. 2015. <em>Exploring <span>Big Historical Data</span>: <span>The Historian</span>’s <span>Macroscope</span></em>. Open Draft Version. <span>Under contract with Imperial College Press</span>. <a href="http://themacroscope.org">http://themacroscope.org</a>.
 </div>
 <div id="ref-Lazer2009" class="csl-entry" role="doc-biblioentry">
-<p>Lazer, David, Alex Pentland, Lada Adamic, Sinan Aral, Albert-László Barabási, Devon Brewer, Nicholas Christakis, et al. 2009. <span>“Computational <span>Social Science</span>.”</span> <em>Science</em> 323 (5915): 721–23. <a href="https://doi.org/10.1126/science.1167742">https://doi.org/10.1126/science.1167742</a>.</p>
+Lazer, David, Alex Pentland, Lada Adamic, Sinan Aral, Albert-László Barabási, Devon Brewer, Nicholas Christakis, et al. 2009. <span>“Computational <span>Social Science</span>.”</span> <em>Science</em> 323 (5915): 721–23. <a href="https://doi.org/10.1126/science.1167742">https://doi.org/10.1126/science.1167742</a>.
 </div>
 </div>
 </section></section>
@@ -1147,7 +1159,7 @@ $(function() {
 
   <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
 
-  // reveal.js plugins
+  <!-- reveal.js plugins -->
   <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
@@ -1157,10 +1169,12 @@ $(function() {
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
+      
         // Display the page number of the current slide
         slideNumber: true,
-        // Push each slide change to the browser history
-        history: true,
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
         // see https://revealjs.com/vertical-slides/#navigation-mode
         navigationMode: 'linear',
         // The "normal" size of the presentation, aspect ratio will be preserved

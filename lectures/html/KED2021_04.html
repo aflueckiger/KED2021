@@ -156,6 +156,8 @@
   }
   .reveal h2[data-background*="images"] {
       color: white;
+      font-family: Lato;
+      font-weight: bold;
   }
 
 
@@ -184,9 +186,8 @@
   /*********************************************
   * OTHER TEXT
   *********************************************/
-
-  section section:not(.has-dark-background) strong,
-  section section:not(.has-dark-background) b {
+  section:not(.has-dark-background) strong,
+  section:not(.has-dark-background) b {
     color: rgb(170, 180, 10);
   }
 
@@ -217,7 +218,8 @@
   }
 
   .reveal pre {
-      margin-top: 3em;
+      margin-top: 2em;
+      margin-bottom: 4em;
   }
 
   .reveal pre code {
@@ -282,6 +284,11 @@
   .white-text {
       color:#f9f9ff !important;
   }
+  .dark-text {
+      color:#0c0c0c !important;
+      font-weight: bold;
+  }
+
   .answer {
       font-style: italic;
       background-color: rgba(00, 00, 00, .2);
@@ -348,6 +355,10 @@
       transform: translate(0%,-55%);
   }
 
+  .l-left-align {
+    text-align: left;
+  }
+
   </style>
 </head>
 <body>
@@ -358,6 +369,8 @@
   <h1 class="title">The ABC of Computational Text Analysis</h1>
   <p class="subtitle">#4 Introduction to the Command-line</p>
   <p class="author">Alex Flückiger</p>
+  <p class="institute"><div class="line-block">Faculty of Humanities and Social Sciences<br />
+University of Lucerne</div></p>
   <p class="date">18 March 2021<br></br>
 <div class="institute">
 Faculty of Humanities and Social Sciences<br>University of Lucerne
@@ -764,29 +777,29 @@ cat *.txt &gt; all_text.txt        # merge all txt into a single one</code></pre
 </ul>
 </aside>
 </section>
-<section id="scripting" class="slide level2">
-<h2>Scripting</h2>
+<section id="writing-a-runnable-script" class="slide level2">
+<h2>Writing a runnable Script</h2>
 <h3 id="example-script-find_all_pdf.sh">Example script: <code>find_all_pdf.sh</code></h3>
 <pre class="bash"><code>#!/bin/sh
 
 echo &quot;This is a list of all PDFs on my computer:&quot;
 locate -i /home/*.pdf</code></pre>
 <ul>
-<li>file with one command per row</li>
-<li>start script with Shebang
+<li>file with suffix <code>.sh</code>
 <ul>
-<li><code>#!/bin/sh</code></li>
+<li>one command per row</li>
+<li><code>#</code> precedes comments</li>
 </ul></li>
-<li>execute with
-<ul>
-<li><code>bash SCRIPTNAME.sh</code></li>
-</ul></li>
+<li>start script with Shebang <code>#!/bin/sh</code></li>
+<li>execute with <code>bash SCRIPTNAME.sh</code></li>
 </ul>
+<p>The beauty of scripting is automation. <span class="emoji" data-emoji="zap">⚡</span></p>
 <aside class="notes">
 <ul>
 <li>Automation = Ablauf von Instruktionen</li>
 <li>Vorteil: nicht nötig Befehlsabfolge zu merken</li>
 <li>Übung ebenfalls als Skript abgeben</li>
+<li>no prompt, just commands</li>
 </ul>
 </aside>
 </section>
@@ -927,7 +940,7 @@ $(function() {
 
   <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
 
-  // reveal.js plugins
+  <!-- reveal.js plugins -->
   <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
@@ -937,10 +950,12 @@ $(function() {
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
+      
         // Display the page number of the current slide
         slideNumber: true,
-        // Push each slide change to the browser history
-        history: true,
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
         // see https://revealjs.com/vertical-slides/#navigation-mode
         navigationMode: 'linear',
         // The "normal" size of the presentation, aspect ratio will be preserved

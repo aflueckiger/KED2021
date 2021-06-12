@@ -185,9 +185,8 @@
   /*********************************************
   * OTHER TEXT
   *********************************************/
-
-  section section:not(.has-dark-background) strong,
-  section section:not(.has-dark-background) b {
+  section:not(.has-dark-background) strong,
+  section:not(.has-dark-background) b {
     color: rgb(170, 180, 10);
   }
 
@@ -368,6 +367,8 @@
 <section id="title-slide">
   <h1 class="title">The ABC of Computational Text Analysis</h1>
   <p class="subtitle">#7 Working with (your own) Data</p>
+  <p class="institute"><div class="line-block">Faculty of Humanities and Social Sciences<br />
+University of Lucerne</div></p>
   <p class="date">15 April 2021<br></br>
 <div class="institute">
 Faculty of Humanities and Social Sciences<br>University of Lucerne
@@ -1109,8 +1110,9 @@ $(function() {
       
         // Display the page number of the current slide
         slideNumber: true,
-        // Push each slide change to the browser history
-        history: true,
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
         // see https://revealjs.com/vertical-slides/#navigation-mode
         navigationMode: 'linear',
         // The "normal" size of the presentation, aspect ratio will be preserved

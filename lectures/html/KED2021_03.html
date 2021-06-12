@@ -175,6 +175,8 @@
   }
   .reveal h2[data-background*="images"] {
       color: white;
+      font-family: Lato;
+      font-weight: bold;
   }
 
 
@@ -203,9 +205,8 @@
   /*********************************************
   * OTHER TEXT
   *********************************************/
-
-  section section:not(.has-dark-background) strong,
-  section section:not(.has-dark-background) b {
+  section:not(.has-dark-background) strong,
+  section:not(.has-dark-background) b {
     color: rgb(170, 180, 10);
   }
 
@@ -236,15 +237,15 @@
   }
 
   .reveal pre {
-      margin-top: 3em;
+      margin-top: 2em;
+      margin-bottom: 4em;
   }
 
   .reveal pre code {
-      font-size: 2em;
+      font-size: 1.5em;
       padding: 1.5em;
-      line-height: 1.1em;
-      max-height: 500px;
-
+      line-height: 1.2em;
+      max-height: 600px;
   }
 
 
@@ -302,6 +303,11 @@
   .white-text {
       color:#f9f9ff !important;
   }
+  .dark-text {
+      color:#0c0c0c !important;
+      font-weight: bold;
+  }
+
   .answer {
       font-style: italic;
       background-color: rgba(00, 00, 00, .2);
@@ -368,6 +374,10 @@
       transform: translate(0%,-55%);
   }
 
+  .l-left-align {
+    text-align: left;
+  }
+
   </style>
 </head>
 <body>
@@ -378,6 +388,8 @@
   <h1 class="title">The ABC of Computational Text Analysis</h1>
   <p class="subtitle">#3 Setting up your Development Environment</p>
   <p class="author">Alex Flückiger</p>
+  <p class="institute"><div class="line-block">Faculty of Humanities and Social Sciences<br />
+University of Lucerne</div></p>
   <p class="date">11 March 2021<br></br>
 <div class="institute">
 Faculty of Humanities and Social Sciences<br>University of Lucerne
@@ -900,7 +912,7 @@ $(function() {
 </script>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-Healy2019" class="csl-entry" role="doc-biblioentry">
-<p>Healy, Kieran. 2019. <span>“The <span>Plain Person</span>’s <span>Guide</span> to <span>Plain Text Social Science</span>.”</span> <a href="https://kieranhealy.org/publications/plain-person-text/">https://kieranhealy.org/publications/plain-person-text/</a>.</p>
+Healy, Kieran. 2019. <span>“The <span>Plain Person</span>’s <span>Guide</span> to <span>Plain Text Social Science</span>.”</span> <a href="https://kieranhealy.org/publications/plain-person-text/">https://kieranhealy.org/publications/plain-person-text/</a>.
 </div>
 </div>
 </section></section>
@@ -909,7 +921,7 @@ $(function() {
 
   <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
 
-  // reveal.js plugins
+  <!-- reveal.js plugins -->
   <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
@@ -919,10 +931,12 @@ $(function() {
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
+      
         // Display the page number of the current slide
         slideNumber: true,
-        // Push each slide change to the browser history
-        history: true,
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
         // see https://revealjs.com/vertical-slides/#navigation-mode
         navigationMode: 'linear',
         // The "normal" size of the presentation, aspect ratio will be preserved

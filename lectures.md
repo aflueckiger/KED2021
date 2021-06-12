@@ -103,7 +103,7 @@ Everything we have touched about text processing in greater detail.
 
 #### Online Regular Expression Editor
 
-[Rubular](https://rubular.com/) is a visual editor to check your regular expressions.
+[regex101](https://regex101.com/) is a visual editor to check your regular expressions.
 
 ## Week 7: Working with Data
 

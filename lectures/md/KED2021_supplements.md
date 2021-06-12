@@ -1,11 +1,11 @@
 ---
-title: The ABC of computational Text Analysis
+title: The ABC of Computational Text Analysis
 subtitle: "Supplements"
 author: "Alex Flückiger"
 institute: |
   | Faculty of Humanities and Social Sciences
   | University of Lucerne
-date: "23 April 2020"
+date: "25 February 2021<br></br><div class='institute'>Faculty of Humanities and Social Sciences<br>University of Lucerne</div>"
 lang: en-US
 ---
 
@@ -22,6 +22,15 @@ Here I present some stuff that we did not cover in class.
   - what follows `she/he` or `her/his`
 
 
+
+## Forms of Data
+
+- content data
+  - clean, plain text data
+  - preferable as `.txt`
+- metadata ~ information about the actual data
+  - publishing date, authors, source, version
+  - preferable as `.csv` 
 
 
 
@@ -51,6 +60,30 @@ cut -d\t -f1 	# extract the 2nd column from a tab-separated file
 ```bash
 echo "Starting program at $(date)" 
 ```
+
+
+
+## Better Tokenization
+
+- tokenization ~ splitting into words
+
+```bash
+# new, improved approach
+cat text.txt | tr -sc "[a-zäöüA-ZÄÖÜ0-9-]" "\n"
+
+# old approach
+cat text.txt | tr ' ' '\n'	
+```
+
+::: notes
+
+- Tokenisierung = in Wörter splitten
+- Interpunktion "klebt nicht mehr an Wörtern"
+- -s = beliebig viele Zeichen
+- -c = Komplement (also nicht diese Zeichen)
+- angegebene Zeichen werden NICHT ersetzt
+
+:::
 
 
 

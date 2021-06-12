@@ -175,6 +175,8 @@
   }
   .reveal h2[data-background*="images"] {
       color: white;
+      font-family: Lato;
+      font-weight: bold;
   }
 
 
@@ -203,9 +205,8 @@
   /*********************************************
   * OTHER TEXT
   *********************************************/
-
-  section section:not(.has-dark-background) strong,
-  section section:not(.has-dark-background) b {
+  section:not(.has-dark-background) strong,
+  section:not(.has-dark-background) b {
     color: rgb(170, 180, 10);
   }
 
@@ -236,12 +237,15 @@
   }
 
   .reveal pre {
-      margin-top: 3em;
+      margin-top: 2em;
+      margin-bottom: 4em;
   }
 
   .reveal pre code {
-      font-size: 2em;
+      font-size: 1.5em;
       padding: 1.5em;
+      line-height: 1.2em;
+      max-height: 600px;
   }
 
 
@@ -297,8 +301,13 @@
   * CUSTOM CLASSES
   *********************************************/
   .white-text {
-      color:white !important;
+      color:#f9f9ff !important;
   }
+  .dark-text {
+      color:#0c0c0c !important;
+      font-weight: bold;
+  }
+
   .answer {
       font-style: italic;
       background-color: rgba(00, 00, 00, .2);
@@ -365,6 +374,10 @@
       transform: translate(0%,-55%);
   }
 
+  .l-left-align {
+    text-align: left;
+  }
+
   </style>
 </head>
 <body>
@@ -375,6 +388,8 @@
   <h1 class="title">The ABC of Computational Text Analysis</h1>
   <p class="subtitle">#2 Text as Data</p>
   <p class="author">Alex Flückiger</p>
+  <p class="institute"><div class="line-block">Faculty of Humanities and Social Sciences<br />
+University of Lucerne</div></p>
   <p class="date">04 March 2021<br></br>
 <div class="institute">
 Faculty of Humanities and Social Sciences<br>University of Lucerne
@@ -981,16 +996,16 @@ $(function() {
 </script>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-Evans2016" class="csl-entry" role="doc-biblioentry">
-<p>Evans, James A., and Pedro Aceves. 2016. <span>“Machine <span>Translation</span>: <span>Mining Text</span> for <span>Social Theory</span>.”</span> <em>Annual Review of Sociology</em> 42 (1): 21–50. <a href="https://doi.org/10.1146/annurev-soc-081715-074206">https://doi.org/10.1146/annurev-soc-081715-074206</a>.</p>
+Evans, James A., and Pedro Aceves. 2016. <span>“Machine <span>Translation</span>: <span>Mining Text</span> for <span>Social Theory</span>.”</span> <em>Annual Review of Sociology</em> 42 (1): 21–50. <a href="https://doi.org/10.1146/annurev-soc-081715-074206">https://doi.org/10.1146/annurev-soc-081715-074206</a>.
 </div>
 <div id="ref-Grimmer2013" class="csl-entry" role="doc-biblioentry">
-<p>Grimmer, Justin, and Brandon M. Stewart. 2013. <span>“Text as <span>Data</span>: <span>The Promise</span> and <span>Pitfalls</span> of <span>Automatic Content Analysis Methods</span> for <span>Political Texts</span>.”</span> <em>Political Analysis</em> 21 (3): 267–97. <a href="https://doi.org/10.1093/pan/mps028">https://doi.org/10.1093/pan/mps028</a>.</p>
+Grimmer, Justin, and Brandon M. Stewart. 2013. <span>“Text as <span>Data</span>: <span>The Promise</span> and <span>Pitfalls</span> of <span>Automatic Content Analysis Methods</span> for <span>Political Texts</span>.”</span> <em>Political Analysis</em> 21 (3): 267–97. <a href="https://doi.org/10.1093/pan/mps028">https://doi.org/10.1093/pan/mps028</a>.
 </div>
 <div id="ref-Lazer2009" class="csl-entry" role="doc-biblioentry">
-<p>Lazer, David, Alex Pentland, Lada Adamic, Sinan Aral, Albert-László Barabási, Devon Brewer, Nicholas Christakis, et al. 2009. <span>“Computational <span>Social Science</span>.”</span> <em>Science</em> 323 (5915): 721–23. <a href="https://doi.org/10.1126/science.1167742">https://doi.org/10.1126/science.1167742</a>.</p>
+Lazer, David, Alex Pentland, Lada Adamic, Sinan Aral, Albert-László Barabási, Devon Brewer, Nicholas Christakis, et al. 2009. <span>“Computational <span>Social Science</span>.”</span> <em>Science</em> 323 (5915): 721–23. <a href="https://doi.org/10.1126/science.1167742">https://doi.org/10.1126/science.1167742</a>.
 </div>
 <div id="ref-Ogden1923" class="csl-entry" role="doc-biblioentry">
-<p>Ogden, Charles Kay, and Ivor Armstrong Richards. 1923. <em>The <span>Meaning</span> of <span>Meaning</span>: <span>A Study</span> of the <span>Influence</span> of <span>Language Upon Thought</span> and of the <span>Science</span> of <span>Symbolism</span>. <span>Supplementary Essays</span> by <span>B</span>. <span>Malinowski</span> and <span>F</span>.<span>G</span>. <span>Crookshank</span></em>. <span>New York</span>: <span>Harcourt</span>. <a href="http://books.google.com?id=i3MIAQAAIAAJ">http://books.google.com?id=i3MIAQAAIAAJ</a>.</p>
+Ogden, Charles Kay, and Ivor Armstrong Richards. 1923. <em>The <span>Meaning</span> of <span>Meaning</span>: <span>A Study</span> of the <span>Influence</span> of <span>Language Upon Thought</span> and of the <span>Science</span> of <span>Symbolism</span>. <span>Supplementary Essays</span> by <span>B</span>. <span>Malinowski</span> and <span>F</span>.<span>G</span>. <span>Crookshank</span></em>. <span>New York</span>: <span>Harcourt</span>. <a href="https://books.google.com?id=i3MIAQAAIAAJ">https://books.google.com?id=i3MIAQAAIAAJ</a>.
 </div>
 </div>
 </section></section>
@@ -999,7 +1014,7 @@ $(function() {
 
   <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
 
-  // reveal.js plugins
+  <!-- reveal.js plugins -->
   <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
@@ -1009,10 +1024,12 @@ $(function() {
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
+      
         // Display the page number of the current slide
         slideNumber: true,
-        // Push each slide change to the browser history
-        history: true,
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
         // see https://revealjs.com/vertical-slides/#navigation-mode
         navigationMode: 'linear',
         // The "normal" size of the presentation, aspect ratio will be preserved

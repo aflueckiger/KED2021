@@ -164,9 +164,8 @@ ul li li {
 /*********************************************
 * OTHER TEXT
 *********************************************/
-
-section section:not(.has-dark-background) strong,
-section section:not(.has-dark-background) b {
+section:not(.has-dark-background) strong,
+section:not(.has-dark-background) b {
   color: rgb(170, 180, 10);
 }
 
