@@ -100,11 +100,12 @@ $(LECTURES_PDF_DIR)/%.pdf: $(LECTURES_HTML_DIR)/%.html
 
 
 KED2021_syllabus.pdf: index.md schedule.md lectures.md assignments.md
-	cat index.md | sed '/<div/,/div>/d' > index.md.tmp
+	cat index.md <(echo "[Go to Course Website](https://aflueckiger.github.io/KED2021/)" ) | grep -v "Go to UniLu website" | sed '/<div/,/div>/d'	> index.md.tmp
 	sed '5 a # Schedule' schedule.md | sed 's/.lectures//' > schedule.md.tmp
-	sed '5 a # Lectures' lectures.md > lectures.md.tmp
+	sed '5 a # Lectures' lectures.md | sed 's/!.*\.svg)/Binder/' > lectures.md.tmp
 	sed '5 a # Assignments' assignments.md > assignments.md.tmp
-	pandoc -o $@ index.md.tmp schedule.md.tmp lectures.md.tmp assignments.md.tmp --from markdown \
+	pandoc -o $@ index.md.tmp schedule.md.tmp lectures.md.tmp assignments.md.tmp \
+	--from markdown \
 	--toc \
 	--toc-depth=1 \
 	--number-sections \
